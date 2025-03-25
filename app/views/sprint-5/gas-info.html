@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">St Mary's Primary School</span>
+      <h1 class="govuk-heading-xl">Gas meters and usage</h1>
+
+      <form class="form" action="" method="post">
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "meterType",
+  fieldset: {
+    legend: {
+      text: "Is this a single meter or multi meter site? ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "If your site is multi meter, your bill will have more than one meter number in the readings section."
+  },
+  items: [
+    {
+      value: "Single~/sprint-5/gas-meter-info",
+      text: "Single meter"
+    },
+    {
+      value: "Multi~/sprint-5/gas-meter-info",
+      text: "Multi meter"
+    }
+  ]
+}) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

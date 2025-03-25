@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">St Mary's Primary School</span>
+      <h1 class="govuk-heading-xl">Gas meters and usage</h1>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">You have added 1 MPRN</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">MPRN</th>
+              <th scope="col" class="govuk-table__header">Estimated annual gas usage</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{ data['mprn'] }}</th>
+              <td class="govuk-table__cell">{{ data['kwh'] }}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/gas-meter-info">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">{{ data['mprn-1'] }}</th>
+              <td class="govuk-table__cell">{{ data['kwh-1'] }}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/gas-meter-info">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        {{ govukButton({
+        text: "Add another MPRN",
+        href: "gas-meter-info-2",
+        classes: "govuk-button--secondary"
+        }) }}
+
+
+  <br>
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: "gas-info-billing"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
