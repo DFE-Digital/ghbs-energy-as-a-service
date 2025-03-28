@@ -21,7 +21,7 @@
 
       <form class="form" action="" method="post">
 
-<!-- {{ govukRadios({
+{{ govukRadios({
   classes: "govuk-radios",
   name: "meterType",
   fieldset: {
@@ -39,28 +39,6 @@
     {
       value: "No~/sprint-5/finish",
       text: "No, I want a separate bill for each MPAN"
-    }
-  ]
-}) }} -->
-  
-{{ govukRadios({
-  classes: "govuk-radios",
-  name: "meterType",
-  fieldset: {
-    legend: {
-      text: "Do you want your MPRNs consolidated on one bill?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "Yes~/sprint-5/elec-info",
-      text: "Yes"
-    },
-    {
-      value: "No~/sprint-5/elec-info",
-      text: "No, I want a separate bill for each MPRN"
     }
   ]
 }) }}
