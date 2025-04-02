@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p class="govuk-body-l">How state-funded schools and trusts can join the Energy for Schools scheme, an alternative to energy procurement, which may save time and money.</p>
+      <p class="govuk-body-l">Applies to England</p>
+   
+
+      <p>Contents</p>
+      <p class="govuk-body-s">— <a href="#about-the-scheme" class="govuk-link">About the scheme</a></p>
+      <p class="govuk-body-s">— <a href="#v30" class="govuk-link">V30 contract</a></p>
+      <p class="govuk-body-s">— <a href="#compliance" class="govuk-link">Compliance</a></p>
+      <p class="govuk-body-s">— <a href="#consideration" class="govuk-link">Consideration</a></p>
+      <p class="govuk-body-s">— <a href="#how-to-join" class="govuk-link">How to join the scheme</a></p>
+
+
+      <div id="about-the-scheme"></div>
+      <h3 class="govuk-heading-m">About the scheme</h3>
+      <p>The Energy for Schools scheme offers schools a simpler, safer way to manage their energy needs by helping schools switch to the same energy contract as the Department for Education (DfE).</p>
+      <p>DfE manages the contract on behalf of schools through procurement specialists Crown Commercial Service (CCS). On the current contract, called V30, electricity is supplied by EDF, and gas is supplied by TotalEnergies.</p>
+      <p>This scheme differs to other frameworks because it allows schools to benefit from the bulk purchasing power of a government-wide contract. It also saves schools from pouring over complex energy contracts because DfE handles the paperwork.</p>
+
+      <p><strong>Benefits</strong></p>
+      <p>All central government departments are on the V30 contract to compliantly procure their energy supply.</p>
+      <p>Customers are protected from market volatility and soaring prices because the CCS trades over a long timeframe (42 months).</p>
+      <p>V30 has outperformed the energy market by an average of 12% over the past 7 years.</p>
+      <p>If your school or trust joins the scheme, DfE will handle contractual responsibilities and administrative paperwork with the energy suppliers.</p>
+
+      <p class="govuk-body">This means schools</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>save time by using our simplified onboarding process</li>
+        <li>don’t have to deal with complex energy contracts</li>
+        <li>are exempt from the usual requirements around procurement</li>
+      </ul>
+
+      <p>Unlike brokers, this process is free to access and use.</p>
+
+      <div id="v30"></div>
+      <h3 class="govuk-heading-m">V30 contract</h3>
+
+      <p>V30 is a low-risk variable rate contract.</p>
+      <p>Prices can go up and down, but changes are less drastic than other variable rates. However, it may not always give you the lowest price.</p>
+      <p>CCS cannot provide potential customers with energy prices before they join the scheme due to commercial sensitivity.</p>
+      <p>To get an estimate of prices, email <a href="#" class="govuk-link">dfe-energy.services-team@education.gov.uk</a> and request DfE’s benchmarking service. The service provides a price comparison based on your energy bills from the last financial year.</p>
+      <p>V30 is a rolling contract, meaning your school will remain on the contract until you give notice to exit. 30 months’ notice is required.</p>
+
+      <p><strong>Start date</strong></p>
+      <p>New customers are added to the V30 contract every April. Your application date and current contract’s expiry date will determine which year you’ll join.</p>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Application deadline</th>
+            <th scope="col" class="govuk-table__header">V30 start dates</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">25 September 2025</th>
+            <td class="govuk-table__cell">1 April 2026</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">September 2026</th>
+            <td class="govuk-table__cell">1 April 2027</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">September 2027</th>
+            <td class="govuk-table__cell">1 April 2028</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Check your current contract's termination terms and notice period. You will need to serve out your notice period and inform your supplier if you join the Energy for Schools scheme. DfE cannot undertake this for you.</p>
+      <p>If your school’s energy contract is already through CCS, DfE will transfer (novate) you onto the new account. In this instance, you’ll not need to give notice to your current supplier.</p>
+
+      <p><strong>Interim rate</strong></p>
+      <p>You’ll be placed on an interim rate if there’s a gap between your current contract’s expiry date and the next available start date for the V30 contract.</p>
+      <p>An interim rate contract is a temporary arrangement that bridges the gap until the new contract begins. You'll still benefit from all framework protections, including procurement compliance, social value commitments and data security measures.</p>
+      <p>Interim rates are available on request. They are similar to the V30 rate but may vary due to market conditions.</p>
+      <p>If you apply to the Energy for Schools scheme and need to go on an interim rate for electricity, the supplier EDF will inform you of prices within 6 weeks of completing the scheme’s application.</p>
+      <p>For gas, you should receive interim prices from the supplier Total roughly 30 days prior to receiving supply.</p>
+      <p>We'll automatically move you onto the V30 contract when your interim contract ends.</p>
+      <p>If you’re out of contract and need an immediate energy supply, you’ll receive interim rates. Interim rates are a reflection of the current energy market.</p>
+
+      <p><strong>Billing</strong></p>
+      <p>Your electricity and gas invoices will be issues separately by the relevant suppliers. You can choose whether you’d like to receive invoices via post or on the suppliers’ portals when you join the scheme.</p>
+      <p>You’ll be granted portal access once your contract begins. Portal access also allows you to view a breakdown of your energy consumption.</p>
+      <p>Schools will receive a monthly email from DfE with forecast updates of what your unit rates are projected to be for the following year.</p>
+
+      <div id="compliance"></div>
+      <h3 class="govuk-heading-m">Compliance</h3>
+
+      <p>The Energy for Schools scheme is a contract and not a procurement process. By joining the scheme, you’ll be switching to the CCS framework used by DfE.</p>
+      <p>The CCS framework complies with Public Contracts Regulation 2015 in place at the time the framework was established and is therefore procurement compliant.</p>
+      <p>Schools joining the scheme will have complied with DfE’s Buying Procedures and Procurement Law for Schools.</p>
+      <p>That means you're exempt from the procurement protocol of securing 3 quotes or going out to market.</p>
+
+      <div id="consideration"></div>
+      <h3 class="govuk-heading-m">Considerations</h3>
+
+      <p><strong>VAT declaration</strong></p>
+      <p>You’ll be asked to declare your VAT status when joining the scheme. This is to ensure you’re charged the correct amount of VAT on your energy supplies.</p>
+      <p>If you’re unsure how much VAT you’re currently charged for gas and electricity, check with your tax advisor. If you’re a local authority-maintained school, check with your local authority.</p>
+
+      <p><strong>Renewable energy</strong></p>
+      <p>The energy supply is from the supplier’s standard ‘Brown’ product. Everyone who uses this supply gets between 30-40% renewable energy through the UK power grid. This percentage is increasing as more renewable energy sources are added to the grid.</p>
+      <p>You can choose to pay more for a product that contains more renewable energy. <a href="#" class="govuk-link">dfe-energy.services-team@education.gov.uk</a> to discuss renewable options.</p>
+      <p>Energy savings made through renewable energy, such as solar panels, are not factored into this contract. You should continue your current arrangement or contact EDF about setting up a Smart Export Guarantee if you wish to export energy back to the grid.</p>
+
+      <p><strong>Objections</strong></p>
+      <p>In some cases, the current energy supplier may raise an objection to switching contracts. Common reasons for objections include unpaid invoices, incorrect site address information, incorrect meter point reference numbers or termination notice not served.</p>
+      <p>DfE will inform you if an objection is raised. You’ll need to contact your existing supplier to resolve the issue and switch contracts – DfE does not have the authority to do this for you.</p>
+
+      <div id="how-to-join"></div>
+      <h3 class="govuk-heading-m">How to join the scheme</h3>
+
+      <p>State-funded schools and trusts in England that want to switch to the contract can do so by filling in an online form.</p>
+      <p>DfE will then share your information with the new suppliers and send you an email confirming the contract’s start date and any interim rate arrangements, if applicable.</p>
+
+      {{ govukButton({
+        text: "Join the scheme",
+        href: "/sprint-5/start-page"
+      }) }}
+
+      {{ govukButton({
+        text: "Request support",
+        href: "admin/listings",
+        classes: "govuk-button--secondary govuk-!-margin-left-1"
+        }) }}
+
+
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related actions
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="/sprint-5/start-page">
+                Join the scheme
+              </a>
+            </li>
+            <li>
+              <a href="/sprint-5/request-for-help-email">
+                Request support
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
