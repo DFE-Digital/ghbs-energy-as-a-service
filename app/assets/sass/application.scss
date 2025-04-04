@@ -11,3 +11,7 @@
 .govuk-width-container {
     @include govuk-width-container;
 }
+
+.govuk-checkboxes__item {
+    display: inline-flex
+}
