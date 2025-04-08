@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Lancashire Schools Trust</span>
+      <h1 class="govuk-heading-l">Are you authorised to switch energy suppliers for these schools?</h1>
+
+      <form class="form" action="/sprint-5/mat-existing-contracts" method="post">
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Bowland High</li>
+          <li>Roseacre Primary Academy</li>
+          <li>Thames Primary Academy</li>
+          <li>Witton Park Academy</li>
+        </ul>
+
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            Please seek appropriate authorisation to switch energy suppliers. There is no cooling off period once you’ve submitted this form.
+          </strong>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+      <span class="govuk-caption-l">About your schools: Current contract details</span>
+      <h1 class="govuk-heading-xl">Electricity contract</h1>
+
+      <form class="form" action="/path/of/next/page" method="post">
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="location">
+            Current electricity supplier
+          </label>
+          <div id="location-hint" class="govuk-hint">
+            This is the company that supplies your electricity. If you use a broker, check your invoice for supplier details or ask the broker.
+          </div>
+          <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+            <option value="choose" selected>Choose supplier</option>
+            <option value="eastmidlands">British Gas</option>
+            <option value="eastofengland">Crown Gas & Power</option>
+            <option value="london">EDF</option>
+            <option value="northeast">E.ON</option>
+            <option value="northwest">npower</option>
+            <option value="southeast">Octopus Energy</option>
+            <option value="southwest">Ovo Energy</option>
+            <option value="westmidlands">Scottish Power</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="econtract-end-issued-hint">
+            <legend class="govuk-fieldset__legend">
+              When does the contract end?
+            </legend>
+            <div id="contract-end-hint" class="govuk-hint">
+              For example, 27 3 2025 
+            </div>
+            <div class="govuk-date-input" id="contract-end">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="econtract-end-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="econtract-end-day" name="econtract-end-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="econtract-end-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="econtract-end-month" name="econtract-end-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="econtract-end-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="econtract-end-year" name="econtract-end-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Save and Continue",
+          href: "/sprint-5/nextpage?ccd=Complete"
+        }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist?ccd=Complete",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
