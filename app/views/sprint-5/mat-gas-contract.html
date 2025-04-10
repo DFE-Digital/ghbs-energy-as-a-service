@@ -81,12 +81,13 @@
         </div>
 
         {{ govukButton({
-          text: "Save and Continue"
+          text: "Save and Continue",
+          href: "/sprint-5/mat-vat-status?ccd=complete"
         }) }}
 
         {{ govukButton({
           text: "Save and go to tasks",
-          href: "/sprint-5/tasklist",
+          href: "/sprint-5/tasklist?ccd=inProgress",
           classes: "govuk-button--secondary govuk-!-margin-left-1"
           }) }}
 
