@@ -82,13 +82,15 @@
 
         {{ govukButton({
           text: "Save and Continue",
-          href: "/sprint-5/mat-vat-decleration?ccd=Complete"
+          href: "/sprint-5/mat-vat-declaration",
+          value: "ccd=Complete"
         }) }}
 
         {{ govukButton({
           text: "Save and go to tasks",
-          href: "/sprint-5/tasklist?ccd=Complete",
-          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1",
+          value: "ccd=Complete"
           }) }}
 
       </form>
