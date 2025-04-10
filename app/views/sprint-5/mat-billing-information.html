@@ -1,0 +1,166 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">About your schools: Billing preferences</span>
+      <h1 class="govuk-heading-xl">Billing preferences</h1>
+
+      <form class="form" action="/sprint-5/tasklist?bp=complete" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          name: "paymentType",
+          fieldset: {
+            legend: {
+              text: "How will the bills be paid?"
+            }
+          },
+          items: [
+            {
+              value: "bacs",
+              text: "BACS"
+            },
+            {
+              value: "direct-debit",
+              text: "Direct Debit"
+            },
+            {
+              value: "gp-card",
+              text: "Government Procurement Card"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          name: "paymentTerms",
+          fieldset: {
+            legend: {
+              text: "Payment terms"
+            }
+          },
+          items: [
+            {
+              value: "7-days",
+              text: "7 days"
+            },
+            {
+              value: "10-days",
+              text: "10 days"
+            },
+            {
+              value: "14-days",
+              text: "14 days"
+            },
+            {
+              value: "21-days",
+              text: "21 days"
+            },
+            {
+              value: "28-days",
+              text: "28 days"
+            },
+            {
+              value: "30-days",
+              text: "30 days"
+            }
+          ]
+        }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set ebillHtml %}
+        {{ govukInput({
+          id: "invoice-ebilling",
+          name: "invoiceByEmail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Email address"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set paperHtml %}
+        {{ govukRadios({
+          id: "invoice-paper",
+          name: "invoiceByPaper",
+          type: "tel",
+          name: "paymentType",
+          fieldset: {
+            legend: {
+              text: "Billing address"
+            }
+          },
+          items: [
+            {
+              value: "address-1",
+              text: "Address 1"
+            },
+            {
+              value: "address-2",
+              text: "Address 2"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "manual-address",
+              text: "Enter address manually"
+            }
+          ]
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "invoiceType",
+          fieldset: {
+            legend: {
+              text: "How do you want to be invoiced?"
+            }
+          },
+          items: [
+            {
+              value: "email",
+              text: "Email",
+              conditional: {
+                html: ebillHtml
+              }
+            },
+            {
+              value: "paper",
+              text: "Paper",
+              conditional: {
+                html: paperHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
