@@ -17,12 +17,37 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Preload data for user journeys</h1>
-        <!-- <p>Preload data for user journeys</p> -->
+    <form class="form" action="/sprint-5/start-page" method="post">
 
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            name: "journeyType",
+            fieldset: {
+              legend: {
+                text: "Preload data for user journeys",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "single-school",
+                text: "Single School"
+              },
+              {
+                value: "mats",
+                text: "MATs"
+              }
+            ]
+          }) }}
+
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
   
 
-          
+        </form>
 
             </tbody>
         </table>

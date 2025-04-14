@@ -36,20 +36,27 @@
   },
   items: [
     {
-      value: "Single~/sprint-5/gas-meter-info",
+      value: "single~/sprint-5/gas-meter-info",
       text: "Single meter"
     },
     {
-      value: "Multi~/sprint-5/gas-meter-info",
+      value: "multi~/sprint-5/gas-meter-info",
       text: "Multi meter"
     }
   ]
 }) }}
 
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+{{ govukButton({
+  text: "Save and Continue",
+  href: ""
+}) }}
+
+{{ govukButton({
+  text: "Save and go to tasks",
+  href: "/sprint-5/tasklist",
+  classes: "govuk-button--secondary govuk-!-margin-left-1"
+  }) }}
 
       </form>
 

@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+      <span class="govuk-caption-l">St Mary's Primary School: Site contact</span>
+      <h1 class="govuk-heading-xl">What is the contact details for who manages the site?</h1>
+
+      <form class="form" action="/sprint-5/tasklist?scontact=complete" method="post">
+
+        <p>Please provide details of the person who oversees site maintenance and access. This is in case the supplier needs access to the site or meter equipment, or in case of emergency</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="scontact-name">
+            Name
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="scontact-name" name="scontact-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="scontact-email">
+            Email
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="scontact-email" name="scontact-email" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="scontact-tel">
+            Telephone
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="scontact-tel" name="scontact-tel" type="text">
+        </div>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
