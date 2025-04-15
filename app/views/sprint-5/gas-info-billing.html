@@ -23,7 +23,7 @@
 
 {{ govukRadios({
   classes: "govuk-radios",
-  name: "meterType",
+  name: "billType",
   fieldset: {
     legend: {
       text: "Do you want your MPRNs consolidated on one bill?",
@@ -33,11 +33,11 @@
   },
   items: [
     {
-      value: "Yes~/sprint-5/elec-info",
+      value: "Consolidated on one bill~/sprint-5/elec-info",
       text: "Yes"
     },
     {
-      value: "No~/sprint-5/elec-info",
+      value: "Separate bill for each MPRN~/sprint-5/elec-info",
       text: "No, I want a separate bill for each MPRN"
     }
   ]

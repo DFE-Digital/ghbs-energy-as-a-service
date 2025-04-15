@@ -272,8 +272,8 @@
       <dd class="govuk-summary-list__actions">
         <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice email/span></a>
       </dd>
-      {% endif %}
     </div>
+      {% endif %}
   </dl>
 </div>
 </div>
@@ -374,38 +374,235 @@
           {% else %}
           {% endif %}
 
-
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you want your MPRNs consolidated on one bill?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['billType'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
         </dl>
       </div>
     </div>
+
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Electricity information
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is this a single meter or multi meter site?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['emeterType'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              MPAN
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['mpan'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is this a half-hourly MPAN?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['halfHour'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the supply capacity?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
+
+          {% if data['eaddmeter1'] == "1" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              MPAN 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['mpan-1'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is this a half-hourly MPAN?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['halfHour-3'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the supply capacity?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh-1'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
+          {% else %}
+          {% endif %}
+
+          {% if data['eaddmeter2'] == "2" %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              MPAN 3
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['mpan-2'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is this a half-hourly MPAN?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['halfHour-4'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What is the supply capacity?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh-2'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you want your MPANs consolidated on one bill?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ebillType'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">
+          Site contact details
+        </h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['scontact-name'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['scontact-email'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Telephone
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['scontact-tel'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
     </dl>
   </div>
 </div>
 
 
+  <p>
+    By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+  </p>
 
+  <form action="/confirmation" method="post" novalidate>
 
+    {{ govukButton({
+      text: "Accept and send",
+      href: "/sprint-5/authorisation"
+    }) }}
 
+  </form>
 
-
-
-
-    
-
-
-
-      <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
-      </p>
-
-      <form action="/confirmation" method="post" novalidate>
-
-        {{ govukButton({
-          text: "Accept and send"
-        }) }}
-
-      </form>
-
-    </div>
-  </div>
+</div>
+</div>
 {% endblock %}

@@ -23,7 +23,7 @@
 
 {{ govukRadios({
   classes: "govuk-radios",
-  name: "meterType",
+  name: "ebillType",
   fieldset: {
     legend: {
       text: "Do you want your MPANs consolidated on one bill?",
@@ -33,11 +33,11 @@
   },
   items: [
     {
-      value: "yes",
+      value: "Consolidated on one bill",
       text: "Yes"
     },
     {
-      value: "no",
+      value: "Separate bill for each MPAN",
       text: "No, I want a separate bill for each MPAN"
     }
   ]
