@@ -16,17 +16,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% if data['journeyType'] == "mats" %}
       <span class="govuk-caption-l">Lancashire Schools Trust</span>
+      {% else %}
+      <span class="govuk-caption-l">St Mary's Primary School</span>
+      {% endif %}
+
       <h1 class="govuk-heading-l">Are you authorised to switch energy suppliers for these schools?</h1>
 
+      {% if data['journeyType'] == "mats" %}
       <form class="form" action="/sprint-5/mat-existing-contracts" method="post">
+      {% else %}
+      <form class="form" action="/sprint-5/mat-gas-contract" method="post">
+      {% endif %}
 
+        {% if data['journeyType'] == "mats" %}
         <ul class="govuk-list govuk-list--bullet">
           <li>Bowland High</li>
           <li>Roseacre Primary Academy</li>
           <li>Thames Primary Academy</li>
           <li>Witton Park Academy</li>
         </ul>
+        {% else %}
+        <ul class="govuk-list govuk-list--bullet">
+          <li>St Mary's Primary School</li>
+        </ul>
+        {% endif %}
 
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
