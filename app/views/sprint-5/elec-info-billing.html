@@ -16,28 +16,28 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">St Mary's Primary School</span>
-      <h1 class="govuk-heading-xl">Electricity meters and usage</h1>
+      <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
+    
 
-      <form class="form" action="" method="post">
+      <form class="form" action="/sprint-5/tasklist?emu1=complete" method="post">
 
 {{ govukRadios({
   classes: "govuk-radios",
-  name: "meterType",
+  name: "ebillType",
   fieldset: {
     legend: {
       text: "Do you want your MPANs consolidated on one bill?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--xl"
     }
   },
   items: [
     {
-      value: "Yes~/sprint-5/finish",
+      value: "Consolidated on one bill",
       text: "Yes"
     },
     {
-      value: "No~/sprint-5/finish",
+      value: "Separate bill for each MPAN",
       text: "No, I want a separate bill for each MPAN"
     }
   ]

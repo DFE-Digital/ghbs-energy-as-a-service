@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">About your schools: VAT status</span>
-      <h1 class="govuk-heading-xl">VAT declaration</h1>
+      <h1 class="govuk-heading-l">VAT declaration</h1>
 
       <form class="form" action="/sprint-5/mat-vat-contact?vatd=inProgress" method="post">
 
@@ -80,8 +80,14 @@
        
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 

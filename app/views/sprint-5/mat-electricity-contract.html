@@ -20,26 +20,26 @@
       <span class="govuk-caption-l">About your schools: Current contract details</span>
       <h1 class="govuk-heading-xl">Electricity contract</h1>
 
-      <form class="form" action="/sprint-5/mat-vat-status" method="post">
+      <form class="form" action="/sprint-5/mat-vat-status?ccd=complete" method="post">
 
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="location">
+          <label class="govuk-label" for="e-supplier">
             Current electricity supplier
           </label>
-          <div id="location-hint" class="govuk-hint">
+          <div id="e-supplier-hint" class="govuk-hint">
             This is the company that supplies your electricity. If you use a broker, check your invoice for supplier details or ask the broker.
           </div>
-          <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+          <select class="govuk-select" id="e-supplier" name="e-supplier" aria-describedby="e-supplier-hint">
             <option value="choose" selected>Choose supplier</option>
-            <option value="eastmidlands">British Gas</option>
-            <option value="eastofengland">Crown Gas & Power</option>
-            <option value="london">EDF</option>
-            <option value="northeast">E.ON</option>
-            <option value="northwest">npower</option>
-            <option value="southeast">Octopus Energy</option>
-            <option value="southwest">Ovo Energy</option>
-            <option value="westmidlands">Scottish Power</option>
+            <option value="British Gas">British Gas</option>
+            <option value="Crown Gas & Power">Crown Gas & Power</option>
+            <option value="EDF">EDF</option>
+            <option value="E.ON">E.ON</option>
+            <option value="npower">npower</option>
+            <option value="Octopus Energy">Octopus Energy</option>
+            <option value="Ovo Energy">Ovo Energy</option>
+            <option value="Scottish Power">Scottish Power</option>
           </select>
         </div>
 
@@ -81,16 +81,13 @@
         </div>
 
         {{ govukButton({
-          text: "Save and Continue",
-          href: "/sprint-5/mat-vat-declaration",
-          value: "ccd=Complete"
+          text: "Save and Continue"
         }) }}
 
         {{ govukButton({
           text: "Save and go to tasks",
           href: "/sprint-5/tasklist",
-          classes: "govuk-button--secondary govuk-!-margin-left-1",
-          value: "ccd=Complete"
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
           }) }}
 
       </form>

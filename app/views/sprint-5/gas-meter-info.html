@@ -16,10 +16,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">St Mary's Primary School</span>
-      <h1 class="govuk-heading-xl">Gas meters and usage</h1>
+      <span class="govuk-caption-l">St Mary's Primary School: Gas meters and usage</span>
+      <h1 class="govuk-heading-xl">Gas meter details</h1>
 
-      <form class="form" action="/sprint-5/gas-meter-review" method="post">
+      <form class="form" action="/sprint-5/gas-meter-review?gmu1=complete" method="post">
 
         <p>You can usually find this information on your gas bill. Please check all pages.</p>
 
@@ -51,8 +51,15 @@
         </div>
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and Continue",
+          href: ""
         }) }}
+        
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 
