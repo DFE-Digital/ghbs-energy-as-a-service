@@ -273,10 +273,36 @@
         <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice email/span></a>
       </dd>
     </div>
-      {% endif %}
+    {% endif %}
+
+    {% if data['Billingcontact'] == "Yes" %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Address for billing purposes
+      </dt>
+      <dd class="govuk-summary-list__value">
+        Pleckgate High School, Pleckgate Road, BB1 8QA
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
+      </dd>
+    </div>
+    {% else %}
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Address for billing purposes
+      </dt>
+      <dd class="govuk-summary-list__value">
+        {{ data['billaddress-line-1'] }}, {{ data['billaddress-line-2'] }}, {{ data['billaddresss-town'] }}, {{ data['billaddress-county'] }}, {{ data['billaddress-postcode'] }}
+      </dd>
+      <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
+      </dd>
+    </div>
   </dl>
 </div>
 </div>
+{% endif %}
 
 
     <h2>St Mary's Primary School</h2>
