@@ -27,8 +27,11 @@
 
       {% if data['journeyType'] == "mats" %}
       <h2 class="govuk-heading-m">All schools</h2>
-
+      
+      
       <ul class="govuk-task-list">
+        {% if data['contractSetup'] == "mixcontract" %}
+        {% else %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-gas-contract?ccd=inProgress" aria-describedby="school-details-1-status">
@@ -55,6 +58,7 @@
           </div>
           {% endif %}
         </li>
+        {% endif %}
         {% if data['VATstatus'] == "yes" %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
@@ -116,6 +120,35 @@
       <h2 class="govuk-heading-m govuk-!-margin-top-5">St Mary's Primary School</h2>
 
       <ul class="govuk-task-list">
+        {% if data['contractSetup'] == "mixcontract" %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-gas-contract?ccd=inProgress" aria-describedby="school-details-1-status">
+              Current contract details
+            </a>
+          </div>
+          {% if data['ccd'] == "inProgress" %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </div>
+          {% elif data['ccd'] == "complete" %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--green">
+              Complete
+            </strong>
+          </div>
+          {% else %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--grey">
+              Not started
+            </strong>
+          </div>
+          {% endif %}
+        </li>
+        {% else %}
+        {% endif %}
         {% if data['VATstatus'] == "no" %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
