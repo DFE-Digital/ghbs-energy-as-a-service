@@ -30,8 +30,8 @@
       
       
       <ul class="govuk-task-list">
-        {% if data['contractSetup'] == "mixcontract" %}
-        {% else %}
+      {% if data['contractSetup'] == "mixcontract" %}
+      {% else %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-gas-contract?ccd=inProgress" aria-describedby="school-details-1-status">
@@ -58,8 +58,9 @@
           </div>
           {% endif %}
         </li>
-        {% endif %}
-        {% if data['VATstatus'] == "yes" %}
+      {% endif %}
+
+      {% if data['VATstatus'] == "yes" %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-vat-status?vatd=inProgress" aria-describedby="school-details-2-status">
@@ -86,9 +87,9 @@
           </div>
           {% endif %}
         </li>
-        {% else %}
-        {% endif %}
-        
+      {% else %}
+      {% endif %}
+
         {% if data['billingPref'] == "yes" %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
@@ -124,7 +125,7 @@
       <h2 class="govuk-heading-m govuk-!-margin-top-5">St Mary's Primary School</h2>
 
       <ul class="govuk-task-list">
-        {% if data['contractSetup'] == "mixcontract" %}
+      {% if data['contractSetup'] == "mixcontract" %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-gas-contract?ccd=inProgress" aria-describedby="school-details-1-status">
@@ -151,8 +152,9 @@
           </div>
           {% endif %}
         </li>
-        {% else %}
-        {% endif %}
+      {% else %}
+      {% endif %}
+
         {% if data['VATstatus'] == "no" %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
@@ -182,6 +184,7 @@
         </li>
         {% else %}
         {% endif %}
+
         {% if data['billingPref'] == "no" %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
