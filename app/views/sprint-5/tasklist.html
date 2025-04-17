@@ -88,6 +88,7 @@
         </li>
         {% else %}
         {% endif %}
+        {% if data['billingPref'] == "yes" %}
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
             <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-billing-setup?bp=inProgress" aria-describedby="school-details-3-hint school-details-3-status">
@@ -114,6 +115,8 @@
           </div>
           {% endif %}
         </li>
+        {% else %}
+        {% endif %}
       </ul>
       
 
@@ -163,6 +166,35 @@
             </strong>
           </div>
           {% elif data['vatd'] == "complete" %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--green">
+              Complete
+            </strong>
+          </div>
+          {% else %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--grey">
+              Not started
+            </strong>
+          </div>
+          {% endif %}
+        </li>
+        {% else %}
+        {% endif %}
+        {% if data['billingPref'] == "no" %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-billing-setup?bp=inProgress" aria-describedby="school-details-3-hint school-details-3-status">
+              Billing preferences
+            </a>
+          </div>
+          {% if data['bp'] == "inProgress" %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </div>
+          {% elif data['bp'] == "complete" %}
           <div class="govuk-task-list__status" id="school-details-1-status">
             <strong class="govuk-tag govuk-tag--green">
               Complete
