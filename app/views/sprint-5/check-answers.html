@@ -20,6 +20,9 @@
       </h1>
 
       <h2>All schools</h2>
+
+      {% if data['contractSetup'] == "mixcontract" %}
+      {% else %}
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-summary-card__title">
@@ -55,7 +58,6 @@
   </div>
 
 
-   
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-summary-card__title">
@@ -89,9 +91,10 @@
       </dl>
     </div>
   </div>
-  
+  {% endif %}
       
-
+  
+  {% if data['VATstatus'] == "yes" %}
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-summary-card__title">
@@ -206,8 +209,10 @@
       </dl>
     </div>
   </div>
+  {% else %}
+  {% endif %}
 
-
+  {% if data['billingPref'] == "yes" %}
   <div class="govuk-summary-card">
     <div class="govuk-summary-card__title-wrapper">
       <h2 class="govuk-summary-card__title">
@@ -303,9 +308,12 @@
 </div>
 </div>
 {% endif %}
+{% else %}
+{% endif %}
 
 
     <h2>St Mary's Primary School</h2>
+    {% if data['contractSetup'] == "mixcontract" %}
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
@@ -414,7 +422,7 @@
         </dl>
       </div>
     </div>
-
+    
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
@@ -557,6 +565,8 @@
         </dl>
       </div>
     </div>
+    {% else %}
+    {% endif %}
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
