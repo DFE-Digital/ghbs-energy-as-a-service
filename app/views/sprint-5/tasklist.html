@@ -23,7 +23,12 @@
       <span class="govuk-caption-l">St Mary's Primary School</span>
       <h1 class="govuk-heading-xl">Provide information about your schools</h1>
       {% endif %}
-      
+
+      {% if data['journeyType'] == "mats" %}
+      <form class="form" action="/sprint-5/check-answers-mat" method="post">
+      {% elif data['journeyType'] == "single-school" %}
+      <form class="form" action="/sprint-5/check-answers-single-school" method="post">
+      {% endif %}
 
       {% if data['journeyType'] == "mats" %}
       <h2 class="govuk-heading-m">All schools</h2>
@@ -466,12 +471,13 @@
 
         {% endif %}
 
+        
 
         {{ govukButton({
-          text: "Continue",
-          href: "check-answers"
+          text: "Continue"
         }) }}
 
+      </form>
      
 
     </div>

@@ -20,8 +20,11 @@
       <span class="govuk-caption-l">About your schools: Current contract details</span>
       <h1 class="govuk-heading-l">Energy contract</h1>
 
+      {% if data['single-energyType'] == "gasandelec" %}
+      <form class="form" action="/sprint-5/mat-vat-declaration?ccd=complete" method="post">
+      {% else %}
       <form class="form" action="/sprint-5/mat-vat-status?ccd=complete" method="post">
-
+      {% endif %}
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="g-supplier">
