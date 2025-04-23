@@ -19,7 +19,7 @@
       <span class="govuk-caption-l">About your schools: VAT contact</span>
       <h1 class="govuk-heading-l">VAT contact information</h1>
 
-      <form class="form" action="/sprint-5/tasklist?vatd=complete" method="post">
+      <form class="form" action="/sprint-5/mat-billing-information?vatd=complete" method="post">
 
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group">
@@ -75,7 +75,12 @@
         {{ govukButton({
           text: "Save and continue"
         }) }}
-      
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist?vatd=inProgress",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 

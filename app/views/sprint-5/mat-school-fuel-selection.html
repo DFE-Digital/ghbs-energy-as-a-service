@@ -38,14 +38,14 @@
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell">
                 <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                <input class="govuk-checkboxes__input" id="selectAllCheckbox" name="mat-gastype" type="checkbox" value="gas-all">
+                <label class="govuk-label govuk-checkboxes__label" for="gas-all">
                   Gas
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                <input class="govuk-checkboxes__input" id="elec-all" name="mat-electype" type="checkbox" value="elec-all">
+                <label class="govuk-label govuk-checkboxes__label" for="elec-all">
                   Electricity
                 </label>
               </div>
@@ -56,53 +56,20 @@
               <td class="govuk-table__cell">Riversmead, Sawley Road, BB7 4QS</td>
               <td class="govuk-table__cell">
                 <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                <input class="govuk-checkboxes__input checkboxes" id="gas-school-1" name="mat-gastype" type="checkbox" value="gas-school-1">
+                <label class="govuk-label govuk-checkboxes__label" for="gas-school-1">
                   Gas
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                <input class="govuk-checkboxes__input" id="elec-school-1" name="mat-electype" type="checkbox" value="elec-school-1">
+                <label class="govuk-label govuk-checkboxes__label" for="elec-school-1">
                   Electricity
                 </label>
               </div>
             </td>
             </tr>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Bowland High</th>
-              <td class="govuk-table__cell">Riversmead, Sawley Road, BB7 4QS</td>
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                  Gas
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                  Electricity
-                </label>
-              </div>
-            </td>
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header">Bowland High</th>
-              <td class="govuk-table__cell">Riversmead, Sawley Road, BB7 4QS</td>
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                  Gas
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                  Electricity
-                </label>
-              </div>
-            </td>
+          
             </tr>
           </tbody>
         </table>
@@ -120,3 +87,11 @@
   </div>
 
 {% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $('#selectAllCheckbox').change(function () {
+      $('.checkboxes').prop('checked', $(this).prop('checked'));
+  });
+</script>
