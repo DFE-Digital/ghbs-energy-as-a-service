@@ -420,6 +420,8 @@ href: "javascript:window.history.back()"
           {% else %}
           {% endif %}
 
+          {% if data['meterType'] == "Single meter" %}
+          {% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Do you want your MPRNs consolidated on one bill?
@@ -431,6 +433,8 @@ href: "javascript:window.history.back()"
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
+          {% endif %}
+
         </dl>
       </div>
     </div>
@@ -563,6 +567,8 @@ href: "javascript:window.history.back()"
           {% else %}
           {% endif %}
 
+          {% if data['emeterType'] == "Single" %}
+          {% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Do you want your MPANs consolidated on one bill?
@@ -574,6 +580,8 @@ href: "javascript:window.history.back()"
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
+          {% endif %}
+
         </dl>
       </div>
     </div>

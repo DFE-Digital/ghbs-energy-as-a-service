@@ -19,7 +19,11 @@
       <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
       <h1 class="govuk-heading-l">Electricity meter details</h1>
 
+      {% if data['emeterType'] == "Single" %}
+      <form class="form" action="/sprint-5/mat-site-contact?emu1=complete" method="post">
+      {% else %}
       <form class="form" action="/sprint-5/elec-meter-review?emu1=complete" method="post">
+      {% endif %}
 
         <p>You can usually find this information on your electricity bill. Please check all pages.</p>
 
@@ -134,10 +138,16 @@
             <div class="govuk-input__suffix" aria-hidden="true">kWh</div>
           </div>
         </div>
-
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue",
+          href: ""
         }) }}
+        
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 

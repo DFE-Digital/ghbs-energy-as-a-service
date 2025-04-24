@@ -22,6 +22,8 @@
 
       {% if data['single-energyType'] == "gasandelec" %}
       <form class="form" action="/sprint-5/mat-vat-declaration?ccd=complete" method="post">
+      {% elif data['mat-gastype'] == "gas-school-1" %}
+      <form class="form" action="/sprint-5/mat-electricity-contract?ccd=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-5/mat-vat-status?ccd=complete" method="post">
       {% endif %}
