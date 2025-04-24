@@ -21,7 +21,12 @@
 
       <p>This information will be used to generate a VAT certificate which will be shared with the new suppliers.</p>
 
-      <form class="form" action="" method="post">
+      {% if data['journeyType'] == "mats" %}
+      <form class="form" action="/sprint-5/mat-billing-setup?vatd=complete" method="post">
+      {% else %}
+      <form class="form" action="/sprint-5/mat-billing-information?vatd=complete" method="post">
+      {% endif %}
+
 
         <table class="govuk-table">
           <tbody class="govuk-table__body">
@@ -57,7 +62,7 @@
           },
           items: [
             {
-              value: "yes~/sprint-5/mat-billing-information?vatd=complete",
+              value: "yes",
               text: "Yes"
             },
             {
@@ -68,8 +73,15 @@
         }) }}
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue",
+          href: ""
         }) }}
+        
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 

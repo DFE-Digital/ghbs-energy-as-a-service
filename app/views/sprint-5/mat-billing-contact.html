@@ -19,7 +19,13 @@
       <span class="govuk-caption-l">All schools: Billing preferences</span>
       <h1 class="govuk-heading-l">Are these the correct details for billing purposes?</h1>
 
-      <form class="form" action="/sprint-5/tasklist?bp=complete" method="post">
+      {% if data['single-energyType'] == "gasandelec" %}
+      <form class="form" action="/sprint-5/gas-info?bp=complete" method="post">
+      {% elif data['single-energyType'] == "electricity" %}
+      <form class="form" action="/sprint-5/elec-info?bp=complete" method="post">
+      {% elif data['single-energyType'] == "gas" %}
+      <form class="form" action="/sprint-5/gas-info?bp=complete" method="post">
+      {% endif %}
 
         <table class="govuk-table">
           <tbody class="govuk-table__body">
@@ -54,8 +60,14 @@
         }) }}
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist?vatd=inProgress",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 
