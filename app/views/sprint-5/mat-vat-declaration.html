@@ -16,19 +16,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">About your schools: VAT status</span>
-      <h1 class="govuk-heading-l">VAT status</h1>
+      <span class="govuk-caption-l">About your schools: VAT declaration</span>
+      <h1 class="govuk-heading-l">Which VAT rate are you charged</h1>
 
       <form class="form" action="/sprint-5/mat-vat-contact?vatd=inProgress" method="post">
 
-        <div class="govuk-form-group">
+        <!-- <div class="govuk-form-group">
           <h3 class="govuk-label-wrapper">
             <label class="govuk-label" for="vat-num">
               VAT registration number (optional)
             </label>
           </h3>
           <input class="govuk-input govuk-input--width-20" id="vat-num" name="vat-num" type="text">
-        </div>
+        </div> -->
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -37,23 +37,23 @@
         {% set textHtml %}
         {{ govukInput({
           label: {
-            text: "Percentage of total consumption qualifying for reduced rate of VAT"
+            text: "VAT registration number"
           },
-          classes: "govuk-input--width-5",
-          id: "totalVAT",
-          name: "totalVAT",
+          classes: "govuk-input--width-20",
+          id: "vat-num",
+          name: "vat-num",
           suffix: {
-            text: "%"
+            text: ""
           },
           spellcheck: false
         }) }}
         {% endset -%}
 
         {{ govukRadios({
-          name: "invoiceType",
+          name: "vatType",
           fieldset: {
             legend: {
-              text: "Which VAT rate are you charged?"
+              text: ""
             }
           },
           hint: {

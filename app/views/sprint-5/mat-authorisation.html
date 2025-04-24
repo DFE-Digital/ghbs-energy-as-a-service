@@ -24,9 +24,14 @@
 
       <h1 class="govuk-heading-l">Are you authorised to switch energy suppliers for these schools?</h1>
 
-      {% if data['journeyType'] == "mats" %}
+
+      {% if ((data['mat-gastype'] == "gas-school-1") and (data['mat-electype'] == "elec-school-1")) %}
       <form class="form" action="/sprint-5/mat-existing-contracts" method="post">
-      {% else %}
+      {% elif data['mat-gastype'] == "gas-school-1" %}
+      <form class="form" action="/sprint-5/mat-existing-contracts-gas" method="post">
+      {% elif data['mat-electype'] == "elec-school-1" %}
+      <form class="form" action="/sprint-5/mat-existing-contracts-electric" method="post">
+      {% elif data['journeyType'] == "single-school" %}
       <form class="form" action="/sprint-5/single-school-fuel-selection" method="post">
       {% endif %}
 

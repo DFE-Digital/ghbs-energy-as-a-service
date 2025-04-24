@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-l">About your schools: Current contract details</span>
+      <!-- <h1 class="govuk-heading-xl">How are your gas and electricity contracts set up?</h1> -->
+
+      <form class="form" action="" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                How are your gas contracts set up?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contractSetup" name="contractSetup" type="radio" value="combinedcontract~/sprint-5/mat-gas-contract-combined">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  All schools are on the same combined gas contract
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contractSetup-3" name="contractSetup" type="radio" value="mixcontract~/sprint-5/mat-gas-contract">
+                <label class="govuk-label govuk-radios__label" for="contractSetup-3">
+                  There’s a mix of gas contracts across the trust
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
