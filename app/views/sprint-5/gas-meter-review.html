@@ -52,10 +52,17 @@
 
   <br>
 
+        {% if data['meterType'] == "Single meter" %}
+        {{ govukButton({
+          text: "Save and continue",
+          href: "elec-info"
+        }) }}
+        {% else %}
         {{ govukButton({
           text: "Save and continue",
           href: "gas-info-billing"
         }) }}
+        {% endif %}
 
       </form>
 
