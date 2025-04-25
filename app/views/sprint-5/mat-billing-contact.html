@@ -19,6 +19,8 @@
       <span class="govuk-caption-l">All schools: Billing preferences</span>
       <h1 class="govuk-heading-l">Are these the correct details for billing purposes?</h1>
 
+      <!-- {% if ((data['user-auth'] == "p5") or (data['user-auth'] == "p9")) %} -->
+
       {% if data['single-energyType'] == "gasandelec" %}
       <form class="form" action="/sprint-5/gas-info?bp=complete" method="post">
       {% elif data['single-energyType'] == "electricity" %}
