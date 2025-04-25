@@ -26,72 +26,25 @@
       <form class="form" action="/sprint-5/mat-electricity-contract?ccd=complete" method="post">
       {% endif %}
 
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
-      {% from "govuk/components/input/macro.njk" import govukInput %}
-      
- 
-      
-        {% set textHtml %}
-        {{ govukInput({
-          id: "g-supplier",
-          name: "g-supplier",
-          type: "text",
-          autocomplete: "text",
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Gas supplier"
-          }
-        }) }}
-        {% endset -%}
-        
-        {{ govukRadios({
-          name: "g-supplier",
-          fieldset: {
-            legend: {
-              text: "Current gas supplier"
-            }
-          },
-          hint: {
-            text: "Select one option"
-          },
-          items: [
-            {
-              value: "British Gas",
-              text: "British Gas"
-            },
-            {
-              value: "EDF Energy",
-              text: "EDF Energy"
-            },
-            {
-              value: "E.ON Next",
-              text: "E.ON Next"
-            },
-            {
-              value: "Scottish Power",
-              text: "Scottish Power"
-            },
-            {
-              value: "OVO Energy",
-              text: "OVO Energy"
-            },
-            {
-              value: "Octopus Energy",
-              text: "Octopus Energy"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "text",
-              text: "Other",
-              conditional: {
-                html: textHtml
-              }
-            }
-          ]
-        }) }}
-
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="g-supplier">
+            Current gas supplier
+          </label>
+          <div id="g-supplier-hint" class="govuk-hint">
+            This is the company that supplies your gas. If you use a broker, check your invoice for supplier details or ask the broker.
+          </div>
+          <select class="govuk-select" id="g-supplier" name="g-supplier" aria-describedby="g-supplier-hint">
+            <option value="choose" selected>Choose supplier</option>
+            <option value="British Gas">British Gas</option>
+            <option value="Crown Gas & Power">Crown Gas & Power</option>
+            <option value="EDF">EDF</option>
+            <option value="E.ON">E.ON</option>
+            <option value="npowet">npower</option>
+            <option value="Octopus Energy">Octopus Energy</option>
+            <option value="Ovo Energy">Ovo Energy</option>
+            <option value="Scottish Power">Scottish Power</option>
+          </select>
+        </div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="contract-end-issued-hint">
