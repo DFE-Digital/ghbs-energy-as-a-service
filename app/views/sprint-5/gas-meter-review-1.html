@@ -19,7 +19,12 @@
       <span class="govuk-caption-l">St Mary's Primary School: Gas meters and usage</span>
       <h1 class="govuk-heading-l">MPRN summary</h1>
 
-      <form class="form" action="/path/of/next/page" method="post">
+      
+      {% if data['meterType'] == "Multi meter" %}
+      <form class="form" action="/sprint-5/gas-info-billing" method="post">
+      {% else %}
+      <form class="form" action="/sprint-5/elec-info?gmu1=complete" method="post">
+      {% endif %}
 
 
         <table class="govuk-table">
@@ -60,8 +65,7 @@
   <br>
 
         {{ govukButton({
-          text: "Save and continue",
-          href: "gas-info-billing"
+          text: "Save and continue"
         }) }}
 
       </form>

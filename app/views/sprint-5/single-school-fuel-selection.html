@@ -41,7 +41,7 @@
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="single-energyType-3" name="single-energyType" type="radio" value="gasandelec~/sprint-5/mat-gas-contract-combined">
+                <input class="govuk-radios__input" id="single-energyType-3" name="single-energyType" type="radio" value="gasandelec~/sprint-5/mat-gas-contract">
                 <label class="govuk-label govuk-radios__label" for="single-energyType-3">
                   Gas and electricity
                 </label>
@@ -51,8 +51,14 @@
         </div>
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 

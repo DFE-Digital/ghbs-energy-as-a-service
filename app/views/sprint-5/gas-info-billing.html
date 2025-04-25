@@ -19,7 +19,11 @@
       <span class="govuk-caption-l">St Mary's Primary School</span>
       <h1 class="govuk-heading-l">Gas meters and usage</h1>
 
+      {% if data['single-energyType'] == "gas" %}
+      <form class="form" action="/sprint-5/mat-site-contact?scontact=inProgress" method="post">
+      {% else %}
       <form class="form" action="/sprint-5/elec-info" method="post">
+      {% endif %}
 
 {{ govukRadios({
   classes: "govuk-radios",

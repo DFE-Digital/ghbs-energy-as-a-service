@@ -22,6 +22,8 @@
 
       {% if ((data['meterType'] == "Single meter") and (data['single-energyType'] == "gas")) %}
       <form class="form" action="/sprint-5/mat-site-contact?vatd=complete" method="post">
+      {% elif data['meterType'] == "Multi meter" %}
+      <form class="form" action="/sprint-5/gas-meter-review?gmu1=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-5/elec-info?gmu1=complete" method="post">
       {% endif %}
