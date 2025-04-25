@@ -29,7 +29,7 @@
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
       {% from "govuk/components/input/macro.njk" import govukInput %}
       
- 
+
       
         {% set textHtml %}
         {{ govukInput({
@@ -50,9 +50,6 @@
             legend: {
               text: "Current gas supplier"
             }
-          },
-          hint: {
-            text: "Select one option"
           },
           items: [
             {
