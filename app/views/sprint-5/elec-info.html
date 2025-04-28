@@ -17,18 +17,18 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">St Mary's Primary School</span>
-      <h1 class="govuk-heading-xl">Electricity meters and usage</h1>
+      <h1 class="govuk-heading-l">Electricity meters and usage</h1>
 
-      <form class="form" action="" method="post">
+      <form class="form" action="/sprint-5/elec-meter-info?emu1=inProgress" method="post">
 
 {{ govukRadios({
   classes: "govuk-radios",
   name: "emeterType",
   fieldset: {
     legend: {
-      text: "Is this a single meter or multi meter site? ",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      text: "Is this a single or multi meter site?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
     }
   },
   hint: {
@@ -36,11 +36,11 @@
   },
   items: [
     {
-      value: "Single~/sprint-5/elec-meter-info",
+      value: "Single",
       text: "Single meter"
     },
     {
-      value: "Multi meter~/sprint-5/elec-meter-info",
+      value: "Multi meter",
       text: "Multi meter"
     }
   ]
@@ -48,7 +48,7 @@
 
 
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue"
         }) }}
 
         {{ govukButton({

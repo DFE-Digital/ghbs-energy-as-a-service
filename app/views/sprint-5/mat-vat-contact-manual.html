@@ -19,7 +19,7 @@
       <span class="govuk-caption-l">About your schools: VAT contact</span>
       <h1 class="govuk-heading-l">VAT contact information</h1>
 
-      <form class="form" action="/sprint-5/tasklist?vatd=complete" method="post">
+      <form class="form" action="/sprint-5/mat-billing-information?vatd=complete" method="post">
 
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group">
@@ -64,18 +64,17 @@
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="vattel" name="vattel" type="text" autocomplete="vattel">
           </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="vat-num">
-              VAT registration number (if applicable)
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="vat-num" name="vat-num" type="text" autocomplete="vat-num">
-          </div>
         </fieldset>
 
         {{ govukButton({
           text: "Save and continue"
         }) }}
-      
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist?vatd=inProgress",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 

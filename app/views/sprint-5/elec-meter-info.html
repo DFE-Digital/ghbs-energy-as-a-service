@@ -17,15 +17,19 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
-      <h1 class="govuk-heading-xl">Electricity meter details</h1>
+      <h1 class="govuk-heading-l">Electricity meter details</h1>
 
+      {% if data['emeterType'] == "Single" %}
+      <form class="form" action="/sprint-5/mat-site-contact?emu1=complete" method="post">
+      {% else %}
       <form class="form" action="/sprint-5/elec-meter-review?emu1=complete" method="post">
+      {% endif %}
 
         <p>You can usually find this information on your electricity bill. Please check all pages.</p>
 
         <div class="govuk-form-group">
           <h2 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--m" for="mpan">
+            <label class="govuk-label govuk-label govuk-label--s" for="mpan">
               Add an MPAN
             </label>
           </h2>
@@ -35,7 +39,7 @@
           <details class="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Where can I find my MPAN number?
+                Where can I find my MPAN?
               </span>
             </summary>
             <div class="govuk-details__text">
@@ -50,8 +54,8 @@
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="halfHourIn-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h1 class="govuk-fieldset__heading">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+              <h1 class="govuk-label govuk-label govuk-label--s">
                 Is this a half-hourly meter?
               </h1>
             </legend>
@@ -101,12 +105,6 @@
                 </div>
               </div>
 
-              <!-- <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="halfHour" name="halfHour" type="radio" value="Yes" aria-describedby="halfHour-item-hint">
-                <label class="govuk-label govuk-radios__label" for="halfHour">
-                  Yes
-                </label>
-              </div> -->
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="halfHour-2" name="halfHour" type="radio" value="No" aria-describedby="halfHour-2-item-hint">
                 <label class="govuk-label govuk-radios__label" for="halfHour-2">
@@ -120,7 +118,7 @@
 
         <div class="govuk-form-group">
           <h2 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--m" for="ekwh">
+          <label class="govuk-label govuk-label govuk-label--s" for="ekwh">
             Estimated annual electricity usage
           </label>
           </h2>
@@ -140,10 +138,16 @@
             <div class="govuk-input__suffix" aria-hidden="true">kWh</div>
           </div>
         </div>
-
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue",
+          href: ""
         }) }}
+        
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 

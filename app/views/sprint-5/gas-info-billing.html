@@ -17,9 +17,13 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">St Mary's Primary School</span>
-      <h1 class="govuk-heading-xl">Gas meters and usage</h1>
+      <h1 class="govuk-heading-l">Gas meters and usage</h1>
 
-      <form class="form" action="" method="post">
+      {% if data['single-energyType'] == "gas" %}
+      <form class="form" action="/sprint-5/mat-site-contact?scontact=inProgress" method="post">
+      {% else %}
+      <form class="form" action="/sprint-5/elec-info" method="post">
+      {% endif %}
 
 {{ govukRadios({
   classes: "govuk-radios",
@@ -28,25 +32,32 @@
     legend: {
       text: "Do you want your MPRNs consolidated on one bill?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend"
     }
   },
   items: [
     {
-      value: "Consolidated on one bill~/sprint-5/elec-info",
+      value: "Consolidated on one bill",
       text: "Yes"
     },
     {
-      value: "Separate bill for each MPRN~/sprint-5/elec-info",
+      value: "Separate bill for each MPRN",
       text: "No, I want a separate bill for each MPRN"
     }
   ]
 }) }}
 
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+{{ govukButton({
+  text: "Save and continue",
+  href: ""
+}) }}
+
+{{ govukButton({
+  text: "Save and go to tasks",
+  href: "/sprint-5/tasklist",
+  classes: "govuk-button--secondary govuk-!-margin-left-1"
+  }) }}
 
       </form>
 

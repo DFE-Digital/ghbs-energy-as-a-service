@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
-      <h1 class="govuk-heading-xl">MPAN summary</h1>
+      <h1 class="govuk-heading-l">MPAN summary</h1>
 
       <form class="form" action="/path/of/next/page" method="post">
 
@@ -54,10 +54,17 @@
 
   <br>
 
+        {% if data['meterType'] == "Single meter" %}
+        {{ govukButton({
+          text: "Save and continue",
+          href: "mat-site-contact"
+        }) }}
+        {% else %}
         {{ govukButton({
           text: "Save and continue",
           href: "elec-info-billing"
         }) }}
+        {% endif %}
 
       </form>
 

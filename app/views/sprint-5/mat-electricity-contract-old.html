@@ -29,70 +29,29 @@
       {% endif %}
 
 
-      {% set textHtml %}
-      {{ govukInput({
-        id: "e-supplier",
-        name: "e-supplier",
-        type: "tel",
-        autocomplete: "tel",
-        classes: "govuk-!-width-one-third",
-        label: {
-          text: "Electricity supplier"
-          
-        }
-      }) }}
-      {% endset -%}
-      
-      {{ govukRadios({
-        name: "e-supplier",
-        fieldset: {
-          legend: {
-            text: "Current electricity supplier",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "British Gas",
-            text: "British Gas"
-          },
-          {
-            value: "EDF Energy",
-            text: "EDF Energy"
-          },
-          {
-            value: "E.ON Next",
-            text: "E.ON Next"
-          },
-          {
-            value: "Scottish Power",
-            text: "Scottish Power"
-          },
-          {
-            value: "OVO Energy",
-            text: "OVO Energy"
-          },
-          {
-            value: "Octopus Energy",
-            text: "Octopus Energy"
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "text",
-            text: "Other",
-            conditional: {
-              html: textHtml
-            }
-          }
-        ]
-      }) }}
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="e-supplier">
+            Current electricity supplier
+          </label>
+          <div id="e-supplier-hint" class="govuk-hint">
+            This is the company that supplies your electricity. If you use a broker, check your invoice for supplier details or ask the broker.
+          </div>
+          <select class="govuk-select" id="e-supplier" name="e-supplier" aria-describedby="e-supplier-hint">
+            <option value="choose" selected>Choose supplier</option>
+            <option value="British Gas">British Gas</option>
+            <option value="Crown Gas & Power">Crown Gas & Power</option>
+            <option value="EDF">EDF</option>
+            <option value="E.ON">E.ON</option>
+            <option value="npower">npower</option>
+            <option value="Octopus Energy">Octopus Energy</option>
+            <option value="Ovo Energy">Ovo Energy</option>
+            <option value="Scottish Power">Scottish Power</option>
+          </select>
+        </div>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="econtract-end-issued-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <legend class="govuk-fieldset__legend">
               When does the contract end?
             </legend>
             <div id="contract-end-hint" class="govuk-hint">
