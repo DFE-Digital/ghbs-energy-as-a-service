@@ -62,7 +62,6 @@
             <img src="/public/images/mpan.png" style="width:30%">
 
             <div class="govuk-radios" data-module="govuk-radios">
-
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="halfHour-3" name="halfHour-3" type="radio" value="Yes" data-aria-controls="conditional-halfhour">
                 <label class="govuk-label govuk-radios__label" for="supplier">
@@ -70,17 +69,23 @@
                 </label>
               </div>
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-halfhour">
+                <div class="govuk-inset-text">
+                  Half-hourly meters are sometimes managed by a separate company. Ask your electricity supplier if you need help answering the following questions.
+                </div>
+                <div class="govuk-form-group">
+
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="supplier">
                     What is the supply capacity?
                   </label>
                   <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+                    <input class="govuk-input govuk-input--width-5" id="kva" name="kva" type="text" spellcheck="false">
                     <div class="govuk-input__suffix" aria-hidden="true">kVA</div>
                   </div>
-                  <div class="govuk-inset-text">
-                    Half-hourly meters are sometimes managed by a separate company. Ask your electricity supplier if you’re unsure who provides these services.
-                  </div>
+                </div>
+
+  
+
                   <div class="govuk-form-group">
                   <label class="govuk-label" for="width-20">
                     Who is the data aggregator?
@@ -101,19 +106,22 @@
                 </div>
                 </div>
               </div>
+              
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="halfHour-3" name="halfHour-3" type="radio" value="No" aria-describedby="halfHour-3-item-hint">
-                <label class="govuk-label govuk-radios__label" for="halfHour-2">
+                <input class="govuk-radios__input" id="halfHour-4" name="halfHour-3" type="radio" value="No" aria-describedby="halfHour-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="halfHour">
                   No
                 </label>
               </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             </div>
           </fieldset>
         </div>
 
         <div class="govuk-form-group">
           <h2 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label govuk-label--s" for="ekwh-1">
+          <label class="govuk-label govuk-label govuk-label--s" for="ekwh-2">
             Estimated annual electricity usage
           </label>
           </h2>
@@ -129,14 +137,20 @@
             <p><span class="mural-link"><a href=""></a></span></p>
           </details>
           <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-5" id="ekwh-1" name="ekwh-1" type="text" spellcheck="false">
+            <input class="govuk-input govuk-input--width-5" id="ekwh-2" name="ekwh-2" type="text" spellcheck="false">
             <div class="govuk-input__suffix" aria-hidden="true">kWh</div>
           </div>
         </div>
-
         {{ govukButton({
-          text: "Continue"
+          text: "Save and continue",
+          href: ""
         }) }}
+        
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-5/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
 
       </form>
 
