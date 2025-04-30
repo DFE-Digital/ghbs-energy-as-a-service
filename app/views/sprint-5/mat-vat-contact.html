@@ -21,11 +21,7 @@
 
       <p>This information will be used to generate a VAT certificate which will be shared with the new suppliers.</p>
 
-      {% if data['journeyType'] == "mats" %}
-      <form class="form" action="/sprint-5/mat-billing-setup?vatd=complete" method="post">
-      {% else %}
-      <form class="form" action="/sprint-5/mat-billing-information?vatd=complete" method="post">
-      {% endif %}
+      <form class="form" action="/sprint-5/vat-certificate" method="post">
 
 
         <table class="govuk-table">

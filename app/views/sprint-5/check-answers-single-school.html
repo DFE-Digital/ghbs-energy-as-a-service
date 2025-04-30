@@ -826,11 +826,10 @@ href: "javascript:window.history.back()"
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Address
+              Telephone number
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['address-line-1'] }}, {{ data['address-line-2'] }}, {{ data['address-town'] }}, {{
-              data['address-county'] }}, {{ data['address-postcode'] }}
+              {{ data['vattel'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
@@ -838,10 +837,10 @@ href: "javascript:window.history.back()"
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Telephone number
+              Address
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['vattel'] }}
+              {{ data['invoiceByPaper'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
@@ -893,7 +892,7 @@ href: "javascript:window.history.back()"
               {{ data['invoiceType'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice type</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></a>
             </dd>
           </div>
           {% if data['invoiceType'] == "email" %}
@@ -905,7 +904,7 @@ href: "javascript:window.history.back()"
               {{ data['invoiceByEmail'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice email/span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">/a>
             </dd>
           </div>
           {% else %}
@@ -917,7 +916,7 @@ href: "javascript:window.history.back()"
               {{ data['billing-address'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice email/span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></a>
             </dd>
           </div>
           {% endif %}
@@ -1103,18 +1102,53 @@ href: "javascript:window.history.back()"
             </dd>
           </div>
           {% else %}
+          {% endif %}
+
+  
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address for invoice
+            </dt>
+            {% if data['Billingcontact'] == "Yes" %}
+            <dd class="govuk-summary-list__value">
+              Pleckgate High School, Pleckgate Road, BB1 8QA
+            </dd>
+            {% else %}
+            <dd class="govuk-summary-list__value">
+              {{ data['billaddress'] }}
+            </dd>
+            {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice email/span></a>
+            </dd>
+          </div>
+
+          {% if data['Billingcontact'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Address for invoice
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['billing-address'] }}
+              Pleckgate High School, Pleckgate Road, BB1 8QA
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice email/span></a>
+            </dd>
+          </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address for invoice
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['billaddress'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice email/span></a>
             </dd>
           </div>
           {% endif %}
+        
         </dl>
       </div>
     </div>

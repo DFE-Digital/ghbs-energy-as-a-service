@@ -16,43 +16,37 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">All schools: Billing prefences</span>
-      <h1 class="govuk-heading-l">Billing contact details</h1>
+      <span class="govuk-caption-l">All schools: Billing preferences</span>
+ 
 
       <form class="form" action="/sprint-5/tasklist?bp=complete" method="post">
 
-        <fieldset class="govuk-fieldset">
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="billaddress-line-1">
-              Address line 1
-            </label>
-            <input class="govuk-input" id="billaddress-line-1" name="billaddressLine1" type="text" autocomplete="billaddress-line1">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="billaddress-line-2">
-              Address line 2 (optional)
-            </label>
-            <input class="govuk-input" id="billaddress-line-2" name="billaddressLine2" type="text" autocomplete="billaddress-line2">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="billaddress-town">
-              Town or city
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="billaddress-town" name="billaddressTown" type="text" autocomplete="billaddress-level2">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="billaddress-county">
-              County (optional)
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="billaddress-county" name="billaddressCounty" type="text">
-          </div>
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="billaddress-postcode">
-              Postcode
-            </label>
-            <input class="govuk-input govuk-input--width-10" id="billaddress-postcode" name="billaddressPostcode" type="text" autocomplete="postal-code">
-          </div>
-        </fieldset>
+
+        {{ govukRadios({
+          id: "bill-address",
+          name: "billaddress",
+          fieldset: {
+            legend: {
+              text: "Billing contact details",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Address 1",
+              text: "Address 1"
+            },
+            {
+              value: "Address 2",
+              text: "Address 2"
+            },
+            {
+              value: "Address 2",
+              text: "Address 2"
+            }
+          ]
+        }) }}
 
         {{ govukButton({
           text: "Save and continue"
