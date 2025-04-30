@@ -90,36 +90,7 @@
         }) }}
         {% endset -%}
 
-        {% set paperHtml %}
-        {{ govukRadios({
-          id: "invoice-paper",
-          name: "invoiceByPaper",
-          type: "tel",
-          name: "billing-address",
-          fieldset: {
-            legend: {
-              text: "Billing address"
-            }
-          },
-          items: [
-            {
-              value: "Address 1",
-              text: "Address 1"
-            },
-            {
-              value: "Address 2",
-              text: "Address 2"
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "manual-address",
-              text: "Enter address manually"
-            }
-          ]
-        }) }}
-        {% endset -%}
+    
 
         {{ govukRadios({
           name: "invoiceType",
