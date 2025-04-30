@@ -16,7 +16,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">About your schools: Billing preferences</span>
+      {% if data['journeyType'] == "single-school" %}
+      <span class="govuk-caption-l">St Mary's Primary School: Current contract details</span>
+      {% else %}
+      <span class="govuk-caption-l">About your schools: Current contract details</span>
+      {% endif %}
       <h1 class="govuk-heading-l">Billing preferences</h1>
 
       <form class="form" action="/sprint-5/mat-billing-contact?bp=inProgress" method="post">

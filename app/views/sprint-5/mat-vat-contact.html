@@ -16,7 +16,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">About your schools: VAT declaration</span>
+      {% if data['journeyType'] == "single-school" %}
+      <span class="govuk-caption-l">St Mary's Primary School: Current contract details</span>
+      {% else %}
+      <span class="govuk-caption-l">About your schools: Current contract details</span>
+      {% endif %}
       <h1 class="govuk-heading-l">Are these the correct details for VAT purposes?</h1>
 
       <p>This information will be used to generate a VAT certificate which will be shared with the new suppliers.</p>
