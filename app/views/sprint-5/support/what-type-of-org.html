@@ -16,29 +16,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      
       <span class="govuk-caption-l">About your school</span>
-      <h1 class="govuk-heading-l">Do you have a DfE Sign-in account linked to the school that your request is about?</h1>  
 
-      <form class="form" action="" method="post">
+      <form class="form" action="/sprint-5/support/school-search" method="post">
 
         {{ govukRadios({
           classes: "govuk-radios",
-          name: "meterType",
+          name: "orgType",
           fieldset: {
             legend: {
-              text: "",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
+              text: "Do you have a DfE Sign-in account linked to the school that your request is about?",
+              isPageHeading: flase,
+              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
             {
-              value: "Yes~/sprint-5/gas-meter-info",
-              text: "Yes, use my DfE Sign-in"
+              value: "single",
+              text: "A single school",
+              hint: {
+                text: "A local authority maintained school or an academy in a single or multi-academy trust"
+              }
             },
             {
-              value: "No~/sprint-5/gas-meter-info",
-              text: "No, continue without a DfE Sign-in account"
+              value: "trust",
+              text: "An academy trust or federation"
             }
           ]
         }) }}
@@ -46,10 +49,6 @@
         {{ govukButton({
           text: "Continue"
         }) }}
-
-        <p>
-          <a href="#">Create a new DfE Sign-in account</a>
-        </p>
 
       </form>
 
