@@ -20,6 +20,8 @@
 
       <form class="form" action="/sprint-5/support/is-this-your-school" method="post">
 
+        {% if data['orgType'] == "single" %}
+
         {{ govukInput({
           label: {
             text: "Search for your school",
@@ -32,6 +34,34 @@
           id: "event-name",
           name: "eventName"
         }) }}
+
+        {% else %}
+
+        {{ govukInput({
+          label: {
+            text: "Search for an academy trust or federation",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter the name, Unique group identifier (UID) or UK Provider Reference Number (UKPRN)"
+          },
+          id: "event-name",
+          name: "eventName"
+        }) }}
+
+        {% endif %}
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Can't find it?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            
+          </div>
+        </details>
 
         {{ govukButton({
           text: "Continue"
