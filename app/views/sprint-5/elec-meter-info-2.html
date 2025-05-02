@@ -43,7 +43,7 @@
               <img src="/public/images/mpan-2.png" style="width:30%">
             </div>
           </details>
-          <input class="govuk-input govuk-input--width-10" id="mpan-3" name="mpan-3" type="text" aria-describedby="mpan">
+          <input class="govuk-input govuk-input--width-10" id="mpan-3" name="mpan-3" type="text" aria-describedby="mpan" value="{{data['mpan-3']}}">
         </div>
 
 
@@ -79,34 +79,34 @@
                     What is the supply capacity?
                   </label>
                   <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="kva" name="kva" type="text" spellcheck="false">
+                    <input class="govuk-input govuk-input--width-5" id="kva" name="kva" type="text" spellcheck="false" value="{{data['kva']}}">
                     <div class="govuk-input__suffix" aria-hidden="true">kVA</div>
                   </div>
                 </div>
 
-  
+
 
                   <div class="govuk-form-group">
                   <label class="govuk-label" for="width-20">
                     Who is the data aggregator?
                   </label>
-                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                  <input class="govuk-input govuk-input--width-20" id="data-aggregator2" name="data-aggregator2" type="text" value="{{data['data-aggregator2']}}">
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="width-20">
                     Who is the data collector?
                   </label>
-                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                  <input class="govuk-input govuk-input--width-20" id="data-collector2" name="data-collector2" type="text" value="{{data['data-collector2']}}">
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="width-20">
                     Who is the meter operator?
                   </label>
-                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                  <input class="govuk-input govuk-input--width-20" id="meter-operator2" name="meter-operator2" type="text" value="{{data['meter-operator2']}}">
                 </div>
                 </div>
               </div>
-              
+
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="halfHour-5" name="halfHour5" type="radio" value="No" aria-describedby="halfHour-2-item-hint">
@@ -137,7 +137,7 @@
             <p><span class="mural-link"><a href=""></a></span></p>
           </details>
           <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-5" id="ekwh-3" name="ekwh-3" type="text" spellcheck="false">
+            <input class="govuk-input govuk-input--width-5" id="ekwh-3" name="ekwh-3" type="text" spellcheck="false" value="{{data['ekwh-3']}}">
             <div class="govuk-input__suffix" aria-hidden="true">kWh</div>
           </div>
         </div>
@@ -145,7 +145,7 @@
           text: "Save and continue",
           href: ""
         }) }}
-        
+
         {{ govukButton({
           text: "Save and go to tasks",
           href: "/sprint-5/tasklist",

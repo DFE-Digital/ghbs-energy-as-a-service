@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
-    
+
 
       <form class="form" action="/sprint-5/mat-site-contact?emu1=complete" method="post">
 
@@ -34,11 +34,13 @@
         items: [
           {
             value: "Consolidated on one bill",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("ebillType", "Consolidated on one bill")
           },
           {
             value: "Separate bill for each MPAN",
-            text: "No, I want a separate bill for each MPAN"
+            text: "No, I want a separate bill for each MPAN",
+            checked: checked("ebillType", "Separate bill for each MPAN")
           }
         ]
       }) }}
@@ -47,7 +49,7 @@
         text: "Save and continue",
         href: ""
       }) }}
-      
+
       {{ govukButton({
         text: "Save and go to tasks",
         href: "/sprint-5/tasklist",

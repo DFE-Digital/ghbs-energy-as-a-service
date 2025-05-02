@@ -40,7 +40,7 @@
             <fieldset class="govuk-fieldset" aria-describedby="agree-hint">
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="agree">
+                  <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="agree" {{ checked("agree", "agree") }}>
                   <label class="govuk-label govuk-checkboxes__label" for="agree">
                     I agree that I am signing up to a new energy contract.
                   </label>
