@@ -43,7 +43,7 @@
               <img src="/public/images/mpan.png-2" style="width:30%">
             </div>
           </details>
-          <input class="govuk-input govuk-input--width-10" id="mpan-1" name="mpan-1" type="text" aria-describedby="mpan">
+          <input class="govuk-input govuk-input--width-10" id="mpan-1" name="mpan-1" type="text" aria-describedby="mpan" value="{{data['mpan-1']}}">
         </div>
 
 
@@ -63,7 +63,7 @@
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="halfHour-3" name="halfHour-3" type="radio" value="Yes" data-aria-controls="conditional-halfhour">
+                <input class="govuk-radios__input" id="halfHour-3" name="halfHour-3" type="radio" value="Yes" data-aria-controls="conditional-halfhour" {{ checked("halfHour-3", "Yes") }}>
                 <label class="govuk-label govuk-radios__label" for="supplier">
                   Yes
                 </label>
@@ -79,34 +79,34 @@
                     What is the supply capacity?
                   </label>
                   <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="kva" name="kva" type="text" spellcheck="false">
+                    <input class="govuk-input govuk-input--width-5" id="kva" name="kva" type="text" spellcheck="false" value="{{data['kva']}}">
                     <div class="govuk-input__suffix" aria-hidden="true">kVA</div>
                   </div>
                 </div>
 
-  
+
 
                   <div class="govuk-form-group">
                   <label class="govuk-label" for="width-20">
                     Who is the data aggregator?
                   </label>
-                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                  <input class="govuk-input govuk-input--width-20" id="data-aggregator" name="data-aggregator" type="text" value="{{data['data-aggregator']}}">
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="width-20">
                     Who is the data collector?
                   </label>
-                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                  <input class="govuk-input govuk-input--width-20" id="data-collector" name="data-collector" type="text" value="{{data['data-collector']}}">
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="width-20">
                     Who is the meter operator?
                   </label>
-                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                  <input class="govuk-input govuk-input--width-20" id="meter-operator" name="meter-operator" type="text" value="{{data['meter-operator']}}">
                 </div>
                 </div>
               </div>
-              
+
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="halfHour-4" name="halfHour-3" type="radio" value="No" aria-describedby="halfHour-2-item-hint">
@@ -137,7 +137,7 @@
             <p><span class="mural-link"><a href=""></a></span></p>
           </details>
           <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-5" id="ekwh-2" name="ekwh-2" type="text" spellcheck="false">
+            <input class="govuk-input govuk-input--width-5" id="ekwh-2" name="ekwh-2" type="text" spellcheck="false" value="{{data['ekwh-2']}}">
             <div class="govuk-input__suffix" aria-hidden="true">kWh</div>
           </div>
         </div>
@@ -145,7 +145,7 @@
           text: "Save and continue",
           href: ""
         }) }}
-        
+
         {{ govukButton({
           text: "Save and go to tasks",
           href: "/sprint-5/tasklist",
