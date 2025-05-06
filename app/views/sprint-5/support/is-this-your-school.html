@@ -17,9 +17,13 @@
     <div class="govuk-grid-column-two-thirds">
 
       <span class="govuk-caption-l">About your school</span>
-      <h1 class="govuk-heading-l">Is this the school you’re buying for?</h1>
+      
 
       <form class="form" action="/sprint-5/support/is-this-your-school" method="post">
+
+      {% if data['orgType'] == "single" %}
+
+      <h1 class="govuk-heading-l">Is this the school you’re buying for?</h1>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -73,6 +77,48 @@
           </dd>
         </div>
       </dl>
+
+      {% else %}
+
+      <h1 class="govuk-heading-l">Is this the academy trust or federation you're buying for?</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Group name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            The Federation of St Gregory's Catholic High school
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Not provided
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Group type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Federation
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            IDs
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">UID: 123456</p>
+            <p class="govuk-body">UKPRN: 12345678</p>
+          </dd>
+        </div>
+      </dl>
+
+      {% endif %}
 
       {{ govukRadios({
         classes: "govuk-radios",
