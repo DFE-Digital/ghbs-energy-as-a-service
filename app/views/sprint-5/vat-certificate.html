@@ -34,21 +34,21 @@
         <div class="govuk-form-group">
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="dec" name="declaration" type="checkbox" value="dec">
+            <input class="govuk-checkboxes__input" id="dec" name="declaration" type="checkbox" value="dec" {{ checked("declaration", "dec") }}>
             <label class="govuk-label govuk-checkboxes__label" for="dec">
               I certify that the information given is correct and complete
             </label>
           </div>
           <br>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="dec-1" name="declaration" type="checkbox" value="dec-1">
+            <input class="govuk-checkboxes__input" id="dec-1" name="declaration" type="checkbox" value="dec-1" {{ checked("declaration", "dec-1") }}>
             <label class="govuk-label govuk-checkboxes__label" for="dec-1">
               I undertake to inform the supplier of any change in the qualifying use
             </label>
           </div>
           <br>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="dec-2" name="declaration" type="checkbox" value="dec-2">
+            <input class="govuk-checkboxes__input" id="dec-2" name="declaration" type="checkbox" value="dec-2" {{ checked("declaration", "dec-2") }}>
             <label class="govuk-label govuk-checkboxes__label" for="dec-2">
               I understand that any incorrect statement may make me liable for a financial penalty under the Value Added Tax Act (as amended from time to time)
             </label>
