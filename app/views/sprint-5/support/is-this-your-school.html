@@ -18,8 +18,12 @@
 
       <span class="govuk-caption-l">About your school</span>
       
-
-      <form class="form" action="/sprint-5/support/is-this-your-school" method="post">
+      
+      {% if data['signinType'] == "Yes" %}
+      <form class="form" action="/sprint-5/support/which-schools-list" method="post">
+      {% else %}
+      <form class="form" action="sprint-5/support/what-is-your-name" method="post">
+      {% endif %}
 
       {% if data['orgType'] == "single" %}
 
@@ -132,7 +136,7 @@
         },
         items: [
           {
-            value: "Yes~/sprint-5/support/what-is-your-name",
+            value: "Yes",
             text: "Yes"
           },
           {
