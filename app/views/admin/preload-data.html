@@ -38,10 +38,27 @@
               {
                 value: "mats",
                 text: "MATs"
-              },
+              }
+            ]
+          }) }}
+
+          {{ govukRadios({
+            name: "journeyType",
+            fieldset: {
+              legend: {
+                text: "For MVP Dfe Sign",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
               {
                 value: "trust",
-                text: "Pilot MAT/Trust"
+                text: "Pilot MAT,Trust single school"
+              },
+              {
+                value: "trustonly",
+                text: "MAT or Trust only"
               }
             ]
           }) }}
