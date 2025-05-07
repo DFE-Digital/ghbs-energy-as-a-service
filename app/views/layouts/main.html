@@ -127,8 +127,14 @@
         $('#get-help-with-form-container-success').show();
         $('#something-is-wrong').hide();
       });
+      $('#get-help-with-form-close').click(function() {
+        $('#get-help-with-form-container').show();
+        $('#something-is-wrong').hide();
+      });
     });
   </script>
+
+  
 
 
   <div class="govuk-width-container">
@@ -152,7 +158,7 @@
           </div>
           <button class="gem-c-button govuk-button" id="get-help-with-form-send">
             Send</button>
-          <button class="govuk-button govuk-button--secondary gem-c-feedback__close gem-c-feedback__js-show js-close-form" aria-controls="something-is-wrong" aria-expanded="true">
+          <button class="govuk-button govuk-button--secondary" id="get-help-with-form-close">
             Cancel</button>
         </div>
       </div>
