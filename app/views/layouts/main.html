@@ -123,12 +123,16 @@
         $('#something-is-wrong').show();
         $('#get-help-with-form-container').hide();
       });
+      $('#get-help-with-form-send').click(function() {
+        $('#get-help-with-form-container-success').show();
+        $('#something-is-wrong').hide();
+      });
     });
   </script>
 
 
   <div class="govuk-width-container">
-    <div id="get-help-with-form-container" class="gem-c-feedback__prompt gem-c-feedback__js-show js-prompt" tabindex="-1">
+    <div id="get-help-with-form-container" class="gem-c-feedback__prompt gem-c-feedback__js-show js-prompt">
       <div class="gem-c-feedback__prompt-content">
         <div class="gem-c-feedback__prompt-questions gem-c-feedback__prompt-questions--something-is-wrong js-prompt-questions">
           <button id="get-help-with-form" class="govuk-button gem-c-feedback__prompt-link js-toggle-form js-something-is-wrong" aria-expanded="false" aria-controls="something-is-wrong">
@@ -146,10 +150,18 @@
               What do you need help with?</label>
             <textarea name="what_doing" class="govuk-textarea" id="textarea-ad3d27b6" rows="5" spellcheck="true" aria-describedby="feedback_explanation"></textarea>
           </div>
-          <button class="gem-c-button govuk-button" type="submit" data-ga4-event="{&quot;event_name&quot;:&quot;form_submit&quot;,&quot;type&quot;:&quot;feedback&quot;,&quot;text&quot;:&quot;Send&quot;,&quot;section&quot;:&quot;Help us improve GOV.UK&quot;,&quot;tool_name&quot;:&quot;Help us improve GOV.UK&quot;}">
+          <button class="gem-c-button govuk-button" id="get-help-with-form-send">
             Send</button>
           <button class="govuk-button govuk-button--secondary gem-c-feedback__close gem-c-feedback__js-show js-close-form" aria-controls="something-is-wrong" aria-expanded="true">
             Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div id="get-help-with-form-container-success" class="gem-c-feedback__prompt gem-c-feedback__js-show js-prompt" style="display: none;">
+      <div class="gem-c-feedback__prompt-content">
+        <div class="gem-c-feedback__prompt-questions gem-c-feedback__prompt-questions--something-is-wrong js-prompt-questions">
+          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-0">
+            An email has been sent</p>
         </div>
       </div>
     </div>
