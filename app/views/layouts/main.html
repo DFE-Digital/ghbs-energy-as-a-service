@@ -116,6 +116,44 @@
   {% endblock %}
 
 {% block footer %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#get-help-with-form').click(function() {
+        $('#something-is-wrong').show();
+        $('#get-help-with-form-container').hide();
+      });
+    });
+  </script>
+
+
+  <div class="govuk-width-container">
+    <div id="get-help-with-form-container" class="gem-c-feedback__prompt gem-c-feedback__js-show js-prompt" tabindex="-1">
+      <div class="gem-c-feedback__prompt-content">
+        <div class="gem-c-feedback__prompt-questions gem-c-feedback__prompt-questions--something-is-wrong js-prompt-questions">
+          <button id="get-help-with-form" class="govuk-button gem-c-feedback__prompt-link js-toggle-form js-something-is-wrong" aria-expanded="false" aria-controls="something-is-wrong">
+            Get help with this form</button>
+        </div>
+      </div>
+    </div>
+    <div id="something-is-wrong" class="gem-c-feedback__form js-feedback-form" style="display: none;">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="gem-c-feedback__form-heading">Get help with your Energy for
+            Schools form</h3>
+          <div class="gem-c-textarea govuk-form-group govuk-!-margin-bottom-6">
+            <label for="textarea-ad3d27b6" class="gem-c-label govuk-label">
+              What do you need help with?</label>
+            <textarea name="what_doing" class="govuk-textarea" id="textarea-ad3d27b6" rows="5" spellcheck="true" aria-describedby="feedback_explanation"></textarea>
+          </div>
+          <button class="gem-c-button govuk-button" type="submit" data-ga4-event="{&quot;event_name&quot;:&quot;form_submit&quot;,&quot;type&quot;:&quot;feedback&quot;,&quot;text&quot;:&quot;Send&quot;,&quot;section&quot;:&quot;Help us improve GOV.UK&quot;,&quot;tool_name&quot;:&quot;Help us improve GOV.UK&quot;}">
+            Send</button>
+          <button class="govuk-button govuk-button--secondary gem-c-feedback__close gem-c-feedback__js-show js-close-form" aria-controls="something-is-wrong" aria-expanded="true">
+            Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer class="govuk-footer">
     <div class="govuk-width-container">
       <div class="govuk-footer__meta">
