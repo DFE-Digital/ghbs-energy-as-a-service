@@ -16,7 +16,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
       <h1 class="govuk-heading-xl">
-        Check your answers before sending your application
+        Sned your request
       </h1>
 
       {{ govukSummaryList({
@@ -131,18 +131,16 @@
         ]
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Now send your application
-      </h2>
+
 
       <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+        Once you send this request, we will review it and get in touch within 2 working days.
       </p>
 
       <form action="/sprint-5/support/confirmation" method="post" novalidate>
 
         {{ govukButton({
-          text: "Accept and send"
+          text: "Send request"
         }) }}
 
       </form>
