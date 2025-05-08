@@ -18,9 +18,11 @@
 
       <span class="govuk-caption-l">About your school</span>
       
-
+      {% if data['signinType'] == "Yes" %}
+      <form class="form" action="/sprint-5/support/how-can-we-help" method="post">
+      {% else %}
       <form class="form" action="/sprint-5/support/is-this-your-school" method="post">
-
+      {% endif %}
 
 
       <h1 class="govuk-heading-l">Are these the schools you’re buying for?</h1>
@@ -63,11 +65,11 @@
         },
         items: [
           {
-            value: "Yes~/sprint-5/support/how-can-we-help",
+            value: "Yes",
             text: "Yes"
           },
           {
-            value: "No~/support/which-schools-list",
+            value: "No~/sprint-5/support/which-schools-list",
             text: "No, I need to choose another school"
           }
         ]

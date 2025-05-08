@@ -20,6 +20,24 @@
 
       <form class="form" action="/sprint-5/support/how-did-you-find-out-about-this-service" method="post">
 
+
+        {% set emailHtml %}
+        {{ govukTextarea({
+          id: "access-needs",
+          name: "access-needs",
+          rows: "8",
+          label: {
+            text: "Tel us about your access needs",
+            classes: "govuk-label",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example, I have difficulty hearing so I cannot do video calls"
+          }
+        }) }}
+        {% endset -%}
+
+        
       {{ govukRadios({
         name: "accessNeeds",
         fieldset: {
@@ -35,7 +53,10 @@
         items: [
           {
             value: "Yes",
-            text: "Yes"
+            text: "Yes",
+            conditional: {
+              html: emailHtml
+            }
           },
           {
             value: "No",
