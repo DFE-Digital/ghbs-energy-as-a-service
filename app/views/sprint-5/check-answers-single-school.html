@@ -757,14 +757,35 @@ href: "javascript:window.history.back()"
               VAT rate
             </dt>
             <dd class="govuk-summary-list__value">
+              {{ data['vatType'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> VAT reg</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Percentage of total consumption qualifying for reduced rate of VAT
+            </dt>
+            <dd class="govuk-summary-list__value">
               {{ data['vat-num'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> VAT reg</span></a>
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              VAT registration number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['vat-reg'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> VAT reg</span></a>
+            </dd>
+          </div>
           {% else %}
-          {% endif %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               VAT rate
@@ -776,6 +797,8 @@ href: "javascript:window.history.back()"
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
             </dd>
           </div>
+          {% endif %}
+        
          
 
           {% if data['VATcontact'] == "yes" %}
@@ -939,7 +962,7 @@ href: "javascript:window.history.back()"
               VAT rate
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['invoiceType'] }}
+              {{ data['vatType'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
