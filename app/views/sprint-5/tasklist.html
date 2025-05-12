@@ -17,10 +17,10 @@
 
 
       {% if data['journeyType'] == "mats" %}
-      <span class="govuk-caption-l">Lancashire Schools Trust</span>
+      <span class="govuk-caption-l">Lancashire Schools Trust: Task list</span>
       <h1 class="govuk-heading-xl">Provide information about your schools</h1>
       {% else %}
-      <span class="govuk-caption-l">St Mary's Primary School</span>
+      <span class="govuk-caption-l">St Mary's Primary School: Task list</span>
       <h1 class="govuk-heading-xl">Provide information about your schools</h1>
       {% endif %}
 
@@ -483,7 +483,7 @@
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-vat-declaration?vatd=inProgress" aria-describedby="school-details-2-status">
-                VAT Declaration
+                VAT declaration
               </a>
             </div>
             {% if data['vatd'] == "inProgress" %}
