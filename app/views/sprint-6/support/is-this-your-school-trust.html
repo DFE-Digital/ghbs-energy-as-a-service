@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">About your school</span>
+      
+      {% if data['signinType'] == "Yes" %}
+      <form class="form" action="/sprint-6/support/how-can-we-help" method="post">
+      {% else %}
+      <form class="form" action="/sprint-6/support/is-this-your-school" method="post">
+      {% endif %}
+
+
+      <h1 class="govuk-heading-l">Are these the schools you’re buying for?</h1>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class">School name</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Address</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Phase of education</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Local authority</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Anglesey Primary Academy</th>
+            <td class="govuk-table__cell">Clarence Street, DE14 3LG</td>
+            <td class="govuk-table__cell">Primary</td>
+            <td class="govuk-table__cell">Staffordshire</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Kingswood Academy</th>
+            <td class="govuk-table__cell">Wawne Road, Bransholme, HU7 4WR</td>
+            <td class="govuk-table__cell">Secondary</td>
+            <td class="govuk-table__cell">Kingston upon Hull</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        name: "confirmSchool",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No~/sprint-6/support/which-schools-list",
+            text: "No, I need to choose another school"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

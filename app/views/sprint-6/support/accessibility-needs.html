@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">Accessibility</span>
+
+      <form class="form" action="/sprint-6/support/how-did-you-find-out-about-this-service" method="post">
+
+
+        {% set emailHtml %}
+        {{ govukTextarea({
+          id: "access-needs",
+          name: "access-needs",
+          rows: "8",
+          label: {
+            text: "Tel us about your access needs",
+            classes: "govuk-label",
+            isPageHeading: true
+          },
+          hint: {
+            text: "For example, I have difficulty hearing so I cannot do video calls"
+          }
+        }) }}
+        {% endset -%}
+
+        
+      {{ govukRadios({
+        name: "accessNeeds",
+        fieldset: {
+          legend: {
+            text: "Do you have any access needs that we need to be aware of when we contact you?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "We'll contact you by email first. Ifwe need more information we'll arrange a video call with you later. Let us know if ethier of these need to be made accessible to you and how you'd like us to do that."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: emailHtml
+            }
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

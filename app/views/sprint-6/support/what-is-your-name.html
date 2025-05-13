@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">About you</span>
+      <h1 class="govuk-heading-l">What is your name?</h1>
+
+      <form class="form" action="/sprint-6/support/what-is-your-email" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="supportFirstname">
+            First name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="supportFirstname" name="supportFirstname" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="supportLastname">
+            Last name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="supportLastname" name="supportLastname" type="text">
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

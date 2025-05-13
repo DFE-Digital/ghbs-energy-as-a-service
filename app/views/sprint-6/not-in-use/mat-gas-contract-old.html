@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+      <span class="govuk-caption-l">About your schools: Current contract details</span>
+      <h1 class="govuk-heading-l">Gas contract</h1>
+
+      {% if data['single-energyType'] == "gas" %}
+      <form class="form" action="/sprint-6/gas-info?ccd=complete" method="post">
+      {% else %}
+      <form class="form" action="/sprint-6/mat-electricity-contract?ccd=complete" method="post">
+      {% endif %}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="g-supplier">
+            Current gas supplier
+          </label>
+          <div id="g-supplier-hint" class="govuk-hint">
+            This is the company that supplies your gas. If you use a broker, check your invoice for supplier details or ask the broker.
+          </div>
+          <select class="govuk-select" id="g-supplier" name="g-supplier" aria-describedby="g-supplier-hint">
+            <option value="choose" selected>Choose supplier</option>
+            <option value="British Gas">British Gas</option>
+            <option value="Crown Gas & Power">Crown Gas & Power</option>
+            <option value="EDF">EDF</option>
+            <option value="E.ON">E.ON</option>
+            <option value="npowet">npower</option>
+            <option value="Octopus Energy">Octopus Energy</option>
+            <option value="Ovo Energy">Ovo Energy</option>
+            <option value="Scottish Power">Scottish Power</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="contract-end-issued-hint">
+            <legend class="govuk-fieldset__legend">
+              When does the contract end?
+            </legend>
+            <div id="contract-end-hint" class="govuk-hint">
+              For example, 27 3 2025 
+            </div>
+            <div class="govuk-date-input" id="contract-end">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="contract-end-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contract-end-day" name="contract-end-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="contract-end-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contract-end-month" name="contract-end-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="contract-end-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contract-end-year" name="contract-end-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-6/tasklist?ccd=inProgress",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

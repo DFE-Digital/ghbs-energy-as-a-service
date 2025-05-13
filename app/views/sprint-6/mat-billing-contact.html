@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['journeyType'] == "single-school" %}
+      <span class="govuk-caption-l">St Mary's Primary School: Billing preferences</span>
+      {% else %}
+      <span class="govuk-caption-l">About your schools: Billing preferences</span>
+      {% endif %}
+ 
+
+      <form class="form" action="/sprint-6/tasklist?bp=complete" method="post">
+
+
+        {{ govukRadios({
+          id: "bill-address",
+          name: "billaddress",
+          fieldset: {
+            legend: {
+              text: "Billing address",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Address 1",
+              text: "Address 1"
+            },
+            {
+              value: "Address 2",
+              text: "Address 2"
+            },
+            {
+              value: "Address 2",
+              text: "Address 2"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+      
+
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

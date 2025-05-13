@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
+      <h1 class="govuk-heading-l">Which energy supplies are you switching?</h1>
+      <p>Only tick the boxes of the schools switching to the DfE contract.</p>
+      <form class="form" action="/sprint-6/mat-authorisation" method="post">
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">School name</th>
+              <th scope="col" class="govuk-table__header">Address</th>
+              <th scope="col" class="govuk-table__header">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="selectAllGas" name="mat-gastype" type="checkbox" value="gas-all">
+                  <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="selectAllGas">
+                    All Gas
+                  </label>
+                </div>
+              </th>
+              <th scope="col" class="govuk-table__header">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="selectAllElectricity" name="mat-electype" type="checkbox" value="elec-all">
+                  <label class="govuk-label govuk-checkboxes__label govuk-!-font-weight-bold" for="selectAllElectricity">
+                    All Electricity
+                  </label>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Bowland High</th>
+              <td class="govuk-table__cell">Riversmead, Sawley Road, BB7 4QS</td>
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input gasCheckbox" id="gas-school-1" name="mat-gastype" type="checkbox" value="gas-school-1">
+                <label class="govuk-label govuk-checkboxes__label" for="gas-school-1">
+                  Gas
+                </label>
+              </div>
+              </td>
+              <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input electricityCheckbox" id="elec-school-1" name="mat-electype" type="checkbox" value="elec-school-1">
+                <label class="govuk-label govuk-checkboxes__label" for="elec-school-1">
+                  Electricity
+                </label>
+              </div>
+            </td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Downend Highschool</th>
+              <td class="govuk-table__cell">Downend, Sawley Road, BB8 4QS</td>
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input gasCheckbox" id="gas-school-2" name="mat-gastype" type="checkbox" value="gas-school-2">
+                <label class="govuk-label govuk-checkboxes__label" for="gas-school-2">
+                  Gas
+                </label>
+              </div>
+              </td>
+              <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input electricityCheckbox" id="elec-school-2" name="mat-electype" type="checkbox" value="elec-school-2">
+                <label class="govuk-label govuk-checkboxes__label" for="elec-school-2">
+                  Electricity
+                </label>
+              </div>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#selectAllGas').change(function() {
+        $('.gasCheckbox').prop('checked', $(this).prop('checked'));
+      });
+    });
+    $(document).ready(function() {
+      $('#selectAllElectricity').change(function() {
+        $('.electricityCheckbox').prop('checked', $(this).prop('checked'));
+      });
+    });
+  </script>
+{% endblock %}
+

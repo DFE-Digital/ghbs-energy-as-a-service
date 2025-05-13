@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">St Mary's Primary School: Site contact details</span>
+      <h1 class="govuk-heading-l">Who manages site access and maintenance?</h1>
+
+      {% if data['journeyType'] == "single-school" %}
+      <form class="form" action="/sprint-6/mat-vat-declaration?scontact=complete" method="post">
+      {% else %}
+      <form class="form" action="/sprint-6/tasklist?scontact=complete" method="post">
+      {% endif %}
+
+        <p>This is in case the supplier needs access to the site or meter equipment, or in case of emergency</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="scontact-firstname">
+            First name
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="scontact-firstname" name="scontact-firstname" type="text" value="{{data['scontact-firstname']}}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="scontact-lastname">
+            Last name
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="scontact-lastname" name="scontact-lastname" type="text" value="{{data['scontact-lastname']}}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="scontact-email">
+            Email
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="scontact-email" name="scontact-email" type="text" value="{{data['scontact-email']}}">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="scontact-tel">
+            Telephone
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="scontact-tel" name="scontact-tel" type="text" value="{{data['scontact-tel']}}" >
+        </div>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-6/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

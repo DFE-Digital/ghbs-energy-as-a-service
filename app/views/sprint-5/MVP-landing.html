@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">MVP prototype</h1>
+
+      <p>This prototype captures what is being relased for MVP which is only Single schools</p>
+
+    {{ govukButton({
+        text: "Start journey",
+        href: "/sprint-5/preload-data"
+    }) }}
+
+    {{ govukButton({
+    text: "Page by page listings and scenarios",
+    href: "/sprint-5/listings",
+    classes: "govuk-button--secondary govuk-!-margin-left-1"
+    }) }}
+
+    <!-- {{ govukButton({
+      text: "Load data for Single schools and DfE sign scenarios",
+      href: "/sprint-5/preload-data",
+      classes: "govuk-button--secondary govuk-!-margin-left-1"
+      }) }} -->
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
+
+
+      <form class="form" action="/sprint-6/mat-site-contact?emu1=complete" method="post">
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        name: "ebillType",
+        fieldset: {
+          legend: {
+            text: "Do you want your MPANs consolidated on one bill?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Consolidated on one bill",
+            text: "Yes",
+            checked: checked("ebillType", "Consolidated on one bill")
+          },
+          {
+            value: "Separate bill for each MPAN",
+            text: "No, I want a separate bill for each MPAN",
+            checked: checked("ebillType", "Separate bill for each MPAN")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: ""
+      }) }}
+
+      {{ govukButton({
+        text: "Save and go to tasks",
+        href: "/sprint-6/tasklist",
+        classes: "govuk-button--secondary govuk-!-margin-left-1"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

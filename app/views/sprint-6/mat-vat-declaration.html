@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['journeyType'] == "single-school" %}
+      <span class="govuk-caption-l">St Mary's Primary School: VAT declaration</span>
+      {% else %}
+      <span class="govuk-caption-l">About your schools: VAT declaration</span>
+      {% endif %}
+      <h1 class="govuk-heading-l">Which VAT rate are you charged?</h1>
+
+      <form class="form" action="/sprint-6/mat-vat-contact?vatd=inProgress" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+        {% set textHtml %}
+        {{ govukInput({
+          label: {
+            text: "Percentage of total consumption qualifying for reduced rate of VAT"
+          },
+          classes: "govuk-input--width-5",
+          id: "vat-num",
+          name: "vat-num",
+          suffix: {
+            text: "%"
+          },
+          value: data['vat-num'],
+          spellcheck: false
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "VAT registration number (optional)"
+          },
+          classes: "govuk-!-width-one-third",
+          id: "vat-reg",
+          name: "vat-reg",
+          suffix: {
+            text: ""
+          },
+          value: data['vat-reg'],
+          spellcheck: false
+        }) }}
+
+
+
+        {% endset -%}
+
+        {{ govukRadios({
+          name: "vatType",
+          fieldset: {
+            legend: {
+              text: ""
+            }
+          },
+          hint: {
+            text: "If you're unsure, check your energy bills or ask your local authority"
+          },
+          items: [
+            {
+              value: "20%",
+              text: "20%",
+              conditional: {
+                html: 20vatHtml
+              }
+            },
+            {
+              value: "5%",
+              text: "5%",
+              conditional: {
+                html: textHtml
+              }
+            }
+          ]
+        }) }}
+
+
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-6/tasklist?vatd=inProgress",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

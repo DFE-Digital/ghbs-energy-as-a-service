@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">St Mary's Primary School</span>
+      <h1 class="govuk-heading-l">Gas meters and usage</h1>
+
+      {% if data['single-energyType'] == "gas" %}
+      <form class="form" action="/sprint-6/mat-site-contact?scontact=inProgress" method="post">
+      {% else %}
+      <form class="form" action="/sprint-6/elec-info" method="post">
+      {% endif %}
+
+{{ govukRadios({
+  classes: "govuk-radios",
+  name: "billType",
+  fieldset: {
+    legend: {
+      text: "Do you want your MPRNs consolidated on one bill?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend"
+    }
+  },
+  items: [
+    {
+      value: "Consolidated on one bill",
+      text: "Yes"
+    },
+    {
+      value: "Separate bill for each MPRN",
+      text: "No, I want a separate bill for each MPRN"
+    }
+  ]
+}) }}
+
+
+{{ govukButton({
+  text: "Save and continue",
+  href: ""
+}) }}
+
+{{ govukButton({
+  text: "Save and go to tasks",
+  href: "/sprint-6/tasklist",
+  classes: "govuk-button--secondary govuk-!-margin-left-1"
+  }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

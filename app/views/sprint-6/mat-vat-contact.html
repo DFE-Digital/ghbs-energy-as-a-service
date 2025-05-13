@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['journeyType'] == "single-school" %}
+      <span class="govuk-caption-l">St Mary's Primary School: VAT declaration</span>
+      {% else %}
+      <span class="govuk-caption-l">About your schools: VAT declaration</span>
+      {% endif %}
+      <h1 class="govuk-heading-l">Are these the correct details for VAT purposes?</h1>
+
+      <p>This information will be used to generate a VAT certificate which will be shared with the new suppliers.</p>
+
+      <form class="form" action="/sprint-6/vat-certificate" method="post">
+
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name</th>
+              <td class="govuk-table__cell">Mr Smith</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Address</th>
+              <td class="govuk-table__cell">Pleckgate High School, Pleckgate Road, BB1 8QA</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Telephone number</th>
+              <td class="govuk-table__cell">012345 678 910</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "VATcontact",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no~/sprint-6/mat-vat-contact-manual",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue",
+          href: ""
+        }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-6/tasklist",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
