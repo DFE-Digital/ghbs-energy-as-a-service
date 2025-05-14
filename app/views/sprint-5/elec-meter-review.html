@@ -13,8 +13,25 @@
 
 {% block content %}
 
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      {% if data['mpnremove'] == "yes" %}
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Notice
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            MPAN succesfully removed
+          </p>
+        </div>
+      </div>
+      {% else %}
+      {% endif %}
 
       <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
       <h1 class="govuk-heading-l">MPAN summary</h1>
@@ -37,7 +54,7 @@
               <td class="govuk-table__cell">{{ data['mpan'] }}</th>
               <td class="govuk-table__cell">{{ data['halfHour'] }}</td>
               <td class="govuk-table__cell">{{ data['ekwh'] }}</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/gas-meter-info">Change<span class="govuk-visually-hidden"> name</span></a>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/elec-meter-info">Change<span class="govuk-visually-hidden"> name</span></a>
             </tr>
           </tbody>
         </table>
