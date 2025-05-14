@@ -43,21 +43,24 @@
       <form class="form" action="/sprint-6/mat-existing-contracts" method="post">
       {% endif %}
 
-        {% if data['journeyType'] == "mats" %}
+        
         <ul class="govuk-list govuk-list--bullet">
-          {% if ((data['mat-gastype'] == "gas-school-1") or (data['mat-electype'] == "elec-school-1")) %}
+          {% if ((data['mat-gastype-1'] == "gas-school-1") or (data['mat-electype-1'] == "elec-school-1")) %}
           <li>Bowland High</li>
-          {% elif ((data['mat-gastype'] == "gas-school-2") or (data['mat-electype'] == "elec-school-2")) %}
+          {% else %}
+          {% endif %}
+          {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
           <li>Downend Highschool</li>
           {% else %}
-          <li>Bowland High</li>
+          {% endif %}
+          {% if data['journeyType'] == "single-school" %}
+          <ul class="govuk-list govuk-list--bullet">
+            <li>St Mary's Primary School</li>
+          </ul>
+          {% else %}
           {% endif %}
         </ul>
-        {% else %}
-        <ul class="govuk-list govuk-list--bullet">
-          <li>St Mary's Primary School</li>
-        </ul>
-        {% endif %}
+      
 
         <div class="govuk-warning-text">
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>

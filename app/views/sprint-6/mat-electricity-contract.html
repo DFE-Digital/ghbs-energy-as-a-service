@@ -27,6 +27,8 @@
       <form class="form" action="/sprint-6/elec-info?ccd=complete" method="post">
       {% elif data['single-energyType'] == "gasandelec" %}
       <form class="form" action="/sprint-6/gas-info?ccd=complete" method="post">
+      {% elif data['contractSetup'] == "mixcontract" %}
+      <form class="form" action="/sprint-6/gas-info?ccd=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-6/mat-vat-status?ccd=complete" method="post">
       {% endif %}
