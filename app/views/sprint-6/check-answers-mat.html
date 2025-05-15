@@ -412,7 +412,7 @@ href: "javascript:window.history.back()"
         {% endif %}
     {% endif %}
 
-
+    {% if data['mat-gastype-1'] == "gas-school-1" %}
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
@@ -454,6 +454,7 @@ href: "javascript:window.history.back()"
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
+      
 
           {% if data['addmeter1'] == "1" %}
           <div class="govuk-summary-list__row">
@@ -507,6 +508,8 @@ href: "javascript:window.history.back()"
           {% else %}
           {% endif %}
 
+      
+
           {% if data['meterType'] == "Single meter" %}
           {% else %}
           <div class="govuk-summary-list__row">
@@ -526,8 +529,11 @@ href: "javascript:window.history.back()"
         </dl>
       </div>
     </div>
+    {% else %}
+    {% endif %}
 
 
+    {% if data['mat-electype-1'] == "elec-school-1" %}
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
@@ -674,6 +680,8 @@ href: "javascript:window.history.back()"
         </dl>
       </div>
     </div>
+    {% else %}
+    {% endif %}
 
 
 
