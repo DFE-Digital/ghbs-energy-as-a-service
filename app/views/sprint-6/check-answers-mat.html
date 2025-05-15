@@ -143,37 +143,29 @@ href: "javascript:window.history.back()"
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              VAT registration number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['vat-num'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> VAT reg</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
               VAT rate
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['invoiceType'] }}
+              {{ data['vatType'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
             </dd>
           </div>
+          {% if data['vatType'] == "5%" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Percentage of total consumption qualifying for reduced rate of VAT
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['totalVAT'] }}
+              {{ data['vat-num'] }}%
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
             </dd>
           </div>
+          {% else %}
+          {% endif %}
 
           {% if data['VATcontact'] == "yes" %}
           <div class="govuk-summary-list__row">
@@ -312,7 +304,7 @@ href: "javascript:window.history.back()"
               Address for invoice
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['billing-address'] }}
+              {{ data['billaddress'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> invoice email/span></a>
