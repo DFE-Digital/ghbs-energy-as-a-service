@@ -332,76 +332,86 @@ href: "javascript:window.history.back()"
 
     {% if data['contractSetup'] == "combinedcontract" %} 
     {% elif data['contractSetup'] == "mixcontract" %}
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Gas contract
-        </h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Current gas supplier
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['g-supplier'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">g supplier</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              When does your contract end?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['contract-end-day'] }}/{{ data['contract-end-month'] }}/{{ data['contract-end-year'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
 
+        <!-- // If only gas on mixed contract -->
 
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Electricity contract
-        </h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Current electricity supplier
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['e-supplier'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> e supplier</span></a>
-            </dd>
+        {% if data['mat-gastype-1'] == "gas-school-1" %} 
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Gas contract
+            </h2>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              When does your contract end?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['econtract-end-day'] }}/{{ data['econtract-end-month'] }}/{{ data['econtract-end-year'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> elec contract end
-                  date</span></a>
-            </dd>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Current gas supplier
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['g-supplier'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">g supplier</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  When does your contract end?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['contract-end-day'] }}/{{ data['contract-end-month'] }}/{{ data['contract-end-year'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
+                </dd>
+              </div>
+            </dl>
           </div>
-        </dl>
-      </div>
-    </div>
+        </div>
+        {% else %}
+        {% endif %}
+    
+
+        {% if data['mat-electype-1'] == "elec-school-1" %} 
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Electricity contract
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Current electricity supplier
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['e-supplier'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> e supplier</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  When does your contract end?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['econtract-end-day'] }}/{{ data['econtract-end-month'] }}/{{ data['econtract-end-year'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> elec contract end
+                      date</span></a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        {% else %}
+        {% endif %}
     {% endif %}
+
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">

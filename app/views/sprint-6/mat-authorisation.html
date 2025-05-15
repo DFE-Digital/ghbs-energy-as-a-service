@@ -23,20 +23,23 @@
       {% endif %}
 
       <h1 class="govuk-heading-l">Are you authorised to switch energy suppliers for these schools?</h1>
+      
+      <!-- // Gas and elec -->
+      {% if ((data['mat-electype-1'] == "elec-school-1") and (data['mat-gastype-1'] == "gas-school-1")) %}
+      <form class="form" action="/sprint-6/mat-existing-contracts" method="post">
 
       <!-- // Gas only  -->
-      {% if data['mat-gastype'] == "gas-school-1" %}
+      {% elif data['mat-gastype-1'] == "gas-school-1" %}
       <form class="form" action="/sprint-6/mat-existing-contracts-gas" method="post">
-      {% elif data['mat-gastype'] == "gas-school-1,gas-school-2" %}
+      {% elif ((data['mat-gastype-1'] == "gas-school-1") and (data['mat-gastype-2'] == "gas-school-2")) %}
       <form class="form" action="/sprint-6/mat-existing-contracts-gas" method="post">
 
       <!-- // Elec only -->
-      {% elif data['mat-electype'] == "elec-school-1" %}
+      {% elif data['mat-electype-1'] == "elec-school-1" %}
       <form class="form" action="/sprint-6/mat-existing-contracts-electric" method="post">
-      {% elif data['mat-electype'] == "elec-school-1,elec-school-2" %}
+      {% elif ((data['mat-electype-1'] == "elec-school-1") and (data['mat-electype-2'] == "elec-school-2")) %}
       <form class="form" action="/sprint-6/mat-existing-contracts-electric" method="post">
 
-      <!-- // Gas and elec -->
       {% elif data['journeyType'] == "single-school" %}
       <form class="form" action="/sprint-6/single-school-fuel-selection" method="post">
       {% else %}

@@ -135,7 +135,11 @@
               {% if data['contractSetup'] == "mixcontract" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
+                    {% if ((data['mat-gastype-1'] == "gas-school-1") and (data['mat-electype-1'] == "elec-school-1")) %}
                     <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-gas-contract?ccd=inProgress" aria-describedby="school-details-1-status">
+                    {% else %}
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-electricity-contract?ccd=inProgress" aria-describedby="school-details-1-status">
+                    {% endif %}
                       Current contract details
                     </a>
                   </div>
