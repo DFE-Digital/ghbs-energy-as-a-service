@@ -25,7 +25,7 @@
       <form class="form" action="/sprint-5/elec-meter-review?emu1=complete" method="post">
       {% endif %}
 
-        <!-- <p>You can usually find this information on your electricity bill. Please check all pages.</p> -->
+       <p>You can usually find this information on your electricity bill. Please check all pages.</p> 
 
         <div class="govuk-form-group">
           <h2 class="govuk-label-wrapper">
@@ -34,19 +34,9 @@
             </label>
           </h2>
           <div id="event-name-hint" class="govuk-hint">
-            You can usually find the 13-digit MPAN on your electricity bill. Please check all pages.
+            Your MPAN is on your electricity bill. It’s the last 13 digits of the Supply number.
+            <img src="/public/images/mpan-2.png" style="width:30%">
           </div>
-          <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Where can I find my MPAN?
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              Your MPAN is on your electricity bill. It’s the last 13 digits of the Supply number.
-              <img src="/public/images/mpan-2.png" style="width:30%">
-            </div>
-          </details>
           <input class="govuk-input govuk-input--width-10" id="mpan" name="mpan" type="text" aria-describedby="mprn">
         </div>
 
