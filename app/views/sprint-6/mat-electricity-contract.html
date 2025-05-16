@@ -27,8 +27,10 @@
       <form class="form" action="/sprint-6/elec-info?ecd=complete" method="post">
       {% elif data['single-energyType'] == "gasandelec" %}
       <form class="form" action="/sprint-6/gas-info?ecd=complete" method="post">
-      {% elif data['contractSetup'] == "mixcontract" %}
-      <form class="form" action="/sprint-6/gas-info?ecd=complete" method="post">
+      {% elif ((data['econtractSetup'] == "mixcontract") and (data['billingPref'] == "no")) %}
+      <form class="form" action="/sprint-6/mat-billing-information?ecd=complete" method="post">
+      {% elif data['econtractSetup'] == "mixcontract" %}
+      <form class="form" action="/sprint-6/mat-vat-declaration?ecd=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-6/mat-vat-status?ecd=complete" method="post">
       {% endif %}
