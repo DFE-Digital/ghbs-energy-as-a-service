@@ -26,7 +26,7 @@
       
       <!-- // Gas and elec -->
       {% if ((data['mat-electype-1'] == "elec-school-1") and (data['mat-gastype-1'] == "gas-school-1")) %}
-      <form class="form" action="/sprint-6/mat-existing-contracts" method="post">
+      <form class="form" action="/sprint-6/mat-existing-contracts-gas" method="post">
 
       <!-- // Gas only  -->
       {% elif data['mat-gastype-1'] == "gas-school-1" %}
@@ -43,7 +43,7 @@
       {% elif data['journeyType'] == "single-school" %}
       <form class="form" action="/sprint-6/single-school-fuel-selection" method="post">
       {% else %}
-      <form class="form" action="/sprint-6/mat-existing-contracts" method="post">
+      <form class="form" action="/sprint-6/mat-existing-gas" method="post">
       {% endif %}
 
         

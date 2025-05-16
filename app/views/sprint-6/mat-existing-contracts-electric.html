@@ -16,29 +16,44 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <span class="govuk-caption-l">About your schools: Current contract details</span>
+      <span class="govuk-caption-l">All schools</span>
       <!-- <h1 class="govuk-heading-xl">How are your gas and electricity contracts set up?</h1> -->
 
-      <form class="form" action="" method="post">
+
+      {% if data['gcontractSetup'] == "combinedcontract" %}
+      <form class="form" action="/sprint-6/mat-gas-contract" method="post">
+      {% else %}
+      <form class="form" action="/sprint-6/mat-electricity-contract" method="post">
+      {% endif %}
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                How are your electricity contracts set up?
+                Are all of these schools on the same electricity contract?
               </h1>
             </legend>
+            <ul class="govuk-list govuk-list--bullet">
+              {% if ((data['mat-gastype-1'] == "gas-school-1") or (data['mat-electype-1'] == "elec-school-1")) %}
+              <li>Bowland High</li>
+              {% else %}
+              {% endif %}
+              {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
+              <li>Downend Highschool</li>
+              {% else %}
+              {% endif %}
+            </ul>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contractSetup" name="contractSetup" type="radio" value="combinedcontract~/sprint-6/mat-electricity-contract">
+                <input class="govuk-radios__input" id="econtractSetup" name="econtractSetup" type="radio" value="combinedcontract">
                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                  All schools are on the same combined electricity contract
+                  Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contractSetup-3" name="contractSetup" type="radio" value="mixcontract~/sprint-6/mat-vat-status">
+                <input class="govuk-radios__input" id="econtractSetup-1" name="econtractSetup" type="radio" value="mixcontract">
                 <label class="govuk-label govuk-radios__label" for="contractSetup-3">
-                  There’s a mix of electricity contracts across the trust
+                  No
                 </label>
               </div>
             </div>
