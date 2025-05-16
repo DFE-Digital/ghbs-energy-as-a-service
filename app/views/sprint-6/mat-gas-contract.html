@@ -20,9 +20,9 @@
       {% if data['journeyType'] == "single-school" %}
       <span class="govuk-caption-l">St Mary's Primary School: Current contract details</span>
       {% else %}
-      <span class="govuk-caption-l">About your schools: Current contract details</span>
+      <span class="govuk-caption-l">About your schools: Current gas supplier</span>
       {% endif %}
-      <h1 class="govuk-heading-l">Gas contract</h1>
+      <h1 class="govuk-heading-l">Who currently supplies your gas?</h1>
 
       {% if data['single-energyType'] == "gas" %}
       <form class="form" action="/sprint-6/gas-info?ccd=complete" method="post">

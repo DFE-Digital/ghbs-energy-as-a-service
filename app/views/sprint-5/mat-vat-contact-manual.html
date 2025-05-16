@@ -28,7 +28,13 @@
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group">
             <label class="govuk-label" for="vatname">
-              Name
+              First name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="vatname" name="vatname" type="text" autocomplete="vatname" value="{{data['vatname']}}">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="vatname">
+              Last name (optional)
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="vatname" name="vatname" type="text" autocomplete="vatname" value="{{data['vatname']}}">
           </div>
@@ -63,10 +69,6 @@
               checked: {
                 html: data['Address 2']
               }
-            },
-            {
-              value: "Address 3",
-              text: "Address 3"
             }
           ]
         }) }}
