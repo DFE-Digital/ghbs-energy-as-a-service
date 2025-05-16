@@ -23,8 +23,11 @@
       {% endif %}
  
 
+      {% if ((data['econtractSetup'] == "mixcontract") and (data['billingPref'] == "no")) %}
+      <form class="form" action="/sprint-6/gas-info?bp=complete" method="post">
+      {% else %}
       <form class="form" action="/sprint-6/tasklist?bp=complete" method="post">
-
+      {% endif %}
 
         {{ govukRadios({
           id: "bill-address",
