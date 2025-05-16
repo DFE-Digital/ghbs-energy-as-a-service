@@ -28,6 +28,8 @@
       <form class="form" action="/sprint-6/gas-info?ccd=complete" method="post">
       {% elif data['econtractSetup'] == "mixcontract" %}
       <form class="form" action="/sprint-6/mat-vat-status?ccd=complete" method="post">
+      {% elif ((data['econtractSetup'] == "combinedcontract") and (data['gcontractSetup'] == "mixcontract")) %}
+      <form class="form" action="/sprint-6/mat-vat-declaration?vatd=inProgress" method="post">
       {% else %}
       <form class="form" action="/sprint-6/mat-electricity-contract?ccd=complete" method="post">
       {% endif %}
