@@ -23,7 +23,10 @@
       {% endif %}
       <h1 class="govuk-heading-l">VAT certificate of declaration</h1>
 
-      {% if data['journeyType'] == "mats" %}
+     
+      {% if ((data['VATstatus'] == "no") and (data['billingPref'] == "no")) %}
+      <form class="form" action="/sprint-6/mat-billing-information?vatd=complete" method="post">
+      {% elif ((data['gcontractSetup'] == "combinedcontract") and (data['gcontractSetup'] == "combinedcontract")) %}
       <form class="form" action="/sprint-6/mat-billing-setup?vatd=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-6/mat-billing-information?vatd=complete" method="post">

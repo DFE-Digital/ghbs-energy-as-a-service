@@ -17,15 +17,19 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if data['journeyType'] == "single-school" %}
-      <span class="govuk-caption-l">St Mary's Primary School: Current contract details</span>
+      <span class="govuk-caption-l">St Mary's Primary School: Current electricity supplier</span>
       {% else %}
       <span class="govuk-caption-l">About your schools: Current electricity supplier</span>
       {% endif %}
-      <h1 class="govuk-heading-l">Who currently supplies your electricity?</h1>
+      <h1 class="govuk-heading-l">Electricity contract</h1>
 
       {% if data['single-energyType'] == "electricity" %}
       <form class="form" action="/sprint-6/elec-info?ecd=complete" method="post">
       {% elif data['single-energyType'] == "gasandelec" %}
+      <form class="form" action="/sprint-6/gas-info?ecd=complete" method="post">
+      {% elif ((data['gcontractSetup'] == "combinedcontract") and (data['econtractSetup'] == "mixcontract")) %}
+      <form class="form" action="/sprint-6/gas-info?ecd=complete" method="post">
+      {% elif ((data['econtractSetup'] == "mixcontract") and (data['gcontractSetup'] == "mixcontract")) %}
       <form class="form" action="/sprint-6/gas-info?ecd=complete" method="post">
       {% elif ((data['econtractSetup'] == "mixcontract") and (data['billingPref'] == "no")) %}
       <form class="form" action="/sprint-6/mat-billing-information?ecd=complete" method="post">
@@ -54,7 +58,7 @@
         name: "e-supplier",
         fieldset: {
           legend: {
-            text: "Current electricity supplier",
+            text: "Who currently supplies your electricity?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
           }

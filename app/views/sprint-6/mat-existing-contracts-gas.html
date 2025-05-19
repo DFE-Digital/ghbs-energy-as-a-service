@@ -20,6 +20,8 @@
   
       {% if ((data['mat-electype-1'] == "elec-school-1") and (data['mat-gastype-1'] == "gas-school-1")) %}
       <form class="form" action="/sprint-6/mat-existing-contracts-electric" method="post">
+      {% elif data['mat-gastype-1'] == "gas-school-1" %}
+      <form class="form" action="/sprint-6/mat-gas-contract" method="post">
       {% else %}
       <form class="form" action="/sprint-6/mat-vat-status" method="post">
       {% endif %}

@@ -22,7 +22,7 @@
       {% else %}
       <span class="govuk-caption-l">About your schools: Current gas supplier</span>
       {% endif %}
-      <h1 class="govuk-heading-l">Who currently supplies your gas?</h1>
+      <h1 class="govuk-heading-l">Gas contract</h1>
 
       {% if data['single-energyType'] == "gas" %}
       <form class="form" action="/sprint-5/gas-info?ccd=complete" method="post">
@@ -52,7 +52,7 @@
           name: "g-supplier",
           fieldset: {
             legend: {
-              text: "Current gas supplier",
+              text: "Who currently supplies your gas?",
               isPageHeading: false,
                classes: "govuk-fieldset__legend--s"
             }

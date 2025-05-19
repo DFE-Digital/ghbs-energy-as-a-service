@@ -18,18 +18,24 @@
 
      
       {% if data['journeyType'] == "single-school" %}
-      <span class="govuk-caption-l">St Mary's Primary School: Current contract details</span>
+      <span class="govuk-caption-l">St Mary's Primary School: Current gas supplier</span>
       {% else %}
       <span class="govuk-caption-l">About your schools: Current gas supplier</span>
       {% endif %}
-      <h1 class="govuk-heading-l">Who currently supplies your gas?</h1>
+      <h1 class="govuk-heading-l">Gas contract</h1>
 
       {% if data['single-energyType'] == "gas" %}
       <form class="form" action="/sprint-6/gas-info?ccd=complete" method="post">
-      {% elif data['econtractSetup'] == "mixcontract" %}
+      {% elif ((data['gcontractSetup'] == "combinedcontract") and (data['econtractSetup'] == "mixcontract")) %}
+      <form class="form" action="/sprint-6/mat-vat-status?ccd=complete" method="post">
+      {% elif ((data['econtractSetup'] == "mixcontract") and (data['gcontractSetup'] == "mixcontract")) %}
+      <form class="form" action="/sprint-6/mat-electricity-contract?ccd=complete" method="post">
+      {% elif ((data['gcontractSetup'] == "combinedcontract") and (data['gcontractSetup'] == "combinedcontract")) %}
+      <form class="form" action="/sprint-6/mat-electricity-contract?ccd=complete" method="post">
+      {% elif ((data['gcontractSetup'] == "combinedcontract") and (data['mat-gastype-1'] == "gas-school-1")) %}
       <form class="form" action="/sprint-6/mat-vat-status?ccd=complete" method="post">
       {% elif ((data['econtractSetup'] == "combinedcontract") and (data['gcontractSetup'] == "mixcontract")) %}
-      <form class="form" action="/sprint-6/mat-vat-declaration?vatd=inProgress" method="post">
+      <form class="form" action="/sprint-6/mat-vat-declaration?ccd=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-6/mat-electricity-contract?ccd=complete" method="post">
       {% endif %}
@@ -56,7 +62,7 @@
           name: "g-supplier",
           fieldset: {
             legend: {
-              text: "Current gas supplier",
+              text: "Who currently supplies your gas?",
               isPageHeading: false,
                classes: "govuk-fieldset__legend--s"
             }

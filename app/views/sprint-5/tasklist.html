@@ -190,67 +190,6 @@
           {% else %}
           {% endif %}
 
-        {% if data['VATstatus'] == "no" %}
-        <li class="govuk-task-list__item govuk-task-list__item--with-link">
-          <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-vat-status?vatd=inProgress" aria-describedby="school-details-2-status">
-              VAT Declaration
-            </a>
-          </div>
-          {% if data['vatd'] == "inProgress" %}
-          <div class="govuk-task-list__status" id="school-details-1-status">
-            <strong class="govuk-tag govuk-tag--blue">
-              In progress
-            </strong>
-          </div>
-          {% elif data['vatd'] == "complete" %}
-          <div class="govuk-task-list__status" id="school-details-1-status">
-            <strong class="govuk-tag govuk-tag--green">
-              Complete
-            </strong>
-          </div>
-          {% else %}
-          <div class="govuk-task-list__status" id="school-details-1-status">
-            <strong class="govuk-tag govuk-tag--grey">
-              Not started
-            </strong>
-          </div>
-          {% endif %}
-        </li>
-        {% else %}
-        {% endif %}
-
-        {% if data['billingPref'] == "no" %}
-        <li class="govuk-task-list__item govuk-task-list__item--with-link">
-          <div class="govuk-task-list__name-and-hint">
-            <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-billing-setup?bp=inProgress" aria-describedby="school-details-3-hint school-details-3-status">
-              Billing preferences
-            </a>
-          </div>
-          {% if data['bp'] == "inProgress" %}
-          <div class="govuk-task-list__status" id="school-details-1-status">
-            <strong class="govuk-tag govuk-tag--blue">
-              In progress
-            </strong>
-          </div>
-          {% elif data['bp'] == "complete" %}
-          <div class="govuk-task-list__status" id="school-details-1-status">
-            <strong class="govuk-tag govuk-tag--green">
-              Complete
-            </strong>
-          </div>
-          {% else %}
-          <div class="govuk-task-list__status" id="school-details-1-status">
-            <strong class="govuk-tag govuk-tag--grey">
-              Not started
-            </strong>
-          </div>
-          {% endif %}
-        </li>
-        {% else %}
-        {% endif %}
-
-
         
         <li class="govuk-task-list__item govuk-task-list__item--with-link">
           <div class="govuk-task-list__name-and-hint">
@@ -333,6 +272,66 @@
           {% endif %}
         </li>
         </ul>
+
+        {% if data['VATstatus'] == "no" %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-vat-status?vatd=inProgress" aria-describedby="school-details-2-status">
+              VAT Declaration
+            </a>
+          </div>
+          {% if data['vatd'] == "inProgress" %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </div>
+          {% elif data['vatd'] == "complete" %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--green">
+              Complete
+            </strong>
+          </div>
+          {% else %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--grey">
+              Not started
+            </strong>
+          </div>
+          {% endif %}
+        </li>
+        {% else %}
+        {% endif %}
+
+        {% if data['billingPref'] == "no" %}
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="/sprint-5/mat-billing-setup?bp=inProgress" aria-describedby="school-details-3-hint school-details-3-status">
+              Billing preferences
+            </a>
+          </div>
+          {% if data['bp'] == "inProgress" %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--blue">
+              In progress
+            </strong>
+          </div>
+          {% elif data['bp'] == "complete" %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--green">
+              Complete
+            </strong>
+          </div>
+          {% else %}
+          <div class="govuk-task-list__status" id="school-details-1-status">
+            <strong class="govuk-tag govuk-tag--grey">
+              Not started
+            </strong>
+          </div>
+          {% endif %}
+        </li>
+        {% else %}
+        {% endif %}
 
         {% else %}
 
