@@ -28,6 +28,8 @@
       <form class="form" action="/sprint-6/mat-billing-information?vatd=complete" method="post">
       {% elif ((data['gcontractSetup'] == "combinedcontract") and (data['gcontractSetup'] == "combinedcontract")) %}
       <form class="form" action="/sprint-6/mat-billing-setup?vatd=complete" method="post">
+      {% elif data['econtractSetup'] == "combinedcontract" %}
+      <form class="form" action="/sprint-6/mat-billing-setup?vatd=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-6/mat-billing-information?vatd=complete" method="post">
       {% endif %}
