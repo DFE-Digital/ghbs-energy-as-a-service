@@ -23,7 +23,7 @@
       {% endif %}
       <h1 class="govuk-heading-l">Which VAT rate are you charged?</h1>
 
-      <form class="form" action="/sprint-5/mat-vat-contact?vatd=inProgress" method="post">
+      <form class="form" action="/sprint-5/mat-vat-contact" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -73,7 +73,7 @@
           },
           items: [
             {
-              value: "20%~/sprint-5/tasklist?vatd=complete",
+              value: "20%~/sprint-5/mat-billing-information?vatd=complete",
               text: "20%",
               conditional: {
                 html: 20vatHtml
@@ -91,15 +91,13 @@
 
 
 
-        {{ govukButton({
-          text: "Save and continue"
-        }) }}
-
-        {{ govukButton({
-          text: "Save and go to tasks",
-          href: "/sprint-5/tasklist?vatd=inProgress",
-          classes: "govuk-button--secondary govuk-!-margin-left-1"
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save and continue"
           }) }}
+    
+          <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+        </div>
 
       </form>
 

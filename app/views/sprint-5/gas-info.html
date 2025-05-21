@@ -19,7 +19,7 @@
       <span class="govuk-caption-l">St Mary’s Primary School: Gas meters and usage</span>
       <!-- <h1 class="govuk-heading-l">Gas meters and usage</h1> -->
 
-      <form class="form" action="/sprint-5/gas-meter-info?gmu1=inProgress" method="post">
+      <form class="form" action="/sprint-5/gas-meter-info" method="post">
 
 {{ govukRadios({
   classes: "govuk-radios",
@@ -48,16 +48,14 @@
 }) }}
 
 
-{{ govukButton({
-  text: "Save and continue",
-  href: ""
-}) }}
 
-{{ govukButton({
-  text: "Save and go to tasks",
-  href: "/sprint-5/tasklist",
-  classes: "govuk-button--secondary govuk-!-margin-left-1"
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Save and continue"
   }) }}
+
+  <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+</div>
 
       </form>
 

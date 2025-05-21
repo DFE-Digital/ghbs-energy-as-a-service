@@ -143,15 +143,15 @@
           </fieldset>
         </div>
 
+        <div class="govuk-button-group">
         {{ govukButton({
           text: "Save and continue"
         }) }}
 
-        {{ govukButton({
-          text: "Save and go to tasks",
-          href: "/sprint-6/tasklist?ccd=inProgress",
-          classes: "govuk-button--secondary govuk-!-margin-left-1"
-          }) }}
+        <a class="govuk-link" href="/sprint-6/tasklist?ccd=inProgress">Discard and go to task list</a>
+      </div>
+
+      
 
       </form>
 

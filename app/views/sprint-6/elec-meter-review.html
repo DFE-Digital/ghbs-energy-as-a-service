@@ -54,17 +54,21 @@
 
   <br>
 
-        {% if data['meterType'] == "Single meter" %}
-        {{ govukButton({
-          text: "Save and continue",
-          href: "mat-site-contact"
-        }) }}
-        {% else %}
-        {{ govukButton({
-          text: "Save and continue",
-          href: "elec-info-billing"
-        }) }}
-        {% endif %}
+
+        
+        <div class="govuk-button-group">
+          {% if data['meterType'] == "Single meter" %}
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+          {% else %}
+          {{ govukButton({
+            text: "Save and continue",
+            href: "elec-info-billing"
+          }) }}  
+          {% endif %}
+          <a class="govuk-link" href="/sprint-6/tasklist">Discard and go to task list</a>
+        </div>
 
       </form>
 
