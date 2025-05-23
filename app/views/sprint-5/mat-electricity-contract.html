@@ -27,6 +27,8 @@
       <form class="form" action="/sprint-5/tasklist?ecd=complete" method="post">
       {% elif ((data['single-energyType'] == "electricity") and (data['tasklist'] == "on")) %}
       <form class="form" action="/sprint-5/tasklist?ecd=complete" method="post">
+      {% elif data['check-answers'] == "on" %}
+      <form class="form" action="/sprint-5/check-answers-single-school?ccd=complete" method="post">
       {% elif data['single-energyType'] == "electricity" %}
       <form class="form" action="/sprint-5/elec-info?ecd=complete" method="post">
       {% elif data['single-energyType'] == "gasandelec" %}
@@ -140,7 +142,10 @@
             text: "Save and continue"
           }) }}
   
+          {% if data['check-answers'] == "on" %}
+          {% else %}
           <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+          {% endif %}
         </div>
 
       </form>

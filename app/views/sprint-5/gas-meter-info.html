@@ -21,6 +21,8 @@
 
       {% if ((data['meterType'] == "Single meter") and (data['tasklist'] == "on")) %}
       <form class="form" action="/sprint-5/tasklist?gmu1=complete" method="post">
+      {% elif ((data['meterType'] == "Single meter") and (data['check-answers'] == "on")) %}
+      <form class="form" action="/sprint-5/check-answers-single-school" method="post">
       {% elif data['meterType'] == "Multi meter" %}
       <form class="form" action="/sprint-5/gas-meter-review?gmu1=complete" method="post">
       {% else %}
@@ -69,7 +71,10 @@
             text: "Save and continue"
           }) }}
   
+          {% if data['check-answers'] == "on" %}
+          {% else %}
           <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+          {% endif %}
         </div>
 
       </form>

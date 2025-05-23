@@ -32,7 +32,7 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract information</span></a>
+            <a class="govuk-link" href="/sprint-5/mat-gas-contract?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> gas contract information</span></a>
           </li>
         </ul>
       </div>
@@ -65,7 +65,7 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            <a class="govuk-link" href="/sprint-5/mat-electricity-contract?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
           </li>
         </ul>
       </div>
@@ -102,7 +102,7 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract information</span></a>
+            <a class="govuk-link" href="/sprint-5/mat-gas-contract?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> gas contract information</span></a>
           </li>
         </ul>
       </div>
@@ -137,7 +137,7 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            <a class="govuk-link" href="/sprint-5/mat-electricity-contract?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
           </li>
         </ul>
       </div>
@@ -173,7 +173,11 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% if data['meterType'] == "Single meter" %}
+            <a class="govuk-link" href="/sprint-5/gas-info?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% else %}
+            <a class="govuk-link" href="/sprint-5/gas-meter-review?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% endif %}
           </li>
         </ul>
       </div>
@@ -268,7 +272,11 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% if data['emeterType'] == "Single" %}
+            <a class="govuk-link" href="/sprint-5/elec-info?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% else %}
+            <a class="govuk-link" href="/sprint-5/elec-meter-review?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% endif %}
           </li>
         </ul>
       </div>
@@ -511,7 +519,11 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas meter information</span></a>
+            {% if data['meterType'] == "Single meter" %}
+            <a class="govuk-link" href="/sprint-5/gas-info?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% else %}
+            <a class="govuk-link" href="/sprint-5/gas-meter-review?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% endif %}
           </li>
         </ul>
       </div>
@@ -604,7 +616,11 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% if data['emeterType'] == "Single" %}
+            <a class="govuk-link" href="/sprint-5/elec-info?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% else %}
+            <a class="govuk-link" href="/sprint-5/elec-meter-review?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% endif %}
           </li>
         </ul>
       </div>
@@ -842,7 +858,7 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> site contact information</span></a>
+            <a class="govuk-link" href="/sprint-5/mat-site-contact?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> site contact information</span></a>
           </li>
         </ul>
       </div>
@@ -891,7 +907,7 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> vat declaration</span></a>
+            <a class="govuk-link" href="/sprint-5/mat-vat-declaration?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> vat declaration</span></a>
           </li>
         </ul>
       </div>
@@ -1005,7 +1021,7 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> VAT information</span></a>
+            <a class="govuk-link" href="/sprint-5/mat-vat-declaration?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> VAT information</span></a>
           </li>
         </ul>
       </div>
@@ -1099,7 +1115,7 @@ href: "javascript:window.history.back()"
         </h3>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action">
-            <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> billing preferences</span></a>
+            <a class="govuk-link" href="/sprint-5/mat-billing-information?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> billing preferences</span></a>
           </li>
         </ul>
       </div>

@@ -20,6 +20,8 @@
 
       {% if (data['tasklist'] == "on") %}
       <form class="form" action="/sprint-5/tasklist?scontact=complete" method="post">
+      {% elif (data['check-answers'] == "on") %}
+      <form class="form" action="/sprint-5/check-answers-single-school" method="post">
       {% else %}
       <form class="form" action="/sprint-5/mat-vat-declaration?scontact=complete" method="post">
       {% endif %}
@@ -59,7 +61,10 @@
             text: "Save and continue"
           }) }}
     
+          {% if data['check-answers'] == "on" %}
+          {% else %}
           <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+          {% endif %}
         </div>
 
       </form>

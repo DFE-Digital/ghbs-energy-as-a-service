@@ -22,9 +22,11 @@
       <span class="govuk-caption-l">About your schools: Billing preferences</span>
       {% endif %}
  
-
+      {% if data['check-answers'] == "on" %}
+      <form class="form" action="/sprint-5/check-answers-single-school" method="post">
+      {% else %}
       <form class="form" action="/sprint-5/tasklist?bp=complete" method="post">
-
+      {% endif %}
 
         {{ govukRadios({
           id: "bill-address",
@@ -57,7 +59,10 @@
             text: "Save and continue"
           }) }}
   
+          {% if data['check-answers'] == "on" %}
+          {% else %}
           <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+          {% endif %}
         </div>
 
       </form>

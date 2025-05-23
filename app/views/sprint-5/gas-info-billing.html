@@ -21,42 +21,47 @@
 
       {% if ((data['meterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
       <form class="form" action="/sprint-5/tasklist?emu1=complete" method="post">
+      {% elif ((data['meterType'] == "Multi meter") and (data['check-answers'] == "on")) %}
+      <form class="form" action="/sprint-5/check-answers-single-school?emu1=complete" method="post">
       {% elif data['single-energyType'] == "gas" %}
       <form class="form" action="/sprint-5/mat-site-contact?scontact=inProgress" method="post">
       {% else %}
       <form class="form" action="/sprint-5/elec-info" method="post">
       {% endif %}
 
-{{ govukRadios({
-  classes: "govuk-radios",
-  name: "billType",
-  fieldset: {
-    legend: {
-      text: "Do you want your MPRNs consolidated on one bill?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend"
-    }
-  },
-  items: [
-    {
-      value: "Consolidated on one bill",
-      text: "Yes"
-    },
-    {
-      value: "Separate bill for each MPRN",
-      text: "No, I want a separate bill for each MPRN"
-    }
-  ]
-}) }}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "billType",
+          fieldset: {
+            legend: {
+              text: "Do you want your MPRNs consolidated on one bill?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend"
+            }
+          },
+          items: [
+            {
+              value: "Consolidated on one bill",
+              text: "Yes"
+            },
+            {
+              value: "Separate bill for each MPRN",
+              text: "No, I want a separate bill for each MPRN"
+            }
+          ]
+        }) }}
 
 
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Save and continue"
-  }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
 
-  <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
-</div>
+          {% if data['check-answers'] == "on" %}
+          {% else %}
+          <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+          {% endif %}
+        </div>
 
       </form>
 
