@@ -61,6 +61,38 @@
 
         {% endset -%}
 
+        {% if (data['tasklist'] == "on") %}
+
+        {{ govukRadios({
+          name: "vatType",
+          fieldset: {
+            legend: {
+              text: ""
+            }
+          },
+          hint: {
+            text: "If you're unsure, check your bills. Or, if relevant, ask your local authority or chief financial officer."
+          },
+          items: [
+            {
+              value: "20%~/sprint-5/tasklist?vatd=complete",
+              text: "20%",
+              conditional: {
+                html: 20vatHtml
+              }
+            },
+            {
+              value: "5%",
+              text: "5%",
+              conditional: {
+                html: textHtml
+              }
+            }
+          ]
+        }) }}
+
+        {% else %}
+
         {{ govukRadios({
           name: "vatType",
           fieldset: {
@@ -89,6 +121,7 @@
           ]
         }) }}
 
+        {% endif %}
 
 
         <div class="govuk-button-group">

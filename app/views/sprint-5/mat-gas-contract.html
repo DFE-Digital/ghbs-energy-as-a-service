@@ -26,6 +26,8 @@
 
       {% if data['single-energyType'] == "gas" %}
       <form class="form" action="/sprint-5/gas-info?ccd=complete" method="post">
+      {% elif data['tasklist'] == "on" %}
+      <form class="form" action="/sprint-5/tasklist?ccd=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-5/mat-electricity-contract?ccd=complete" method="post">
       {% endif %}

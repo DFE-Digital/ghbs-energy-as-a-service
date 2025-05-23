@@ -16,17 +16,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <span class="govuk-caption-l">All schools</span>
+      <span class="govuk-caption-l">About your schools</span>
       <!-- <h1 class="govuk-heading-xl">How are your gas and electricity contracts set up?</h1> -->
 
-      {% if ((data['gcontractSetup'] == "combinedcontract") and (data['econtractSetup'] == "mixcontract")) %}
-      <form class="form" action="/sprint-6/mat-gas-contract" method="post">
-      {% elif ((data['gcontractSetup'] == "mixcontract") and (data['econtractSetup'] == "mixcontract")) %}
-      <form class="form" action="/sprint-6/mat-vat-status" method="post">
-      {% elif data['gcontractSetup'] == "combinedcontract" %}
+      {% if data['gcontractSetup'] == "combinedcontract" %}
       <form class="form" action="/sprint-6/mat-gas-contract" method="post">
       {% else %}
-      <form class="form" action="/sprint-6/mat-electricity-contract" method="post">
+      <form class="form" action="/sprint-6/mat-vat-status" method="post">
       {% endif %}
 
         <div class="govuk-form-group">
@@ -64,15 +60,13 @@
         </div>
 
 
-        {{ govukButton({
-          text: "Save and continue"
-        }) }}
-
-        {{ govukButton({
-          text: "Save and go to tasks",
-          href: "/sprint-6/tasklist",
-          classes: "govuk-button--secondary govuk-!-margin-left-1"
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save and continue"
           }) }}
+    
+          <a class="govuk-link" href="/sprint-6/tasklist">Discard and go to task list</a>
+        </div>
 
       </form>
 

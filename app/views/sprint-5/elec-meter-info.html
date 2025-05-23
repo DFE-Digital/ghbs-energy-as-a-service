@@ -19,7 +19,9 @@
       <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
       <h1 class="govuk-heading-l">Electricity meter details</h1>
 
-      {% if data['emeterType'] == "Single" %}
+      {% if ((data['emeterType'] == "Single") and (data['tasklist'] == "on")) %}
+      <form class="form" action="/sprint-5/tasklist?emu1=complete" method="post">
+      {% elif data['emeterType'] == "Single" %}
       <form class="form" action="/sprint-5/mat-site-contact?emu1=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-5/elec-meter-review?emu1=complete" method="post">

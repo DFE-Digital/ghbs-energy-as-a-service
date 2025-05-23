@@ -19,9 +19,8 @@
       <span class="govuk-caption-l">St Mary's Primary School: Gas meters and usage</span>
       <h1 class="govuk-heading-l">Gas meter details</h1>
 
-
-      {% if ((data['meterType'] == "Single meter") and (data['single-energyType'] == "gas")) %}
-      <form class="form" action="/sprint-5/mat-site-contact?vatd=complete" method="post">
+      {% if ((data['meterType'] == "Single meter") and (data['tasklist'] == "on")) %}
+      <form class="form" action="/sprint-5/tasklist?gmu1=complete" method="post">
       {% elif data['meterType'] == "Multi meter" %}
       <form class="form" action="/sprint-5/gas-meter-review?gmu1=complete" method="post">
       {% else %}

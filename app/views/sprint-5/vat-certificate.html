@@ -25,6 +25,8 @@
 
       {% if data['journeyType'] == "mats" %}
       <form class="form" action="/sprint-5/mat-billing-setup?vatd=complete" method="post">
+      {% elif (data['tasklist'] == "on") %}
+      <form class="form" action="/sprint-5/tasklist?vatd=complete" method="post">
       {% else %}
       <form class="form" action="/sprint-5/mat-billing-information?vatd=complete" method="post">
       {% endif %}
