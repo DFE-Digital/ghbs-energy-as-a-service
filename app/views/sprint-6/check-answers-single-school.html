@@ -1,7 +1,7 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-no-help-form.html" %}
 
 {% block pageTitle %}
-Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,21 +27,56 @@ href: "javascript:window.history.back()"
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Electricity contract
-        </h2>
+        <h3 class="govuk-summary-card__title">
+          Current gas supplier
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/sprint-5/mat-gas-contract?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> gas contract information</span></a>
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Current electricity supplier
+              Who currently supplies your gas?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['g-supplier'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              When does your contract end?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['contract-end-day'] }}/{{ data['contract-end-month'] }}/{{ data['contract-end-year'] }}
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">
+          Current electricity supplier
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/sprint-5/mat-electricity-contract?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who currently supplies your electricity?
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['e-supplier'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> e supplier</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -51,68 +86,34 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['econtract-end-day'] }}/{{ data['econtract-end-month'] }}/{{ data['econtract-end-year'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> elec contract end
-                  date</span></a>
-            </dd>
           </div>
         </dl>
       </div>
     </div>
     
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Gas contract
-        </h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Current gas supplier
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['g-supplier'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">g supplier</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              When does your contract end?
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['contract-end-day'] }}/{{ data['contract-end-month'] }}/{{ data['contract-end-year'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
+  
 
     {% elif data['single-energyType'] == "gas" %}
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Gas contract
-        </h2>
+        <h3 class="govuk-summary-card__title">
+          Current gas supplier
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/sprint-5/mat-gas-contract?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> gas contract information</span></a>
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Current gas supplier
+              Who currently supplies your gas?
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['g-supplier'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">g supplier</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -121,9 +122,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['contract-end-day'] }}/{{ data['contract-end-month'] }}/{{ data['contract-end-year'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
             </dd>
           </div>
         </dl>
@@ -134,21 +132,23 @@ href: "javascript:window.history.back()"
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Electricity contract
-        </h2>
+        <h3 class="govuk-summary-card__title">
+          Current electricity supplier
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/sprint-5/mat-electricity-contract?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Current electricity supplier
+              Who currently supplies your electricity?
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['e-supplier'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> e supplier</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -157,10 +157,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['econtract-end-day'] }}/{{ data['econtract-end-month'] }}/{{ data['econtract-end-year'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> elec contract end
-                  date</span></a>
             </dd>
           </div>
         </dl>
@@ -172,9 +168,18 @@ href: "javascript:window.history.back()"
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Gas information
-        </h2>
+        <h3 class="govuk-summary-card__title">
+          Gas meters and usage
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            {% if data['meterType'] == "Single meter" %}
+            <a class="govuk-link" href="/sprint-5/gas-info?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% else %}
+            <a class="govuk-link" href="/sprint-5/gas-meter-review?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% endif %}
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -185,9 +190,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['meterType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -196,9 +198,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['mprn'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -206,9 +205,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['kwh'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
 
@@ -220,9 +216,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['mprn-1'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -230,9 +223,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['kwh-1'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
             </dd>
           </div>
           {% else %}
@@ -246,9 +236,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['mprn-2'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -256,9 +243,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['kwh-2'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
           {% else %}
@@ -273,9 +257,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['billType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
           {% endif %}
 
@@ -286,9 +267,18 @@ href: "javascript:window.history.back()"
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Electricity information
-        </h2>
+        <h3 class="govuk-summary-card__title">
+          Electricity meters and usage
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            {% if data['emeterType'] == "Single" %}
+            <a class="govuk-link" href="/sprint-5/elec-info?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% else %}
+            <a class="govuk-link" href="/sprint-5/elec-meter-review?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% endif %}
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -299,9 +289,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['emeterType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -309,9 +296,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['mpan'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -321,19 +305,54 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['halfHour'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
+
+          {% if data['halfHour'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               What is the supply capacity?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['ekwh'] }}
+              {{ data['kva'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data aggregator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataAgg'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data collector?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataCollector'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the meter operator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['meterOp'] }}
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated annual electricity usage
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh'] }}
             </dd>
           </div>
 
@@ -345,9 +364,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['mpan-1'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -356,19 +372,54 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['halfHour-3'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
+
+          {% if data['halfHour-3'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               What is the supply capacity?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['ekwh-1'] }}
+              {{ data['kva'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data aggregator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataAgg'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data collector?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataCollector'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the meter operator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['meterOp'] }}
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated annual electricity usage
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh-2'] }}
             </dd>
           </div>
           {% else %}
@@ -380,10 +431,7 @@ href: "javascript:window.history.back()"
               MPAN 3
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['mpan-2'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
+              {{ data['mpan-3'] }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -391,21 +439,56 @@ href: "javascript:window.history.back()"
               Is this a half-hourly MPAN?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['halfHour-4'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+              {{ data['halfHour5'] }}
             </dd>
           </div>
+
+          {% if data['halfHour5'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               What is the supply capacity?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['ekwh-2'] }}
+              {{ data['kva'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data aggregator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataAgg'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data collector?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataCollector'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the meter operator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['meterOp'] }}
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated annual electricity usage
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh-3'] }}
             </dd>
           </div>
           {% else %}
@@ -420,9 +503,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['ebillType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
           {% endif %}
 
@@ -434,9 +514,18 @@ href: "javascript:window.history.back()"
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Gas information
-        </h2>
+        <h3 class="govuk-summary-card__title">
+          Gas meters and usage
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            {% if data['meterType'] == "Single meter" %}
+            <a class="govuk-link" href="/sprint-5/gas-info?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% else %}
+            <a class="govuk-link" href="/sprint-5/gas-meter-review?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity contract information</span></a>
+            {% endif %}
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -447,9 +536,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['meterType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -457,9 +543,7 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['mprn'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+              
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -468,9 +552,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['kwh'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
 
@@ -482,9 +563,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['mprn-1'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -492,9 +570,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['kwh-1'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
           {% else %}
@@ -508,9 +583,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['mprn-2'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -518,9 +590,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['kwh-2'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
           {% else %}
@@ -533,9 +602,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['billType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
         </dl>
       </div>
@@ -545,9 +611,18 @@ href: "javascript:window.history.back()"
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Electricity information
-        </h2>
+        <h3 class="govuk-summary-card__title">
+          Electricity meters and usage
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            {% if data['emeterType'] == "Single" %}
+            <a class="govuk-link" href="/sprint-5/elec-info?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% else %}
+            <a class="govuk-link" href="/sprint-5/elec-meter-review?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> electricity meter information</span></a>
+            {% endif %}
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -558,9 +633,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['emeterType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -568,9 +640,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['mpan'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -580,19 +649,53 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['halfHour'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
+          {% if data['halfHour'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               What is the supply capacity?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['ekwh'] }}
+              {{ data['kva'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data aggregator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataAgg'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data collector?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataCollector'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the meter operator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['meterOp'] }}
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated annual electricity usage
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh'] }}
             </dd>
           </div>
 
@@ -604,9 +707,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['mpan-1'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -615,19 +715,54 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['halfHour-3'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
+
+          {% if data['halfHour-3'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               What is the supply capacity?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['ekwh-1'] }}
+              {{ data['kva'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data aggregator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataAgg'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data collector?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataCollector'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the meter operator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['meterOp'] }}
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated annual electricity usage
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh-1'] }}
             </dd>
           </div>
           {% else %}
@@ -641,9 +776,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['mpan-2'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn 1</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -652,19 +784,55 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['halfHour-4'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
+
+
+          {% if data['halfHour-4'] == "Yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               What is the supply capacity?
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['ekwh-2'] }}
+              {{ data['kva'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data aggregator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataAgg'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the data collector?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['dataCollector'] }}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Who is the meter operator?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['meterOp'] }}
+            </dd>
+          </div>
+
+          {% else %}
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Estimated annual electricity usage
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['ekwh-2'] }}
             </dd>
           </div>
           {% else %}
@@ -677,9 +845,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['ebillType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> mprn</span></a>
-            </dd>
           </div>
         </dl>
       </div>
@@ -688,9 +853,14 @@ href: "javascript:window.history.back()"
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
+        <h3 class="govuk-summary-card__title">
           Site contact details
-        </h2>
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/sprint-5/mat-site-contact?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> site contact information</span></a>
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -701,9 +871,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['scontact-firstname'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -711,9 +878,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['scontact-lastname'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -723,9 +887,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['scontact-email'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -734,9 +895,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['scontact-tel'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-            </dd>
           </div>
         </dl>
       </div>
@@ -744,9 +902,14 @@ href: "javascript:window.history.back()"
     
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
+        <h3 class="govuk-summary-card__title">
           VAT Declaration
-        </h2>
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/sprint-5/mat-vat-declaration?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> vat declaration</span></a>
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -759,9 +922,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['vatType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> VAT reg</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -769,9 +929,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['vat-num'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> VAT reg</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -781,26 +938,11 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['vat-reg'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> VAT reg</span></a>
-            </dd>
           </div>
-          {% else %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              VAT rate
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['vatType'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
-            </dd>
-          </div>
-          {% endif %}
+        
         
          
-
+          
           {% if data['VATcontact'] == "yes" %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -808,9 +950,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               Mr smith
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -820,9 +959,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               Pleckgate High School, Pleckgate Road, BB1 8QA
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -830,9 +966,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               012345 678 910
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
             </dd>
           </div>
           {% else %}
@@ -843,9 +976,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['vatname'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -853,9 +983,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['vattel'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -865,8 +992,16 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['invoiceByPaper'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
+          </div>
+          {% endif %}
+
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              VAT rate
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['vatType'] }}
             </dd>
           </div>
           {% endif %}
@@ -881,9 +1016,14 @@ href: "javascript:window.history.back()"
     {% if data['VATstatus'] == "no" %}
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
+        <h3 class="govuk-summary-card__title">
           VAT Declaration
-        </h2>
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/sprint-5/mat-vat-declaration?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> VAT information</span></a>
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -894,9 +1034,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['vatType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> gas contract end date</span></a>
-            </dd>
           </div>
           {% if data['vatType'] == "5%" %}
           <div class="govuk-summary-list__row">
@@ -905,9 +1042,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['vat-num'] }}%
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
             </dd>
           </div>
           {% else %}
@@ -921,9 +1055,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               Mr smith
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -932,9 +1063,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               Pleckgate High School, Pleckgate Road, BB1 8QA
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reduced rate</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -942,9 +1070,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               012345 678 910
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">reduced rate</span></a>
             </dd>
           </div>
           {% else %}
@@ -955,9 +1080,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['vatname'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">reduced rate</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -967,9 +1089,6 @@ href: "javascript:window.history.back()"
               {{ data['address-line-1'] }}, {{ data['address-line-2'] }}, {{ data['address-town'] }}, {{
               data['address-county'] }}, {{ data['address-postcode'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">reduced rate</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -977,9 +1096,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['vattel'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">reduced rate</span></a>
             </dd>
           </div>
           {% endif %}
@@ -994,9 +1110,14 @@ href: "javascript:window.history.back()"
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
+        <h3 class="govuk-summary-card__title">
           Billing preferences
-        </h2>
+        </h3>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action">
+            <a class="govuk-link" href="/sprint-5/mat-billing-information?check-answers=on&tasklist">Change<span class="govuk-visually-hidden"> billing preferences</span></a>
+          </li>
+        </ul>
       </div>
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
@@ -1008,9 +1129,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['paymentType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">payment type</span></a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -1018,9 +1136,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['paymentTerms'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">elec contract end date</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -1030,9 +1145,6 @@ href: "javascript:window.history.back()"
             <dd class="govuk-summary-list__value">
               {{ data['invoiceType'] }}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">invoice type</span></a>
-            </dd>
           </div>
           {% if data['invoiceType'] == "email" %}
           <div class="govuk-summary-list__row">
@@ -1041,9 +1153,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['invoiceByEmail'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">invoice email/span></span></a>
             </dd>
           </div>
           {% else %}
@@ -1056,9 +1165,6 @@ href: "javascript:window.history.back()"
             </dt>
             <dd class="govuk-summary-list__value">
               {{ data['billaddress'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">invoice email</span></a>
             </dd>
           </div>
         
@@ -1092,7 +1198,7 @@ href: "javascript:window.history.back()"
 
       {{ govukButton({
       text: "Continue",
-      href: "/sprint-6/authorisation"
+      href: "/sprint-5/authorisation"
       }) }}
 
     </form>

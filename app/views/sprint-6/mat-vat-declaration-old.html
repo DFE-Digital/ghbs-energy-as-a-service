@@ -1,7 +1,7 @@
-{% extends "layouts/main-no-help-form.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,7 +23,7 @@ Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
       {% endif %}
       <h1 class="govuk-heading-l">Which VAT rate are you charged?</h1>
 
-      <form class="form" action="/sprint-6/mat-vat-contact" method="post">
+      <form class="form" action="/sprint-6/mat-vat-contact?vatd=inProgress" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -61,8 +61,6 @@ Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
 
         {% endset -%}
 
-        {% if (data['tasklist'] == "on") %}
-
         {{ govukRadios({
           name: "vatType",
           fieldset: {
@@ -75,7 +73,7 @@ Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
           },
           items: [
             {
-              value: "20%~/sprint-6/tasklist?vatd=complete",
+              value: "20%",
               text: "20%",
               conditional: {
                 html: 20vatHtml
@@ -90,68 +88,6 @@ Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
             }
           ]
         }) }}
-
-        {% elif (data['check-answers'] == "on") %}
-
-        {{ govukRadios({
-          name: "vatType",
-          fieldset: {
-            legend: {
-              text: ""
-            }
-          },
-          hint: {
-            text: "If you're unsure, check your bills. Or, if relevant, ask your local authority or chief financial officer."
-          },
-          items: [
-            {
-              value: "20%~/sprint-6/check-answers-single-school",
-              text: "20%",
-              conditional: {
-                html: 20vatHtml
-              }
-            },
-            {
-              value: "5%",
-              text: "5%",
-              conditional: {
-                html: textHtml
-              }
-            }
-          ]
-        }) }}
-
-        {% else %}
-
-        {{ govukRadios({
-          name: "vatType",
-          fieldset: {
-            legend: {
-              text: ""
-            }
-          },
-          hint: {
-            text: "If you're unsure, check your bills. Or, if relevant, ask your local authority or chief financial officer."
-          },
-          items: [
-            {
-              value: "20%~/sprint-6/mat-billing-information?vatd=complete",
-              text: "20%",
-              conditional: {
-                html: 20vatHtml
-              }
-            },
-            {
-              value: "5%",
-              text: "5%",
-              conditional: {
-                html: textHtml
-              }
-            }
-          ]
-        }) }}
-
-        {% endif %}
 
 
         <div class="govuk-button-group">
@@ -159,10 +95,7 @@ Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
             text: "Save and continue"
           }) }}
     
-          {% if data['check-answers'] == "on" %}
-          {% else %}
           <a class="govuk-link" href="/sprint-6/tasklist">Discard and go to task list</a>
-          {% endif %}
         </div>
 
       </form>

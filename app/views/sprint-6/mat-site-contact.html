@@ -33,28 +33,28 @@
         <p>This is in case the supplier needs access to the site or meter equipment, or in case of emergency</p>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="scontact-firstname">
+          <label class="govuk-label govuk-label--s" for="scontact-firstname">
             First name
           </label>
           <input class="govuk-input govuk-input--width-20" id="scontact-firstname" name="scontact-firstname" type="text" value="{{data['scontact-firstname']}}">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="scontact-lastname">
+          <label class="govuk-label govuk-label--s" for="scontact-lastname">
             Last name (optional)
           </label>
           <input class="govuk-input govuk-input--width-20" id="scontact-lastname" name="scontact-lastname" type="text" value="{{data['scontact-lastname']}}">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="scontact-email">
+          <label class="govuk-label govuk-label--s" for="scontact-email">
             Email
           </label>
           <input class="govuk-input govuk-input--width-20" id="scontact-email" name="scontact-email" type="text" value="{{data['scontact-email']}}">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="scontact-tel">
+          <label class="govuk-label govuk-label--s" for="scontact-tel">
             Telephone
           </label>
           <input class="govuk-input govuk-input--width-20" id="scontact-tel" name="scontact-tel" type="text" value="{{data['scontact-tel']}}" >
@@ -65,7 +65,10 @@
             text: "Save and continue"
           }) }}
     
-          <a class="govuk-link" href="/sprint-6/tasklist">Discard and go to task list</a>
+          {% if data['check-answers'] == "on" %}
+          {% else %}
+          <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+          {% endif %}
         </div>
       </form>
 

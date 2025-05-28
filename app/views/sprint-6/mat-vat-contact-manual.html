@@ -27,13 +27,13 @@
 
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group">
-            <label class="govuk-label" for="vatname">
+            <label class="govuk-label govuk-label--s" for="vatname">
               Name
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="vatname" name="vatname" type="text" autocomplete="vatname" value="{{data['vatname']}}">
           </div>
           <div class="govuk-form-group">
-            <label class="govuk-label" for="vattel">
+            <label class="govuk-label govuk-label--s" for="vattel">
               Telephone number
             </label>
             <input class="govuk-input govuk-!-width-two-thirds" id="vattel" name="vattel" type="text" autocomplete="vattel" value="{{data['vattel']}}">
@@ -46,7 +46,8 @@
           type: "tel",
           fieldset: {
             legend: {
-              text: "Select an address"
+              text: "Select an address",
+              classes: "govuk-fieldset__legend--s"
             }
           },
           items: [
@@ -76,7 +77,10 @@
             text: "Save and continue"
           }) }}
     
-          <a class="govuk-link" href="/sprint-6/tasklist">Discard and go to task list</a>
+          {% if data['check-answers'] == "on" %}
+          {% else %}
+          <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+          {% endif %}
         </div>
 
       </form>
