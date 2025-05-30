@@ -19,7 +19,11 @@
       <span class="govuk-caption-l">St Mary's Primary School: Electricity meters and usage</span>
 
 
+      {% if ((data['emeterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
+      <form class="form" action="/sprint-6/tasklist?emu1=complete" method="post">
+      {% else %}
       <form class="form" action="/sprint-6/mat-site-contact?emu1=complete" method="post">
+      {% endif %}
 
       {{ govukRadios({
         classes: "govuk-radios",
