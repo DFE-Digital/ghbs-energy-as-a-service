@@ -24,6 +24,8 @@
       <form class="form" action="/sprint-6/mat-vat-status?gmu1=complete" method="post">
       {% elif ((data['meterType'] == "Single meter") and (data['tasklist'] == "on")) %}
       <form class="form" action="/sprint-6/tasklist?gmu1=complete" method="post">
+      {% elif ((data['meterType'] == "Single meter") and (data['check-answers'] == "on")) %}
+      <form class="form" action="/sprint-6/check-answers-mat?gmu1=complete" method="post">
       {% elif data['meterType'] == "Multi meter" %}
       <form class="form" action="/sprint-6/gas-meter-review?gmu1=complete" method="post">
       {% else %}
