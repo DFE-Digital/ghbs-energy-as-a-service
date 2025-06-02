@@ -21,6 +21,8 @@
 
       {% if ((data['emeterType'] == "Single") and (data['tasklist'] == "on")) %}
       <form class="form" action="/sprint-6/tasklist?emu1=complete" method="post">
+      {% elif ((data['emeterType'] == "Single") and (data['check-answers'] == "on")) %}
+      <form class="form" action="/sprint-6/check-answers-mat?emu1=complete" method="post">
       {% elif data['emeterType'] == "Single" %}
       <form class="form" action="/sprint-6/mat-site-contact?emu1=complete" method="post">
       {% else %}

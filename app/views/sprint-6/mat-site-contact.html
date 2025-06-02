@@ -22,6 +22,8 @@
       <form class="form" action="/sprint-6/mat-vat-declaration?scontact=complete" method="post">
       {% elif ((data['VATstatus'] == "no") and (data['billingPref'] == "no") and (data['tasklist'] == "on")) %}
       <form class="form" action="/sprint-6/tasklist?scontact=complete" method="post">
+        {% elif ((data['VATstatus'] == "no") and (data['billingPref'] == "no") and (data['check-answers'] == "on")) %}
+        <form class="form" action="/sprint-6/check-answers-mat?scontact=complete" method="post">
       {% elif ((data['VATstatus'] == "no") and (data['billingPref'] == "no")) %}
       <form class="form" action="/sprint-6/mat-vat-declaration?scontact=complete" method="post">
       {% elif data['tasklist'] == "on" %}
@@ -76,7 +78,7 @@
           <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
           {% endif %}
         </div>
-        
+
       </form>
 
     </div>

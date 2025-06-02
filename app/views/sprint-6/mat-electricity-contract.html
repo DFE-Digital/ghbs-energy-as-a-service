@@ -27,6 +27,10 @@
       <form class="form" action="/sprint-6/elec-info?ecd=complete" method="post">
       {% elif data['single-energyType'] == "gasandelec" %}
       <form class="form" action="/sprint-6/gas-info?ecd=complete" method="post">
+      {% elif ((data['mat-electype-1'] == "elec-school-1") and (data['tasklist'] == "on")) %}
+      <form class="form" action="/sprint-6/tasklist?ecd=complete" method="post">
+      {% elif ((data['mat-electype-1'] == "elec-school-1") and (data['check-answers'] == "on")) %}
+      <form class="form" action="/sprint-6/check-answers-mat?ecd=complete" method="post">
       {% elif ((data['mat-gastype-1'] == "gas-school-1") and (data['mat-electype-1'] == "elec-school-1") and (data['tasklist'] == "on")) %}
       <form class="form" action="/sprint-6/tasklist?ecd=complete" method="post">
       {% elif ((data['mat-gastype-1'] == "gas-school-1") and (data['mat-electype-1'] == "elec-school-1") and (data['check-answers'] == "on")) %}
