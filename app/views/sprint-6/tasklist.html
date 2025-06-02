@@ -228,7 +228,11 @@
             {% if data['mat-gastype-1'] == "gas-school-1" %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
+                {% if data['meterType'] == "Multi meter" %}
+                <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% else %}
                 <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% endif %}
                   Gas meters and usage
                 </a>
               </div>
@@ -259,7 +263,11 @@
                 {% if data['mat-electype-1'] == "elec-school-1" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
+                    {% if data['emeterType'] == "Multi meter" %}
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    {% else %}
                     <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    {% endif %}
                       Electricity meters and usage
                     </a>
                   </div>

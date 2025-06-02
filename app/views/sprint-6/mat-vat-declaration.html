@@ -105,7 +105,7 @@ Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
           },
           items: [
             {
-              value: "20%~/sprint-6/check-answers-single-school",
+              value: "20%~/sprint-6/check-answers-mat",
               text: "20%",
               conditional: {
                 html: 20vatHtml
@@ -121,35 +121,6 @@ Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
           ]
         }) }}
 
-        {% elif (data['journeyType'] == "mats") %}
-
-        {{ govukRadios({
-          name: "vatType",
-          fieldset: {
-            legend: {
-              text: ""
-            }
-          },
-          hint: {
-            text: "If you're unsure, check your bills. Or, if relevant, ask your local authority or chief financial officer."
-          },
-          items: [
-            {
-              value: "20%~/sprint-6/mat-billing-setup?vatd=complete",
-              text: "20%",
-              conditional: {
-                html: 20vatHtml
-              }
-            },
-            {
-              value: "5%",
-              text: "5%",
-              conditional: {
-                html: textHtml
-              }
-            }
-          ]
-        }) }}
 
 
         {% else %}
@@ -166,7 +137,7 @@ Which VAT rate are you charged? – {{ serviceName }} – GOV.UK Prototype Kit
           },
           items: [
             {
-              value: "20%~/sprint-6/mat-billing-information?vatd=complete",
+              value: "20%~/sprint-6/mat-billing-setup?vatd=complete",
               text: "20%",
               conditional: {
                 html: 20vatHtml

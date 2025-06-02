@@ -20,9 +20,9 @@ Do you want your MPRNs consolidated on one bill? – {{ serviceName }} – GOV.U
       <h1 class="govuk-heading-l">Gas meters and usage</h1>
 
       {% if ((data['meterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
-      <form class="form" action="/sprint-5/tasklist?emu1=complete" method="post">
+      <form class="form" action="/sprint-5/tasklist?gmu1=complete" method="post">
       {% elif ((data['meterType'] == "Multi meter") and (data['check-answers'] == "on")) %}
-      <form class="form" action="/sprint-5/check-answers-single-school?emu1=complete" method="post">
+      <form class="form" action="/sprint-5/check-answers-single-school?gmu1=complete" method="post">
       {% elif data['single-energyType'] == "gas" %}
       <form class="form" action="/sprint-5/mat-site-contact?scontact=inProgress" method="post">
       {% else %}
