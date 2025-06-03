@@ -34,6 +34,8 @@
       <form class="form" action="/sprint-6/mat-existing-contracts-electric?ccd=complete" method="post">
       {% elif ((data['mat-gastype-1'] == "gas-school-1") and (data['check-answers'] == "on"))  %}
       <form class="form" action="/sprint-6/check-answers-mat?ccd=complete" method="post">
+      {% elif ((data['mat-gastype-1'] == "gas-school-1") and (data['tasklist'] == "on"))  %}
+      <form class="form" action="/sprint-6/tasklist?ccd=complete" method="post">
       {% elif data['mat-gastype-1'] == "gas-school-1" %}
       <form class="form" action="/sprint-6/mat-vat-status?ccd=complete" method="post">
       {% elif data['tasklist'] == "on" %}
