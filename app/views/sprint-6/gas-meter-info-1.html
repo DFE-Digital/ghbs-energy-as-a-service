@@ -16,7 +16,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-l">St Mary's Primary School: Gas meters and usage</span>
+      {% if data['journeyType'] == "mats" %}
+      <span class="govuk-caption-l">Bowland High: Gas meters and usage</span>
+      {% else %}
+      <span class="govuk-caption-l">St Mary’s Primary School: Gas meters and usage</span>
+      {% endif %}
       <h1 class="govuk-heading-l">Gas meter details</h1>
 
       <form class="form" action="/sprint-6/gas-meter-review-1?addmeter1=1" method="post">

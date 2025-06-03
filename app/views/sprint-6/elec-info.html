@@ -16,7 +16,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% if data['journeyType'] == "mats" %}
+      <span class="govuk-caption-l">Bowland High: Electricity meters and usage</span>
+      {% else %}
       <span class="govuk-caption-l">St Mary’s Primary School: Electricity meters and usage</span>
+      {% endif %}
       <!-- <h1 class="govuk-heading-l">Electricity meters and usage</h1> -->
 
       <form class="form" action="/sprint-6/elec-meter-info?emu1=inProgress" method="post">
