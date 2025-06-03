@@ -40,12 +40,8 @@
       <form class="form" action="/sprint-6/mat-billing-setup?vatd=complete" method="post">
       {% elif data['econtractSetup'] == "combinedcontract" %}
       <form class="form" action="/sprint-6/mat-billing-setup?vatd=complete" method="post">
-      {% elif (data['tasklist'] == "on") %}
-      <form class="form" action="/sprint-5/tasklist?vatd=complete" method="post">
-      {% elif (data['check-answers'] == "on") %}
-      <form class="form" action="/sprint-5/check-answers-single-school" method="post">
       {% else %}
-      <form class="form" action="/sprint-6/mat-billing-information?vatd=complete" method="post">
+      <form class="form" action="/sprint-6/mat-billing-setup?vatd=complete" method="post">
       {% endif %}
 
         <p>This information will be used to generate a VAT certificate which will be shared with the new suppliers.</p>
