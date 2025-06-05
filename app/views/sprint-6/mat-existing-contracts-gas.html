@@ -40,7 +40,22 @@
               {% endif %}
             </ul>
 
-            {% if ((data['mat-electype-1'] == "elec-school-1") and (data['mat-gastype-1'] == "gas-school-1")) %}
+            {% if ((data['mat-electype-1'] == "elec-school-1") and (data['mat-gastype-1'] == "gas-school-1") and (data['tasklist'] == "on")) %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="gcontractSetup" name="gcontractSetup" type="radio" value="combinedcontract~/sprint-6/mat-gas-contract">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contractSetup-2" name="gcontractSetup" type="radio" value="mixcontract~/sprint-6/tasklist?ccd">
+                <label class="govuk-label govuk-radios__label" for="contractSetup-3">
+                  No
+                </label>
+              </div>
+            </div>
+            {% elif ((data['mat-electype-1'] == "elec-school-1") and (data['mat-gastype-1'] == "gas-school-1")) %}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="gcontractSetup" name="gcontractSetup" type="radio" value="combinedcontract~/sprint-6/mat-gas-contract">
@@ -50,6 +65,21 @@
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="contractSetup-2" name="gcontractSetup" type="radio" value="mixcontract~/sprint-6/mat-existing-contracts-electric">
+                <label class="govuk-label govuk-radios__label" for="contractSetup-3">
+                  No
+                </label>
+              </div>
+            </div>
+            {% elif ((data['mat-gastype-1'] == "gas-school-1") and (data['tasklist'] == "on")) %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="gcontractSetup" name="gcontractSetup" type="radio" value="combinedcontract~/sprint-6/mat-gas-contract">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contractSetup-2" name="gcontractSetup" type="radio" value="mixcontract~/sprint-6/tasklist?ccd">
                 <label class="govuk-label govuk-radios__label" for="contractSetup-3">
                   No
                 </label>

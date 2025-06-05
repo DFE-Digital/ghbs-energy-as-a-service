@@ -41,6 +41,23 @@
               {% else %}
               {% endif %}
             </ul>
+
+            {% if  data['tasklist'] == "on" %}
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="econtractSetup" name="econtractSetup" type="radio" value="combinedcontract~/sprint-6/mat-electricity-contract">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="econtractSetup-1" name="econtractSetup" type="radio" value="mixcontract~/sprint-6/tasklist?ecd">
+                <label class="govuk-label govuk-radios__label" for="contractSetup-3">
+                  No
+                </label>
+              </div>
+            </div>
+            {% else %}
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="econtractSetup" name="econtractSetup" type="radio" value="combinedcontract~/sprint-6/mat-electricity-contract">
@@ -55,6 +72,7 @@
                 </label>
               </div>
             </div>
+            {% endif %}
           </fieldset>
         </div>
 
