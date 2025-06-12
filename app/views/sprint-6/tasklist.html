@@ -30,6 +30,12 @@
       <form class="form" action="/sprint-6/check-answers-single-school" method="post">
       {% endif %}
 
+      <div class="govuk-inset-text govuk-!-margin-bottom-7">
+				<ul class="govuk-list">
+					<li><a class="govuk-link govuk-link--no-visited-state" href="">Remove a school</a></li>
+				</ul>
+			</div>
+
               {% if data['journeyType'] == "mats" %}
 
               {% if ((data['gcontractSetup'] == "mixcontract") and (data['econtractSetup'] == "mixcontract") and (data['VATstatus'] == "no") and (data['billingPref'] == "no")) %}
@@ -166,8 +172,7 @@
               <!-- // School 1 -->
 
               {% if ((data['mat-gastype-1'] == "gas-school-1") or (data['mat-electype-1'] == "elec-school-1")) %}
-              <h2 class="govuk-heading-m govuk-!-margin-top-5">Bowland High</h2>
-
+              <h2 class="govuk-heading-m govuk-!-margin-top-5">Bowland High<p>Clarence Street, DE14 3LG</p></h2>
               <ul class="govuk-task-list">
               {% if data['gcontractSetup'] == "mixcontract" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -397,7 +402,7 @@
               <!-- // School 2 -->
 
               {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
-              <h2 class="govuk-heading-m govuk-!-margin-top-5">Downend Highschool</h2>
+              <h2 class="govuk-heading-m govuk-!-margin-top-5">Downend Highschool<p>Wawne Road, Bransholme, HU7 4WR</p></h2>
 
               <ul class="govuk-task-list">
               {% if data['gcontractSetup'] == "mixcontract" %}
@@ -988,6 +993,10 @@
         {{ govukButton({
           text: "Continue"
         }) }}
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">Save and complete later</a>
+        </p>
 
       </form>
      

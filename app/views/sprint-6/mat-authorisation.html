@@ -22,7 +22,8 @@
       <span class="govuk-caption-l">St Mary's Primary School</span>
       {% endif %}
 
-      <h1 class="govuk-heading-l">Are you authorised to switch energy suppliers for these schools?</h1>
+      <h1 class="govuk-heading-l">Make sure you are authorised to switch energy suppliers for these schools</h1>
+      <p>Please seek appropriate authorisation to switch energy suppliers. There is no cooling off period once you’ve submitted this form</p>
       
       <!-- // Gas and elec -->
       {% if ((data['mat-electype-1'] == "elec-school-1") and (data['mat-gastype-1'] == "gas-school-1")) %}
@@ -49,11 +50,11 @@
         
         <ul class="govuk-list govuk-list--bullet">
           {% if ((data['mat-gastype-1'] == "gas-school-1") or (data['mat-electype-1'] == "elec-school-1")) %}
-          <li>Bowland High</li>
+          <li>Bowland High, Clarence Street, DE14 3LG</li>
           {% else %}
           {% endif %}
           {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
-          <li>Downend Highschool</li>
+          <li>Downend Highschool, Wawne Road, Bransholme, HU7 4WR</li>
           {% else %}
           {% endif %}
           {% if data['journeyType'] == "single-school" %}
@@ -64,14 +65,6 @@
           {% endif %}
         </ul>
       
-
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-visually-hidden">Warning</span>
-            Please seek appropriate authorisation to switch energy suppliers. There is no cooling off period once you’ve submitted this form.
-          </strong>
-        </div>
 
         {{ govukButton({
           text: "Continue"
