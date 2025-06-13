@@ -30,163 +30,149 @@
       <form class="form" action="/sprint-6/check-answers-single-school" method="post">
       {% endif %}
 
-
+      <div class="govuk-inset-text govuk-!-margin-bottom-7">
+				<ul class="govuk-list">
+					<li><a class="govuk-link govuk-link--no-visited-state" href="">Remove a school</a></li>
+				</ul>
+			</div>
 
               {% if data['journeyType'] == "mats" %}
 
-
+              {% if ((data['gcontractSetup'] == "mixcontract") and (data['econtractSetup'] == "mixcontract") and (data['VATstatus'] == "no") and (data['billingPref'] == "no")) %}
+              {% else %}
+              <h2 class="govuk-heading-m">All schools</h2>
+              {% endif %}
               <!-- // MATs -->
 
-              <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                        All schools
-                      </span>
-                    </h2>
+              <ul class="govuk-task-list">
+
+                {% if data['gcontractSetup'] == "mixcontract" %}
+                {% else %}
+                  <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                    <div class="govuk-task-list__name-and-hint">
+                      <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-existing-contracts-gas?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                      Current gas supplier
+                    </a>
                   </div>
-                  <div id="accordion-default-content-1" class="govuk-accordion__section-content">
-                    <ul class="govuk-task-list">
-                      {% if data['gcontractSetup'] != "mixcontract" %}
-                        <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                          <div class="govuk-task-list__name-and-hint">
-                            <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-existing-contracts-gas?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
-                            Current gas supplier
-                          </a>
-                        </div>
-                        {% if data['ccd'] == "inProgress" %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--blue">
-                            In progress
-                          </strong>
-                        </div>
-                        {% elif data['ccd'] == "complete" %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--green">
-                            Complete
-                          </strong>
-                        </div>
-                        {% else %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--grey">
-                            Not started
-                          </strong>
-                        </div>
-                        {% endif %}
-                      </li>
-                      {% endif %}
-
-                      {% if data['econtractSetup'] == "mixcontract" %}
-                      {% else %}
-                      <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                        <div class="govuk-task-list__name-and-hint">
-                          <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-existing-contracts-electric?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
-                            Current electricity supplier
-                        </a>
-                      </div>
-                      {% if data['ecd'] == "inProgress" %}
-                      <div class="govuk-task-list__status" id="school-details-1-status">
-                        <strong class="govuk-tag govuk-tag--blue">
-                          In progress
-                        </strong>
-                      </div>
-                      {% elif data['ecd'] == "complete" %}
-                      <div class="govuk-task-list__status" id="school-details-1-status">
-                        <strong class="govuk-tag govuk-tag--green">
-                          Complete
-                        </strong>
-                      </div>
-                      {% else %}
-                      <div class="govuk-task-list__status" id="school-details-1-status">
-                        <strong class="govuk-tag govuk-tag--grey">
-                          Not started
-                        </strong>
-                      </div>
-                      {% endif %}
-                    </li>
-                    {% endif %}
-
-                    {% if data['VATstatus'] == "no" %}
-                    {% else %}
-                      <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                        <div class="govuk-task-list__name-and-hint">
-                          <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-vat-status?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
-                            VAT declaration
-                          </a>
-                        </div>
-                        {% if data['vatd'] == "inProgress" %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--blue">
-                            In progress
-                          </strong>
-                        </div>
-                        {% elif data['vatd'] == "complete" %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--green">
-                            Complete
-                          </strong>
-                        </div>
-                        {% else %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--grey">
-                            Not started
-                          </strong>
-                        </div>
-                        {% endif %}
-                      </li>
-                    {% endif %}
-
-                      {% if data['billingPref'] == "no" %}
-                      {% else %}
-                      <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                        <div class="govuk-task-list__name-and-hint">
-                          <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-billing-setup?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
-                            Billing preferences
-                          </a>
-                        </div>
-                        {% if data['bp'] == "inProgress" %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--blue">
-                            In progress
-                          </strong>
-                        </div>
-                        {% elif data['bp'] == "complete" %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--green">
-                            Complete
-                          </strong>
-                        </div>
-                        {% else %}
-                        <div class="govuk-task-list__status" id="school-details-1-status">
-                          <strong class="govuk-tag govuk-tag--grey">
-                            Not started
-                          </strong>
-                        </div>
-                        {% endif %}
-                      </li>
-                      {% endif %}
-                    </ul>
+                  {% if data['ccd'] == "inProgress" %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--blue">
+                      In progress
+                    </strong>
                   </div>
+                  {% elif data['ccd'] == "complete" %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--green">
+                      Complete
+                    </strong>
+                  </div>
+                  {% else %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--grey">
+                      Not started
+                    </strong>
+                  </div>
+                  {% endif %}
+                </li>
+                {% endif %}
+
+                {% if data['econtractSetup'] == "mixcontract" %}
+                {% else %}
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-existing-contracts-electric?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                      Current electricity supplier
+                  </a>
                 </div>
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                        <span class="govuk-caption-m">Clarence Street, DE14 3LG</span>
-                        {% if ((data['mat-gastype-1'] == "gas-school-1") or (data['mat-electype-1'] == "elec-school-1")) %}
-                        Bowland High | <a class="govuk-link govuk-link--no-visited-state" href="">Remove</a>
-                        <strong class="govuk-tag govuk-tag--grey" style="float: right;">
-                          Not started
-                        </strong>
-                      </span>
-                    </h2>
+                {% if data['ecd'] == "inProgress" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">
+                    In progress
+                  </strong>
+                </div>
+                {% elif data['ecd'] == "complete" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--green">
+                    Complete
+                  </strong>
+                </div>
+                {% else %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--grey">
+                    Not started
+                  </strong>
+                </div>
+                {% endif %}
+              </li>
+              {% endif %}
+
+              {% if data['VATstatus'] == "no" %}
+              {% else %}
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-vat-status?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
+                      VAT declaration
+                    </a>
                   </div>
-                  <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+                  {% if data['vatd'] == "inProgress" %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--blue">
+                      In progress
+                    </strong>
+                  </div>
+                  {% elif data['vatd'] == "complete" %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--green">
+                      Complete
+                    </strong>
+                  </div>
+                  {% else %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--grey">
+                      Not started
+                    </strong>
+                  </div>
+                  {% endif %}
+                </li>
+              {% endif %}
+
+                {% if data['billingPref'] == "no" %}
+                {% else %}
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-billing-setup?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
+                      Billing preferences
+                    </a>
+                  </div>
+                  {% if data['bp'] == "inProgress" %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--blue">
+                      In progress
+                    </strong>
+                  </div>
+                  {% elif data['bp'] == "complete" %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--green">
+                      Complete
+                    </strong>
+                  </div>
+                  {% else %}
+                  <div class="govuk-task-list__status" id="school-details-1-status">
+                    <strong class="govuk-tag govuk-tag--grey">
+                      Not started
+                    </strong>
+                  </div>
+                  {% endif %}
+                </li>
+                {% endif %}
+              </ul>
+              
+            
 
               <!-- // School 1 -->
 
-
+              {% if ((data['mat-gastype-1'] == "gas-school-1") or (data['mat-electype-1'] == "elec-school-1")) %}
+              <h2 class="govuk-heading-m govuk-!-margin-top-5">Bowland High<p>Clarence Street, DE14 3LG</p></h2>
               <ul class="govuk-task-list">
               {% if data['gcontractSetup'] == "mixcontract" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -248,7 +234,7 @@
             {% else %}
             {% endif %}
 
-
+               
 
             {% if data['mat-gastype-1'] == "gas-school-1" %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -319,7 +305,7 @@
                 {% else %}
                 {% endif %}
 
-
+              
 
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
@@ -411,26 +397,12 @@
 
                 {% else %}
                 {% endif %}
-                  </div>
-                </div>
-
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-                        <span class="govuk-caption-m">Wawne Road, Bransholme, HU7 4WR</span>
-                        {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
-                        Downend Highschool | <a class="govuk-link govuk-link--no-visited-state" href="">Remove</a>
-                        <strong class="govuk-tag govuk-tag--grey" style="float: right;">
-                          Not started
-                        </strong>
-                      </span>
-                    </h2>
-                  </div>
-                  <div id="accordion-default-content-3" class="govuk-accordion__section-content">
-                       <!-- // School 2 -->
 
 
+              <!-- // School 2 -->
+
+              {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
+              <h2 class="govuk-heading-m govuk-!-margin-top-5">Downend Highschool<p>Wawne Road, Bransholme, HU7 4WR</p></h2>
 
               <ul class="govuk-task-list">
               {% if data['gcontractSetup'] == "mixcontract" %}
@@ -493,7 +465,7 @@
             {% else %}
             {% endif %}
 
-
+               
 
             {% if data['mat-gastype-2'] == "gas-school-2" %}
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -564,7 +536,7 @@
                 {% else %}
                 {% endif %}
 
-
+              
 
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
@@ -656,12 +628,6 @@
 
                 {% else %}
                 {% endif %}
-                  </div>
-                </div>
-              </div>
-
-
-
 
 
                 </ul>
@@ -671,7 +637,7 @@
         <!-- // Single school tasklist -->
 
         <h2 class="govuk-heading-m">St Mary's Primary School</h2>
-
+  
         <!-- // Gas and elec contracts -->
 
         <ul class="govuk-task-list">
@@ -703,7 +669,7 @@
             {% endif %}
           </li>
 
-
+        
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-electricity-contract?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
@@ -828,7 +794,7 @@
             </div>
             {% endif %}
           </li>
-
+          
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               {% if data['emeterType'] == "Single" %}
@@ -895,7 +861,7 @@
           </li>
           {% else %}
           {% endif %}
-
+  
           {% if data['single-energyType'] == "electricity" %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
@@ -1011,18 +977,18 @@
             {% endif %}
           </li>
 
+         
 
-
-
+         
         </ul>
+        
 
-
-
+  
 
 
         {% endif %}
 
-
+        
 
         {{ govukButton({
           text: "Continue"
@@ -1033,9 +999,6 @@
         </p>
 
       </form>
-
-
-
 
 
 
