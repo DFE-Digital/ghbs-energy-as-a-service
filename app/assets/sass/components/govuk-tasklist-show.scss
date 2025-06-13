@@ -2,6 +2,17 @@
   display: none;
 }
 
-.govuk-accordion__section-content {
-  padding: 0px !important;
+.govuk-accordion__section {
+  .govuk-accordion__section-button {
+    padding-top: govuk-spacing(6);
+  }
+  .govuk-accordion__section-content {
+    padding: 0 0 govuk-spacing(6) !important;
+  }
+  .govuk-task-list__item:last-of-type {
+    border-bottom: 0 none;
+  }
+  .govuk-task-list__item:first-child {
+    border-top: 0 none;
+  }
 }
