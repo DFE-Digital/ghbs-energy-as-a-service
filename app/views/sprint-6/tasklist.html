@@ -53,22 +53,37 @@
 
               <!-- // MATs -->
 
+     
               <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
                 <div class="govuk-accordion__section">
                   <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
+                      {% if ((data['gcontractSetup'] == "mixcontract") and (data['econtractSetup'] == "mixcontract") and (data['VATstatus'] == "no") and (data['billingPref'] == "no")) %}
+                      {% else %}
                       <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
                         All schools
+                        {% if ((data['ccd'] == "inProgress") or (data['ecd'] == "inProgress") or (data['vatd'] == "inProgress") or (data['bp'] == "inProgress")) %}
+                        <strong class="govuk-tag govuk-tag--blue" style="float: right;">
+                          In progress
+                        </strong>
+                        {% elif ((data['ccd'] == "complete") and (data['ecd'] == "complete") and (data['vatd'] == "complete") and (data['bp'] == "complete")) %}
+                        <strong class="govuk-tag govuk-tag--green" style="float: right;">
+                          Complete
+                        </strong>
+                        {% else %}
                         <strong class="govuk-tag govuk-tag--grey" style="float: right;">
                           Not started
                         </strong>
-                      </span>
-                      
+                        {% endif %}
+                      </span> 
                     </h2>
+                    {% endif %}
                   </div>
+                  
                   <div id="accordion-default-content-1" class="govuk-accordion__section-content">
                     <ul class="govuk-task-list">
-                      {% if data['gcontractSetup'] != "mixcontract" %}
+                      {% if data['gcontractSetup'] == "mixcontract" %}
+                      {% else %}
                         <li class="govuk-task-list__item govuk-task-list__item--with-link">
                           <div class="govuk-task-list__name-and-hint">
                             <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-existing-contracts-gas?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
@@ -192,8 +207,6 @@
 
                  <!-- // School 1 -->
 
-                 {% if data['schoolremove'] == "yes" %}
-                 {% else %}
 
                 <div class="govuk-accordion__section">
                   <div class="govuk-accordion__section-header">
@@ -201,7 +214,7 @@
                       <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
                         {% if ((data['mat-gastype-1'] == "gas-school-1") or (data['mat-electype-1'] == "elec-school-1")) %}
                         <span class="govuk-caption-m">Clarence Street, DE14 3LG</span>
-                        Bowland High  <a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-left: 10px;"" href="/sprint-6/remove-school">Remove</a>
+                        Bowland High  <a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-left: 10px;"" href="">Remove</a>
                         <strong class="govuk-tag govuk-tag--grey" style="float: right;">
                           Not started
                         </strong>
@@ -437,9 +450,13 @@
                 {% endif %}
                   </div>
                 </div>
-                {% endif %}
+            
 
                   <!-- // School 2 -->
+
+
+                  {% if data['schoolremove'] == "yes" %}
+                  {% else %}
 
                 <div class="govuk-accordion__section">
                   <div class="govuk-accordion__section-header">
@@ -685,7 +702,7 @@
                 </div>
               </div>
 
-
+              {% endif %}
 
 
 
