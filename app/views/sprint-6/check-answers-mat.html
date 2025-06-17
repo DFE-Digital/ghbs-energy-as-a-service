@@ -961,7 +961,10 @@ href: "javascript:window.history.back()"
 
    <!-- // School 2 -->
 
-  {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
+
+   {% if data['schoolremove'] == "yes" %}
+   {% else %}
+   {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
 
   <div class="govuk-accordion__section">
     <div class="govuk-accordion__section-header">
@@ -1627,6 +1630,8 @@ href: "javascript:window.history.back()"
   
       {% else %}
       {% endif %}
+
+      {% endif %}
     </div>
   </div>
 
@@ -1638,6 +1643,8 @@ href: "javascript:window.history.back()"
 
 {% else %}
 {% endif %}
+
+
    
 
 
