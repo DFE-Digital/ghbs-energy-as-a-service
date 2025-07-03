@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['schoolremove'] == "yes" %}
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Notice
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            School succesfully removed
+          </p>
+        </div>
+      </div>
+      {% else %}
+      {% endif %}
+
+      <span class="govuk-caption-l">{{ data['school'] }}: School dashboard</span>
+      <h1 class="govuk-heading-xl">School dashboard</h1>
+     
+
+      <form class="form" action="/sprint-7/authorisation" method="post">
+
+       <p><a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-right: 0px;" href="/sprint-7/school-selection">Add a school</a></p> 
+
+
+       <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class"></th>
+            <th scope="col" class="govuk-table__header app-custom-class"></th>
+            <th scope="col" class="govuk-table__header app-custom-class"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="padding: 10px 20px 0px 0;">
+            {% if data['tag'] == "inprogress" %}
+            <p class="govuk-body"><a href="/sprint-7/tasklist?journeyType=single-school&tag=inprogress" class="govuk-link govuk-link--no-visited-state">Bowland High</a><span class="govuk-caption-m">Clarence Street, DE14 3LG</span></p>
+            {% else %}
+            <p class="govuk-body"><a href="/sprint-7/mat-authorisation?journeyType=single-school&tag=inprogress" class="govuk-link govuk-link--no-visited-state">Bowland High</a><span class="govuk-caption-m">Clarence Street, DE14 3LG</span></p>
+            {% endif %}
+          </th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-right: 20px;" href="/sprint-7/remove-school">Remove</a> 
+              {% if data['schoolts'] == "complete" %}
+              <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              {% elif data['tag'] == "inprogress" %}
+              <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey" style="float: right;">Not started</strong></td>
+              {% endif %}
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="padding: 10px 20px 0px 0;">
+            <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">Downend Highschool</a><span class="govuk-caption-m">Wawne Road, Bransholme, HU7 4WR</span></p>
+            </th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-right: 20px;" href="/sprint-7/remove-school">Remove</a> 
+              {% if data['schoolts'] == "complete" %}
+              <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              {% elif data['tag'] == "inprogress" %}
+              <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey" style="float: right;">Not started</strong></td>
+              {% endif %}
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="padding: 10px 20px 0px 0;">
+            <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">Aylsetone High</a><span class="govuk-caption-m">Wawne Road, Bransholme, HU7 4WR</span></p>
+            </th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-right: 20px;" href="/sprint-7/remove-school">Remove</a> 
+              {% if data['schoolts'] == "complete" %}
+              <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              {% elif data['tag'] == "inprogress" %}
+              <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey" style="float: right;">Not started</strong></td>
+              {% endif %}
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header" style="padding: 10px 20px 0px 0px;">
+            <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">Highland high school</a><span class="govuk-caption-m">Clarence Street, DE14 3LG</span></p>
+            </th>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-right: 20px;" href="/sprint-7/remove-school">Remove</a> 
+              {% if data['schoolts'] == "complete" %}
+              <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              {% elif data['tag'] == "inprogress" %}
+              <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+              {% else %}
+              <strong class="govuk-tag govuk-tag--grey" style="float: right;">Not started</strong></td>
+              {% endif %}
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+      
+
+    
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <p class="govuk-body">
+          <a href="/sprint-7/you-have-left-the-service" class="govuk-link">Save and complete later</a>
+        </p>
+
+      </form>
+
+
+
+
+
+
+
+{% endblock %}

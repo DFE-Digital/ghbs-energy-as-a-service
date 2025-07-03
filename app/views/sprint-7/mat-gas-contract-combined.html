@@ -1,0 +1,144 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+      <span class="govuk-caption-l">About your schools: Current contract details</span>
+      <h1 class="govuk-heading-l">Energy contract</h1>
+
+      {% if data['single-energyType'] == "gasandelec" %}
+      <form class="form" action="/sprint-7/mat-vat-declaration?ccd=complete" method="post">
+      {% elif data['mat-gastype'] == "gas-school-1" %}
+      <form class="form" action="/sprint-7/mat-electricity-contract?ccd=complete" method="post">
+      {% else %}
+      <form class="form" action="/sprint-7/mat-vat-status?ccd=complete" method="post">
+      {% endif %}
+
+      {% set textHtml %}
+      {{ govukInput({
+        id: "en-supplier",
+        name: "en-supplier",
+        type: "text",
+        autocomplete: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Gas supplier"
+        }
+      }) }}
+      {% endset -%}
+      
+      {{ govukRadios({
+        name: "en-supplier",
+        fieldset: {
+          legend: {
+            text: "Current energy supplier",
+            isPageHeading: false,
+             classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "British Gas",
+            text: "British Gas"
+          },
+          {
+            value: "EDF Energy",
+            text: "EDF Energy"
+          },
+          {
+            value: "E.ON Next",
+            text: "E.ON Next"
+          },
+          {
+            value: "Scottish Power",
+            text: "Scottish Power"
+          },
+          {
+            value: "OVO Energy",
+            text: "OVO Energy"
+          },
+          {
+            value: "Octopus Energy",
+            text: "Octopus Energy"
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "text",
+            text: "Other",
+            conditional: {
+              html: textHtml
+            }
+          }
+        ]
+      }) }}
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="contract-end-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            When does the contract end?
+          </legend>
+          <div id="contract-end-hint" class="govuk-hint">
+            For example, 27 3 2025 
+          </div>
+          <div class="govuk-date-input" id="contract-end">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="contract-end-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contract-end-day" name="contract-end-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="contract-end-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="contract-end-month" name="contract-end-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="contract-end-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="contract-end-year" name="contract-end-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-7/tasklist?ccd=inProgress",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

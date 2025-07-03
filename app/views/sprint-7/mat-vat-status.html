@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">About your schools: VAT declaration</span>
+
+      <form class="form" action="/sprint-7/mat-vat-declaration" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do all schools in the trust use the same VAT number?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="VATstatus" name="VATstatus" type="radio" value="yes" {{ checked("VATstatus", "yes") }}>
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  Yes
+                </label>
+              </div>
+              {% if data['tasklist'] == "on" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="VATstatus-2" name="VATstatus" type="radio" value="no~/sprint-7/tasklist?vatd" {{ checked("VATstatus", "no") }}>
+                <label class="govuk-label govuk-radios__label" for="VATstatus-2">
+                  No
+                </label>
+              </div>
+              {% else %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="VATstatus-2" name="VATstatus" type="radio" value="no~/sprint-7/mat-billing-setup" {{ checked("VATstatus", "no") }}>
+                <label class="govuk-label govuk-radios__label" for="VATstatus-2">
+                  No
+                </label>
+              </div>
+              {% endif %}
+            </div>
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+    
+          {% if data['check-answers'] == "on" %}
+          {% else %}
+          <a class="govuk-link" href="/sprint-7/tasklist">Discard and go to task list</a>
+          {% endif %}
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

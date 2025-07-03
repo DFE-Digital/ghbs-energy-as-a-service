@@ -41,9 +41,9 @@
       {% endif %}
 
       {% if data['journeyType'] == "mats" %}
-      <form class="form" action="/sprint-6/check-answers-mat" method="post">
+      <form class="form" action="/sprint-7/check-answers-mat" method="post">
       {% elif data['journeyType'] == "single-school" %}
-      <form class="form" action="/sprint-6/check-answers-single-school" method="post">
+      <form class="form" action="/sprint-7/check-answers-single-school" method="post">
       {% endif %}
 
 
@@ -85,7 +85,7 @@
                       {% else %}
                         <li class="govuk-task-list__item govuk-task-list__item--with-link">
                           <div class="govuk-task-list__name-and-hint">
-                            <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-existing-contracts-gas?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                            <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-existing-contracts-gas?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                             Current gas supplier
                           </a>
                         </div>
@@ -115,7 +115,7 @@
                       {% else %}
                       <li class="govuk-task-list__item govuk-task-list__item--with-link">
                         <div class="govuk-task-list__name-and-hint">
-                          <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-existing-contracts-electric?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                          <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-existing-contracts-electric?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                             Current electricity supplier
                         </a>
                       </div>
@@ -145,7 +145,7 @@
                     {% else %}
                       <li class="govuk-task-list__item govuk-task-list__item--with-link">
                         <div class="govuk-task-list__name-and-hint">
-                          <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-vat-status?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
+                          <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-vat-status?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
                             VAT declaration
                           </a>
                         </div>
@@ -175,7 +175,7 @@
                       {% else %}
                       <li class="govuk-task-list__item govuk-task-list__item--with-link">
                         <div class="govuk-task-list__name-and-hint">
-                          <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-billing-setup?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
+                          <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-billing-setup?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
                             Billing preferences
                           </a>
                         </div>
@@ -228,7 +228,7 @@
               {% if data['gcontractSetup'] == "mixcontract" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                     Current gas supplier
                   </a>
                 </div>
@@ -258,7 +258,7 @@
               {% if data['econtractSetup'] == "mixcontract" %}
               <li class="govuk-task-list__item govuk-task-list__item--with-link">
                 <div class="govuk-task-list__name-and-hint">
-                  <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-electricity-contract?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                  <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-electricity-contract?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                   Current electricity supplier
                 </a>
               </div>
@@ -291,9 +291,9 @@
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
                 {% if data['meterType'] == "Multi meter" %}
-                <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                <a class="govuk-link govuk-task-list__link" href="/sprint-7/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 {% else %}
-                <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                <a class="govuk-link govuk-task-list__link" href="/sprint-7/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 {% endif %}
                   Gas meters and usage
                 </a>
@@ -326,9 +326,9 @@
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
                     {% if data['emeterType'] == "Multi meter" %}
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                     {% else %}
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                     {% endif %}
                       Electricity meters and usage
                     </a>
@@ -360,7 +360,7 @@
 
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-site-contact?scontact=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-site-contact?scontact=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                       Site contact details
                     </a>
                   </div>
@@ -388,7 +388,7 @@
                 {% if data['VATstatus'] == "no" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-vat-declaration?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-vat-declaration?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
                       VAT Declaration
                     </a>
                   </div>
@@ -419,7 +419,7 @@
                 {% if data['billingPref'] == "no" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-billing-information?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-billing-information?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
                       Billing preferences
                     </a>
                   </div>
@@ -467,7 +467,7 @@
                       <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
                         {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
                         <span class="govuk-caption-m">Wawne Road, Bransholme, HU7 4WR</span>
-                        Downend Highschool <a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-left: 10px;"" href="/sprint-6/remove-school">Remove</a>
+                        Downend Highschool <a class="govuk-link govuk-link--no-visited-state govuk-body" style="padding-left: 10px;"" href="/sprint-7/remove-school">Remove</a>
                         <strong class="govuk-tag govuk-tag--grey" style="float: right;">
                           Not started
                         </strong>
@@ -481,7 +481,7 @@
               {% if data['gcontractSetup'] == "mixcontract" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                     Current gas supplier
                   </a>
                 </div>
@@ -511,7 +511,7 @@
               {% if data['econtractSetup'] == "mixcontract" %}
               <li class="govuk-task-list__item govuk-task-list__item--with-link">
                 <div class="govuk-task-list__name-and-hint">
-                  <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-electricity-contract?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                  <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-electricity-contract?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                   Current electricity supplier
                 </a>
               </div>
@@ -544,9 +544,9 @@
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
                 {% if data['meterType'] == "Multi meter" %}
-                <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                <a class="govuk-link govuk-task-list__link" href="/sprint-7/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 {% else %}
-                <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                <a class="govuk-link govuk-task-list__link" href="/sprint-7/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 {% endif %}
                   Gas meters and usage
                 </a>
@@ -579,9 +579,9 @@
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
                     {% if data['emeterType'] == "Multi meter" %}
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                     {% else %}
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                     {% endif %}
                       Electricity meters and usage
                     </a>
@@ -613,7 +613,7 @@
 
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-site-contact?scontact=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-site-contact?scontact=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                       Site contact details
                     </a>
                   </div>
@@ -641,7 +641,7 @@
                 {% if data['VATstatus'] == "no" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-vat-declaration?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-vat-declaration?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
                       VAT Declaration
                     </a>
                   </div>
@@ -672,7 +672,7 @@
                 {% if data['billingPref'] == "no" %}
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
-                    <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-billing-information?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
+                    <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-billing-information?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
                       Billing preferences
                     </a>
                   </div>
@@ -715,7 +715,7 @@
 
         <!-- // Single school tasklist -->
 
-        <h2 class="govuk-heading-m">St Mary's Primary School</h2>
+        <h2 class="govuk-heading-m">Bowland High</h2>
 
         <!-- // Gas and elec contracts -->
 
@@ -723,7 +723,7 @@
           {% if data['single-energyType'] == "gasandelec" %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 Current gas supplier
               </a>
             </div>
@@ -751,7 +751,7 @@
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-electricity-contract?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-electricity-contract?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 Current electricity supplier
               </a>
             </div>
@@ -782,7 +782,7 @@
           {% if data['single-energyType'] == "gas" %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 Current gas supplier
               </a>
             </div>
@@ -812,7 +812,7 @@
           {% if data['single-energyType'] == "electricity" %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-electricity-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-electricity-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 Current electricity supplier
               </a>
             </div>
@@ -845,10 +845,10 @@
           {% if data['single-energyType'] == "gasandelec" %}
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              {% if data['meterType'] == "Single meter" %}
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              {% if data['meterType'] == "Multi meter" %}
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
               {% else %}
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
               {% endif %}
               Gas meters and usage
               </a>
@@ -876,10 +876,10 @@
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              {% if data['emeterType'] == "Single" %}
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              {% if data['emeterType'] == "Multi meter" %}
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
               {% else %}
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
               {% endif %}
               Electricity meters and usage
               </a>
@@ -911,9 +911,9 @@
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               {% if data['meterType'] == "Single meter" %}
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
               {% else %}
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
               {% endif %}
               Gas meters and usage
               </a>
@@ -945,9 +945,9 @@
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
               {% if data['emeterType'] == "Single" %}
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
               {% else %}
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
               {% endif %}
               Electricity meters and usage
               </a>
@@ -977,7 +977,7 @@
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-site-contact?scontact=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-site-contact?scontact=inProgress&tasklist=on" aria-describedby="school-details-1-status">
                 Site contact details
               </a>
             </div>
@@ -1004,7 +1004,7 @@
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-vat-declaration?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-vat-declaration?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
                 VAT declaration
               </a>
             </div>
@@ -1031,7 +1031,7 @@
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/sprint-6/mat-billing-information?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
+              <a class="govuk-link govuk-task-list__link" href="/sprint-7/mat-billing-information?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
                 Billing preferences
               </a>
             </div>
@@ -1074,7 +1074,7 @@
         }) }}
 
         <p class="govuk-body">
-          <a href="/sprint-6/you-have-left-the-service" class="govuk-link">Save and complete later</a>
+          <a href="/sprint-7/mat-dashboard" class="govuk-link">Return to schools dashboard</a>
         </p>
 
       </form>

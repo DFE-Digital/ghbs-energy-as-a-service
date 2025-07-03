@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['journeyType'] == "mats" %}
+      <span class="govuk-caption-l">Bowland High: Gas meters and usage</span>
+      {% else %}
+      <span class="govuk-caption-l">St Mary’s Primary School: Gas meters and usage</span>
+      {% endif %}
+      <h1 class="govuk-heading-l">MPRN summary</h1>
+
+      {% if data['meterType'] == "Multi meter" %}
+      <form class="form" action="/sprint-7/gas-info-billing" method="post">
+      {% else %}
+      <form class="form" action="/sprint-7/elec-info?gmu1=complete" method="post">
+      {% endif %}
+
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">You have added 3 MPRNs</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">MPRN</th>
+              <th scope="col" class="govuk-table__header">Estimated annual gas usage</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['mprn'] }}</th>
+              <td class="govuk-table__cell">{{ data['kwh'] }}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-7/gas-meter-info">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="/sprint-7/remove-mprn">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['mprn-1'] }}</th>
+              <td class="govuk-table__cell">{{ data['kwh-1'] }}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-7/gas-meter-info">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="/sprint-7/remove-mprn">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['mprn-2'] }}</th>
+              <td class="govuk-table__cell">{{ data['kwh-2'] }}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-7/gas-meter-info">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="/sprint-7/remove-mprn">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        {% if data['meterType'] == "Multi meter" %}
+        {{ govukButton({
+        text: "Add another MPRN",
+        href: "gas-meter-info-1",
+        classes: "govuk-button--secondary"
+        }) }}
+        {% else %}
+        {% endif %}
+
+
+  <br>
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Save and continue"
+    }) }}
+
+    {% if data['check-answers'] == "on" %}
+    {% else %}
+    <a class="govuk-link" href="6/tasklist">Discard and go to task list</a>
+    {% endif %}
+  </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

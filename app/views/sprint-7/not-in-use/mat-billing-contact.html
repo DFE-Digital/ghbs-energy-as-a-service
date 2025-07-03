@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">All schools: Billing preferences</span>
+      <h1 class="govuk-heading-l">Are these the correct details for billing purposes?</h1>
+
+      
+
+      {% if data['journeyType'] == "single-school" %}
+      <form class="form" action="/sprint-7/tasklist?bp=complete" method="post">
+      {% else %}
+      <form class="form" action="/sprint-7/gas-info?bp=complete" method="post">
+      {% endif %}
+
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Address</th>
+              <td class="govuk-table__cell">Pleckgate High School, Pleckgate Road, BB1 8QA</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "Billingcontact",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No~/sprint-7/mat-billing-contact-manual",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+        {{ govukButton({
+          text: "Save and go to tasks",
+          href: "/sprint-7/tasklist?vatd=inProgress",
+          classes: "govuk-button--secondary govuk-!-margin-left-1"
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

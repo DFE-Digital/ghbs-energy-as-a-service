@@ -1,0 +1,74 @@
+{% extends "layouts/main-no-help-form.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Join {{ serviceName }}
+      </h1>
+
+      <p>Energy for Schools helps state-funded schools and trusts switch to the same energy contract used by the Department for Education.</p>
+      <p>Schools and trusts that use the service are added to the Department for Education’s energy contract with Crown Commercial Service (CCS). The CCS buys energy for this particular contract over a long period of time, reducing the risk to customers of substantial fluctuations in price. </p>
+
+      <h2 class="govuk-heading-m">
+        Benefits
+      </h2>
+      <p>Schools could save up to 36% on their energy bills, based on DfE’s estimates. The service also helps:</p>
+
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>protect schools from market volatility and high prices</li>
+        <li>save time spent on procurement process</li>
+        <li>remove risk associated with unregulated energy brokers</li>
+        <li>comply with procurement regulations</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "before-you-start",
+        isStartButton: true
+      }) }}
+
+
+      <p>
+        <a href="/sprint-7/guidance-page">Get more information</a>
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related actions
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="/sprint-7/guidance-page">
+                Energy for Schools guidance
+              </a>
+            </li>
+            <!-- <li>
+              <a href="#">
+                Find a Buying Solution
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,165 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['journeyType'] == "mats" %}
+      <span class="govuk-caption-l">Bowland High: Electricity meters and usage</span>
+      {% else %}
+      <span class="govuk-caption-l">St Mary’s Primary School: Electricity meters and usage</span>
+      {% endif %}
+      <h1 class="govuk-heading-l">Electricity meter details</h1>
+
+      {% if ((data['emeterType'] == "Single") and (data['tasklist'] == "on")) %}
+      <form class="form" action="/sprint-7/tasklist?emu1=complete" method="post">
+      {% elif ((data['emeterType'] == "Single") and (data['check-answers'] == "on")) %}
+      <form class="form" action="/sprint-7/check-answers-mat?emu1=complete" method="post">
+      {% elif data['emeterType'] == "Single" %}
+      <form class="form" action="/sprint-7/mat-site-contact?emu1=complete" method="post">
+      {% else %}
+      <form class="form" action="/sprint-7/elec-meter-review?emu1=complete" method="post">
+      {% endif %}
+
+     
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label govuk-label--s" for="mpan">
+            Add an MPAN
+          </label>
+        </h2>
+        <div id="event-name-hint" class="govuk-hint">
+          Your MPAN is on your electricity bill. It’s the last 13 digits of the Supply number.
+          <img src="/public/images/mpan-2.png" style="width:30%">
+        </div>
+          <input class="govuk-input govuk-input--width-10" id="mpan" name="mpan" type="text" aria-describedby="mprn">
+        </div>
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="halfHourIn-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+              <h1 class="govuk-label govuk-label govuk-label--s">
+                Is this a half-hourly meter?
+              </h1>
+            </legend>
+            <div id="halfHour-hint" class="govuk-hint">
+              Your meter is half hourly if your Supply number begins with 00. Your Supply number is on your electricity bill.
+            </div>
+
+            <img src="/public/images/mpan.png" style="width:30%">
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="halfHour" name="halfHour" type="radio" value="Yes" data-aria-controls="conditional-halfhour">
+                <label class="govuk-label govuk-radios__label" for="supplier">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-halfhour">
+                <div class="govuk-inset-text">
+                  Half-hourly meters are sometimes managed by a separate company. Ask your electricity supplier if you need help answering the following questions.
+                </div>
+                <div class="govuk-form-group">
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="supplier">
+                    What is the supply capacity?
+                  </label>
+                  <div class="govuk-input__wrapper">
+                    <input class="govuk-input govuk-input--width-5" id="kva" name="kva" type="text" spellcheck="false">
+                    <div class="govuk-input__suffix" aria-hidden="true">kVA</div>
+                  </div>
+                </div>
+
+  
+
+                  <div class="govuk-form-group">
+                  <label class="govuk-label" for="width-20">
+                    Who is the data aggregator?
+                  </label>
+                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="width-20">
+                    Who is the data collector?
+                  </label>
+                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                </div>
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="width-20">
+                    Who is the meter operator?
+                  </label>
+                  <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+                </div>
+                </div>
+              </div>
+              
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="halfHour-2" name="halfHour" type="radio" value="No" aria-describedby="halfHour-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="halfHour-2">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label govuk-label--s" for="ekwh">
+            Estimated annual electricity usage, in kilowatt hours (kWh)
+          </label>
+          </h2>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Where can I find annual electricity usage?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              If your annual estimated usage for this meter is not on your bill, add up the kWh for this meter from your last 12 gas bills to calculate your total usage.
+            </div>
+            <p><span class="mural-link"><a href=""></a></span></p>
+          </details>
+          <div class="govuk-input__wrapper">
+            <input class="govuk-input govuk-input--width-5" id="ekwh" name="ekwh" type="text" spellcheck="false">
+            <div class="govuk-input__suffix" aria-hidden="true">kWh</div>
+          </div>
+        </div>
+    
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Save and continue"
+          }) }}
+        
+          {% if data['check-answers'] == "on" %}
+          {% else %}
+          <a class="govuk-link" href="/sprint-7/tasklist">Discard and go to task list</a>
+          {% endif %}
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

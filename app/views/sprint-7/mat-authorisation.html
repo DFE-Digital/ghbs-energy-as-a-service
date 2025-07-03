@@ -1,0 +1,76 @@
+{% extends "layouts/main-no-help-form.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if data['journeyType'] == "mats" %}
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
+      {% else %}
+      <span class="govuk-caption-l">Bowland High</span>
+      {% endif %}
+
+      <h1 class="govuk-heading-l">Make sure you are authorised to switch energy suppliers for these schools</h1>
+      <p>Please seek appropriate authorisation to switch energy suppliers. There is no cooling off period once you’ve submitted this form</p>
+      
+      <!-- // Gas and elec -->
+      {% if ((data['mat-electype-1'] == "elec-school-1") and (data['mat-gastype-1'] == "gas-school-1")) %}
+      <form class="form" action="/sprint-7/mat-existing-contracts-gas" method="post">
+
+      <!-- // Gas only  -->
+      {% elif data['mat-gastype-1'] == "gas-school-1" %}
+      <form class="form" action="/sprint-7/mat-existing-contracts-gas" method="post">
+      {% elif ((data['mat-gastype-1'] == "gas-school-1") and (data['mat-gastype-2'] == "gas-school-2")) %}
+      <form class="form" action="/sprint-7/mat-existing-contracts-gas" method="post">
+
+      <!-- // Elec only -->
+      {% elif data['mat-electype-1'] == "elec-school-1" %}
+      <form class="form" action="/sprint-7/mat-existing-contracts-electric" method="post">
+      {% elif ((data['mat-electype-1'] == "elec-school-1") and (data['mat-electype-2'] == "elec-school-2")) %}
+      <form class="form" action="/sprint-7/mat-existing-contracts-electric" method="post">
+
+      {% elif data['journeyType'] == "single-school" %}
+      <form class="form" action="/sprint-7/single-school-fuel-selection" method="post">
+      {% else %}
+      <form class="form" action="/sprint-7/mat-existing-gas" method="post">
+      {% endif %}
+
+        
+        <ul class="govuk-list govuk-list--bullet">
+          {% if ((data['mat-gastype-1'] == "gas-school-1") or (data['mat-electype-1'] == "elec-school-1")) %}
+          <li>Bowland High, Clarence Street, DE14 3LG</li>
+          {% else %}
+          {% endif %}
+          {% if ((data['mat-gastype-2'] == "gas-school-2") or (data['mat-electype-2'] == "elec-school-2")) %}
+          <li>Downend Highschool, Wawne Road, Bransholme, HU7 4WR</li>
+          {% else %}
+          {% endif %}
+          {% if data['journeyType'] == "single-school" %}
+          <li>Bowland High</li>
+          {% else %}
+          {% endif %}
+        </ul>
+      
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
