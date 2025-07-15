@@ -3,97 +3,72 @@
 {% set pageName="Home" %}
 
 {% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-
-
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
-    <h1 class="govuk-heading-l">MATs using single school journey (Option 3)</h1>
-
-    <p>This prototype captures MATs using a single school journey for option 3</p>
-
-    {{ govukButton({
-        text: "Continue",
-        href: "/sprint-7/start-page"
-    }) }}
-
-     {{ govukButton({
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+      <h2 class="govuk-heading-l">MATs using single school journey (Option 3)</h2>
+      <p>This prototype captures MATs using a single school journey for option 3</p>
+      {{ govukButton({
+          text: "Continue",
+          href: "/sprint-7/start-page"
+      }) }}
+      {{ govukButton({
       text: "Page by Page listings",
       href: "/admin/listings",
       classes: "govuk-button--secondary govuk-!-margin-left-1"
       }) }}
-
-      <p><a href="https://lucid.app/lucidspark/0d73b4c5-04f1-48df-bbc9-7b941c08ccda/edit?view_items=trItQGIpIqp0&invitationId=inv_af4fe1bb-8ba9-469a-8759-ce64e0368648" class="govuk-link" rel="noreferrer noopener" target="_blank">MATs using single school journey user flows (opens in new tab)</a></span></p>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h1 class="govuk-heading-l">MATs post MVP (Option 5)</h1>
-
-    <p>This prototype captures MATs journey for option 5</p>
-
-    {{ govukButton({
-        text: "Continue",
-        href: "/admin/preload-data"
-    }) }}
-
-     {{ govukButton({
+      <p><a href="https://lucid.app/lucidspark/0d73b4c5-04f1-48df-bbc9-7b941c08ccda/edit?view_items=trItQGIpIqp0&invitationId=inv_af4fe1bb-8ba9-469a-8759-ce64e0368648" class="govuk-link" rel="noreferrer noopener" target="_blank">
+        MATs using single school journey user flows (opens in new tab)</a>
+      </span></p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-l">MATs post MVP (Option 5)</h2>
+      <p>This prototype captures MATs journey for option 5</p>
+      {{ govukButton({
+          text: "Continue",
+          href: "/admin/preload-data"
+      }) }}
+      {{ govukButton({
       text: "Page by Page listings",
       href: "/sprint-6/listings",
       classes: "govuk-button--secondary govuk-!-margin-left-1"
       }) }}
-
-      <p><a href="https://lucid.app/lucidspark/0d73b4c5-04f1-48df-bbc9-7b941c08ccda/edit?beaconFlowId=FD7A96703D116A47&invitationId=inv_af4fe1bb-8ba9-469a-8759-ce64e0368648&page=0_0#" class="govuk-link" rel="noreferrer noopener" target="_blank">Post MVP user flows (opens in new tab)</a></span></p>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h1 class="govuk-heading-l">MVP (Single schools only)</h1>
-
-    <p>This prototype captures what is being relased for MVP which is only Single schools</p>
-
-    {{ govukButton({
-      text: "Start journey",
-      href: "/sprint-5/preload-data"
-  }) }}
-
-    {{ govukButton({
-      text: "Page by Page listings",
-      href: "/sprint-5/listings",
-      classes: "govuk-button--secondary govuk-!-margin-left-1"
+      <p><a href="https://lucid.app/lucidspark/0d73b4c5-04f1-48df-bbc9-7b941c08ccda/edit?beaconFlowId=FD7A96703D116A47&invitationId=inv_af4fe1bb-8ba9-469a-8759-ce64e0368648&page=0_0#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+        Post MVP user flows (opens in new tab)</a></span></p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-l">MVP (Single schools only)</h2>
+      <p>This prototype captures what is being released for MVP which is only
+        Single schools</p>
+      {{ govukButton({
+        text: "Start journey",
+        href: "/sprint-5/preload-data"
       }) }}
-
-      <p><a href="https://lucid.app/lucidspark/0d73b4c5-04f1-48df-bbc9-7b941c08ccda/edit?beaconFlowId=FD7A96703D116A47&invitationId=inv_af4fe1bb-8ba9-469a-8759-ce64e0368648&page=0_0#" class="govuk-link" rel="noreferrer noopener" target="_blank">MVP user flows (opens in new tab)</a></span></p>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-
-    <h1 class="govuk-heading-l">User research</h1>
-
-    {{ govukButton({
-        text: "Continue",
-        href: "admin/user-research"
-    }) }}
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    <h1 class="govuk-heading-l">Previous iterations</h1>
-
-    <p><a href="https://www.figma.com/proto/DMUJnp9WzB8Q6je6UKdz8B/Energy-for-Schools-scheme?node-id=1171-28271&p=f&t=zdYdbOjVy22oIIqK-1&scaling=scale-down-width&content-scaling=fixed&page-id=1171%3A25966&starting-point-node-id=1171%3A28271&show-proto-sidebar=1">Onboarding concept testing (round 2) - MAT (Figma)​</a></span></p>
-    <p><a href="https://www.figma.com/proto/DMUJnp9WzB8Q6je6UKdz8B/Energy-for-Schools-scheme?node-id=1171-28315&p=f&t=zdYdbOjVy22oIIqK-1&scaling=scale-down-width&content-scaling=fixed&page-id=1171%3A25966&starting-point-node-id=1171%3A28315&show-proto-sidebar=1">Onboarding concept testing (round 2) - Single school (Figma)​</a></span></p>
-
-    <p><a href="https://www.figma.com/proto/DMUJnp9WzB8Q6je6UKdz8B/Energy-for-Schools-scheme?node-id=160-9792&t=xjpg6Rbv840gPUG6-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=359%3A10839&show-proto-sidebar=1">Onboarding concept testing (round 1) - MAT (Figma)​</a></span></p>
-    <p><a href="https://www.figma.com/proto/DMUJnp9WzB8Q6je6UKdz8B/Energy-for-Schools-scheme?node-id=1022-24629&t=P0AGX0P81DT5PRFt-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1022%3A24629&show-proto-sidebar=1">Onboarding concept testing (round 1) - Single school (Figma)​</a></span></p>
-
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
-
+      {{ govukButton({
+        text: "Page by Page listings",
+        href: "/sprint-5/listings",
+        classes: "govuk-button--secondary govuk-!-margin-left-1"
+      }) }}
+      <p><a href="https://lucid.app/lucidspark/0d73b4c5-04f1-48df-bbc9-7b941c08ccda/edit?beaconFlowId=FD7A96703D116A47&invitationId=inv_af4fe1bb-8ba9-469a-8759-ce64e0368648&page=0_0#" class="govuk-link" rel="noreferrer noopener" target="_blank">
+        MVP user flows (opens in new tab)</a></span></p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-l">User research</h2>
+      {{ govukButton({
+          text: "Continue",
+          href: "admin/user-research"
+      }) }}
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h2 class="govuk-heading-l">Previous iterations</h2>
+      <p><a href="https://www.figma.com/proto/DMUJnp9WzB8Q6je6UKdz8B/Energy-for-Schools-scheme?node-id=1171-28271&p=f&t=zdYdbOjVy22oIIqK-1&scaling=scale-down-width&content-scaling=fixed&page-id=1171%3A25966&starting-point-node-id=1171%3A28271&show-proto-sidebar=1">
+        Onboarding concept testing (round 2) - MAT (Figma)​</a></span></p>
+      <p><a href="https://www.figma.com/proto/DMUJnp9WzB8Q6je6UKdz8B/Energy-for-Schools-scheme?node-id=1171-28315&p=f&t=zdYdbOjVy22oIIqK-1&scaling=scale-down-width&content-scaling=fixed&page-id=1171%3A25966&starting-point-node-id=1171%3A28315&show-proto-sidebar=1">
+        Onboarding concept testing (round 2) - Single school (Figma)​</a></span></p>
+      <p><a href="https://www.figma.com/proto/DMUJnp9WzB8Q6je6UKdz8B/Energy-for-Schools-scheme?node-id=160-9792&t=xjpg6Rbv840gPUG6-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=359%3A10839&show-proto-sidebar=1">
+        Onboarding concept testing (round 1) - MAT (Figma)</a></span></p>
+      <p><a href="https://www.figma.com/proto/DMUJnp9WzB8Q6je6UKdz8B/Energy-for-Schools-scheme?node-id=1022-24629&t=P0AGX0P81DT5PRFt-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1022%3A24629&show-proto-sidebar=1">
+        Onboarding concept testing (round 1) - Single school (Figma)</a></span></p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    </div>
   </div>
-</div>
-
 {% endblock %}
