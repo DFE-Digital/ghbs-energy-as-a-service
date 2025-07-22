@@ -1,57 +1,53 @@
 {% extends "layouts/main-no-help-form.html" %}
 
 {% block pageTitle %}
-Electricity contract – {{ serviceName }} – GOV.UK Prototype Kit
+  Electricity contract - {{ serviceName }} - GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data['journeyType'] == "single-school" %}
-      <span class="govuk-caption-l">St Mary's Primary School: Current electricity supplier</span>
+      {% if ((data['single-energyType'] == "gasandelec") and (data['tasklist'] == "on")) %}
+        <form class="form" action="/single-schools/tasklist?ecd=complete" method="post">
+      {% elif ((data['single-energyType'] == "electricity") and (data['tasklist'] == "on")) %}
+        <form class="form" action="/single-schools/tasklist?ecd=complete" method="post">
+      {% elif data['check-answers'] == "on" %}
+        <form class="form" action="/single-schools/check-answers-single-school?ccd=complete" method="post">
+      {% elif data['single-energyType'] == "electricity" %}
+        <form class="form" action="/single-schools/elec-info?ecd=complete" method="post">
+      {% elif data['single-energyType'] == "gasandelec" %}
+        <form class="form" action="/single-schools/gas-info?ecd=complete" method="post">
       {% else %}
-      <span class="govuk-caption-l">About your schools: Current electricity supplier</span>
+        <form class="form" action="/single-schools/mat-vat-status?ecd=complete" method="post">
+      {% endif %}
+      {% if data['journeyType'] == "single-school" %}
+        <span class="govuk-caption-l">St Mary's Primary School: Current
+          electricity supplier</span>
+      {% else %}
+        <span class="govuk-caption-l">About your schools: Current electricity
+          supplier</span>
       {% endif %}
       <h1 class="govuk-heading-l">Electricity contract</h1>
-
-      {% if ((data['single-energyType'] == "gasandelec") and (data['tasklist'] == "on")) %}
-      <form class="form" action="/sprint-5/tasklist?ecd=complete" method="post">
-      {% elif ((data['single-energyType'] == "electricity") and (data['tasklist'] == "on")) %}
-      <form class="form" action="/sprint-5/tasklist?ecd=complete" method="post">
-      {% elif data['check-answers'] == "on" %}
-      <form class="form" action="/sprint-5/check-answers-single-school?ccd=complete" method="post">
-      {% elif data['single-energyType'] == "electricity" %}
-      <form class="form" action="/sprint-5/elec-info?ecd=complete" method="post">
-      {% elif data['single-energyType'] == "gasandelec" %}
-      <form class="form" action="/sprint-5/gas-info?ecd=complete" method="post">
-      {% else %}
-      <form class="form" action="/sprint-5/mat-vat-status?ecd=complete" method="post">
-      {% endif %}
-
-
       {% set textHtml %}
-      {{ govukInput({
-        id: "e-supplier",
-        name: "e-supplier",
-        type: "tel",
-        autocomplete: "tel",
-        classes: "govuk-!-width-one-third",
-        label: {
-          text: "Electricity supplier"
-          
-        }
-      }) }}
+        {{ govukInput({
+          id: "e-supplier",
+          name: "e-supplier",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Electricity supplier"
+          }
+        }) }}
       {% endset -%}
-      
       {{ govukRadios({
         name: "e-supplier",
         fieldset: {
@@ -98,59 +94,47 @@ Electricity contract – {{ serviceName }} – GOV.UK Prototype Kit
           }
         ]
       }) }}
-
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="econtract-end-issued-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              When does the contract end?
-            </legend>
-            <div id="contract-end-hint" class="govuk-hint">
-              For example, 27 3 2025 
-            </div>
-            <div class="govuk-date-input" id="contract-end">
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="econtract-end-day">
-                    Day
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="econtract-end-day" name="econtract-end-day" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="econtract-end-month">
-                    Month
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="econtract-end-month" name="econtract-end-month" type="text" inputmode="numeric">
-                </div>
-              </div>
-              <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="econtract-end-year">
-                    Year
-                  </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="econtract-end-year" name="econtract-end-year" type="text" inputmode="numeric">
-                </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="econtract-end-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            When does the contract end?
+          </legend>
+          <div id="contract-end-hint" class="govuk-hint">
+            For example, 27 3 2025
+          </div>
+          <div class="govuk-date-input" id="contract-end">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="econtract-end-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="econtract-end-day" name="econtract-end-day" type="text" inputmode="numeric">
               </div>
             </div>
-          </fieldset>
-        </div>
-
-     
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}
-  
-          {% if data['check-answers'] == "on" %}
-          {% else %}
-          <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
-          {% endif %}
-        </div>
-
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="econtract-end-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="econtract-end-month" name="econtract-end-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="econtract-end-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="econtract-end-year" name="econtract-end-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        {{ govukButton({text: "Save and continue"}) }}
+        <a class="govuk-link" href="/single-schools/tasklist">Discard and go to task list</a>
+      </div>
       </form>
-
     </div>
   </div>
-
 {% endblock %}
