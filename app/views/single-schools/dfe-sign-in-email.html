@@ -5,49 +5,26 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-xl">
-        Access the DfE Sign-in service
-      </h1>
-
-      <form class="form" action="/sprint-5/dfe-sign-in-password" method="post">
-
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="login-email">
-            Log in to your account
-          </label>
-          <div id="event-name-hint" class="govuk-hint">
-            Enter your email address to sign in.
+      <form class="form" action="/single-schools/dfe-sign-in-password" method="post">
+        <h1 class="govuk-heading-xl">Access the DfE Sign-in service</h1>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="login-email">Log in to your account
+              </label>
+            <div id="event-name-hint" class="govuk-hint">Enter your email
+              address to sign in.</div>
+            <input class="govuk-input govuk-!-width-one-half" id="login-email" name="login-email" type="text" value="{{data['login-email']}}">
           </div>
-          <input class="govuk-input govuk-!-width-one-half" id="login-email" name="login-email" type="text" value="{{data['login-email']}}">
-        </div>
-
-        {{ govukButton({
-          text: "Next"
-        }) }}
-
-        <p>
-          By signing in you accept <a href="#">DfE Sign-in terms and conditions</a>
-        </p>
-
-        <h3>New users of DfE sign-in</h3>
-
-        {{ govukButton({
-          text: "Create an account",
-          href: "",
-          classes: "govuk-button--secondary"
-        }) }}
-
+        {{ govukButton({text: "Next"}) }}
+        <p class="govuk-body">By signing in you accept <a href="#">DfE Sign-in
+          terms and conditions</a></p>
+        <h2 class="govuk-heading-l">New users of DfE sign-in</h2>
+        {{ govukButton({text: "Create an account",href: "",classes: "govuk-button--secondary"}) }}
         <details class="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -70,11 +47,11 @@
               <li>Apprenticeship service vacancy QA</li>
               <li>Assessment Service</li>
               <li>Assessment service: develop an assessment</li>
-              <li>Assessment service: manage your school’s assessments</li>
+              <li>Assessment service: manage your school's assessments</li>
               <li>Assessment service: start an assessment</li>
               <li>Check a Family's Eligibility</li>
               <li>Check a teacher's record</li>
-              <li>Check the Children’s barred list</li>
+              <li>Check the Children's barred list</li>
               <li>Child Safeguarding Incident Notification System</li>
               <li>Claim additional payments for teaching</li>
               <li>Claim funding for mentor training</li>
@@ -88,10 +65,7 @@
             </ul>
           </div>
         </details>
-
       </form>
-
     </div>
   </div>
-
 {% endblock %}
