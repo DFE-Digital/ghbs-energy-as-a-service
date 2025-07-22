@@ -1,70 +1,56 @@
 {% extends "layouts/main-no-help-form.html" %}
 
 {% block pageTitle %}
-Do you have authorisation? – {{ serviceName }} – GOV.UK Prototype Kit
+  Do you have authorisation? - {{ serviceName }} - GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {% if data['journeyType'] == "mats" %}
-      <span class="govuk-caption-l">Lancashire Schools Trust</span>
-      {% else %}
-      <span class="govuk-caption-l">St Mary's Primary School</span>
-      {% endif %}
-
-      <h1 class="govuk-heading-l">Are you authorised to switch energy suppliers for these schools?</h1>
-
-
       {% if ((data['mat-gastype'] == "gas-school-1") and (data['mat-electype'] == "elec-school-1")) %}
-      <form class="form" action="/sprint-5/mat-existing-contracts" method="post">
+        <form class="form" action="/single-schools/mat-existing-contracts" method="post">
       {% elif data['mat-gastype'] == "gas-school-1" %}
-      <form class="form" action="/sprint-5/mat-existing-contracts-gas" method="post">
+        <form class="form" action="/single-schools/mat-existing-contracts-gas" method="post">
       {% elif data['mat-electype'] == "elec-school-1" %}
-      <form class="form" action="/sprint-5/mat-existing-contracts-electric" method="post">
+        <form class="form" action="/single-schools/mat-existing-contracts-electric" method="post">
       {% elif data['journeyType'] == "single-school" %}
-      <form class="form" action="/sprint-5/single-school-fuel-selection" method="post">
+        <form class="form" action="/single-schools/single-school-fuel-selection" method="post">
       {% else %}
-      <form class="form" action="/sprint-5/single-school-fuel-selection" method="post">
+        <form class="form" action="/single-schools/single-school-fuel-selection" method="post">
       {% endif %}
-
-        {% if data['journeyType'] == "mats" %}
+      {% if data['journeyType'] == "mats" %}
+        <span class="govuk-caption-l">Lancashire Schools Trust</span>
+      {% else %}
+        <span class="govuk-caption-l">St Mary's Primary School</span>
+      {% endif %}
+      <h1 class="govuk-heading-l">Are you authorised to switch energy suppliers
+        for these schools?</h1>
+      {% if data['journeyType'] == "mats" %}
         <ul class="govuk-list govuk-list--bullet">
           <li>Bowland High</li>
           <li>Roseacre Primary Academy</li>
           <li>Thames Primary Academy</li>
           <li>Witton Park Academy</li>
         </ul>
-        {% else %}
+      {% else %}
         <ul class="govuk-list govuk-list--bullet">
           <li>St Mary's Primary School</li>
         </ul>
-        {% endif %}
-
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-visually-hidden">Warning</span>
-            Please seek appropriate authorisation to switch energy suppliers. There is no cooling off period once you’ve submitted this form.
-          </strong>
-        </div>
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
+      {% endif %}
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Please seek appropriate authorisation to switch energy suppliers.
+          There is no cooling off period once you've submitted this form.
+        </strong>
+      </div>
+      {{ govukButton({text: "Continue"}) }}
       </form>
-
     </div>
   </div>
-
 {% endblock %}
