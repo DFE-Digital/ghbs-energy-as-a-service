@@ -1,0 +1,32 @@
+{% extends "layouts/main-no-help-form.html" %}
+
+{% block pageTitle %}
+  Before you start - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Energy for Schools</h1>
+      <h2 class="govuk-heading-l">Before you start</h2>
+      <p class="govuk-body">You will need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>authorisation from your school or trust to switch energy supplier</li>
+        <li>electricity and/or gas bills from the past 12 months, to estimate
+          annual usage in kilowatt hours</li>
+        <li>your electricity and/or gas contract end date</li>
+        <li>the percentage VAT your school is charged for energy, and the
+          percentage of total consumption which qualifies for a reduced rate, if
+          you pay 5% VAT</li>
+      </ul>
+      <p>This form may take up to 20 minutes to complete, providing you have
+        your bills and VAT details to hand. Please allow longer if you're
+        switching contracts for multiple schools or using a screen reader.</p>
+      {{ govukButton({text: "Continue",href: "/single-schools/dfe-sign-in-email"}) }}
+    </div>
+  </div>
+{% endblock %}

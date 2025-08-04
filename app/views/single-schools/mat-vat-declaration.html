@@ -1,0 +1,144 @@
+{% extends "layouts/main-no-help-form.html" %}
+
+{% block pageTitle %}
+  Which VAT rate are you charged? - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/single-schools/mat-vat-contact" method="post">
+      {% if data['journeyType'] == "single-school" %}
+        <span class="govuk-caption-l">St Mary's Primary School: VAT declaration</span>
+      {% else %}
+        <span class="govuk-caption-l">About your schools: VAT declaration</span>
+      {% endif %}
+      <h1 class="govuk-heading-l">Which VAT rate are you charged?</h1>
+      {% set textHtml %}
+        {{ govukInput({
+          label: {
+            text: "Percentage of total consumption qualifying for reduced rate of VAT"
+          },
+          classes: "govuk-input--width-5",
+          id: "vat-num",
+          name: "vat-num",
+          suffix: {
+            text: "%"
+          },
+          value: data['vat-num'],
+          spellcheck: false
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "VAT registration number (optional)"
+          },
+          classes: "govuk-!-width-one-third",
+          id: "vat-reg",
+          name: "vat-reg",
+          suffix: {
+            text: ""
+          },
+          value: data['vat-reg'],
+          spellcheck: false
+        }) }}
+      {% endset -%}
+      {% if (data['tasklist'] == "on") %}
+        {{ govukRadios({
+          name: "vatType",
+          fieldset: {
+            legend: {
+              text: ""
+            }
+          },
+          hint: {
+            text: "If you're unsure, check your bills. Or, if relevant, ask your local authority or chief financial officer."
+          },
+          items: [
+            {
+              value: "20%~/single-schools/tasklist?vatd=complete",
+              text: "20%",
+              conditional: {
+                html: 20vatHtml
+              }
+            },
+            {
+              value: "5%",
+              text: "5%",
+              conditional: {
+                html: textHtml
+              }
+            }
+          ]
+        }) }}
+      {% elif (data['check-answers'] == "on") %}
+        {{ govukRadios({
+          name: "vatType",
+          fieldset: {
+            legend: {
+              text: ""
+            }
+          },
+          hint: {
+            text: "If you're unsure, check your bills. Or, if relevant, ask your local authority or chief financial officer."
+          },
+          items: [
+            {
+              value: "20%~/single-schools/check-answers-single-school",
+              text: "20%",
+              conditional: {
+                html: 20vatHtml
+              }
+            },
+            {
+              value: "5%",
+              text: "5%",
+              conditional: {
+                html: textHtml
+              }
+            }
+          ]
+        }) }}
+      {% else %}
+        {{ govukRadios({
+          name: "vatType",
+          fieldset: {
+            legend: {
+              text: ""
+            }
+          },
+          hint: {
+            text: "If you're unsure, check your bills. Or, if relevant, ask your local authority or chief financial officer."
+          },
+          items: [
+            {
+              value: "20%~/single-schools/mat-billing-information?vatd=complete",
+              text: "20%",
+              conditional: {
+                html: 20vatHtml
+              }
+            },
+            {
+              value: "5%",
+              text: "5%",
+              conditional: {
+                html: textHtml
+              }
+            }
+          ]
+        }) }}
+      {% endif %}
+      <div class="govuk-button-group">
+        {{ govukButton({text: "Save and continue"}) }}
+        {% if data['check-answers'] != "on" %}
+          <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+            to task list</a>
+        {% endif %}
+      </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layouts/main-no-help-form.html" %}
+
+{% block pageTitle %}
+  VAT declaration - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['journeyType'] == "mats" %}
+        <form class="form" action="/single-schools/mat-billing-setup?vatd=complete" method="post">
+      {% elif (data['tasklist'] == "on") %}
+        <form class="form" action="/single-schools/tasklist?vatd=complete" method="post">
+      {% elif (data['check-answers'] == "on") %}
+        <form class="form" action="/single-schools/check-answers-single-school" method="post">
+      {% else %}
+        <form class="form" action="/single-schools/mat-billing-information?vatd=complete" method="post">
+      {% endif %}
+      {% if data['journeyType'] == "single-school" %}
+        <span class="govuk-caption-l">St Mary's Primary School: VAT declaration</span>
+      {% else %}
+        <span class="govuk-caption-l">About your schools: VAT declaration</span>
+      {% endif %}
+        <h1 class="govuk-heading-l">VAT certificate of declaration</h1>
+        <p class="govuk-body">This information will be used to generate a VAT
+          certificate which will be shared with the new suppliers.</p>
+          <div class="govuk-form-group">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dec" name="declaration" type="checkbox" value="dec" {{ checked("declaration", "dec") }}/>
+              <label class="govuk-label govuk-checkboxes__label" for="dec">I
+                certify that the information given is correct and complete and it
+                will remain valid until I inform the supplier in writing of any
+                significant changes in circumstances</label>
+            </div>
+            <br>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dec-1" name="declaration" type="checkbox" value="dec-1" {{ checked("declaration", "dec-1") }}/>
+              <label class="govuk-label govuk-checkboxes__label" for="dec-1">I
+                undertake to inform the supplier of any change in the qualifying
+                use</label>
+            </div>
+            <br>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dec-2" name="declaration" type="checkbox" value="dec-2" {{ checked("declaration", "dec-2") }}/>
+              <label class="govuk-label govuk-checkboxes__label" for="dec-2">I
+                understand that any incorrect statement may make me liable for a
+                financial penalty under the Value Added Tax Act (as amended from
+                time to time)</label>
+            </div>
+          </div>
+      </div>
+      <div class="govuk-button-group">
+        {{ govukButton({text: "Save and continue"}) }}
+        {% if data['check-answers'] != "on" %}
+          <a class="govuk-link" href="/single-schools/tasklist">Discard and go to
+            task list</a>
+        {% endif %}
+      </div>
+    </form>
+    </div>
+  </div>
+{% endblock %}

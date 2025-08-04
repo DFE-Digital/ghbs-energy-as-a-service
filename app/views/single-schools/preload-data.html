@@ -1,0 +1,56 @@
+{% extends "layouts/main-no-help-form.html" %}
+
+{% block pageTitle %}
+  Content page template - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/single-schools/start-page?journeyType=single-school" method="post">
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {{ govukRadios({
+            name: "journeyType",
+            fieldset: {
+              legend: {
+                text: "Preload data for user journeys",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "single-school",
+                text: "Single School"
+              }
+            ]
+          }) }}
+            {{ govukRadios({
+              name: "signinType",
+              fieldset: {
+                legend: {
+                  text: "For MVP Dfe Sign",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "trust",
+                  text: "MAT,Trust, Single School"
+                },
+                {
+                  value: "trustonly",
+                  text: "MAT or Trust only"
+                }
+              ]
+            }) }}
+            {{ govukButton({text: "Save and continue"}) }}
+          </form>
+    </div>
+  </div>
+{% endblock %}

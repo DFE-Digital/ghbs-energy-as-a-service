@@ -1,0 +1,48 @@
+{% extends "layouts/main-no-help-form.html" %}
+
+{% block pageTitle %}
+  Which school are you buying for? - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/path/of/next/page" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">About your schools</span>
+              <h1 class="govuk-fieldset__heading">Which school are you buying
+                for?</h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school" name="school" type="radio" value="DOWNEND TRUST~/single-schools/pilot-service-only-single-schools">
+                <label class="govuk-label govuk-radios__label" for="school">
+                  DOWNEND TRUST
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school-2" name="school" type="radio" value="St Mary's Primary School~/single-schools/pilot-service-only-single-schools">
+                <label class="govuk-label govuk-radios__label" for="school-2">
+                  ST MARY FOUNDATION
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school-3" name="school" type="radio" value="St Mary's Primary School~/single-schools/mat-authorisation">
+                <label class="govuk-label govuk-radios__label" for="school-3">
+                  St Mary's Primary School
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        {{ govukButton({text: "Continue"}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
