@@ -1,51 +1,39 @@
 {% extends "layouts/main-no-help-form.html" %}
 
 {% block pageTitle %}
-VAT contact information  – {{ serviceName }} – GOV.UK Prototype Kit
+  VAT contact information - {{ serviceName }} - GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {% if data['journeyType'] == "single-school" %}
-      <span class="govuk-caption-l">St Mary's Primary School: VAT declaration</span>
-      {% else %}
-      <span class="govuk-caption-l">About your schools: VAT declaration</span>
-      {% endif %}
-      <h1 class="govuk-heading-l">VAT contact information</h1>
-
-      <form class="form" action="/sprint-5/vat-certificate" method="post">
-
+      <form class="form" action="/single-schools/vat-certificate" method="post">
+        {% if data['journeyType'] == "single-school" %}
+          <span class="govuk-caption-l">St Mary's Primary School: VAT
+            declaration</span>
+        {% else %}
+          <span class="govuk-caption-l">About your schools: VAT declaration</span>
+        {% endif %}
+        <h1 class="govuk-heading-l">VAT contact information</h1>
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--s for="vatname">
-              First name
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="vatname" name="vatname" type="text" autocomplete="vatname" value="{{data['vatname']}}">
+            <label class="govuk-label govuk-label--s" for="vatname">First name</label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="vatname" name="vatname" type="text" autocomplete="vatname" value="{{data['vatname']}}"/>
           </div>
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--s" for="vatname">
-              Last name (optional)
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="vatname" name="vatname" type="text" autocomplete="vatname" value="{{data['vatname']}}">
+            <label class="govuk-label govuk-label--s" for="vatname">Last name (optional)</label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="vatname" name="vatname" type="text" autocomplete="vatname" value="{{data['vatname']}}"/>
           </div>
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--s" for="vattel">
-              Telephone number
-            </label>
+              Telephone number</label>
             <input class="govuk-input govuk-!-width-two-thirds" id="vattel" name="vattel" type="text" autocomplete="vattel" value="{{data['vattel']}}">
           </div>
         </fieldset>
-
         {{ govukRadios({
           id: "invoice-paper",
           name: "invoiceByPaper",
@@ -73,22 +61,14 @@ VAT contact information  – {{ serviceName }} – GOV.UK Prototype Kit
             }
           ]
         }) }}
-
         <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Save and continue"
-          }) }}
-    
-          {% if data['check-answers'] == "on" %}
-          {% else %}
-          <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
+          {{ govukButton({text: "Save and continue"}) }}
+          {% if data['check-answers'] != "on" %}
+            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+              to task list</a>
           {% endif %}
         </div>
-
       </form>
-
     </div>
   </div>
-
-
 {% endblock %}
