@@ -10,3 +10,4 @@ const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
 // Add your routes here
+require('./routes/single-schools/v1.js')(router);

@@ -11,46 +11,30 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/single-schools/start-page?journeyType=single-school" method="post">
+      <form class="form" action="/single-schools/preload-data" method="post">
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
           {{ govukRadios({
             name: "journeyType",
             fieldset: {
               legend: {
-                text: "Preload data for user journeys",
+                text: "For MVP Dfe Sign-in",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--l"
               }
             },
             items: [
               {
-                value: "single-school",
+                value: "Single School",
                 text: "Single School"
+              },
+              {
+                value: "MAT",
+                text: "MAT "
               }
             ]
           }) }}
-            {{ govukRadios({
-              name: "signinType",
-              fieldset: {
-                legend: {
-                  text: "For MVP Dfe Sign",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--l"
-                }
-              },
-              items: [
-                {
-                  value: "trust",
-                  text: "MAT,Trust, Single School"
-                },
-                {
-                  value: "trustonly",
-                  text: "MAT or Trust only"
-                }
-              ]
-            }) }}
-            {{ govukButton({text: "Save and continue"}) }}
-          </form>
+          {{ govukButton({text: "Save and continue"}) }}
+        </form>
     </div>
   </div>
 {% endblock %}
