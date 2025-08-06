@@ -1,4 +1,4 @@
-{% extends "layouts/main-no-help-form.html" %}
+{% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -19,7 +19,7 @@
       <span class="govuk-caption-l">All schools: Billing preferences</span>
       <h1 class="govuk-heading-l">Are these the correct details for billing purposes?</h1>
 
-      
+
 
       {% if data['journeyType'] == "single-school" %}
       <form class="form" action="/sprint-5/tasklist?bp=complete" method="post">
