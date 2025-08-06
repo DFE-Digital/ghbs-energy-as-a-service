@@ -1,4 +1,4 @@
-{% extends "layouts/main-no-help-form.html" %}
+{% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
 Gas meter summary – {{ serviceName }} – GOV.UK Prototype Kit
@@ -19,7 +19,7 @@ Gas meter summary – {{ serviceName }} – GOV.UK Prototype Kit
       <span class="govuk-caption-l">St Mary's Primary School: Gas meters and usage</span>
       <h1 class="govuk-heading-l">MPRN summary</h1>
 
-      
+
       {% if data['meterType'] == "Multi meter" %}
       <form class="form" action="/sprint-5/gas-info-billing" method="post">
       {% else %}
@@ -64,7 +64,7 @@ Gas meter summary – {{ serviceName }} – GOV.UK Prototype Kit
 
   <br>
 
-    
+
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Save and continue"
