@@ -1,3 +1,8 @@
 {
-  "serviceName": "Energy for Schools"
+  "serviceName": "Energy for Schools",
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
 }
