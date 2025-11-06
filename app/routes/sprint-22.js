@@ -32,15 +32,24 @@ module.exports = function (router) {
     }
   })
 
+
   router.get('/' + version + '/which-school-are-you-buying-for', function (req, res) {
     res.render(version + '/which-school-are-you-buying-for', {})
   })
 
   router.post('/' + version + '/which-school-are-you-buying-for', function (req, res) {
     if (req.session.data['school'] == 'St Mary\'s Primary School') {
-      res.redirect('/' + version + '/mat-authorisation')
+      res.redirect('/' + version + '/are-you-authorised')
     } else {
       res.redirect('/' + version + '/trust-schools')
     }
+  })
+
+  router.get('/' + version + '/trust-schools', function (req, res) {
+    res.render(version + '/trust-schools', {})
+  })
+
+  router.post('/' + version + '/trust-schools', function (req, res) {
+    res.redirect('/' + version + '/are-you-authorised')
   })
 }
