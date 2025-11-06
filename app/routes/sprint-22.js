@@ -25,14 +25,22 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/dfe-sign-in-password', function (req, res) {
-
     if (req.session.data['journeyType'] == 'MAT') {
       res.redirect('/' + version + '/which-school-are-you-buying-for')
     } else {
       res.redirect('/' + version + '/single-school-authorisation')
     }
-
   })
 
+  router.get('/' + version + '/which-school-are-you-buying-for', function (req, res) {
+    res.render(version + '/which-school-are-you-buying-for', {})
+  })
 
+  router.post('/' + version + '/which-school-are-you-buying-for', function (req, res) {
+    if (req.session.data['school'] == 'St Mary\'s Primary School') {
+      res.redirect('/' + version + '/mat-authorisation')
+    } else {
+      res.redirect('/' + version + '/trust-schools')
+    }
+  })
 }
