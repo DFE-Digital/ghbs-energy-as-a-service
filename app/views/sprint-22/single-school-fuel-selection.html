@@ -11,29 +11,33 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="" method="post">
+      <form class="form" action="single-school-fuel-selection" method="post">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <span class="govuk-caption-l">St Mary's Primary School</span>
+              <span class="govuk-caption-l">{{ data['school'] }}</span>
               <h1 class="govuk-fieldset__heading">Are you switching electricity,
                 gas or both?</h1>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="single-energyType" name="single-energyType" type="radio" value="electricity~/single-schools/mat-electricity-contract">
+                <!-- <input class="govuk-radios__input" id="single-energyType" name="single-energyType" type="radio" value="electricity~/single-schools/mat-electricity-contract"> -->
+                <input class="govuk-radios__input" id="single-energyType" name="single-energyType" type="radio" value="electricity">
                 <label class="govuk-label govuk-radios__label" for="single-energyType">
                   Electricity only</label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="single-energyType-2" name="single-energyType" type="radio" value="gas~/single-schools/mat-gas-contract">
+                <!-- <input class="govuk-radios__input" id="single-energyType-2" name="single-energyType" type="radio" value="gas~/single-schools/mat-gas-contract"> -->
+                <input class="govuk-radios__input" id="single-energyType-2" name="single-energyType" type="radio" value="gas">
                 <label class="govuk-label govuk-radios__label" for="single-energyType-2">
                   Gas only</label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="single-energyType-3" name="single-energyType" type="radio" value="gasandelec~/single-schools/mat-gas-contract">
+                <!-- <input class="govuk-radios__input" id="single-energyType-3" name="single-energyType" type="radio" value="gasandelec~/single-schools/mat-gas-contract"> -->
+                <input class="govuk-radios__input" id="single-energyType-3" name="single-energyType" type="radio" value="gasAndElectricity">
                 <label class="govuk-label govuk-radios__label" for="single-energyType-3">
-                  Gas and electricity</label>
+                  Gas and electricity
+                </label>
               </div>
             </div>
           </fieldset>

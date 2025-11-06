@@ -45,11 +45,26 @@ module.exports = function (router) {
     }
   })
 
+
   router.get('/' + version + '/trust-schools', function (req, res) {
     res.render(version + '/trust-schools', {})
   })
 
   router.post('/' + version + '/trust-schools', function (req, res) {
     res.redirect('/' + version + '/are-you-authorised')
+  })
+
+  router.get('/' + version + '/single-school-fuel-selection', function (req, res) {
+    res.render(version + '/single-school-fuel-selection', {})
+  })
+
+  router.post('/' + version + '/single-school-fuel-selection', function (req, res) {
+    if (req.session.data['single-energyType'] == 'electricity') {
+      res.redirect('/' + version + '/mat-electricity-contract')
+    } else if (req.session.data['single-energyType'] == 'gas') {
+      res.redirect('/' + version + '/mat-gas-contract')
+    } else {
+      res.redirect('/' + version + '/mat-gas-contract')
+    }
   })
 }
