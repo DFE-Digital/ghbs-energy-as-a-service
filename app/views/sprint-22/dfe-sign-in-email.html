@@ -11,7 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/single-schools/dfe-sign-in-password" method="post">
+      <form class="form" action="dfe-sign-in-email" method="post">
         <h1 class="govuk-heading-xl">Access the DfE Sign-in service</h1>
           <div class="govuk-form-group">
             <label class="govuk-label" for="login-email">Log in to your account
@@ -20,7 +20,8 @@
               address to sign in.</div>
             <input class="govuk-input govuk-!-width-one-half" id="login-email" name="login-email" type="text" value="{{data['login-email']}}">
           </div>
-        {{ govukButton({text: "Next"}) }}
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Next</button>
         <p class="govuk-body">By signing in you accept <a href="#">DfE Sign-in
           terms and conditions</a></p>
         <h2 class="govuk-heading-l">New users of DfE sign-in</h2>
