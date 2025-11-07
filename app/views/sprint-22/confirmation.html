@@ -7,18 +7,29 @@
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukPanel({titleText: "Information submitted",html: "Case reference number<br><strong>HDJ2123F</strong>"}) }}
-      <p class="govuk-body">We've sent you an email containing a copy of this
-        form and details about your new contract.</p>
-      <p class="govuk-body">If your current contract expires before 31 March
-        2026, you'll join the Energy for Schools contract on 1 April 2026.</p>
-      <p class="govuk-body">Depending on your contract's end date, you may be
-        placed on an interim contract to ensure continued supply to your school.</p>
-      <p class="govuk-body">
-        Depending on your contract's end date, you may be placed on an interim
-        contract to ensure continued supply to your school.</p>
-      <p class="govuk-body"><a href="#">What did you think of this service?</a>
-        (takes 5 minutes)</p>
+      <form action="confirmation" method="post">
+        {{ govukPanel({titleText: "Information submitted",html: "Case reference number<br><strong>HDJ2123F</strong>"}) }}
+        <p class="govuk-body">We've sent you an email to your.email@schoool.sch.uk
+          containing a copy of this form and details about what happens next.</p>
+        <p class="govuk-body">Check your current contract's termination terms
+          and notice period to find out how much notice you need to provide to
+          switch suppliers. You must provide notice to your current supplier in
+          writing. DfE cannot do this for you.</p>
+        {% if (data['journeyType'] == 'MAT') %}
+          <p class="govuk-body">Use the online service again to switch another
+            school in your MAT to the energy contract.</p>
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Switch another school
+            </button>
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" name="addAnotherSchool" value="True">
+              Add another school
+            </button>
+          </div>
+        {% endif %}
+        <p class="govuk-body"><a href="#">What did you think of this service?</a>
+          (takes 5 minutes)</p>
+      </form>
     </div>
   </div>
 {% endblock %}

@@ -71,4 +71,12 @@ module.exports = function (router) {
       }
     }
   })
+
+  router.get('/' + version + '/confirmation', function (req, res){
+    res.render(version + '/confirmation')
+  })
+
+  router.post('/' + version + '/confirmation', function (req, res){
+    res.redirect('/' + version + '/trust-schools')
+  })
 }
