@@ -59,12 +59,16 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/single-school-fuel-selection', function (req, res) {
-    if (req.session.data['single-energyType'] == 'electricity') {
-      res.redirect('/' + version + '/mat-electricity-contract')
-    } else if (req.session.data['single-energyType'] == 'gas') {
-      res.redirect('/' + version + '/mat-gas-contract')
+    if (req.session.data['skipForm'] == 'True'){
+      res.redirect('/' + version + '/confirmation')
     } else {
-      res.redirect('/' + version + '/mat-gas-contract')
+      if (req.session.data['single-energyType'] == 'electricity') {
+        res.redirect('/' + version + '/mat-electricity-contract')
+      } else if (req.session.data['single-energyType'] == 'gas') {
+        res.redirect('/' + version + '/mat-gas-contract')
+      } else {
+        res.redirect('/' + version + '/mat-gas-contract')
+      }
     }
   })
 }
