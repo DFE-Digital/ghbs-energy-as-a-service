@@ -21,26 +21,25 @@
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <!-- <input class="govuk-radios__input" id="school" name="school" type="radio" value="DOWNEND TRUST~/single-schools/pilot-service-only-single-schools"> -->
                 <input class="govuk-radios__input" id="school" name="school" type="radio" value="DOWNEND TRUST">
                 <label class="govuk-label govuk-radios__label" for="school">
                   DOWNEND TRUST
                 </label>
               </div>
-              <div class="govuk-radios__item">
-                <!-- <input class="govuk-radios__input" id="school-2" name="school" type="radio" value="St Mary's Primary School~/single-schools/pilot-service-only-single-schools"> -->
-                <input class="govuk-radios__input" id="school-2" name="school" type="radio" value="ST MARY FOUNDATION">
-                <label class="govuk-label govuk-radios__label" for="school-2">
-                  ST MARY FOUNDATION
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <!-- <input class="govuk-radios__input" id="school-3" name="school" type="radio" value="St Mary's Primary School~/single-schools/mat-authorisation"> -->
-                <input class="govuk-radios__input" id="school-3" name="school" type="radio" value="St Mary's Primary School">
-                <label class="govuk-label govuk-radios__label" for="school-3">
-                  St Mary's Primary School
-                </label>
-              </div>
+              {% if (data['journeyType'] != 'MAT')   %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="school-2" name="school" type="radio" value="ST MARY FOUNDATION">
+                  <label class="govuk-label govuk-radios__label" for="school-2">
+                    ST MARY FOUNDATION
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="school-3" name="school" type="radio" value="St Mary's Primary School">
+                  <label class="govuk-label govuk-radios__label" for="school-3">
+                    St Mary's Primary School
+                  </label>
+                </div>
+              {% endif %}
             </div>
           </fieldset>
         </div>
