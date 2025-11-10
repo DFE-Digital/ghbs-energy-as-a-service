@@ -54,6 +54,15 @@ module.exports = function (router) {
     res.redirect('/' + version + '/are-you-authorised')
   })
 
+
+  router.get('/' + version + '/are-you-authorised', function (req, res) {
+    res.render(version + '/are-you-authorised', {})
+  })
+
+  router.post('/' + version + '/are-you-authorised', function (req, res) {
+    res.redirect('/' + version + '/single-school-fuel-selection')
+  })
+
   router.get('/' + version + '/single-school-fuel-selection', function (req, res) {
     res.render(version + '/single-school-fuel-selection', {})
   })
