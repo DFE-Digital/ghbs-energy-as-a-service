@@ -11,20 +11,26 @@
   {% endblock %}
 
   {% block header %}
-    {% from 'node_modules/dfe-frontend/packages/components/header/macro.njk' import header %}
-    <header class="dfe-header" role="banner">
-      <div class="govuk-width-container dfe-header__container">
-          <div class="dfe-header__logo">
-            <a class="dfe-header__link" href="/" aria-label="DfE homepage">
-            <img src="/public/images/dfe-logo.png" class="dfe-logo" alt="Department for Education">
-            <img src="/public/images/dfe-logo-alt.png" class="dfe-logo-hover" alt="Department for Education">
+    <header class="govuk-header" data-module="govuk-header">
+      <div class="govuk-header__container govuk-width-container">
+          <div class="govuk-header__logo">
+            <a href="/" class="govuk-header__link govuk-header__link--homepage">
+                <img src="/public/images/department-for-education_white.png" alt="Department for Education" class="govuk-header__logotype">
             </a>
           </div>
       </div>
-      <div class="govuk-width-container dfe-header__service-name">
-          <a href="/" class="dfe-header__link--service">Get help buying for schools</a>
-      </div>
     </header>
+    <section aria-label="Service information" class="govuk-service-navigation" data-module="govuk-service-navigation" data-govuk-service-navigation-init="">
+      <div class="govuk-width-container">
+          <div class="govuk-service-navigation__container">
+              <span class="govuk-service-navigation__service-name">
+                  <a href="/" class="govuk-service-navigation__link ">
+                  {{serviceName}}
+              </a>
+              </span>
+          </div>
+      </div>
+    </section>
   {% endblock %}
   {% block scripts %}
     {{ super() }}
