@@ -1,0 +1,32 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Information submitted - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="confirmation" method="post">
+        {{ govukPanel({titleText: "Information submitted",html: "Case reference number<br><strong>HDJ2123F</strong>"}) }}
+        <p class="govuk-body">We've sent a confirmation email to
+          email@schoool.sch.uk containing a copy of this form and information
+          about what happens next.</p>
+        <h2 class="govuk-heading-m">Next steps</h2>
+        <p class="govuk-body">Check your current contract's termination terms
+          and notice period to find out how much notice you need to provide to
+          switch suppliers. You must provide notice to your current supplier in
+          writing. DfE cannot do this for you.</p>
+        {% if (data['journeyType'] == 'MAT') %}
+          <p class="govuk-body">Use the online service again to switch another
+            school in your MAT to the energy contract.</p>
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button" name="addAnotherSchool" value="True">
+              Switch another school
+            </button>
+          </div>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+{% endblock %}

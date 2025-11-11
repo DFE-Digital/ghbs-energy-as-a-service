@@ -1,0 +1,44 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+Are you authorised to switch energy suppliers for this school? - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="are-you-authorised" method="post">
+      <!-- {% if ((data['mat-gastype'] == "gas-school-1") and (data['mat-electype'] == "elec-school-1")) %}
+        <form class="form" action="mat-existing-contracts" method="post">
+      {% elif data['mat-gastype'] == "gas-school-1" %}
+        <form class="form" action="mat-existing-contracts-gas" method="post">
+      {% elif data['mat-electype'] == "elec-school-1" %}
+        <form class="form" action="mat-existing-contracts-electric" method="post">
+      {% elif data['journeyType'] == "single-school" %}
+        <form class="form" action="single-school-fuel-selection" method="post">
+      {% else %}
+        <form class="form" action="single-school-fuel-selection" method="post">
+      {% endif %} -->
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
+        <h1 class="govuk-heading-l">Are you authorised to switch energy suppliers
+          for this school?</h1>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>{{ data['school'] }}</li>
+        </ul>
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            Please seek appropriate authorisation to switch energy suppliers.
+            There is no cooling off period once you've submitted this form.
+          </strong>
+        </div>
+        {{ govukButton({text: "Continue"}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

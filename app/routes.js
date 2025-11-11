@@ -10,3 +10,5 @@ const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
 // Add your routes here
+
+require('./routes/sprint-22.js')(router);

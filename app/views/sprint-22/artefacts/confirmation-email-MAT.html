@@ -1,0 +1,34 @@
+{% extends "layouts/govuk-notify.html" %}
+
+{% set pageName="Case [Insert Case Number] - invitation to participate in
+  procurement process" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <p class="govuk-body">You have been invited to participate in the
+        process for [Sub-category] procurement for [Organisation name].</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Sign in to view tasks</p>
+      <p class="govuk-body">Click this <a href="../../school-buyer/start" class="govuk-link" rel="noreferrer noopener" target="_blank">
+        unique case-specific link (opens in new tab)</a> to access
+        your procurement task list. You will need to sign in with your DfE
+        Sign-in account. If you do not have a DfE Sign-in account, you will need
+        to create one.</p>
+      <p class="govuk-body">From here you will be able to see all the tasks
+        you will need to complete.</p>
+      <p class="govuk-body govuk-!-margin-top-9">[Case worker full name]</p>
+      <p class="govuk-body">Procurement Specialist</p>
+      <p class="govuk-body">Get help buying for schools</p>
+      <p class="govuk-body govuk-!-margin-top-9">Get help buying for schools
+        service disclaimer</p>
+      <p class="govuk-body">Please note that the expertise and advice being
+        provided by the Service shall not in any way affect your obligations
+        to comply with all relevant procurement law and the Department's
+        guidance, including but not limited to the Public Contracts
+        Regulations, Academy Trust Handbook, ESFA Funding Agreement and the
+        Schemes for Financing Local Authority Maintained schools.</p>
+      <p class="govuk-body">For the avoidance of doubt, the Department shall
+        bear no liability as a result of using our Service.</p>
+    </div>
+  </div>
+{% endblock %}

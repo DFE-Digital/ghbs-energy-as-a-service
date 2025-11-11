@@ -1,0 +1,73 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  VAT contact details - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/single-schools/vat-certificate" method="post">
+      {% if data['journeyType'] == "single-school" %}
+        <span class="govuk-caption-l">St Mary's Primary School: VAT declaration</span>
+      {% else %}
+        <span class="govuk-caption-l">About your schools: VAT declaration</span>
+      {% endif %}
+      <h1 class="govuk-heading-l">Are these the correct details for VAT
+        purposes?</h1>
+      <p class="govuk-body">This information will be used to generate a VAT
+        certificate which will be shared with the new suppliers.</p>
+        <table class="govuk-table">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Name</th>
+              <td class="govuk-table__cell">Mr Smith</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Address</th>
+              <td class="govuk-table__cell">Pleckgate High School, Pleckgate Road, BB1 8QA</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Telephone number</th>
+              <td class="govuk-table__cell">012345 678 910</td>
+            </tr>
+          </tbody>
+        </table>
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "VATcontact",
+          fieldset: {
+            legend: {
+              text: "",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("VATcontact", "Yes")
+            },
+            {
+              value: "no~/single-schools/mat-vat-contact-manual",
+              text: "No",
+              checked: checked("VATcontact", "No")
+            }
+          ]
+        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({text: "Save and continue"}) }}
+          {% if data['check-answers'] != "on" %}
+            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+              to task list</a>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
