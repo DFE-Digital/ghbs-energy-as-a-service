@@ -8,8 +8,8 @@
     <div class="govuk-grid-column-full">
       <p class="govuk-body">Dear Jo Wade,</p>
       <p class="govuk-body">Thank you for joining Energy for Schools on behalf
-        of {{data['schoolName']}}.</p>
-      <p class="govuk-body">Your case reference number is HDJ2123F.</p>
+        of {{data['schoolName'] | default('St Mary\'s Primary School')}}. Your 
+        case reference number is 005647.</p>
       <p class="govuk-body">Please find attached:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>a summary of the information you provided</li>
@@ -18,10 +18,8 @@
     <p class="govuk-body">The relevant information will also be sent to the new
       supplier(s). If the transfer from your current supplier is successful,
       your new contract(s) will start on:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Gas: 1 April 2026</li>
-      <li>Electricity: 1 April 2026</li>
-    </ul>
+    <p class="govuk-body">1/04/2026 (gas)</p>
+    <p class="govuk-body">1/04/2026 (electricity)</p>
     <p class="govuk-body">Check your current contract termination terms and
       notice period to find out how much notice you need to provide to switch
       suppliers. Notice must be provided in writing. DfE cannot do this for you.
@@ -32,8 +30,8 @@
       supplier.</p>
     <p class="govuk-body govuk-!-font-weight-bold">Switch another school</p>
     <p class="govuk-body">Visit <a href="[link]" class="govuk-link" rel="noreferrer noopener" target="_blank">
-      [link] (opens in new tab)</a> to switch another school to the
-      Energy for Schools contract using the online service.</p>
+      Energy for Schools (opens in new tab)</a> to swtich another school to the 
+      contract using the online service.</p>
     <p class="govuk-body">Alternatively, fill in the <a href="#" class="govuk-link">
       Register your interest form</a> and complete the paperwork for
       any additional schools offline.</p>
@@ -52,12 +50,30 @@
       you'll be on an interim rate between 1 January 2026 and 31 March 2026.</p>
     <p class="govuk-body">We'll keep you informed of forecast unit rates once
       your contract starts by sending you a monthly email update.</p>
-    <p class="govuk-body govuk-!-font-weight-bold">Billing</p>
-    <p class="govuk-body">Your electricity and gas invoices will be issued
-      separately by the relevant suppliers.</p>
-    <p class="govuk-body">Once your contract begins, DfE will keep you
-      updated via email on forecast rates for the following year. You'll also
-
+    <p class="govuk-body govuk-!-font-weight-bold">Invoices and portal access</p>
+    <p class="govuk-body">We'll also contact you with further instructions about 
+      submitting your VAT certificate and Direct Debit mandate, if you selected 
+      Direct Debit as your preferred payment method.</p>
+    <p class="govuk-body">You'll be granted access to the new supplier(s) 
+      portal(s) on or shortly after your contract's start date. Portal access 
+      allows you to view your consumption and billing information and input 
+      meter readings.</p>
+    <p class="govuk-body govuk-!-font-weight-bold">Support</p>
+    <p class="govuk-body">You can contact DfE by replying to this email if you 
+      need help with:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>adding more schools or removing existing ones from your energy contract 
+        (only applicable to federations and multi-academy trusts)</li>
+      <li>contract-related questions, including guidance on termination notice 
+        periods and contractual obligations</li>
+      <li>escalating and resolving any persistent problems with your energy 
+        supplier</li>
+      <li>account configuration and ensuring correct billing information across 
+        all your sites</li>
+      <li>managing energy contracts during change of tenancy situations</li>
+      <li>renewable energy options</li>
+    </ul>
+    <p class="govuk-body">Kind regards,<br>Energy for Schools team</p>
   </div>
   </div>
 {% endblock %}
