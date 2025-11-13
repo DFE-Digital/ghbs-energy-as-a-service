@@ -6,29 +6,74 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <p class="govuk-body">You have been invited to participate in the
-        process for [Sub-category] procurement for [Organisation name].</p>
-      <p class="govuk-body govuk-!-font-weight-bold">Sign in to view tasks</p>
-      <p class="govuk-body">Click this <a href="../../school-buyer/start" class="govuk-link" rel="noreferrer noopener" target="_blank">
-        unique case-specific link (opens in new tab)</a> to access
-        your procurement task list. You will need to sign in with your DfE
-        Sign-in account. If you do not have a DfE Sign-in account, you will need
-        to create one.</p>
-      <p class="govuk-body">From here you will be able to see all the tasks
-        you will need to complete.</p>
-      <p class="govuk-body govuk-!-margin-top-9">[Case worker full name]</p>
-      <p class="govuk-body">Procurement Specialist</p>
-      <p class="govuk-body">Get help buying for schools</p>
-      <p class="govuk-body govuk-!-margin-top-9">Get help buying for schools
-        service disclaimer</p>
-      <p class="govuk-body">Please note that the expertise and advice being
-        provided by the Service shall not in any way affect your obligations
-        to comply with all relevant procurement law and the Department's
-        guidance, including but not limited to the Public Contracts
-        Regulations, Academy Trust Handbook, ESFA Funding Agreement and the
-        Schemes for Financing Local Authority Maintained schools.</p>
-      <p class="govuk-body">For the avoidance of doubt, the Department shall
-        bear no liability as a result of using our Service.</p>
-    </div>
+      <p class="govuk-body">Dear Jo Wade,</p>
+      <p class="govuk-body">Thank you for joining Energy for Schools on behalf
+        of {{data['schoolName'] | default('St Mary\'s Primary School')}}. Your 
+        case reference number is 005647.</p>
+      <p class="govuk-body">Please find attached:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a summary of the information you provided</li>
+        <li>a copy of the letter of authority</li>
+      </ul>
+    <p class="govuk-body">The relevant information will also be sent to the new
+      supplier(s). If the transfer from your current supplier is successful,
+      your new contract(s) will start on:</p>
+    <p class="govuk-body">1/04/2026 (gas)</p>
+    <p class="govuk-body">1/04/2026 (electricity)</p>
+    <p class="govuk-body">Check your current contract termination terms and
+      notice period to find out how much notice you need to provide to switch
+      suppliers. Notice must be provided in writing. DfE cannot do this for you.
+    </p>
+    <p class="govuk-body">If your school's energy contract is already through
+      Crown Commercial Service, DfE will transfer (novate) you onto the new
+      account. In this instance, you do not need to give notice to your current
+      supplier.</p>
+    <p class="govuk-body govuk-!-font-weight-bold">Switch another school</p>
+    <p class="govuk-body">Visit <a href="[link]" class="govuk-link" rel="noreferrer noopener" target="_blank">
+      Energy for Schools (opens in new tab)</a> to swtich another school to the 
+      contract using the online service.</p>
+    <p class="govuk-body">Alternatively, fill in the <a href="#" class="govuk-link">
+      Register your interest form</a> and complete the paperwork for
+      any additional schools offline.</p>
+    <p class="govuk-body govuk-!-font-weight-bold">Objections</p>
+    <p class="govuk-body">The new suppliers will start the process of switching
+      your supply approximately one month before your new contract's start date.
+      If the transfer from your current supplier is refused, this is referred to
+      as an objection. DfE will notify you if there has been an objection and
+      guide you on what to do next.</p>
+    <p class="govuk-body govuk-!-font-weight-bold">Interim rate</a>
+    <p class="govuk-body">You may be placed on an interim rate to start with,
+      depending on your current contract end date and the start of the next
+      available V30 rate.</p>
+    <p class="govuk-body">For example, if your current contract ends on 31
+      December 2025 and you're set to switch to the V30 rate on 1 April 2026,
+      you'll be on an interim rate between 1 January 2026 and 31 March 2026.</p>
+    <p class="govuk-body">We'll keep you informed of forecast unit rates once
+      your contract starts by sending you a monthly email update.</p>
+    <p class="govuk-body govuk-!-font-weight-bold">Invoices and portal access</p>
+    <p class="govuk-body">We'll also contact you with further instructions about 
+      submitting your VAT certificate and Direct Debit mandate, if you selected 
+      Direct Debit as your preferred payment method.</p>
+    <p class="govuk-body">You'll be granted access to the new supplier(s) 
+      portal(s) on or shortly after your contract's start date. Portal access 
+      allows you to view your consumption and billing information and input 
+      meter readings.</p>
+    <p class="govuk-body govuk-!-font-weight-bold">Support</p>
+    <p class="govuk-body">You can contact DfE by replying to this email if you 
+      need help with:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>adding more schools or removing existing ones from your energy contract 
+        (only applicable to federations and multi-academy trusts)</li>
+      <li>contract-related questions, including guidance on termination notice 
+        periods and contractual obligations</li>
+      <li>escalating and resolving any persistent problems with your energy 
+        supplier</li>
+      <li>account configuration and ensuring correct billing information across 
+        all your sites</li>
+      <li>managing energy contracts during change of tenancy situations</li>
+      <li>renewable energy options</li>
+    </ul>
+    <p class="govuk-body">Kind regards,<br>Energy for Schools team</p>
+  </div>
   </div>
 {% endblock %}
