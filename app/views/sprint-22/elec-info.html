@@ -12,8 +12,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/single-schools/elec-meter-info?emu1=inProgress" method="post">
-        <span class="govuk-caption-l">St Mary's Primary School: Electricity
-          meters and usage</span>
+        <span class="govuk-caption-l">{{ data['school'] }}</span>
         {{ govukRadios({
           classes: "govuk-radios",
           name: "emeterType",

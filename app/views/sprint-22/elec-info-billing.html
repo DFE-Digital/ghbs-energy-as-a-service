@@ -19,8 +19,7 @@
       {% else %}
         <form class="form" action="/single-schools/mat-site-contact?emu1=complete" method="post">
       {% endif %}
-      <span class="govuk-caption-l">St Mary's Primary School: Electricity meters
-        and usage</span>
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
       {{ govukRadios({
         classes: "govuk-radios",
         name: "ebillType",

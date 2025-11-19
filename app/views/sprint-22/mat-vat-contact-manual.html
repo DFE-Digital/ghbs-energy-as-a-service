@@ -13,8 +13,7 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/single-schools/vat-certificate" method="post">
         {% if data['journeyType'] == "single-school" %}
-          <span class="govuk-caption-l">St Mary's Primary School: VAT
-            declaration</span>
+          <span class="govuk-caption-l">{{ data['school'] }}: VAT declaration</span>
         {% else %}
           <span class="govuk-caption-l">About your schools: VAT declaration</span>
         {% endif %}

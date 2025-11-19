@@ -29,10 +29,10 @@
         <form class="form" action="/single-schools/mat-vat-status?ecd=complete" method="post">
       {% endif %}
       {% if data['journeyType'] == "single-school" %}
-        <span class="govuk-caption-l">St Mary's Primary School: Current
-          electricity supplier</span>
+        <span class="govuk-caption-l">{{ data['school'] }}: Current electricity 
+          supplier</span>
       {% else %}
-        <span class="govuk-caption-l">About your schools: Current electricity
+        <span class="govuk-caption-l">{{ data['school'] }}: Current electricity 
           supplier</span>
       {% endif %}
       <h1 class="govuk-heading-l">Electricity contract</h1>

@@ -13,9 +13,9 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/single-schools/mat-billing-contact?bp=inProgress" method="post">
       {% if data['journeyType'] == "single-school" %}
-        <span class="govuk-caption-l">St Mary's Primary School: Billing preferences</span>
+        <span class="govuk-caption-l">{{ data['school'] }}: Billing preferences</span>
       {% else %}
-        <span class="govuk-caption-l">About your schools: Billing preferences</span>
+        <span class="govuk-caption-l">{{ data['school'] }}: Billing</span>
       {% endif %}
       <h1 class="govuk-heading-l">Setting up your billing</h1>
       {{ govukRadios({

@@ -17,10 +17,9 @@
         <form class="form" action="/single-schools/tasklist?bp=complete" method="post">
       {% endif %}
       {% if data['journeyType'] == "single-school" %}
-        <span class="govuk-caption-l">St Mary's Primary School: Billing
-          preferences</span>
+        <span class="govuk-caption-l">{{ data['school'] }}: Billing</span>
       {% else %}
-        <span class="govuk-caption-l">About your schools: Billing preferences</span>
+        <span class="govuk-caption-l">{{ data['school'] }}: Billing preferences</span>
       {% endif %}
       {{ govukRadios({
         id: "bill-address",

@@ -21,7 +21,7 @@
         <form class="form" action="/single-schools/mat-billing-information?vatd=complete" method="post">
       {% endif %}
       {% if data['journeyType'] == "single-school" %}
-        <span class="govuk-caption-l">St Mary's Primary School: VAT declaration</span>
+        <span class="govuk-caption-l">{{ data['school'] }}: VAT declaration</span>
       {% else %}
         <span class="govuk-caption-l">About your schools: VAT declaration</span>
       {% endif %}

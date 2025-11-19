@@ -22,7 +22,7 @@
       {% else %}
         <form class="form" action="/single-schools/elec-info" method="post">
       {% endif %}
-        <span class="govuk-caption-l">St Mary's Primary School</span>
+        <span class="govuk-caption-l">{{ data['school'] }}</span>
         <h1 class="govuk-heading-l">Gas meters and usage</h1>
         {{ govukRadios({
           classes: "govuk-radios",

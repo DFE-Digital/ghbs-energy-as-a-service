@@ -12,7 +12,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="/single-schools/gas-meter-info" method="post">
-      <span class="govuk-caption-l">St Mary's Primary School: Gas meters and usage</span>
+      <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
       {{ govukRadios({
         classes: "govuk-radios",
         name: "meterType",
