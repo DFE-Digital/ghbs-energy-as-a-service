@@ -327,6 +327,16 @@ module.exports = function (router) {
     res.redirect('/' + version + '/authorisation')
   })
 
+
+  router.get('/' + version + '/authorisation', function (req, res) {
+    res.render(version + '/authorisation')
+  })
+
+  router.post('/' + version + '/authorisation', function (req, res) {
+    res.redirect('/' + version + '/confirmation')
+  })
+  
+
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
   })
