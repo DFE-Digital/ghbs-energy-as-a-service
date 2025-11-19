@@ -15,13 +15,9 @@ Electricity meter summary – {{ serviceName }} – GOV.UK Prototype Kit
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       <span class="govuk-caption-l">{{ data['school'] }}</span>
       <h1 class="govuk-heading-l">MPAN summary</h1>
-
-      <form class="form" action="/path/of/next/page" method="post">
-
-
+      <form class="form" action="elec-meter-review-2" method="post">
         <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m">You have added 3 MPANs</caption>
           <thead class="govuk-table__head">
@@ -37,7 +33,12 @@ Electricity meter summary – {{ serviceName }} – GOV.UK Prototype Kit
               <td class="govuk-table__cell">{{ data['mpan'] }}</th>
               <td class="govuk-table__cell">{{ data['halfHour'] }}</td>
               <td class="govuk-table__cell">{{ data['ekwh'] }}</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/elec-meter-info">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                <a class="govuk-link govuk-!-margin-right-3" href="elec-meter-info">
+                  Change<span class="govuk-visually-hidden"> {{data['mpan']}}</span></a>
+                <a class="govuk-link" href="remove-mpan">Remove<span class="govuk-visually-hidden"> 
+                  {{data['mpan']}}</span></a>
+              </td>
             </tr>
           </tbody>
           <tbody class="govuk-table__body">
@@ -45,7 +46,12 @@ Electricity meter summary – {{ serviceName }} – GOV.UK Prototype Kit
               <td class="govuk-table__cell">{{ data['mpan-1'] }}</th>
               <td class="govuk-table__cell">{{ data['halfHour-3'] }}</td>
               <td class="govuk-table__cell">{{ data['ekwh-2'] }}</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/elec-meter-info-1">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                <a class="govuk-link govuk-!-margin-right-3" href="elec-meter-info-1">
+                  Change<span class="govuk-visually-hidden"> {{data['mpan-1']}}</span></a>
+                <a class="govuk-link" href="remove-mpan">Remove<span class="govuk-visually-hidden"> 
+                  {{data['mpan-1']}}</span></a>
+              </td>
             </tr>
           </tbody>
             <tbody class="govuk-table__body">
@@ -53,38 +59,29 @@ Electricity meter summary – {{ serviceName }} – GOV.UK Prototype Kit
               <td class="govuk-table__cell">{{ data['mpan-3'] }}</th>
               <td class="govuk-table__cell">{{ data['halfHour5'] }}</td>
               <td class="govuk-table__cell">{{ data['ekwh-3'] }}</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/elec-meter-info-2">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                <a class="govuk-link govuk-!-margin-right-3" href="elec-meter-info-2">
+                  Change<span class="govuk-visually-hidden"> {{data['mpan-3']}}</span></a>
+                <a class="govuk-link" href="remove-mpan">Remove<span class="govuk-visually-hidden"> 
+                  {{data['mpan-3']}}</span></a>
+              </td>
             </tr>
           </tbody>
         </table>
-
-        {% if data['emeterType'] == "Multi meter" %}
-        {{ govukButton({
-        text: "Add another MPAN",
-        href: "elec-meter-info-2",
-        classes: "govuk-button--secondary"
-        }) }}
-        {% else %}
-        {% endif %}
-
-
-  <br>
-
-      <div class="govuk-button-group">
-        {{ govukButton({
-          text: "Save and continue",
-          href: "elec-info-billing"
-        }) }}
-
-        {% if data['check-answers'] == "on" %}
-        {% else %}
-        <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
-        {% endif %}
-      </div>
-
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Add another MPAN</button>
+        </div>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+          {% if data['check-answers'] != "on" %}
+            <a class="govuk-link" href="/tasklist">Discard and go
+            to task list</a>
+          {% endif %}
+        </div>
       </form>
-
     </div>
   </div>
-
 {% endblock %}

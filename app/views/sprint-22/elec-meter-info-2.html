@@ -11,7 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/single-schools/elec-meter-review-2?eaddmeter2=2" method="post">
+      <form class="form" action="elec-meter-info-2" method="post">
         <span class="govuk-caption-l">{{ data['school'] }}</span>
         <h1 class="govuk-heading-l">Electricity meter details</h1>
         <div class="govuk-form-group">
@@ -108,7 +108,7 @@
         <div class="govuk-button-group">
           {{ govukButton({text: "Save and continue"}) }}
           {% if data['check-answers'] != "on" %}
-            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+            <a class="govuk-link" href="/tasklist">Discard and go
               to task list</a>
           {% endif %}
         </div>

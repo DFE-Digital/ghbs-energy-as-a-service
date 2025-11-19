@@ -11,7 +11,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if ((data['emeterType'] == "Single") and (data['tasklist'] == "on")) %}
+      <form class="form" action="elec-meter-info" method="post">
+      <!-- {% if ((data['emeterType'] == "Single") and (data['tasklist'] == "on")) %}
         <form class="form" action="/single-schools/tasklist?emu1=complete" method="post">
       {% elif ((data['emeterType'] == "Single") and (data['check-answers'] == "on")) %}
         <form class="form" action="/single-schools/check-answers-single-school" method="post">
@@ -19,7 +20,7 @@
         <form class="form" action="/single-schools/mat-site-contact?emu1=complete" method="post">
       {% else %}
         <form class="form" action="/single-schools/elec-meter-review?emu1=complete" method="post">
-      {% endif %}
+      {% endif %} -->
         <span class="govuk-caption-l">{{ data['school'] }}</span>
         <h1 class="govuk-heading-l">Electricity meter details</h1>
         <div class="govuk-form-group">
@@ -118,7 +119,7 @@
         <div class="govuk-button-group">
           {{ govukButton({text: "Save and continue"}) }}
           {% if data['check-answers'] != "on" %}
-            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+            <a class="govuk-link" href="/tasklist">Discard and go
               to task list</a>
           {% endif %}
         </div>

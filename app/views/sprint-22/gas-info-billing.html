@@ -12,8 +12,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {% if ((data['meterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
+      <form class="form" action="gas-info-billing" method="post">
+      <!-- {% if ((data['meterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
         <form class="form" action="/single-schools/tasklist?gmu1=complete" method="post">
       {% elif ((data['meterType'] == "Multi meter") and (data['check-answers'] == "on")) %}
         <form class="form" action="/single-schools/check-answers-single-school?gmu1=complete" method="post">
@@ -21,9 +21,8 @@
         <form class="form" action="/single-schools/mat-site-contact?scontact=inProgress" method="post">
       {% else %}
         <form class="form" action="/single-schools/elec-info" method="post">
-      {% endif %}
-        <span class="govuk-caption-l">{{ data['school'] }}</span>
-        <h1 class="govuk-heading-l">Gas meters and usage</h1>
+      {% endif %} -->
+        <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
         {{ govukRadios({
           classes: "govuk-radios",
           name: "billType",
@@ -31,7 +30,7 @@
             legend: {
               text: "Do you want your MPRNs consolidated on one bill?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend"
+              classes: "govuk-fieldset__legend--l"
             }
           },
           items: [
