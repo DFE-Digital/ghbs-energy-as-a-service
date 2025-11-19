@@ -76,10 +76,266 @@ module.exports = function (router) {
       } else if (req.session.data['single-energyType'] == 'gas') {
         res.redirect('/' + version + '/mat-gas-contract')
       } else {
-        res.redirect('/' + version + '/mat-gas-contract')
+        res.redirect('/' + version + '/gas-info')
       }
     }
   })
+
+  router.get('/' + version + '/gas-info', function (req, res) {
+    res.render(version + '/gas-info')
+  })
+
+  router.post('/' + version + '/gas-info', function (req, res) {
+    res.redirect('/' + version + '/gas-meter-info')
+  })
+
+
+  router.get('/' + version + '/gas-meter-info', function (req, res) {
+    res.render(version + '/gas-meter-info')
+  })
+
+  router.post('/' + version + '/gas-meter-info', function (req, res) {
+    if (req.session.data['meterType'] == 'Single meter') {
+      res.redirect('/' + version + '/elec-info')
+    } else {
+      res.redirect('/' + version + '/gas-meter-review')
+    }
+  })
+
+  router.get('/' + version + '/gas-meter-review', function (req, res) {
+    res.render(version + '/gas-meter-review')
+  })
+
+  router.post('/' + version + '/gas-meter-review', function (req, res) {
+    if (req.session.data['addAnotherMPRN'] == 'true') {
+      res.redirect('/' + version + '/gas-meter-info-1')
+    } else {
+      res.redirect('/' + version + '/gas-info-billing')
+    }
+  })
+
+  router.get('/' + version + '/gas-info-billing', function (req, res) {
+    res.render(version + '/gas-info-billing')
+  })
+
+  router.post('/' + version + '/gas-info-billing', function (req, res) {
+    res.redirect('/' + version + '/elec-info')
+  })
+
+  
+  router.get('/' + version + '/gas-meter-info-1', function (req, res) {
+    res.render(version + '/gas-meter-info-1')
+  })
+
+  router.post('/' + version + '/gas-meter-info-1', function (req, res) {
+    res.redirect('/' + version + '/gas-meter-review-1')
+  })
+
+  
+  router.get('/' + version + '/gas-meter-review-1', function (req, res) {
+    res.render(version + '/gas-meter-review-1')
+  })
+
+  router.post('/' + version + '/gas-meter-review-1', function (req, res) {
+    if (req.session.data['addAnotherMPRN1'] == 'true') {
+      res.redirect('/' + version + '/gas-meter-info-2')
+    } else {
+      res.redirect('/' + version + '/gas-info-billing')
+    }
+  })
+
+
+  router.get('/' + version + '/gas-meter-info-2', function (req, res) {
+    res.render(version + '/gas-meter-info-2')
+  })
+
+  router.post('/' + version + '/gas-meter-info-2', function (req, res) {
+    res.redirect('/' + version + '/gas-meter-review-2')
+  })
+
+
+
+  router.get('/' + version + '/gas-meter-review-2', function (req, res) {
+    res.render(version + '/gas-meter-review-2')
+  })
+
+  router.post('/' + version + '/gas-meter-review-2', function (req, res) {
+    if (req.session.data['addAnotherMPRN2'] == 'true') {
+      res.redirect('/' + version + '/gas-meter-info-3')
+    } else {
+      res.redirect('/' + version + '/gas-info-billing')
+    }
+  })
+
+
+  router.get('/' + version + '/elec-info', function (req, res) {
+    res.render(version + '/elec-info')
+  })
+
+  router.post('/' + version + '/elec-info', function (req, res) {
+    res.redirect('/' + version + '/elec-meter-info')
+  })
+
+
+  router.get('/' + version + '/elec-meter-info', function (req, res) {
+    res.render(version + '/elec-meter-info')
+  })
+
+  router.post('/' + version + '/elec-meter-info', function (req, res) {
+    if (req.session.data['emeterType'] == 'Multi meter') {
+      res.redirect('/' + version + '/elec-meter-review')
+    } else {
+      res.redirect('/' + version + '/mat-site-contact')
+    }
+  })
+
+
+  router.get('/' + version + '/elec-meter-review', function (req, res) {
+    res.render(version + '/elec-meter-review')
+  })
+
+  router.post('/' + version + '/elec-meter-review', function (req, res) {
+    if (req.session.data['addAnotherMPAN1'] == 'true') {
+      res.redirect('/' + version + '/elec-meter-info-1')
+    } else {
+      res.redirect('/' + version + '/elec-info-billing')
+    }
+  })
+
+
+  router.get('/' + version + '/elec-meter-info-1', function (req, res) {
+    res.render(version + '/elec-meter-info-1')
+  })
+
+  router.post('/' + version + '/elec-meter-info-1', function (req, res) {
+    res.redirect('/' + version + '/elec-meter-review-1')
+  })
+
+
+  router.get('/' + version + '/elec-meter-review-1', function (req, res) {
+    res.render(version + '/elec-meter-review-1')
+  })
+
+  router.post('/' + version + '/elec-meter-review-1', function (req, res) {
+    if (req.session.data['addAnotherMPAN1'] == 'true') {
+      res.redirect('/' + version + '/elec-meter-info-2')
+    } else {
+      res.redirect('/' + version + '/elec-info-billing')
+    }
+  })
+
+
+  router.get('/' + version + '/elec-meter-info-2', function (req, res) {
+    res.render(version + '/elec-meter-info-2')
+  })
+
+  router.post('/' + version + '/elec-meter-info-2', function (req, res) {
+    res.redirect('/' + version + '/elec-meter-review-2')
+  })
+  
+
+  router.get('/' + version + '/elec-meter-review-2', function (req, res) {
+    res.render(version + '/elec-meter-review-2')
+  })
+
+  router.post('/' + version + '/elec-meter-review-2', function (req, res) {
+    res.redirect('/' + version + '/elec-info-billing')
+  })
+
+
+  router.get('/' + version + '/elec-info-billing', function (req, res) {
+    res.render(version + '/elec-info-billing')
+  })
+
+  router.post('/' + version + '/elec-info-billing', function (req, res) {
+    res.redirect('/' + version + '/mat-site-contact')
+  })
+
+
+  router.get('/' + version + '/mat-site-contact', function (req, res) {
+    res.render(version + '/mat-site-contact')
+  })
+
+  router.post('/' + version + '/mat-site-contact', function (req, res) {
+    res.redirect('/' + version + '/mat-vat-declaration')
+  })
+
+
+  router.get('/' + version + '/mat-vat-declaration', function (req, res) {
+    res.render(version + '/mat-vat-declaration')
+  })
+
+  router.post('/' + version + '/mat-vat-declaration', function (req, res) {
+      res.redirect('/' + version + '/mat-vat-contact')
+  })
+
+
+  router.get('/' + version + '/mat-vat-contact', function (req, res) {
+    res.render(version + '/mat-vat-contact')
+  })
+
+  router.post('/' + version + '/mat-vat-contact', function (req, res) {
+    if (req.session.data['VATcontact'] == 'Yes') {
+      res.redirect('/' + version + '/vat-certificate')
+    } else {
+      res.redirect('/' + version + '/mat-vat-contact-manual') 
+    } 
+  })
+
+
+  router.get('/' + version + '/mat-vat-contact-manual', function (req, res) {
+    res.render(version + '/mat-vat-contact-manual')
+  })
+
+  router.post('/' + version + '/mat-vat-contact-manual', function (req, res) {
+    res.redirect('/' + version + '/vat-certificate')
+  })
+
+
+  router.get('/' + version + '/vat-certificate', function (req, res) {
+    res.render(version + '/vat-certificate')
+  })
+
+  router.post('/' + version + '/vat-certificate', function (req, res) {
+    res.redirect('/' + version + '/mat-billing-information')
+  })
+
+
+  router.get('/' + version + '/mat-billing-information', function (req, res) {
+    res.render(version + '/mat-billing-information')
+  })
+
+  router.post('/' + version + '/mat-billing-information', function (req, res) {
+    res.redirect('/' + version + '/mat-billing-contact')
+  })
+
+
+  router.get('/' + version + '/mat-billing-contact', function (req, res) {
+    res.render(version + '/mat-billing-contact')
+  })
+
+  router.post('/' + version + '/mat-billing-contact', function (req, res) {
+    res.redirect('/' + version + '/check-answers-single-school')
+  })
+
+
+  router.get('/' + version + '/check-answers-single-school', function (req, res) {
+    res.render(version + '/check-answers-single-school')
+  })
+
+  router.post('/' + version + '/check-answers-single-school', function (req, res) {
+    res.redirect('/' + version + '/authorisation')
+  })
+
+
+  router.get('/' + version + '/authorisation', function (req, res) {
+    res.render(version + '/authorisation')
+  })
+
+  router.post('/' + version + '/authorisation', function (req, res) {
+    res.redirect('/' + version + '/confirmation')
+  })
+  
 
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')

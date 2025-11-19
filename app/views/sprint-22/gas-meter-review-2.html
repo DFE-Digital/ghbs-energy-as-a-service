@@ -11,13 +11,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['meterType'] == "Multi meter" %}
+      <form action="gas-meter-review-2" method="post">
+      <!-- {% if data['meterType'] == "Multi meter" %}
         <form class="form" action="/single-schools/gas-info-billing" method="post">
       {% else %}
         <form class="form" action="/single-schools/elec-info?gmu1=complete" method="post">
-      {% endif %}
-        <span class="govuk-caption-l">St Mary's Primary School: Gas meters and
-          usage</span>
+      {% endif %} -->
+        <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
         <h1 class="govuk-heading-l">MPRN summary</h1>
         <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m">You have added 3 MPRNs</caption>
@@ -33,38 +33,37 @@
               <td class="govuk-table__cell">{{ data['mprn'] }}</td>
               <td class="govuk-table__cell">{{ data['kwh'] }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-!-margin-right-3" href="/single-schools/gas-meter-info">
-                  Change<span class="govuk-visually-hidden"> name</span></a>
-                <a class="govuk-link" href="/single-schools/remove-mprn">Remove
-                  <span class="govuk-visually-hidden"> name</span></a>
+                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info">
+                  Change<span class="govuk-visually-hidden"> {{data['mprn']}}</span></a>
+                <a class="govuk-link" href="remove-mprn">Remove
+                  <span class="govuk-visually-hidden"> {{data['mprn']}}</span></a>
               </td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">{{ data['mprn-1'] }}</td>
               <td class="govuk-table__cell">{{ data['kwh-1'] }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-!-margin-right-3" href="/single-schools/gas-meter-info">
-                  Change<span class="govuk-visually-hidden"> name</span></a>
-                <a class="govuk-link" href="/single-schools/remove-mprn">Remove
-                  <span class="govuk-visually-hidden"> name</span></a>
+                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info-1">
+                  Change<span class="govuk-visually-hidden"> {{data['mprn-1']}}</span></a>
+                <a class="govuk-link" href="remove-mprn">Remove
+                  <span class="govuk-visually-hidden"> {{data['mprn-1']}}</span></a>
               </td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">{{ data['mprn-2'] }}</td>
               <td class="govuk-table__cell">{{ data['kwh-2'] }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-!-margin-right-3" href="/single-schools/gas-meter-info">
-                  Change<span class="govuk-visually-hidden"> name</span></a>
-                <a class="govuk-link" href="/single-schools/remove-mprn">Remove
-                  <span class="govuk-visually-hidden"> name</span></a>
+                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info-2">
+                  Change<span class="govuk-visually-hidden"> {{data['mprn-2']}}</span></a>
+                <a class="govuk-link" href="remove-mprn">Remove
+                  <span class="govuk-visually-hidden"> {{data['mprn-2']}}</span></a>
               </td>
             </tr>
           </tbody>
         </table>
         <div class="govuk-button-group">
-          {% if data['meterType'] == "Multi meter" %}
-            {{ govukButton({text: "Add another MPRN",href: "gas-meter-info-1",classes: "govuk-button--secondary"}) }}
-          {% endif %}
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="addAnotherMPRN3" value="true">
+            Add another MPRN</button>
         </div>
         <div class="govuk-button-group">
           {{ govukButton({text: "Save and continue"}) }}

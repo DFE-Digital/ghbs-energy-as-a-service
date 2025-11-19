@@ -1,32 +1,20 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-Gas meter summary – {{ serviceName }} – GOV.UK Prototype Kit
+Gas meter summary - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" }) }}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      <span class="govuk-caption-l">St Mary's Primary School: Gas meters and usage</span>
+      <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
       <h1 class="govuk-heading-l">MPRN summary</h1>
-
-
-      {% if data['meterType'] == "Multi meter" %}
-      <form class="form" action="/sprint-5/gas-info-billing" method="post">
-      {% else %}
-      <form class="form" action="/sprint-5/elec-info?gmu1=complete" method="post">
-      {% endif %}
-
-
+      <form action="gas-meter-review-1" method="post">
         <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m">You have added 2 MPRNs</caption>
           <thead class="govuk-table__head">
@@ -40,39 +28,37 @@ Gas meter summary – {{ serviceName }} – GOV.UK Prototype Kit
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">{{ data['mprn'] }}</th>
               <td class="govuk-table__cell">{{ data['kwh'] }}</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/gas-meter-info">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="/sprint-5/remove-mprn">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info">
+                Change<span class="govuk-visually-hidden"> {{data['mprn']}}</span></a>
+                <a class="govuk-link" href="/sprint-5/remove-mprn">Remove<span class="govuk-visually-hidden">
+                  {{data['mprn']}}</span></a>
+              </td>
             </tr>
           </tbody>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">{{ data['mprn-1'] }}</th>
               <td class="govuk-table__cell">{{ data['kwh-1'] }}</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/sprint-5/gas-meter-info">Change<span class="govuk-visually-hidden"> name</span></a><a class="govuk-link" href="/sprint-5/remove-mprn">Remove<span class="govuk-visually-hidden"> name</span></a></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info-1">
+                Change<span class="govuk-visually-hidden"> {{data['mprn-1']}}</span></a>
+                <a class="govuk-link" href="/sprint-5/remove-mprn">Remove<span class="govuk-visually-hidden">
+                  {{data['mprn-1']}}</span></a>
+              </td>
             </tr>
           </tbody>
         </table>
-
-        {% if data['meterType'] == "Multi meter" %}
-        {{ govukButton({
-        text: "Add another MPRN",
-        href: "gas-meter-info-2",
-        classes: "govuk-button--secondary"
-        }) }}
-        {% else %}
-        {% endif %}
-
-
-  <br>
-
-
-  <div class="govuk-button-group">
-    {{ govukButton({
-      text: "Save and continue"
-    }) }}
-
-    <a class="govuk-link" href="/sprint-5/tasklist">Discard and go to task list</a>
-  </div>
-
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="addAnotherMPRN1" value="true">
+            Add another MPRN</button>
+        </div>
+        <div class="govuk-button-group">
+          {{ govukButton({text: "Save and continue"}) }}
+          {% if data['check-answers'] != "on" %}
+            <a class="govuk-link" href="/single-schools/tasklist">Discard and go to task list</a>
+          {% endif %}
+        </div>
       </form>
 
     </div>

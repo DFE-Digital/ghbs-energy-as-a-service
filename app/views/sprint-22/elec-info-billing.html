@@ -1,8 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Do you want your MPANs consolidated on one bill? - {{ serviceName }} - GOV.UK
-  Prototype Kit
+  Do you want your MPANs consolidated on one bill? - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,46 +11,46 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if ((data['emeterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
-        <form class="form" action="/single-schools/tasklist?emu1=complete" method="post">
-      {% elif ((data['emeterType'] == "Multi meter") and (data['check-answers'] == "on")) %}
-        <form class="form" action="/single-schools/check-answers-single-school" method="post">
-      {% else %}
-        <form class="form" action="/single-schools/mat-site-contact?emu1=complete" method="post">
-      {% endif %}
-      <span class="govuk-caption-l">St Mary's Primary School: Electricity meters
-        and usage</span>
-      {{ govukRadios({
-        classes: "govuk-radios",
-        name: "ebillType",
-        fieldset: {
-          legend: {
-            text: "Do you want your MPANs consolidated on one bill?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "Consolidated on one bill",
-            text: "Yes",
-            checked: checked("ebillType", "Consolidated on one bill")
+      <form class="form" action="elec-info-billing" method="post">
+        <!-- {% if ((data['emeterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
+          <form class="form" action="/single-schools/tasklist?emu1=complete" method="post">
+        {% elif ((data['emeterType'] == "Multi meter") and (data['check-answers'] == "on")) %}
+          <form class="form" action="/single-schools/check-answers-single-school" method="post">
+        {% else %}
+          <form class="form" action="/single-schools/mat-site-contact?emu1=complete" method="post">
+        {% endif %} -->
+        <span class="govuk-caption-l">{{ data['school'] }}</span>
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "ebillType",
+          fieldset: {
+            legend: {
+              text: "Do you want your MPANs consolidated on one bill?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
           },
-          {
-            value: "Separate bill for each MPAN",
-            text: "No, I want a separate bill for each MPAN",
-            checked: checked("ebillType", "Separate bill for each MPAN")
-          }
-        ]
-      }) }}
-      <div class="govuk-button-group">
-        {{ govukButton({text: "Save and continue"}) }}
-        {% if data['check-answers'] != "on" %}
-          <a class="govuk-link" href="/single-schools/tasklist">Discard and go
-            to task list</a>
-        {% endif %}
-      </div>
-    </form>
+          items: [
+            {
+              value: "Consolidated on one bill",
+              text: "Yes",
+              checked: checked("ebillType", "Consolidated on one bill")
+            },
+            {
+              value: "Separate bill for each MPAN",
+              text: "No, I want a separate bill for each MPAN",
+              checked: checked("ebillType", "Separate bill for each MPAN")
+            }
+          ]
+        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({text: "Save and continue"}) }}
+          {% if data['check-answers'] != "on" %}
+            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+              to task list</a>
+          {% endif %}
+        </div>
+      </form>
     </div>
   </div>
 {% endblock %}

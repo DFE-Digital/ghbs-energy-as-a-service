@@ -11,12 +11,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/single-schools/mat-billing-contact?bp=inProgress" method="post">
-      {% if data['journeyType'] == "single-school" %}
-        <span class="govuk-caption-l">St Mary's Primary School: Billing preferences</span>
-      {% else %}
-        <span class="govuk-caption-l">About your schools: Billing preferences</span>
-      {% endif %}
+      <form class="form" action="mat-billing-information" method="post">
+      <span class="govuk-caption-l">{{ data['school'] }}: Billing preferences</span>
       <h1 class="govuk-heading-l">Setting up your billing</h1>
       {{ govukRadios({
         name: "paymentType",
@@ -112,10 +108,8 @@
       }) }}
       <div class="govuk-button-group">
         {{ govukButton({text: "Save and continue"}) }}
-        {% if data['check-answers'] != "on" %}
-          <a class="govuk-link" href="/single-schools/tasklist">Discard and go
-            to task list</a>
-          {% endif %}
+        <a class="govuk-link" href="/tasklist">Discard and go
+          to task list</a>
         </div>
       </form>
     </div>
