@@ -102,6 +102,58 @@ module.exports = function (router) {
     }
   })
 
+  router.get('/' + version + '/gas-meter-review', function (req, res) {
+    res.render(version + '/gas-meter-review')
+  })
+
+  router.post('/' + version + '/gas-meter-review', function (req, res) {
+    if (req.session.data['addAnotherMPRN'] == 'true') {
+      res.redirect('/' + version + '/gas-meter-info-1')
+    } else {
+      res.redirect('/' + version + '/elec-info')
+    }
+  })
+
+  
+  router.get('/' + version + '/gas-meter-info-1', function (req, res) {
+    res.render(version + '/gas-meter-info-1')
+  })
+
+  router.post('/' + version + '/gas-meter-info-1', function (req, res) {
+    res.redirect('/' + version + '/gas-meter-review-1')
+  })
+
+  
+  router.get('/' + version + '/gas-meter-review-1', function (req, res) {
+    res.render(version + '/gas-meter-review-1')
+  })
+
+  router.post('/' + version + '/gas-meter-review-1', function (req, res) {
+    if (req.session.data['addAnotherMPRN1'] == 'true') {
+      res.redirect('/' + version + '/gas-meter-info-2')
+    } else {
+      res.redirect('/' + version + '/elec-info')
+    }
+  })
+
+
+  router.get('/' + version + '/gas-meter-info-2', function (req, res) {
+    res.render(version + '/gas-meter-info-2')
+  })
+
+  router.post('/' + version + '/gas-meter-info-2', function (req, res) {
+    res.redirect('/' + version + '/gas-meter-review-2')
+  })
+
+
+
+  router.get('/' + version + '/gas-meter-review-2', function (req, res) {
+    res.render(version + '/gas-meter-review-2')
+  })
+
+  router.post('/' + version + '/gas-meter-review-2', function (req, res) {
+    res.redirect('/' + version + '/elec-info')
+  })
 
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
