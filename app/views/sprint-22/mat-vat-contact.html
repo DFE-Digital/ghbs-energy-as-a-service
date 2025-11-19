@@ -11,16 +11,12 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/single-schools/vat-certificate" method="post">
-      {% if data['journeyType'] == "single-school" %}
+      <form class="form" action="mat-vat-contact" method="post">
         <span class="govuk-caption-l">{{ data['school'] }}: VAT declaration</span>
-      {% else %}
-        <span class="govuk-caption-l">About your schools: VAT declaration</span>
-      {% endif %}
-      <h1 class="govuk-heading-l">Are these the correct details for VAT
-        purposes?</h1>
-      <p class="govuk-body">This information will be used to generate a VAT
-        certificate which will be shared with the new suppliers.</p>
+        <h1 class="govuk-heading-l">Are these the correct details for VAT
+          purposes?</h1>
+        <p class="govuk-body">This information will be used to generate a VAT
+          certificate which will be shared with the new suppliers.</p>
         <table class="govuk-table">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
@@ -29,7 +25,8 @@
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Address</th>
-              <td class="govuk-table__cell">Pleckgate High School, Pleckgate Road, BB1 8QA</td>
+              <td class="govuk-table__cell">{{data['school']}}, Pleckgate 
+                Road, BB1 8QA</td>
             </tr>
             <tr class="govuk-table__row">
               <th scope="row" class="govuk-table__header">Telephone number</th>
@@ -49,12 +46,12 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes",
               checked: checked("VATcontact", "Yes")
             },
             {
-              value: "no~/single-schools/mat-vat-contact-manual",
+              value: "No",
               text: "No",
               checked: checked("VATcontact", "No")
             }
@@ -62,10 +59,8 @@
         }) }}
         <div class="govuk-button-group">
           {{ govukButton({text: "Save and continue"}) }}
-          {% if data['check-answers'] != "on" %}
-            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
-              to task list</a>
-          {% endif %}
+          <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+            to task list</a>
         </div>
       </form>
     </div>

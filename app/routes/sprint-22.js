@@ -270,6 +270,19 @@ module.exports = function (router) {
   })
 
 
+  router.get('/' + version + '/mat-vat-contact', function (req, res) {
+    res.render(version + '/mat-vat-contact')
+  })
+
+  router.post('/' + version + '/mat-vat-contact', function (req, res) {
+    if (req.session.data['VATcontact'] == 'Yes') {
+      res.redirect('/' + version + '/vat-certificate')
+    } else {
+      res.redirect('/' + version + '/mat-vat-contact-manual') 
+    } 
+  })
+
+
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
   })
