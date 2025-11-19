@@ -11,51 +11,50 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['check-answers'] == "on" %}
+      <form class="form" action="mat-billing-contact" method="post">
+      <!-- {% if data['check-answers'] == "on" %}
         <form class="form" action="/single-schools/check-answers-single-school" method="post">
       {% else %}
         <form class="form" action="/single-schools/tasklist?bp=complete" method="post">
-      {% endif %}
-      {% if data['journeyType'] == "single-school" %}
-        <span class="govuk-caption-l">{{ data['school'] }}: Billing</span>
-      {% else %}
-        <span class="govuk-caption-l">{{ data['school'] }}: Billing preferences</span>
-      {% endif %}
-      {{ govukRadios({
-        id: "bill-address",
-        name: "billaddress",
-        fieldset: {
-          legend: {
-            text: "Billing address",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "Address 1",
-            text: "Address 1",
-            checked: checked("billaddress", "Address 1")
+      {% endif %} -->
+        {% if data['journeyType'] == "single-school" %}
+          <span class="govuk-caption-l">{{ data['school'] }}: Billing</span>
+        {% else %}
+          <span class="govuk-caption-l">{{ data['school'] }}: Billing preferences</span>
+        {% endif %}
+        {{ govukRadios({
+          id: "bill-address",
+          name: "billaddress",
+          fieldset: {
+            legend: {
+              text: "Billing address",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
           },
-          {
-            value: "Address 2",
-            text: "Address 2",
-            checked: checked("billaddress", "Address 2")
-          },
-          {
-            value: "Address 2",
-            text: "Address 2",
-            checked: checked("billaddress", "Address 2")
-          }
-        ]
-      }) }}
-      <div class="govuk-button-group">
-        {{ govukButton({text: "Save and continue"}) }}
-        {% if data['check-answers'] != "on" %}
+          items: [
+            {
+              value: "Address 1",
+              text: "Address 1",
+              checked: checked("billaddress", "Address 1")
+            },
+            {
+              value: "Address 2",
+              text: "Address 2",
+              checked: checked("billaddress", "Address 2")
+            },
+            {
+              value: "Address 2",
+              text: "Address 2",
+              checked: checked("billaddress", "Address 2")
+            }
+          ]
+        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({text: "Save and continue"}) }}
           <a class="govuk-link" href="/single-schools/tasklist">Discard and go
             to task list</a>
-        {% endif %}
-      </div>
+        </div>
       </form>
     </div>
   </div>

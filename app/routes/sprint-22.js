@@ -310,6 +310,15 @@ module.exports = function (router) {
   })
 
 
+  router.get('/' + version + '/mat-billing-contact', function (req, res) {
+    res.render(version + '/mat-billing-contact')
+  })
+
+  router.post('/' + version + '/mat-billing-contact', function (req, res) {
+    res.redirect('/' + version + '/check-answers-single-school')
+  })
+
+
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
   })
