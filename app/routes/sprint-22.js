@@ -252,6 +252,14 @@ module.exports = function (router) {
   })
 
 
+  router.get('/' + version + '/mat-site-contact', function (req, res) {
+    res.render(version + '/mat-site-contact')
+  })
+
+  router.post('/' + version + '/mat-site-contact', function (req, res) {
+    res.redirect('/' + version + '/mat-vat-declaration')
+  })
+
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
   })
