@@ -14,8 +14,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {% if ((data['single-energyType'] == "gasandelec") and (data['tasklist'] == "on")) %}
+      <form action="mat-electricity-contract" method="post">
+      <!-- {% if ((data['single-energyType'] == "gasandelec") and (data['tasklist'] == "on")) %}
         <form class="form" action="/single-schools/tasklist?ecd=complete" method="post">
       {% elif ((data['single-energyType'] == "electricity") and (data['tasklist'] == "on")) %}
         <form class="form" action="/single-schools/tasklist?ecd=complete" method="post">
@@ -27,7 +27,7 @@
         <form class="form" action="/single-schools/gas-info?ecd=complete" method="post">
       {% else %}
         <form class="form" action="/single-schools/mat-vat-status?ecd=complete" method="post">
-      {% endif %}
+      {% endif %} -->
       {% if data['journeyType'] == "single-school" %}
         <span class="govuk-caption-l">{{ data['school'] }}: Current electricity 
           supplier</span>

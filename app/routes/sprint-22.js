@@ -76,10 +76,32 @@ module.exports = function (router) {
       } else if (req.session.data['single-energyType'] == 'gas') {
         res.redirect('/' + version + '/mat-gas-contract')
       } else {
-        res.redirect('/' + version + '/mat-gas-contract')
+        res.redirect('/' + version + '/gas-info')
       }
     }
   })
+
+  router.get('/' + version + '/gas-info', function (req, res) {
+    res.render(version + '/gas-info')
+  })
+
+  router.post('/' + version + '/gas-info', function (req, res) {
+    res.redirect('/' + version + '/gas-meter-info')
+  })
+
+
+  router.get('/' + version + '/gas-meter-info', function (req, res) {
+    res.render(version + '/gas-meter-info')
+  })
+
+  router.post('/' + version + '/gas-meter-info', function (req, res) {
+    if (req.session.data['meterType'] == 'Single meter') {
+      res.redirect('/' + version + '/elec-info')
+    } else {
+      res.redirect('/' + version + '/gas-meter-review')
+    }
+  })
+
 
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
