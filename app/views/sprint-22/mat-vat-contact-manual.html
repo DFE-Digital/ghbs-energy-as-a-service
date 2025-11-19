@@ -11,12 +11,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/single-schools/vat-certificate" method="post">
-        {% if data['journeyType'] == "single-school" %}
-          <span class="govuk-caption-l">{{ data['school'] }}: VAT declaration</span>
-        {% else %}
-          <span class="govuk-caption-l">About your schools: VAT declaration</span>
-        {% endif %}
+      <form class="form" action="mat-vat-contact-manual" method="post">
+        <span class="govuk-caption-l">{{ data['school'] }}: VAT declaration</span>
         <h1 class="govuk-heading-l">VAT contact information</h1>
         <fieldset class="govuk-fieldset">
           <div class="govuk-form-group">
@@ -62,10 +58,8 @@
         }) }}
         <div class="govuk-button-group">
           {{ govukButton({text: "Save and continue"}) }}
-          {% if data['check-answers'] != "on" %}
-            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
-              to task list</a>
-          {% endif %}
+          <a class="govuk-link" href="/tasklist">Discard and go
+            to task list</a>
         </div>
       </form>
     </div>

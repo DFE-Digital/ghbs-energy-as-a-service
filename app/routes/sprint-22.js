@@ -283,6 +283,15 @@ module.exports = function (router) {
   })
 
 
+  router.get('/' + version + '/mat-vat-contact-manual', function (req, res) {
+    res.render(version + '/mat-vat-contact-manual')
+  })
+
+  router.post('/' + version + '/mat-vat-contact-manual', function (req, res) {
+    res.redirect('/' + version + '/vat-certificate')
+  })
+
+
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
   })
