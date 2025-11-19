@@ -260,6 +260,16 @@ module.exports = function (router) {
     res.redirect('/' + version + '/mat-vat-declaration')
   })
 
+
+  router.get('/' + version + '/mat-vat-declaration', function (req, res) {
+    res.render(version + '/mat-vat-declaration')
+  })
+
+  router.post('/' + version + '/mat-vat-declaration', function (req, res) {
+      res.redirect('/' + version + '/mat-vat-contact')
+  })
+
+
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
   })
