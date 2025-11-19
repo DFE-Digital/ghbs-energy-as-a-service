@@ -319,6 +319,14 @@ module.exports = function (router) {
   })
 
 
+  router.get('/' + version + '/check-answers-single-school', function (req, res) {
+    res.render(version + '/check-answers-single-school')
+  })
+
+  router.post('/' + version + '/check-answers-single-school', function (req, res) {
+    res.redirect('/' + version + '/authorisation')
+  })
+
   router.get('/' + version + '/confirmation', function (req, res){
     res.render(version + '/confirmation')
   })
