@@ -1,5 +1,5 @@
 {
-  "serviceName": "Energy for Schools",
+  "serviceName": "Get help buying for schools",
   "plugins": {
     "govuk-frontend": {
       "rebrand": true
