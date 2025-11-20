@@ -1,20 +1,20 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Join Energy for Schools - {{ serviceName }} - GOV.UK Prototype Kit
+  Join Energy for Schools - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Join {{ serviceName }}</h1>
-      <p class="govuk-body">Energy for Schools helps state-funded schools and
-        trusts switch to the same energy contract used by the Department for
+      <h1 class="govuk-heading-xl">Join Energy for Schools</h1>
+      <p class="govuk-body">Energy for Schools helps state-funded schools and 
+        trusts switch to the same energy contract used by the Department for 
         Education.</p>
-      <p class="govuk-body">Schools and trusts that use the service are added to
-        the Department for Education's energy contract with Crown Commercial
-        Service (CCS). The CCS buys energy for this particular contract over a
-        long period of time, reducing the risk to customers of substantial
+      <p class="govuk-body">Schools and trusts that use the service are added to 
+        the Department for Education's V30 energy contract with Crown Commercial 
+        Service (CCS). The CCS buys energy for this particular contract over a 
+        long period of time, reducing the risk to customers of substantial 
         fluctuations in price.</p>
       <h2 class="govuk-heading-m">Benefits</h2>
       <p class="govuk-body">Schools could save on average 36% on their energy
@@ -35,7 +35,14 @@
         Register your interest form</a> and complete the paperwork
         offline. This may benefit MATs that are ready to switch 6 or more
         schools to the energy deal.</p>
-      {{ govukButton({text: "Start now",href: "before-you-start",isStartButton: true}) }}
+      <div class="govuk-button-group">
+        <a href="before-you-start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+      </div>
       <p class="govuk-body"><a href="/single-schools/guidance-page">Get more
         information</a></p>
     </div>
