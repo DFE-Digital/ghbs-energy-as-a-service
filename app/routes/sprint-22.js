@@ -60,14 +60,14 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/are-you-authorised', function (req, res) {
-    res.redirect('/' + version + '/single-school-fuel-selection')
+    res.redirect('/' + version + '/which-energy-supply-are-you-switching')
   })
 
-  router.get('/' + version + '/single-school-fuel-selection', function (req, res) {
-    res.render(version + '/single-school-fuel-selection', {})
+  router.get('/' + version + '/which-energy-supply-are-you-switching', function (req, res) {
+    res.render(version + '/which-energy-supply-are-you-switching', {})
   })
 
-  router.post('/' + version + '/single-school-fuel-selection', function (req, res) {
+  router.post('/' + version + '/which-energy-supply-are-you-switching', function (req, res) {
     if (req.session.data['skipForm'] == 'True'){
       res.redirect('/' + version + '/confirmation')
     } else {
