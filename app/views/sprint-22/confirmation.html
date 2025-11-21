@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Information submitted - {{ serviceName }} - GOV.UK Prototype Kit
+  Information submitted - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -18,13 +18,15 @@
           switch suppliers. You must provide notice to your current supplier in
           writing. DfE cannot do this for you.</p>
         {% if (data['journeyType'] == 'MAT') %}
-          <p class="govuk-body">Use the online service again to switch another
+          <p class="govuk-body">Use this service again to switch another
             school in your MAT to the energy contract.</p>
           <div class="govuk-button-group">
             <button type="submit" class="govuk-button" data-module="govuk-button" name="addAnotherSchool" value="True">
-              Switch another school
-            </button>
+              Switch another school</button>
           </div>
+          <p class="govuk-body">Alternatively, fill in the <a href="https://submit.forms.service.gov.uk/preview-live/8895/multi-academy-trusts-register-your-interest-in-energy-for-schools/1049539" class="govuk-link">
+            Register your interest form</a> and complete the paperwork for any
+            additional schools offline.</p>
         {% endif %}
       </form>
     </div>

@@ -63,22 +63,31 @@ module.exports = function (router) {
     res.redirect('/' + version + '/which-energy-supply-are-you-switching')
   })
 
+
   router.get('/' + version + '/which-energy-supply-are-you-switching', function (req, res) {
     res.render(version + '/which-energy-supply-are-you-switching', {})
   })
+
 
   router.post('/' + version + '/which-energy-supply-are-you-switching', function (req, res) {
     if (req.session.data['skipForm'] == 'True'){
       res.redirect('/' + version + '/confirmation')
     } else {
       if (req.session.data['single-energyType'] == 'electricity') {
-        res.redirect('/' + version + '/mat-electricity-contract')
-      } else if (req.session.data['single-energyType'] == 'gas') {
-        res.redirect('/' + version + '/mat-gas-contract')
+        res.redirect('/' + version + '/electricity-contract')
       } else {
-        res.redirect('/' + version + '/gas-info')
+        res.redirect('/' + version + '/gas-contract')
       }
     }
+  })
+
+
+  router.get('/' + version + '/gas-contract', function (req, res) {
+    res.render(version + '/gas-contract')
+  })
+
+  router.post('/' + version + '/gas-contract', function (req, res) {
+    res.redirect('/' + version + '/gas-info')
   })
 
   router.get('/' + version + '/gas-info', function (req, res) {
@@ -95,11 +104,11 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/gas-meter-info', function (req, res) {
-    if (req.session.data['meterType'] == 'Single meter') {
-      res.redirect('/' + version + '/elec-info')
-    } else {
+    if (req.session.data['meterType'] == 'Multi meter') {
       res.redirect('/' + version + '/gas-meter-review')
-    }
+    } else  {
+      res.redirect('/' + version + '/gas-info-billing')
+    } 
   })
 
   router.get('/' + version + '/gas-meter-review', function (req, res) {
@@ -119,7 +128,11 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/gas-info-billing', function (req, res) {
-    res.redirect('/' + version + '/elec-info')
+    if (req.session.data['single-energyType'] == 'gas') {
+      res.redirect('/' + version + '/mat-site-contact')
+    } else {
+      res.redirect('/' + version + '/elec-info')
+    }
   })
 
   
@@ -165,6 +178,15 @@ module.exports = function (router) {
     } else {
       res.redirect('/' + version + '/gas-info-billing')
     }
+  })
+
+
+  router.get('/' + version + '/electricity-contract', function (req, res) {
+    res.render(version + '/electricity-contract')
+  })
+
+  router.post('/' + version + '/electricity-contract', function (req, res) {
+    res.redirect('/' + version + '/elec-info')
   })
 
 

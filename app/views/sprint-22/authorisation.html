@@ -32,13 +32,14 @@
           agreed to arrange for the supply of gas and/or electricity to the
           following Site(s):</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>[school/trust name], [school address]</li>
+          <li>{{data['schoolName'] | default('St Mary\'s Primary School')}}, 
+            {{data['schoolAddress'] | default('123 Main Street, London, UK')}}</li>
         </ul>
         <h2 class="govuk-heading-l">Appointment</h2>
         <p class="govuk-body">The Education Provider appoints and authorises DfE
           to act on behalf of the Education Provider to negotiate and conclude
           arrangements with the relevant Supplier for the supply of gas and/or
-          electricity to theSite(s).</p>
+          electricity to the Site(s).</p>
         <p class="govuk-body">The Education Provider acknowledges that DfE's
           appointment includes:</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -77,7 +78,8 @@
           <li>protecting the metering equipment against weather damage, physical
             damage and any unauthorised third party interference or adjustment</li>
           <li>where required, providing meter readings to the Supplier for the
-            purposes of calculating energy consumption and the associated charges</li>
+            purposes of calculating energy consumption and the associated 
+            charges</li>
           <li>providing safe and reasonable access to the Supplier, its
             employees and agents for purposes related to the supply of gas
             and/or electricity including inspecting, testing, maintaining,
@@ -108,8 +110,8 @@
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="agree1" name="agree" type="checkbox" value="agree" {{ checked("agree", "agree") }}/>
-                <label class="govuk-label govuk-checkboxes__label" for="agree1">I
-                  confirm that I am authorised by the Education Provider to
+                <label class="govuk-label govuk-checkboxes__label" for="agree1">
+                  I confirm that I am authorised by the Education Provider to
                   switch the supply of gas and/or electricity at the Site(s) to
                   the Energy for Schools contract</label>
               </div>
@@ -121,8 +123,8 @@
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="agree2" name="agree" type="checkbox" value="agree" {{ checked("agree", "agree") }}/>
-                <label class="govuk-label govuk-checkboxes__label" for="agree2">I
-                  confirm that I have read this letter of authority and the
+                <label class="govuk-label govuk-checkboxes__label" for="agree2">
+                  I confirm that I have read this letter of authority and the
                   Education Provider agrees to its terms and conditions</label>
               </div>
             </div>
@@ -133,8 +135,8 @@
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="agree3" name="agree" type="checkbox" value="agree" {{ checked("agree", "agree") }}/>
-                <label class="govuk-label govuk-checkboxes__label" for="agree3">I
-                  understand that my name will be used as the authorised
+                <label class="govuk-label govuk-checkboxes__label" for="agree3">
+                  I understand that my name will be used as the authorised
                   signatory for this letter of authority</label>
               </div>
             </div>
