@@ -13,7 +13,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% if data['single-energyType'] == "gas" %}
+      <form class="form" action="gas-contract" method="post">
+      <!-- {% if data['single-energyType'] == "gas" %}
         <form class="form" action="/single-schools/gas-info?ccd=complete" method="post">
       {% elif data['tasklist'] == "on" %}
         <form class="form" action="/single-schools/tasklist?ccd=complete" method="post">
@@ -21,12 +22,8 @@
         <form class="form" action="/single-schools/check-answers-single-school?ccd=complete" method="post">
       {% else %}
         <form class="form" action="/single-schools/mat-electricity-contract?ccd=complete" method="post">
-      {% endif %}
-      {% if data['journeyType'] == "single-school" %}
+      {% endif %} -->
         <span class="govuk-caption-l">{{ data['school'] }}: Current gas supplier</span>
-      {% else %}
-        <span class="govuk-caption-l">{{ data['school'] }}: Current gas supplier</span>
-      {% endif %}
         <h1 class="govuk-heading-l">Gas contract</h1>
         {% set textHtml %}
           {{ govukInput({
@@ -123,7 +120,8 @@
           </fieldset>
         </div>
         <div class="govuk-button-group">
-          {{ govukButton({text: "Save and continue"}) }}
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue</button>
           <a class="govuk-link" href="/single-schools/tasklist">Discard and go to task list</a>
         </div>
       </form>
