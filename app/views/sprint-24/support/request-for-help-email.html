@@ -1,0 +1,58 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
+
+      <form class="form" action="" method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "signinType",
+          fieldset: {
+            legend: {
+              text: "Do you have a DfE Sign-in account linked to the school that your request is about?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Yes~/sprint-5/support/which-school-are-you-buying-for",
+              text: "Yes, use my DfE Sign-in"
+            },
+            {
+              value: "No~/sprint-5/support/what-type-of-org",
+              text: "No, continue without a DfE Sign-in account"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        <p>
+          <a href="#">Create a new DfE Sign-in account</a>
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

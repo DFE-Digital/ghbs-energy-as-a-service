@@ -1,0 +1,36 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Information submitted - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="confirmation" method="post">
+        {{ govukPanel({titleText: "Information submitted",html: "Case reference number<br><strong>005647</strong>"}) }}
+        <p class="govuk-body">We've sent a confirmation email to
+          email@schoool.sch.uk containing a copy of this form and information
+          about what happens next.</p>
+        <p class="govuk-body">Depending on your contract's end date, you may be 
+          placed on an interim rate to ensure continued supply to your school.</p>
+        <h2 class="govuk-heading-m">Next steps</h2>
+        <p class="govuk-body">Check your current contract's termination terms
+          and notice period to find out how much notice you need to provide to
+          switch suppliers. You must provide notice to your current supplier in
+          writing. DfE cannot do this for you.</p>
+        {% if (data['journeyType'] == 'MAT') %}
+          <p class="govuk-body">Use this service again to switch another
+            school in your MAT to the energy contract.</p>
+          <div class="govuk-button-group">
+            <button type="submit" class="govuk-button" data-module="govuk-button" name="addAnotherSchool" value="True">
+              Switch another school</button>
+          </div>
+          <p class="govuk-body">Alternatively, fill in the <a href="https://submit.forms.service.gov.uk/preview-live/8895/multi-academy-trusts-register-your-interest-in-energy-for-schools/1049539" class="govuk-link">
+            Register your interest form</a> and complete the paperwork for any
+            additional schools offline. </p>
+        {% endif %}
+      </form>
+    </div>
+  </div>
+{% endblock %}
