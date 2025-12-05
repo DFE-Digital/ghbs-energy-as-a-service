@@ -1,0 +1,54 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Gas meter details - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="gas-meter-review-1" method="post">
+        <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
+        <h1 class="govuk-heading-l">Gas meter details</h1>
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label govuk-label--s" for="mprn-1">
+              Add a Meter Point Reference Number (MPRN)
+            </label></h2>
+          <div id="event-name-hint" class="govuk-hint">This is a 6 to 12 digit
+            number on your gas bill. It may also be called MPR or M number.</div>
+          <input class="govuk-input govuk-input--width-10" id="mprn-1" name="mprn-1" type="text" aria-describedby="mprn-1" value="{{ data['mprn-1'] }}">
+        </div>
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label govuk-label--s" for="kwh-1">
+              Estimated annual gas usage for this meter, in kilowatt hours (kWh)
+            </label>
+          </h2>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">Where can I find annual
+                gas usage?</span>
+            </summary>
+            <div class="govuk-details__text">If your annual estimated usage for
+              this meter is not on your bill, add up the kWh for this meter from
+              your last 12 gas bills to calculate your total usage.</div>
+          </details>
+            <div class="govuk-input__wrapper">
+            <input class="govuk-input govuk-input--width-5" id="kwh-1" name="kwh-1" type="text" spellcheck="false value="{{ data['kwh'] }}"">
+            <div class="govuk-input__suffix" aria-hidden="true">kWh</div>
+          </div>
+        </div>
+        <div class="govuk-button-group">
+          {{ govukButton({text: "Save and continue"}) }}
+          {% if data['check-answers'] != "on" %}
+            <a class="govuk-link" href="/single-schools/tasklist">Discard and go to task list</a>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
