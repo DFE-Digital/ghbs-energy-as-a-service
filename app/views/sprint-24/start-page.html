@@ -30,12 +30,20 @@
         join Energy for Schools.</p>
       <p class="govuk-body">Individual schools, like local authority-maintained 
         schools and single academy trusts, can join using the online service.</p>
-      <p class="govuk-body">Multi-academy trusts (MATs) can join by repeating the
-        online process for each school that's switching to the energy contract.</p>
-      <p class="govuk-body">Alternatively, MATs can fill in the <a href="https://submit.forms.service.gov.uk/preview-live/8895/multi-academy-trusts-register-your-interest-in-energy-for-schools/1049539" class="govuk-link">
-        Register your interest form</a> and complete the paperwork
-        offline. This may benefit MATs that are ready to switch 6 or more
-        schools to the energy deal.</p>
+      {% if (data['journeyType'] == 'MAT') %}
+        <p class="govuk-body">Multi-academy trusts (MATs) can join by repeating the
+          online process for each school that's switching to the energy contract.</p>
+        <p class="govuk-body">Alternatively, MATs can fill in the <a href="https://submit.forms.service.gov.uk/preview-live/8895/multi-academy-trusts-register-your-interest-in-energy-for-schools/1049539" class="govuk-link">
+          Register your interest form</a> and complete the paperwork
+          offline. This may benefit MATs that are ready to switch 6 or more
+          schools to the energy deal.</p>
+      {% else %}
+        <p class="govuk-body">Multi-academy trusts (MATs) can join by filling in 
+          <a href="https://submit.forms.service.gov.uk/preview-live/8895/multi-academy-trusts-register-your-interest-in-energy-for-schools/1049539" class="govuk-link">
+          Register your interest form</a> and completing the process offline. 
+          A member of the DfE team will then contact you and help you complete 
+          the process offline.</p>
+      {% endif %}
       <div class="govuk-button-group">
         <a href="before-you-start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
           Start now
@@ -44,8 +52,7 @@
           </svg>
         </a>
       </div>
-      <p class="govuk-body"><a href="guidance-page">Get more
-        information</a></p>
+      <p class="govuk-body"><a href="guidance-page">Get more information</a></p>
     </div>
     <div class="govuk-grid-column-one-third">
       <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
