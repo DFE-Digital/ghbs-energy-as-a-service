@@ -25,11 +25,7 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/dfe-sign-in-password', function (req, res) {
-    if (req.session.data['journeyType'] == 'MAT') {
-      res.redirect('/' + version + '/which-school-or-trust-are-you-buying-for')
-    } else {
-      res.redirect('/' + version + '/single-school-authorisation')
-    }
+    res.redirect('/' + version + '/which-school-or-trust-are-you-buying-for')
   })
 
 
