@@ -360,6 +360,6 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/confirmation', function (req, res){
-    res.redirect('/' + version + '/trust-schools')
+    res.redirect('/' + version + '/which-school-or-trust-are-you-buying-for')
   })
 }
