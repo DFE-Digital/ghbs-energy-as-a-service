@@ -1,0 +1,81 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Which school are you buying for? - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="trust-schools" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <span class="govuk-caption-l">About your schools</span>
+              <h1 class="govuk-fieldset__heading">Which school are you buying
+                for?</h1>
+            </legend>
+            <p class="govuk-body">If you're a multi-academy trust, you must 
+              complete a separate online form for each school. Alternatively, 
+              fill in the <a href="https://submit.forms.service.gov.uk/preview-live/8895/multi-academy-trusts-register-your-interest-in-energy-for-schools/1049539" class="govuk-link">
+              Register your interest form</a> and complete the paperwork 
+              offline.</p>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school1" name="school" type="radio" value="Hilltop Primary School">
+                <label class="govuk-label govuk-radios__label" for="school1">
+                  Hilltop Primary School</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school2" name="school" type="radio" value="Greenfield Academy">
+                <label class="govuk-label govuk-radios__label" for="school2">
+                  Greenfield Academy</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school3" name="school" type="radio" value="Riverside Secondary School">
+                <label class="govuk-label govuk-radios__label" for="school3">
+                  Riverside Secondary School</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school4" name="school" type="radio" value="Sunnydale Infants School">
+                <label class="govuk-label govuk-radios__label" for="school4">
+                  Sunnydale Infants School</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school5" name="school" type="radio" value="Meadowlands Junior School">
+                <label class="govuk-label govuk-radios__label" for="school5">
+                  Meadowlands Junior School</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school6" name="school" type="radio" value="Oakwood High School">
+                <label class="govuk-label govuk-radios__label" for="school6">
+                  Oakwood High School</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school7" name="school" type="radio" value="Parkside Primary">
+                <label class="govuk-label govuk-radios__label" for="school7">
+                  Parkside Primary</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school8" name="school" type="radio" value="Elm Grove Academy">
+                <label class="govuk-label govuk-radios__label" for="school8">
+                  Elm Grove Academy</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school9" name="school" type="radio" value="Bridgewater College">
+                <label class="govuk-label govuk-radios__label" for="school9">
+                  Bridgewater College</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

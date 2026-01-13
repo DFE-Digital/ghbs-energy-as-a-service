@@ -1,0 +1,281 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Task list - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if data['journeyType'] == "mats" %}
+        <form class="form" action="/single-schools/check-answers-mat" method="post">
+      {% elif data['journeyType'] == "single-school" %}
+        <form class="form" action="/single-schools/check-answers-single-school" method="post">
+      {% endif %}
+        {% if data['journeyType'] == "mats" %}
+          <span class="govuk-caption-l">Lancashire Schools Trust: Task list</span>
+          <h1 class="govuk-heading-xl">Provide information about your schools</h1>
+        {% else %}
+          <span class="govuk-caption-l">St Mary's Primary School: Task list</span>
+          <h1 class="govuk-heading-xl">Provide information about your schools</h1>
+        {% endif %}
+        <h2 class="govuk-heading-m">St Mary's Primary School</h2>
+        <ul class="govuk-task-list">
+          {% if data['single-energyType'] == "gasandelec" %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="/single-schools/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                  Current gas supplier</a>
+              </div>
+              {% if data['ccd'] == "inProgress" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">
+                    In progress
+                  </strong>
+                </div>
+              {% elif data['ccd'] == "complete" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--green">
+                    Complete</strong>
+                </div>
+            {% else %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+              </div>
+            {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="/single-schools/mat-electricity-contract?ecd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                  Current electricity supplier</a>
+              </div>
+              {% if data['ecd'] == "inProgress" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                </div>
+              {% elif data['ecd'] == "complete" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          {% endif %}
+          {% if data['single-energyType'] == "gas" %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="/single-schools/mat-gas-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                  Current gas supplier</a>
+              </div>
+              {% if data['ccd'] == "inProgress" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                </div>
+              {% elif data['ccd'] == "complete" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          {% endif %}
+          {% if data['single-energyType'] == "electricity" %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="/single-schools/mat-electricity-contract?ccd=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                  Current electricity supplier</a>
+              </div>
+              {% if data['ecd'] == "inProgress" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                </div>
+              {% elif data['ecd'] == "complete" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          {% endif %}
+          {% if data['single-energyType'] == "gasandelec" %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                {% if data['meterType'] == "Single meter" %}
+                <a class="govuk-link govuk-task-list__link" href="/single-schools/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% else %}
+                <a class="govuk-link govuk-task-list__link" href="/single-schools/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% endif %}
+                Gas meters and usage
+                </a>
+              </div>
+              {% if data['gmu1'] == "inProgress" %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--blue">
+                  In progress
+                </strong>
+              </div>
+              {% elif data['gmu1'] == "complete" %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Complete
+                </strong>
+              </div>
+              {% else %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--grey">
+                  Not started
+                </strong>
+              </div>
+              {% endif %}
+            </li>
+
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                {% if data['emeterType'] == "Single" %}
+                  <a class="govuk-link govuk-task-list__link" href="/single-schools/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% else %}
+                  <a class="govuk-link govuk-task-list__link" href="/single-schools/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% endif %}
+                  Electricity meters and usage</a>
+              </div>
+              {% if data['emu1'] == "inProgress" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                </div>
+              {% elif data['emu1'] == "complete" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          {% endif %}
+          {% if data['single-energyType'] == "gas" %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                {% if data['meterType'] == "Single meter" %}
+                  <a class="govuk-link govuk-task-list__link" href="/single-schools/gas-info?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% else %}
+                  <a class="govuk-link govuk-task-list__link" href="/single-schools/gas-meter-review?gmu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% endif %}
+                  Gas meters and usage</a>
+              </div>
+              {% if data['gmu1'] == "inProgress" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                </div>
+              {% elif data['gmu1'] == "complete" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          {% endif %}
+          {% if data['single-energyType'] == "electricity" %}
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                {% if data['emeterType'] == "Single" %}
+                  <a class="govuk-link govuk-task-list__link" href="/single-schools/elec-info?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% else %}
+                  <a class="govuk-link govuk-task-list__link" href="/single-schools/elec-meter-review?emu1=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                {% endif %}
+                  Electricity meters and usage</a>
+              </div>
+              {% if data['emu1'] == "inProgress" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+                </div>
+              {% elif data['emu1'] == "complete" %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--green">Complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__status" id="school-details-1-status">
+                  <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          {% endif %}
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="/single-schools/mat-site-contact?scontact=inProgress&tasklist=on" aria-describedby="school-details-1-status">
+                Site contact details</a>
+            </div>
+            {% if data['scontact'] == "inProgress" %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+              </div>
+            {% elif data['scontact'] == "complete" %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+               <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              </div>
+            {% else %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+              </div>
+            {% endif %}
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="/single-schools/mat-vat-declaration?vatd=inProgress&tasklist=on" aria-describedby="school-details-2-status">
+                VAT declaration</a>
+            </div>
+            {% if data['vatd'] == "inProgress" %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+              </div>
+            {% elif data['vatd'] == "complete" %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              </div>
+            {% else %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+              </div>
+            {% endif %}
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="/single-schools/mat-billing-information?bp=inProgress&tasklist=on" aria-describedby="school-details-3-hint school-details-3-status">
+                Billing preferences</a>
+            </div>
+            {% if data['bp'] == "inProgress" %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--blue">In progress</strong>
+              </div>
+            {% elif data['bp'] == "complete" %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              </div>
+            {% else %}
+              <div class="govuk-task-list__status" id="school-details-1-status">
+                <strong class="govuk-tag govuk-tag--grey">Not started</strong>
+              </div>
+            {% endif %}
+          </li>
+        </ul>
+        {{ govukButton({text: "Continue"}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

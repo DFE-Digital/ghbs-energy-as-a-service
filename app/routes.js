@@ -13,3 +13,4 @@ router.use(radioButtonRedirect)
 
 require('./routes/sprint-22.js')(router);
 require('./routes/sprint-24.js')(router);
+require('./routes/sprint-25.js')(router);

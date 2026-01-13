@@ -5,9 +5,26 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-xl">{{ serviceName }}</span>
       <h1 class="govuk-heading-xl">
-        {{ serviceName }}
+        Energy for Schools
       </h1>
+      <h2 class="govuk-heading-l">Sprint 25 Maintenance</h2>
+      <p class="govuk-body">Updating the prototyupe to make it easier for the
+        team to use/find things.</p>
+      <div class="govuk-button-group">
+        <a href="/sprint-25/start-page?journeyType=MAT&skipForm=False" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          MAT Start page</a>
+        <a href="/sprint-25/start-page?journeyType=Single-School&skipForm=False" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Single School Start page </a>
+        <a class="govuk-link" href="/sprint-25/artefacts/confirmation-email-MAT.html">
+          Confirmation email (MAT)</a>
+      </div>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://dfedigital.atlassian.net/browse/ES-1098" class="govuk-link" rel="noreferrer noopener" target="_blank">
+          ES 1098 (opens in new tab)</a> Add page listings.</li>
+      </ul>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       <h2 class="govuk-heading-l">Sprint 24 Improve MAT eligibility</h2>
       <p class="govuk-body">Based on user feedback we are reworking content to 
         make MAT eligibility clearer.</p>

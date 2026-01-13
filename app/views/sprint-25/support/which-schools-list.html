@@ -1,0 +1,110 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
+      <h1 class="govuk-heading-l">Which schools in your academy trust or federation are interested in joining Energy for Schools?</h1>
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+
+      <div class="filters-panel">
+
+      <input type="submit" name="clear" value="Clear filters" class="govuk-button govuk-button--secondary" data-action="school-picker-filters#setSchoolUrns" data-disable-with="Clear filters">
+
+
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Filter by learning stage</legend><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"><input type="hidden" name="framework_support_form[filters][phases][]" value="" autocomplete="off"><div class="govuk-checkboxes__item"><input id="framework-support-form-filters-phases-all-through-field" class="govuk-checkboxes__input" type="checkbox" value="all_through" name="framework_support_form[filters][phases][]"><label for="framework-support-form-filters-phases-all-through-field" class="govuk-label govuk-checkboxes__label">All-through</label></div><div class="govuk-checkboxes__item"><input id="framework-support-form-filters-phases-secondary-field" class="govuk-checkboxes__input" type="checkbox" value="secondary" name="framework_support_form[filters][phases][]"><label for="framework-support-form-filters-phases-secondary-field" class="govuk-label govuk-checkboxes__label">Secondary</label></div></div></fieldset></div>
+      <div class="govuk-form-group"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Filter by local authority</legend><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes"><input type="hidden" name="framework_support_form[filters][local_authorities][]" value="" autocomplete="off"><div class="govuk-checkboxes__item"><input id="framework-support-form-filters-local-authorities-371-field" class="govuk-checkboxes__input" type="checkbox" value="371" name="framework_support_form[filters][local_authorities][]"><label for="framework-support-form-filters-local-authorities-371-field" class="govuk-label govuk-checkboxes__label">Doncaster</label></div><div class="govuk-checkboxes__item"><input id="framework-support-form-filters-local-authorities-390-field" class="govuk-checkboxes__input" type="checkbox" value="390" name="framework_support_form[filters][local_authorities][]"><label for="framework-support-form-filters-local-authorities-390-field" class="govuk-label govuk-checkboxes__label">Gateshead</label></div><div class="govuk-checkboxes__item"><input id="framework-support-form-filters-local-authorities-806-field" class="govuk-checkboxes__input" type="checkbox" value="806" name="framework_support_form[filters][local_authorities][]"><label for="framework-support-form-filters-local-authorities-806-field" class="govuk-label govuk-checkboxes__label">Middlesbrough</label></div><div class="govuk-checkboxes__item"><input id="framework-support-form-filters-local-authorities-929-field" class="govuk-checkboxes__input" type="checkbox" value="929" name="framework_support_form[filters][local_authorities][]"><label for="framework-support-form-filters-local-authorities-929-field" class="govuk-label govuk-checkboxes__label">Northumberland</label></div><div class="govuk-checkboxes__item"><input id="framework-support-form-filters-local-authorities-394-field" class="govuk-checkboxes__input" type="checkbox" value="394" name="framework_support_form[filters][local_authorities][]"><label for="framework-support-form-filters-local-authorities-394-field" class="govuk-label govuk-checkboxes__label">Sunderland</label></div></div></fieldset></div>
+      </form></div>
+
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/sprint-5/support/is-this-your-school-trust" method="post">
+
+      <div class="school-picker" data-controller="school-picker">
+        <p class="govuk-body">
+          <b data-school-picker-target="selectedCount">0</b>
+          of <b>5 schools selected</b> from EMMANUEL SCHOOLS FOUNDATION
+        </p>
+        <div class="govuk-form-group"><fieldset class="govuk-fieldset"><input value="" name="" autocomplete="off" type="hidden" id=""><div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <table class="govuk-table" aria-label="Available schools">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      <strong>School name</strong> (select all)
+                    </label>
+                  </div>
+                </th>
+                <th scope="col" class="govuk-table__header">Address</th>
+                <th scope="col" class="govuk-table__header">Phase of education</th>
+                <th scope="col" class="govuk-table__header">Local authority</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body" data-school-picker-target="schoolTableBody">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        Anglesey Primary Academy
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Clarence Street, DE14 3LG</td>
+                  <td class="govuk-table__cell">All through</td>
+                  <td class="govuk-table__cell">Northumberland</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        Kingswood Academy
+                      </label>
+                    </div>
+                  </td>
+                  <td class="govuk-table__cell">Wawne Road, Bransholme, HU7 4WR</td>
+                  <td class="govuk-table__cell">All through</td>
+                  <td class="govuk-table__cell">Sunderland</td>
+                </tr>
+            </tbody>
+          </table>
+      </div></fieldset></div></div>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+</div>
+      </div>
+
+              </div>
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

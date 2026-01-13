@@ -1,0 +1,67 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Electricity meter summary - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="elec-meter-review" method="post">
+        {% if data['mpnremove'] == "yes" %}
+          <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+              <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                Notice</h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+              <p class="govuk-notification-banner__heading">MPAN succesfully
+                removed</p>
+            </div>
+          </div>
+        {% endif %}
+        <span class="govuk-caption-l">{{ data['school'] }}</span>
+        <h1 class="govuk-heading-l">MPAN summary</h1>
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">You have
+            added 1 MPAN</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">MPAN</th>
+              <th scope="col" class="govuk-table__header">Half-hourly</th>
+              <th scope="col" class="govuk-table__header">Estimated annual
+                electricity usage</th>
+              <th scope="col" class="govuk-table__header"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['mpan'] }}</td>
+              <td class="govuk-table__cell">{{ data['halfHour'] }}</td>
+              <td class="govuk-table__cell">{{ data['ekwh'] }}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/single-schools/elec-meter-info">
+                Change<span class="govuk-visually-hidden"> name</span></a></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="govuk-button-group">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" name="addAnotherMPAN1" value="true">
+            Add another MPAN</button>
+        </div>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+          {% if data['check-answers'] != "on" %}
+            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+              to task list</a>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
