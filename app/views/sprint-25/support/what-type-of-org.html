@@ -1,0 +1,58 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
+
+      <form class="form" action="/sprint-5/support/school-search" method="post">
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "orgType",
+          fieldset: {
+            legend: {
+              text: "What type of organisation are you buying for?",
+              isPageHeading: flase,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "single",
+              text: "A single school",
+              hint: {
+                text: "A local authority maintained school or an academy in a single or multi-academy trust"
+              }
+            },
+            {
+              value: "trust",
+              text: "An academy trust or federation"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

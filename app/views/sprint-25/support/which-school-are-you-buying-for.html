@@ -1,0 +1,68 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
+
+      <form class="form" action="/sprint-5/support/is-this-your-school" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Which school are you buying for?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school" name="school" type="radio" value="Downend Highschool">
+                <label class="govuk-label govuk-radios__label" for="school">
+                  Downend Schools foundation
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school-2" name="school" type="radio" value="St Mary's Primary School">
+                <label class="govuk-label govuk-radios__label" for="school-2">
+                  St Mary's Primary School
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school-3" name="school" type="radio" value="wales">
+                <label class="govuk-label govuk-radios__label" for="school-3">
+                  Burley Gate Primary School
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="school-4" name="school" type="radio" value="Aylestone High School">
+                <label class="govuk-label govuk-radios__label" for="school-4">
+                  Aylestone High School
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

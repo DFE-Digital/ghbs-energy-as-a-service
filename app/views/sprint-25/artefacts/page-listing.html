@@ -1,0 +1,91 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Letter of authority - {{ serviceName }} - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Page listing</h1>
+      <p class="govuk-body">This is a list of all the pages in the prototype.
+        Some pages are legacy pages that need removing. Some pages are for 
+        journeys that are no longer used and need removing.</p>
+      <p class="govuk-body">Please note, this list will not set any variables,
+        such as showing MAT specific content.
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/sprint-25/are-you-authorised" class="govuk-link">Are you authorised?</a></li>
+        <li><a href="/sprint-25/authorisation" class="govuk-link">Authorisation</a></li>
+        <li><a href="/sprint-25/before-you-start" class="govuk-link">Before you start</a></li>
+        <li><a href="/sprint-25/check-answers-single-school" class="govuk-link">Check answers single school</a></li>
+        <li><a href="/sprint-25/confirmation" class="govuk-link">Confirmation</a></li>
+        <li><a href="/sprint-25/dfe-sign-in-email" class="govuk-link">DfE sign in email</a></li>
+        <li><a href="/sprint-25/dfe-sign-in-password" class="govuk-link">DfE sign in password</a></li>
+        <li><a href="/sprint-25/elec-info-billing" class="govuk-link">Electricity information billing</a></li>
+        <li><a href="/sprint-25/elec-info" class="govuk-link">Electricity information</a></li>
+        <li><a href="/sprint-25/elec-meter-info" class="govuk-link">Electricity meter information</a></li>
+        <li><a href="/sprint-25/elec-meter-info-1" class="govuk-link">Electricity meter information 1</a></li>
+        <li><a href="/sprint-25/elec-meter-info-2" class="govuk-link">Electricity meter information 2</a></li>
+        <li><a href="/sprint-25/elec-meter-review" class="govuk-link">Electricity meter review</a></li>
+        <li><a href="/sprint-25/elec-meter-review-1" class="govuk-link">Electricity meter review 1</a></li>
+        <li><a href="/sprint-25/elec-meter-review-2" class="govuk-link">Electricity meter review 2</a></li>
+        <li><a href="/sprint-25/electricity-contract" class="govuk-link">Electricity contract</a></li>
+        <li><a href="/sprint-25/finish" class="govuk-link">Finish</a></li>
+        <li><a href="/sprint-25/gas-contract" class="govuk-link">Gas contract</a></li>
+        <li><a href="/sprint-25/gas-info-billing" class="govuk-link">Gas information billing</a></li>
+        <li><a href="/sprint-25/gas-info" class="govuk-link">Gas information</a></li>
+        <li><a href="/sprint-25/gas-meter-info" class="govuk-link">Gas meter information</a></li>
+        <li><a href="/sprint-25/gas-meter-info-1" class="govuk-link">Gas meter information 1</a></li>
+        <li><a href="/sprint-25/gas-meter-info-2" class="govuk-link">Gas meter information 2</a></li>
+        <li><a href="/sprint-25/gas-meter-review" class="govuk-link">Gas meter review</a></li>
+        <li><a href="/sprint-25/gas-meter-review-1" class="govuk-link">Gas meter review 1</a></li>
+        <li><a href="/sprint-25/gas-meter-review-2" class="govuk-link">Gas meter review 2</a></li>
+        <li><a href="/sprint-25/guidance-page" class="govuk-link">Guidance page</a></li>
+        <li><a href="/sprint-25/mat-billing-contact" class="govuk-link">MAT billing contact</a></li>
+        <li><a href="/sprint-25/mat-billing-information" class="govuk-link">MAT billing information</a></li>
+        <li><a href="/sprint-25/mat-billing-setup" class="govuk-link">MAT billing setup</a></li>
+        <li><a href="/sprint-25/mat-existing-contracts" class="govuk-link">MAT existing contracts</a></li>
+        <li><a href="/sprint-25/mat-existing-contracts-electric" class="govuk-link">MAT existing contracts electric</a></li>
+        <li><a href="/sprint-25/mat-existing-contracts-gas" class="govuk-link">MAT existing contracts gas</a></li>
+        <li><a href="/sprint-25/mat-gas-contract-combined" class="govuk-link">MAT gas contract combined</a></li>
+        <li><a href="/sprint-25/mat-school-fuel-selection" class="govuk-link">MAT school fuel selection</a></li>
+        <li><a href="/sprint-25/mat-site-contact" class="govuk-link">MAT site contact</a></li>
+        <li><a href="/sprint-25/mat-vat-contact" class="govuk-link">MAT VAT contact</a></li>
+        <li><a href="/sprint-25/mat-vat-contact-manual" class="govuk-link">MAT VAT contact manual</a></li>
+        <li><a href="/sprint-25/mat-vat-declaration" class="govuk-link">MAT VAT declaration</a></li>
+        <li><a href="/sprint-25/mat-vat-status" class="govuk-link">MAT VAT status</a></li>
+        <li><a href="/sprint-25/multi-meter-prompt" class="govuk-link">Multi meter prompt</a></li>
+        <li><a href="/sprint-25/MVP-landing" class="govuk-link">MVP landing</a></li>
+        <li><a href="/sprint-25/pilot-service-only-single-schools" class="govuk-link">Pilot service only single schools</a></li>
+        <li><a href="/sprint-25/remove-mpan" class="govuk-link">Remove MPAN</a></li>
+        <li><a href="/sprint-25/remove-mprn" class="govuk-link">Remove MPRN</a></li>
+        <li><a href="/sprint-25/request-for-help-email" class="govuk-link">Request for help email</a></li>
+        <li><a href="/sprint-25/start-page" class="govuk-link">Start page</a></li>
+        <li><a href="/sprint-25/tasklist" class="govuk-link">Tasklist</a></li>
+        <li><a href="/sprint-25/trust-schools" class="govuk-link">Trust schools</a></li>
+        <li><a href="/sprint-25/vat-certificate" class="govuk-link">VAT certificate</a></li>
+        <li><a href="/sprint-25/which-energy-supply-are-you-switching" class="govuk-link">Which energy supply are you switching</a></li>
+        <li><a href="/sprint-25/which-school-or-trust-are-you-buying-for" class="govuk-link">Which school or trust are you buying for</a></li>
+        <li><a href="/sprint-25/support/accessibility-needs" class="govuk-link">Accessibility needs</a></li>
+        <li><a href="/sprint-25/support/confirmation" class="govuk-link">Support confirmation</a></li>
+        <li><a href="/sprint-25/support/how-can-we-help" class="govuk-link">How can we help</a></li>
+        <li><a href="/sprint-25/support/how-did-you-find-out-about-this-service" class="govuk-link">How did you find out about this service</a></li>
+        <li><a href="/sprint-25/support/is-this-your-school" class="govuk-link">Is this your school</a></li>
+        <li><a href="/sprint-25/support/is-this-your-school-trust" class="govuk-link">Is this your school trust</a></li>
+        <li><a href="/sprint-25/support/request-for-help-email" class="govuk-link">Support request for help email</a></li>
+        <li><a href="/sprint-25/support/school-search" class="govuk-link">School search</a></li>
+        <li><a href="/sprint-25/support/send-your-request" class="govuk-link">Send your request</a></li>
+        <li><a href="/sprint-25/support/what-is-your-email" class="govuk-link">What is your email</a></li>
+        <li><a href="/sprint-25/support/what-is-your-name" class="govuk-link">What is your name</a></li>
+        <li><a href="/sprint-25/support/what-type-of-org" class="govuk-link">What type of org</a></li>
+        <li><a href="/sprint-25/support/which-school-are-you-buying-for" class="govuk-link">Which school are you buying for</a></li>
+        <li><a href="/sprint-25/support/which-schools-list" class="govuk-link">Which schools list</a></li>
+        <li><a href="/sprint-25/artefacts/confirmation-email-MAT" class="govuk-link">Confirmation email MAT</a></li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-l">{{ data['school'] }}</span>
+
+      <form class="form" action="/sprint-5/support/is-this-your-school" method="post">
+
+        {% if data['orgType'] == "single" %}
+
+        {{ govukInput({
+          label: {
+            text: "Search for your school",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter the name, postcode or unique reference number (URN) of your school"
+          },
+          id: "event-name",
+          name: "eventName"
+        }) }}
+
+        {% else %}
+
+        {{ govukInput({
+          label: {
+            text: "Search for an academy trust or federation",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Enter the name, Unique group identifier (UID) or UK Provider Reference Number (UKPRN)"
+          },
+          id: "event-name",
+          name: "eventName"
+        }) }}
+
+        {% endif %}
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Can't find it?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+
+          </div>
+        </details>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
