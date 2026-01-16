@@ -25,15 +25,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/dfe-sign-in-password', function (req, res) {
-    res.redirect('/' + version + '/which-school-or-trust-are-you-buying-for')
+    res.redirect('/' + version + '/which-school-buying-for')
   })
 
 
-  router.get('/' + version + '/which-school-or-trust-are-you-buying-for', function (req, res) {
-    res.render(version + '/which-school-or-trust-are-you-buying-for', {})
+  router.get('/' + version + '/which-school-buying-for', function (req, res) {
+    res.render(version + '/which-school-buying-for', {})
   })
 
-  router.post('/' + version + '/which-school-or-trust-are-you-buying-for', function (req, res) {
+  router.post('/' + version + '/which-school-buying-for', function (req, res) {
     if (req.session.data['school'] == 'St Mary\'s Primary School') {
       res.redirect('/' + version + '/are-you-authorised')
     } else {
