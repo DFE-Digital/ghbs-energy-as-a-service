@@ -56,16 +56,16 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/authorisation', function (req, res) {
-    res.redirect('/' + version + '/which-energy-supply-are-you-switching')
+    res.redirect('/' + version + '/which-energy-supply')
   })
 
 
-  router.get('/' + version + '/which-energy-supply-are-you-switching', function (req, res) {
-    res.render(version + '/which-energy-supply-are-you-switching', {})
+  router.get('/' + version + '/which-energy-supply', function (req, res) {
+    res.render(version + '/which-energy-supply', {})
   })
 
 
-  router.post('/' + version + '/which-energy-supply-are-you-switching', function (req, res) {
+  router.post('/' + version + '/which-energy-supply', function (req, res) {
     if (req.session.data['skipForm'] == 'True'){
       res.redirect('/' + version + '/confirmation')
     } else {
