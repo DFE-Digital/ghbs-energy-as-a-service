@@ -1,0 +1,69 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Join Energy for Schools - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Join Energy for Schools</h1>
+      <p class="govuk-body">Energy for Schools helps state-funded schools and 
+        trusts switch to the same energy contract used by the Department for 
+        Education.</p>
+      <p class="govuk-body">Schools and trusts that use the service are added to 
+        the Department for Education's V30 energy contract with Crown Commercial 
+        Service (CCS). The CCS buys energy for this particular contract over a 
+        long period of time, reducing the risk to customers of substantial 
+        fluctuations in price.</p>
+      <h2 class="govuk-heading-m">Benefits</h2>
+      <p class="govuk-body">Schools could save on average 36% on their energy
+        bills, based on DfE's estimates. The service also helps:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>protect schools from market volatility and high prices</li>
+        <li>save time spent on procurement process</li>
+        <li>remove risk associated with unregulated energy brokers</li>
+        <li>comply with procurement regulations</li>
+      </ul>
+      <h2 class="govuk-heading-m">Eligibility</h2>
+      <p class="govuk-body">All state-funded schools and trusts in England can 
+        join Energy for Schools.</p>
+      <p class="govuk-body">Individual schools, like local authority-maintained 
+        schools and single academy trusts, can join using the online service.</p>
+      {% if (data['journeyType'] == 'MAT') %}
+        <p class="govuk-body">Multi-academy trusts (MATs) can join by repeating the
+          online process for each school that's switching to the energy contract.</p>
+        <p class="govuk-body">Alternatively, MATs can fill in the <a href="https://submit.forms.service.gov.uk/preview-live/8895/multi-academy-trusts-register-your-interest-in-energy-for-schools/1049539" class="govuk-link">
+          Register your interest form</a> and complete the paperwork
+          offline. This may benefit MATs that are ready to switch 6 or more
+          schools to the energy deal.</p>
+      {% else %}
+        <p class="govuk-body">Multi-academy trusts (MATs) can join by filling in 
+          <a href="https://submit.forms.service.gov.uk/preview-live/8895/multi-academy-trusts-register-your-interest-in-energy-for-schools/1049539" class="govuk-link">
+          Register your interest form</a> and completing the process offline. 
+          A member of the DfE team will then contact you and help you complete 
+          the process offline.</p>
+      {% endif %}
+      <div class="govuk-button-group">
+        <a href="before-you-start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+          Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
+        </a>
+      </div>
+      <p class="govuk-body"><a href="guidance-page">Get more information</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">Related actions</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li><a href="guidance-page">Energy for Schools guidance
+              </a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+{% endblock %}

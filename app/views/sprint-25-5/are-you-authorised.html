@@ -1,0 +1,41 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Are you authorised to switch energy suppliers for this school? - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="are-you-authorised" method="post">
+        <span class="govuk-caption-xl">{{ data['school'] }}</span>
+        <h1 class="govuk-heading-xl">Are you authorised to switch energy 
+          suppliers for this school?</h1>
+        <div class="govuk-form-group">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>{{ data['school'] }}</li>
+          </ul>
+        </div>
+        <div class="govuk-form-group">
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              Please seek appropriate authorisation to switch energy suppliers.
+              There is no cooling off period once you've submitted this form.
+            </strong>
+          </div>
+        </div>
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and Continue
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
