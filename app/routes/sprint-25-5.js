@@ -35,7 +35,7 @@ module.exports = function (router) {
 
   router.post('/' + version + '/which-school-buying-for', function (req, res) {
     if (req.session.data['school'] == 'St Mary\'s Primary School') {
-      res.redirect('/' + version + '/are-you-authorised')
+      res.redirect('/' + version + '/authorisation')
     } else {
       res.redirect('/' + version + '/trust-schools')
     }
@@ -47,15 +47,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/trust-schools', function (req, res) {
-    res.redirect('/' + version + '/are-you-authorised')
+    res.redirect('/' + version + '/authorisation')
   })
 
 
-  router.get('/' + version + '/are-you-authorised', function (req, res) {
-    res.render(version + '/are-you-authorised', {})
+  router.get('/' + version + '/authorisation', function (req, res) {
+    res.render(version + '/authorisation', {})
   })
 
-  router.post('/' + version + '/are-you-authorised', function (req, res) {
+  router.post('/' + version + '/authorisation', function (req, res) {
     res.redirect('/' + version + '/which-energy-supply-are-you-switching')
   })
 
@@ -342,15 +342,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/check-answers-single-school', function (req, res) {
-    res.redirect('/' + version + '/authorisation')
+    res.redirect('/' + version + '/authorisation-RENAME')
   })
 
 
-  router.get('/' + version + '/authorisation', function (req, res) {
-    res.render(version + '/authorisation')
+  router.get('/' + version + '/authorisation-RENAME', function (req, res) {
+    res.render(version + '/authorisation-RENAME')
   })
 
-  router.post('/' + version + '/authorisation', function (req, res) {
+  router.post('/' + version + '/authorisation-RENAME', function (req, res) {
     res.redirect('/' + version + '/confirmation')
   })
   
