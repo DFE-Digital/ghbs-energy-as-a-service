@@ -242,15 +242,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/electricity-meter-1', function (req, res) {
-    res.redirect('/' + version + '/elec-meter-review-1')
+    res.redirect('/' + version + '/electricity-meter-summary-1')
   })
 
 
-  router.get('/' + version + '/elec-meter-review-1', function (req, res) {
-    res.render(version + '/elec-meter-review-1')
+  router.get('/' + version + '/electricity-meter-summary-1', function (req, res) {
+    res.render(version + '/electricity-meter-summary-1')
   })
 
-  router.post('/' + version + '/elec-meter-review-1', function (req, res) {
+  router.post('/' + version + '/electricity-meter-summary-1', function (req, res) {
     if (req.session.data['addAnotherMPAN1'] == 'true') {
       res.redirect('/' + version + '/elec-meter-info-2')
     } else {

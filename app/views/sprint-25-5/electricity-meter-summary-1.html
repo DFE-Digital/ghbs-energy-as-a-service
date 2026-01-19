@@ -15,7 +15,7 @@
 
       <span class="govuk-caption-l">{{ data['school'] }}</span>
       <h1 class="govuk-heading-l">MPAN summary</h1>
-      <form class="form" action="elec-meter-review-1" method="post">
+      <form class="form" action="electricity-meter-summary-1" method="post">
         <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m">You have added 2 MPANs</caption>
           <thead class="govuk-table__head">
@@ -32,7 +32,7 @@
               <td class="govuk-table__cell">{{ data['halfHour'] }}</td>
               <td class="govuk-table__cell">{{ data['ekwh'] }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-!-margin-right-3" href="elec-meter-info">
+                <a class="govuk-link govuk-!-margin-right-3" href="electricity-meter">
                   Change<span class="govuk-visually-hidden"> {{data['mpan']}}</span></a>
                 <a class="govuk-link" href="remove-mpan">Remove<span class="govuk-visually-hidden"> 
                   {{data['mpan']}}</span></a>
@@ -41,11 +41,11 @@
           </tbody>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell">{{ data['mpan-1'] }}</th>
-              <td class="govuk-table__cell">{{ data['halfHour-3'] }}</td>
-              <td class="govuk-table__cell">{{ data['ekwh-2'] }}</td>
+              <td class="govuk-table__cell">{{ data['mpan1'] }}</th>
+              <td class="govuk-table__cell">{{ data['halfHour1'] }}</td>
+              <td class="govuk-table__cell">{{ data['ekwh1'] }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-!-margin-right-3" href="elec-meter-info-1">
+                <a class="govuk-link govuk-!-margin-right-3" href="electricity-meter-1">
                   Change<span class="govuk-visually-hidden"> {{data['mpan-1']}}</span></a>
                 <a class="govuk-link" href="remove-mpan">Remove<span class="govuk-visually-hidden"> 
                   {{data['mpan-1']}}</span></a>
