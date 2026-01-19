@@ -186,7 +186,11 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/electricity-contract', function (req, res) {
-    res.redirect('/' + version + '/elec-info')
+    if (req.session.data['single-energyType'] == 'gasAndElectricity') {
+      res.redirect('/' + version + '/gas-info')
+    } else {
+      res.redirect('/' + version + '/elec-info')
+    }
   })
 
 
