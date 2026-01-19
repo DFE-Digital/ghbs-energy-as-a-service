@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Gas meter summary - {{ serviceName }} - GOV.UK Prototype Kit
+  MPRN summary - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -42,7 +42,7 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">{{ data['mprn'] }}</td>
               <td class="govuk-table__cell">{{ data['kwh'] }}</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info">
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="gas-meter">
                 Change<span class="govuk-visually-hidden"> MPRN {{ data['mprn'] }}</span></a></td>
             </tr>
           </tbody>
