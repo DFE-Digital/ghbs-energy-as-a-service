@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Gas meter summary - {{ serviceName }} - GOV.UK Prototype Kit
+  Gas meter summary - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,11 +12,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="gas-meter-review-2" method="post">
-      <!-- {% if data['meterType'] == "Multi meter" %}
-        <form class="form" action="/single-schools/gas-info-billing" method="post">
-      {% else %}
-        <form class="form" action="/single-schools/elec-info?gmu1=complete" method="post">
-      {% endif %} -->
         <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
         <h1 class="govuk-heading-l">MPRN summary</h1>
         <table class="govuk-table">
@@ -33,7 +28,7 @@
               <td class="govuk-table__cell">{{ data['mprn'] }}</td>
               <td class="govuk-table__cell">{{ data['kwh'] }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info">
+                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter">
                   Change<span class="govuk-visually-hidden"> {{data['mprn']}}</span></a>
                 <a class="govuk-link" href="remove-mprn">Remove
                   <span class="govuk-visually-hidden"> {{data['mprn']}}</span></a>
@@ -43,7 +38,7 @@
               <td class="govuk-table__cell">{{ data['mprn-1'] }}</td>
               <td class="govuk-table__cell">{{ data['kwh-1'] }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info-1">
+                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-1">
                   Change<span class="govuk-visually-hidden"> {{data['mprn-1']}}</span></a>
                 <a class="govuk-link" href="remove-mprn">Remove
                   <span class="govuk-visually-hidden"> {{data['mprn-1']}}</span></a>
@@ -53,7 +48,7 @@
               <td class="govuk-table__cell">{{ data['mprn-2'] }}</td>
               <td class="govuk-table__cell">{{ data['kwh-2'] }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-info-2">
+                <a class="govuk-link govuk-!-margin-right-3" href="gas-meter-2">
                   Change<span class="govuk-visually-hidden"> {{data['mprn-2']}}</span></a>
                 <a class="govuk-link" href="remove-mprn">Remove
                   <span class="govuk-visually-hidden"> {{data['mprn-2']}}</span></a>
