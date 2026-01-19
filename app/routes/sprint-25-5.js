@@ -141,15 +141,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/gas-meter-1', function (req, res) {
-    res.redirect('/' + version + '/gas-meter-review-1')
+    res.redirect('/' + version + '/gas-meter-summary-1')
   })
 
   
-  router.get('/' + version + '/gas-meter-review-1', function (req, res) {
-    res.render(version + '/gas-meter-review-1')
+  router.get('/' + version + '/gas-meter-summary-1', function (req, res) {
+    res.render(version + '/gas-meter-summary-1')
   })
 
-  router.post('/' + version + '/gas-meter-review-1', function (req, res) {
+  router.post('/' + version + '/gas-meter-summary-1', function (req, res) {
     if (req.session.data['addAnotherMPRN1'] == 'true') {
       res.redirect('/' + version + '/gas-meter-info-2')
     } else {
