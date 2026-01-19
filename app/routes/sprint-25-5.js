@@ -180,6 +180,14 @@ module.exports = function (router) {
     }
   })
 
+  router.get('/' + version + '/remove-mprn', function (req, res) {
+    res.render(version + '/remove-mprn')
+  })
+
+  router.post('/' + version + '/remove-mprn', function (req, res) {
+    res.redirect('/' + version + '/gas-meter-summary-2')
+  })
+
 
   router.get('/' + version + '/electricity-contract', function (req, res) {
     res.render(version + '/electricity-contract')
