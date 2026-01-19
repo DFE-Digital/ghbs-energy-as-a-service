@@ -217,7 +217,7 @@ module.exports = function (router) {
 
   router.post('/' + version + '/electricity-meter', function (req, res) {
     if (req.session.data['emeterType'] == 'Multi meter') {
-      res.redirect('/' + version + '/elec-meter-review')
+      res.redirect('/' + version + '/electricity-meter-summary')
     } else {
       res.redirect('/' + version + '/mat-site-contact')
     }
