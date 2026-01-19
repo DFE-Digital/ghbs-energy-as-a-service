@@ -131,7 +131,7 @@ module.exports = function (router) {
     if (req.session.data['single-energyType'] == 'gas') {
       res.redirect('/' + version + '/mat-site-contact')
     } else {
-      res.redirect('/' + version + '/elec-info')
+      res.redirect('/' + version + '/electricity-multi-single')
     }
   })
 
@@ -197,25 +197,25 @@ module.exports = function (router) {
     if (req.session.data['single-energyType'] == 'gasAndElectricity') {
       res.redirect('/' + version + '/gas-multi-single')
     } else {
-      res.redirect('/' + version + '/elec-info')
+      res.redirect('/' + version + '/electricity-multi-single')
     }
   })
 
 
-  router.get('/' + version + '/elec-info', function (req, res) {
-    res.render(version + '/elec-info')
+  router.get('/' + version + '/electricity-multi-single', function (req, res) {
+    res.render(version + '/electricity-multi-single')
   })
 
-  router.post('/' + version + '/elec-info', function (req, res) {
-    res.redirect('/' + version + '/elec-meter-info')
+  router.post('/' + version + '/electricity-multi-single', function (req, res) {
+    res.redirect('/' + version + '/electricity-meter')
   })
 
 
-  router.get('/' + version + '/elec-meter-info', function (req, res) {
-    res.render(version + '/elec-meter-info')
+  router.get('/' + version + '/electricity-meter', function (req, res) {
+    res.render(version + '/electricity-meter')
   })
 
-  router.post('/' + version + '/elec-meter-info', function (req, res) {
+  router.post('/' + version + '/electricity-meter', function (req, res) {
     if (req.session.data['emeterType'] == 'Multi meter') {
       res.redirect('/' + version + '/elec-meter-review')
     } else {
