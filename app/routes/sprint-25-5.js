@@ -224,24 +224,24 @@ module.exports = function (router) {
   })
 
 
-  router.get('/' + version + '/elec-meter-review', function (req, res) {
-    res.render(version + '/elec-meter-review')
+  router.get('/' + version + '/electricity-meter-summary', function (req, res) {
+    res.render(version + '/electricity-meter-summary')
   })
 
-  router.post('/' + version + '/elec-meter-review', function (req, res) {
+  router.post('/' + version + '/electricity-meter-summary', function (req, res) {
     if (req.session.data['addAnotherMPAN1'] == 'true') {
-      res.redirect('/' + version + '/elec-meter-info-1')
+      res.redirect('/' + version + '/electricity-meter-1')
     } else {
       res.redirect('/' + version + '/elec-info-billing')
     }
   })
 
 
-  router.get('/' + version + '/elec-meter-info-1', function (req, res) {
-    res.render(version + '/elec-meter-info-1')
+  router.get('/' + version + '/electricity-meter-1', function (req, res) {
+    res.render(version + '/electricity-meter-1')
   })
 
-  router.post('/' + version + '/elec-meter-info-1', function (req, res) {
+  router.post('/' + version + '/electricity-meter-1', function (req, res) {
     res.redirect('/' + version + '/elec-meter-review-1')
   })
 

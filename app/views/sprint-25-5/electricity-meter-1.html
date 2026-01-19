@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Electricity meter details - {{ serviceName }} - GOV.UK Prototype Kit
+  Electricity meter details - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,7 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="elec-meter-info-1" method="post">
+      <form class="form" action="electricity-meter-1" method="post">
         <span class="govuk-caption-l">{{ data['school'] }}: Electricity meters and usage</span>
         <h1 class="govuk-heading-l">Electricity meter details</h1>
         <div class="govuk-form-group">
@@ -23,7 +23,7 @@
             electricity bill. It's the last 13 digits of the Supply number.<br>
             <img src="/public/images/mpan-2.png" style="width:30%" class="govuk-!-margin-top-4" alt="MPAN example highlighting the bottom row of 13 digits" />
           </div>
-          <input class="govuk-input govuk-input--width-10" id="mpan" name="mpan" type="text" aria-describedby="mprn" value="{{ data['mpan'] }}">
+          <input class="govuk-input govuk-input--width-10" id="mpan1" name="mpan1" type="text" aria-describedby="mprn" value="{{ data['mpan1'] }}">
         </div>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="halfHourIn-hint">
@@ -38,7 +38,7 @@
             </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="halfHour" name="halfHour" type="radio" value="Yes" data-aria-controls="conditional-halfhour" checked="{{ checked('halfHour', 'Yes') }}"/>
+                <input class="govuk-radios__input" id="halfHour1" name="halfHour1" type="radio" value="Yes" data-aria-controls="conditional-halfhour" checked="{{ checked('halfHour1', 'Yes') }}"/>
                 <label class="govuk-label govuk-radios__label" for="supplier">
                   Yes</label>
               </div>
@@ -51,29 +51,29 @@
                     <label class="govuk-label" for="supplier">What is the supply
                       capacity?</label>
                     <div class="govuk-input__wrapper">
-                      <input class="govuk-input govuk-input--width-5" id="kva" name="kva" type="text" spellcheck="false" value="{{ data['kva'] }}"/>
+                      <input class="govuk-input govuk-input--width-5" id="kva1" name="kva1" type="text" spellcheck="false" value="{{ data['kva1'] }}"/>
                       <div class="govuk-input__suffix" aria-hidden="true">kVA</div>
                     </div>
                   </div>
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="dataAgg">Who is the data
                       aggregator?</label>
-                    <input class="govuk-input govuk-input--width-20" id="dataAgg" name="dataAgg" type="text" value="{{ data['dataAgg'] }}"/>
+                    <input class="govuk-input govuk-input--width-20" id="dataAgg1" name="dataAgg1" type="text" value="{{ data['dataAgg1'] }}"/>
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="dataCollector">Who is the data
                     collector?</label>
-                  <input class="govuk-input govuk-input--width-20" id="dataCollector" name="dataCollector" type="text" value="{{ data['dataCollector'] }}"/>
+                  <input class="govuk-input govuk-input--width-20" id="dataCollector1" name="dataCollector1" type="text" value="{{ data['dataCollector1'] }}"/>
                 </div>
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="meterOp">Who is the meter
                     operator?</label>
-                  <input class="govuk-input govuk-input--width-20" id="meterOp" name="meterOp" type="text" value="{{ data['meterOp'] }}">
+                  <input class="govuk-input govuk-input--width-20" id="meterOp1" name="meterOp1" type="text" value="{{ data['meterOp1'] }}">
                 </div>
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="halfHour-2" name="halfHour" type="radio" value="No" aria-describedby="halfHour-2-item-hint">
+              <input class="govuk-radios__input" id="halfHour-2" name="halfHour1" type="radio" value="No" aria-describedby="halfHour-2-item-hint">
               <label class="govuk-label govuk-radios__label" for="halfHour-2">
                 No
               </label>
@@ -102,7 +102,7 @@
             <p><span class="mural-link"><a href=""></a></span></p>
           </details>
           <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-5" id="ekwh" name="ekwh" type="text" spellcheck="false">
+            <input class="govuk-input govuk-input--width-5" id="ekwh1" name="ekwh1" type="text" spellcheck="false" value="{{ data['ekwh1'] }}">
             <div class="govuk-input__suffix" aria-hidden="true">kWh</div>
           </div>
         </div>
