@@ -95,27 +95,27 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/gas-multi-single', function (req, res) {
-    res.redirect('/' + version + '/gas-meter-info')
+    res.redirect('/' + version + '/gas-meter')
   })
 
 
-  router.get('/' + version + '/gas-meter-info', function (req, res) {
-    res.render(version + '/gas-meter-info')
+  router.get('/' + version + '/gas-meter', function (req, res) {
+    res.render(version + '/gas-meter')
   })
 
-  router.post('/' + version + '/gas-meter-info', function (req, res) {
+  router.post('/' + version + '/gas-meter', function (req, res) {
     if (req.session.data['meterType'] == 'Multi meter') {
-      res.redirect('/' + version + '/gas-meter-review')
+      res.redirect('/' + version + '/gas-meter-summary')
     } else  {
       res.redirect('/' + version + '/gas-info-billing')
     } 
   })
 
-  router.get('/' + version + '/gas-meter-review', function (req, res) {
-    res.render(version + '/gas-meter-review')
+  router.get('/' + version + '/gas-meter-summary', function (req, res) {
+    res.render(version + '/gas-meter-summary')
   })
 
-  router.post('/' + version + '/gas-meter-review', function (req, res) {
+  router.post('/' + version + '/gas-meter-summary', function (req, res) {
     if (req.session.data['addAnotherMPRN'] == 'true') {
       res.redirect('/' + version + '/gas-meter-info-1')
     } else {

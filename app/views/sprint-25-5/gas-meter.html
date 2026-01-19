@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Gas meter details - {{ serviceName }} - GOV.UK Prototype Kit
+  Gas meter details - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,16 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="gas-meter-info" method="post">
-        <!-- {% if ((data['meterType'] == "Single meter") and (data['tasklist'] == "on")) %}
-          <form class="form" action="/single-schools/tasklist?gmu1=complete" method="post">
-        {% elif ((data['meterType'] == "Single meter") and (data['check-answers'] == "on")) %}
-          <form class="form" action="/single-schools/check-answers-single-school" method="post">
-        {% elif data['meterType'] == "Multi meter" %}
-          <form class="form" action="/single-schools/gas-meter-review?gmu1=complete" method="post">
-        {% else %}
-          <form class="form" action="/single-schools/elec-info?gmu1=complete" method="post">
-        {% endif %} -->
+      <form action="gas-meter" method="post">
         <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
         <h1 class="govuk-heading-l">Gas meter details</h1>
         <div class="govuk-form-group">
