@@ -1,8 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Do you want your MPRNs consolidated on one bill? - {{ serviceName }} - GOV.UK
-  Prototype Kit
+  Do you want your MPRNs consolidated on one bill? - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,16 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="gas-info-billing" method="post">
-      <!-- {% if ((data['meterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
-        <form class="form" action="/single-schools/tasklist?gmu1=complete" method="post">
-      {% elif ((data['meterType'] == "Multi meter") and (data['check-answers'] == "on")) %}
-        <form class="form" action="/single-schools/check-answers-single-school?gmu1=complete" method="post">
-      {% elif data['single-energyType'] == "gas" %}
-        <form class="form" action="/single-schools/mat-site-contact?scontact=inProgress" method="post">
-      {% else %}
-        <form class="form" action="/single-schools/elec-info" method="post">
-      {% endif %} -->
+      <form class="form" action="gas-bill" method="post">
         <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
         {{ govukRadios({
           classes: "govuk-radios",

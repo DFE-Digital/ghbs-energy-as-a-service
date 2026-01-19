@@ -107,7 +107,7 @@ module.exports = function (router) {
     if (req.session.data['meterType'] == 'Multi meter') {
       res.redirect('/' + version + '/gas-meter-summary')
     } else  {
-      res.redirect('/' + version + '/gas-info-billing')
+      res.redirect('/' + version + '/gas-bill')
     } 
   })
 
@@ -119,15 +119,15 @@ module.exports = function (router) {
     if (req.session.data['addAnotherMPRN'] == 'true') {
       res.redirect('/' + version + '/gas-meter-1')
     } else {
-      res.redirect('/' + version + '/gas-info-billing')
+      res.redirect('/' + version + '/gas-bill')
     }
   })
 
-  router.get('/' + version + '/gas-info-billing', function (req, res) {
-    res.render(version + '/gas-info-billing')
+  router.get('/' + version + '/gas-bill', function (req, res) {
+    res.render(version + '/gas-bill')
   })
 
-  router.post('/' + version + '/gas-info-billing', function (req, res) {
+  router.post('/' + version + '/gas-bill', function (req, res) {
     if (req.session.data['single-energyType'] == 'gas') {
       res.redirect('/' + version + '/mat-site-contact')
     } else {
@@ -153,7 +153,7 @@ module.exports = function (router) {
     if (req.session.data['addAnotherMPRN1'] == 'true') {
       res.redirect('/' + version + '/gas-meter-2')
     } else {
-      res.redirect('/' + version + '/gas-info-billing')
+      res.redirect('/' + version + '/gas-bill')
     }
   })
 
@@ -176,7 +176,7 @@ module.exports = function (router) {
     if (req.session.data['addAnotherMPRN2'] == 'true') {
       res.redirect('/' + version + '/gas-meter-info-3')
     } else {
-      res.redirect('/' + version + '/gas-info-billing')
+      res.redirect('/' + version + '/gas-bill')
     }
   })
 
