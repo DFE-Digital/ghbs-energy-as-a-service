@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Electricity meter summary - {{ serviceName }} - GOV.UK Prototype Kit
+  MPAN summary - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,7 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="elec-meter-review" method="post">
+      <form class="form" action="electricity-meter-summary" method="post">
         {% if data['mpnremove'] == "yes" %}
           <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
             <div class="govuk-notification-banner__header">
@@ -43,7 +43,7 @@
               <td class="govuk-table__cell">{{ data['mpan'] }}</td>
               <td class="govuk-table__cell">{{ data['halfHour'] }}</td>
               <td class="govuk-table__cell">{{ data['ekwh'] }}</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="/single-schools/elec-meter-info">
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link govuk-!-margin-right-3" href="electricity-meter">
                 Change<span class="govuk-visually-hidden"> name</span></a></td>
             </tr>
           </tbody>
