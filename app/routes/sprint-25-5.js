@@ -252,27 +252,27 @@ module.exports = function (router) {
 
   router.post('/' + version + '/electricity-meter-summary-1', function (req, res) {
     if (req.session.data['addAnotherMPAN1'] == 'true') {
-      res.redirect('/' + version + '/elec-meter-info-2')
+      res.redirect('/' + version + '/electricity-meter-2')
     } else {
       res.redirect('/' + version + '/elec-info-billing')
     }
   })
 
 
-  router.get('/' + version + '/elec-meter-info-2', function (req, res) {
-    res.render(version + '/elec-meter-info-2')
+  router.get('/' + version + '/electricity-meter-2', function (req, res) {
+    res.render(version + '/electricity-meter-2')
   })
 
-  router.post('/' + version + '/elec-meter-info-2', function (req, res) {
-    res.redirect('/' + version + '/elec-meter-review-2')
+  router.post('/' + version + '/electricity-meter-2', function (req, res) {
+    res.redirect('/' + version + '/electricity-meter-summary-2')
   })
   
 
-  router.get('/' + version + '/elec-meter-review-2', function (req, res) {
-    res.render(version + '/elec-meter-review-2')
+  router.get('/' + version + '/electricity-meter-summary-2', function (req, res) {
+    res.render(version + '/electricity-meter-summary-2')
   })
 
-  router.post('/' + version + '/elec-meter-review-2', function (req, res) {
+  router.post('/' + version + '/electricity-meter-summary-2', function (req, res) {
     res.redirect('/' + version + '/elec-info-billing')
   })
 
