@@ -313,15 +313,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/vat-rate', function (req, res) {
-      res.redirect('/' + version + '/mat-vat-contact')
+      res.redirect('/' + version + '/vat-contact')
   })
 
 
-  router.get('/' + version + '/mat-vat-contact', function (req, res) {
-    res.render(version + '/mat-vat-contact')
+  router.get('/' + version + '/vat-contact', function (req, res) {
+    res.render(version + '/vat-contact')
   })
 
-  router.post('/' + version + '/mat-vat-contact', function (req, res) {
+  router.post('/' + version + '/vat-contact', function (req, res) {
     if (req.session.data['VATcontact'] == 'Yes') {
       res.redirect('/' + version + '/vat-certificate')
     } else {
