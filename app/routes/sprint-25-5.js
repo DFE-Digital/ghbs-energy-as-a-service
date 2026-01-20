@@ -325,16 +325,16 @@ module.exports = function (router) {
     if (req.session.data['VATcontact'] == 'Yes') {
       res.redirect('/' + version + '/vat-certificate')
     } else {
-      res.redirect('/' + version + '/mat-vat-contact-manual') 
+      res.redirect('/' + version + '/vat-contact-manual') 
     } 
   })
 
 
-  router.get('/' + version + '/mat-vat-contact-manual', function (req, res) {
-    res.render(version + '/mat-vat-contact-manual')
+  router.get('/' + version + '/vat-contact-manual', function (req, res) {
+    res.render(version + '/vat-contact-manual')
   })
 
-  router.post('/' + version + '/mat-vat-contact-manual', function (req, res) {
+  router.post('/' + version + '/vat-contact-manual', function (req, res) {
     res.redirect('/' + version + '/vat-certificate')
   })
 
