@@ -304,15 +304,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/site-contact', function (req, res) {
-    res.redirect('/' + version + '/mat-vat-declaration')
+    res.redirect('/' + version + '/vat-rate')
   })
 
 
-  router.get('/' + version + '/mat-vat-declaration', function (req, res) {
-    res.render(version + '/mat-vat-declaration')
+  router.get('/' + version + '/vat-rate', function (req, res) {
+    res.render(version + '/vat-rate')
   })
 
-  router.post('/' + version + '/mat-vat-declaration', function (req, res) {
+  router.post('/' + version + '/vat-rate', function (req, res) {
       res.redirect('/' + version + '/mat-vat-contact')
   })
 
