@@ -353,15 +353,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/billing-preferences', function (req, res) {
-    res.redirect('/' + version + '/mat-billing-contact')
+    res.redirect('/' + version + '/billing-address')
   })
 
 
-  router.get('/' + version + '/mat-billing-contact', function (req, res) {
-    res.render(version + '/mat-billing-contact')
+  router.get('/' + version + '/billing-address', function (req, res) {
+    res.render(version + '/billing-address')
   })
 
-  router.post('/' + version + '/mat-billing-contact', function (req, res) {
+  router.post('/' + version + '/billing-address', function (req, res) {
     res.redirect('/' + version + '/check-answers')
   })
 

@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Billing address - {{ serviceName }} - GOV.UK Prototype Kit
+  Billing address - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,12 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="mat-billing-contact" method="post">
-      <!-- {% if data['check-answers'] == "on" %}
-        <form class="form" action="/single-schools/check-answers-single-school" method="post">
-      {% else %}
-        <form class="form" action="/single-schools/tasklist?bp=complete" method="post">
-      {% endif %} -->
+      <form class="form" action="billing-address" method="post">
         {% if data['journeyType'] == "single-school" %}
           <span class="govuk-caption-l">{{ data['school'] }}: Billing</span>
         {% else %}
