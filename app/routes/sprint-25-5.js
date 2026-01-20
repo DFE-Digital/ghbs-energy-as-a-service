@@ -371,15 +371,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/check-answers', function (req, res) {
-    res.redirect('/' + version + '/authorisation-RENAME')
+    res.redirect('/' + version + '/letter-of-authority')
   })
 
 
-  router.get('/' + version + '/authorisation-RENAME', function (req, res) {
-    res.render(version + '/authorisation-RENAME')
+  router.get('/' + version + '/letter-of-authority', function (req, res) {
+    res.render(version + '/letter-of-authority')
   })
 
-  router.post('/' + version + '/authorisation-RENAME', function (req, res) {
+  router.post('/' + version + '/letter-of-authority', function (req, res) {
     res.redirect('/' + version + '/confirmation')
   })
   
