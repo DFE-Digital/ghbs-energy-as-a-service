@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  VAT declaration - {{ serviceName }} - GOV.UK Prototype Kit
+  VAT certificate of declaration - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,15 +12,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="vat-certificate" method="post">
-      <!-- {% if data['journeyType'] == "mats" %}
-        <form class="form" action="/single-schools/mat-billing-setup?vatd=complete" method="post">
-      {% elif (data['tasklist'] == "on") %}
-        <form class="form" action="/single-schools/tasklist?vatd=complete" method="post">
-      {% elif (data['check-answers'] == "on") %}
-        <form class="form" action="/single-schools/check-answers-single-school" method="post">
-      {% else %}
-        <form class="form" action="/single-schools/mat-billing-information?vatd=complete" method="post">
-      {% endif %} -->
         <span class="govuk-caption-l">{{ data['school'] }}: VAT declaration</span>
         <h1 class="govuk-heading-l">VAT certificate of declaration</h1>
         <p class="govuk-body">This information will be used to generate a VAT
