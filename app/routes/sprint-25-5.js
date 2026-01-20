@@ -116,6 +116,7 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/gas-meter-summary', function (req, res) {
+    req.session.data['mprnRemove'] = 'False'
     if (req.session.data['addAnotherMPRN'] == 'true') {
       res.redirect('/' + version + '/gas-meter-1')
     } else {
@@ -185,7 +186,8 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/remove-mprn', function (req, res) {
-    res.redirect('/' + version + '/gas-meter-summary-2')
+    req.session.data['mprnRemove'] = 'True'
+    res.redirect('/' + version + '/gas-meter-summary')
   })
 
 
@@ -229,6 +231,7 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/electricity-meter-summary', function (req, res) {
+    req.session.data['mpanRemove'] = 'False'
     if (req.session.data['addAnotherMPAN1'] == 'true') {
       res.redirect('/' + version + '/electricity-meter-1')
     } else {
@@ -251,6 +254,7 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/electricity-meter-summary-1', function (req, res) {
+    req.session.data['mpanRemove'] = 'False'
     if (req.session.data['addAnotherMPAN1'] == 'true') {
       res.redirect('/' + version + '/electricity-meter-2')
     } else {
@@ -283,6 +287,15 @@ module.exports = function (router) {
 
   router.post('/' + version + '/elec-info-billing', function (req, res) {
     res.redirect('/' + version + '/mat-site-contact')
+  })
+
+  router.get('/' + version + '/remove-mpan', function (req, res) {
+    res.render(version + '/remove-mpan')
+  })
+
+  router.post('/' + version + '/remove-mpan', function (req, res) {
+    req.session.data['mpanRemove'] = 'True'
+    res.redirect('/' + version + '/electricity-meter-summary')
   })
 
 
