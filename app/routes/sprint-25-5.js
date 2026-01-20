@@ -130,7 +130,7 @@ module.exports = function (router) {
 
   router.post('/' + version + '/gas-bill', function (req, res) {
     if (req.session.data['single-energyType'] == 'gas') {
-      res.redirect('/' + version + '/mat-site-contact')
+      res.redirect('/' + version + '/site-contact')
     } else {
       res.redirect('/' + version + '/electricity-multi-single')
     }
@@ -286,7 +286,7 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/electricity-bill', function (req, res) {
-    res.redirect('/' + version + '/mat-site-contact')
+    res.redirect('/' + version + '/site-contact')
   })
 
   router.get('/' + version + '/remove-mpan', function (req, res) {
@@ -299,11 +299,11 @@ module.exports = function (router) {
   })
 
 
-  router.get('/' + version + '/mat-site-contact', function (req, res) {
-    res.render(version + '/mat-site-contact')
+  router.get('/' + version + '/site-contact', function (req, res) {
+    res.render(version + '/site-contact')
   })
 
-  router.post('/' + version + '/mat-site-contact', function (req, res) {
+  router.post('/' + version + '/site-contact', function (req, res) {
     res.redirect('/' + version + '/mat-vat-declaration')
   })
 

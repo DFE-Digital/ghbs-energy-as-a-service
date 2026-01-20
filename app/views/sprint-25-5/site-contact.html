@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Site contact details - {{ serviceName }} - GOV.UK Prototype Kit
+  Who manages site access and maintenance? - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,14 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="mat-site-contact" method="post">
-        <!-- {% if (data['tasklist'] == "on") %}
-          <form class="form" action="/single-schools/tasklist?scontact=complete" method="post">
-        {% elif (data['check-answers'] == "on") %}
-          <form class="form" action="/single-schools/check-answers-single-school" method="post">
-        {% else %}
-          <form class="form" action="/single-schools/mat-vat-declaration?scontact=complete" method="post">
-        {% endif %} -->
+      <form class="form" action="site-contact" method="post">
         <span class="govuk-caption-l">{{ data['school'] }}: Site contact details</span>
         <h1 class="govuk-heading-l">Who manages site access and maintenance?</h1>
         <div class="govuk-hint">This is in case the supplier needs access to the
@@ -44,7 +37,7 @@
         <div class="govuk-button-group">
           {{ govukButton({text: "Save and continue"}) }}
           {% if data['check-answers'] != "on" %}
-            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+            <a class="govuk-link" href="tasklist">Discard and go
               to task list</a>
           {% endif %}
         </div>
