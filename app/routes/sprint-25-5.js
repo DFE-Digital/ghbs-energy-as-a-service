@@ -235,7 +235,7 @@ module.exports = function (router) {
     if (req.session.data['addAnotherMPAN1'] == 'true') {
       res.redirect('/' + version + '/electricity-meter-1')
     } else {
-      res.redirect('/' + version + '/elec-info-billing')
+      res.redirect('/' + version + '/electricity-bill')
     }
   })
 
@@ -258,7 +258,7 @@ module.exports = function (router) {
     if (req.session.data['addAnotherMPAN1'] == 'true') {
       res.redirect('/' + version + '/electricity-meter-2')
     } else {
-      res.redirect('/' + version + '/elec-info-billing')
+      res.redirect('/' + version + '/electricity-bill')
     }
   })
 
@@ -277,15 +277,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/electricity-meter-summary-2', function (req, res) {
-    res.redirect('/' + version + '/elec-info-billing')
+    res.redirect('/' + version + '/electricity-bill')
   })
 
 
-  router.get('/' + version + '/elec-info-billing', function (req, res) {
-    res.render(version + '/elec-info-billing')
+  router.get('/' + version + '/electricity-bill', function (req, res) {
+    res.render(version + '/electricity-bill')
   })
 
-  router.post('/' + version + '/elec-info-billing', function (req, res) {
+  router.post('/' + version + '/electricity-bill', function (req, res) {
     res.redirect('/' + version + '/mat-site-contact')
   })
 

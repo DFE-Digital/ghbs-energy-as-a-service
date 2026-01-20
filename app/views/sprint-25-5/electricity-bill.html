@@ -11,14 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="elec-info-billing" method="post">
-        <!-- {% if ((data['emeterType'] == "Multi meter") and (data['tasklist'] == "on")) %}
-          <form class="form" action="/single-schools/tasklist?emu1=complete" method="post">
-        {% elif ((data['emeterType'] == "Multi meter") and (data['check-answers'] == "on")) %}
-          <form class="form" action="/single-schools/check-answers-single-school" method="post">
-        {% else %}
-          <form class="form" action="/single-schools/mat-site-contact?emu1=complete" method="post">
-        {% endif %} -->
+      <form class="form" action="electricity-bill" method="post">
         <span class="govuk-caption-l">{{ data['school'] }}</span>
         {{ govukRadios({
           classes: "govuk-radios",
