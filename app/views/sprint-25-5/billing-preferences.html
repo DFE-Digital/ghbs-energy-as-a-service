@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Billing preferences - {{ serviceName }} - GOV.UK Prototype Kit
+  Billing preferences - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,7 +11,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="mat-billing-information" method="post">
+      <form class="form" action="billing-preferences" method="post">
       <span class="govuk-caption-l">{{ data['school'] }}: Billing preferences</span>
       <h1 class="govuk-heading-l">Setting up your billing</h1>
       {{ govukRadios({
