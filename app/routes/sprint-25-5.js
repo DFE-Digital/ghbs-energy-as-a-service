@@ -362,15 +362,15 @@ module.exports = function (router) {
   })
 
   router.post('/' + version + '/mat-billing-contact', function (req, res) {
-    res.redirect('/' + version + '/check-answers-single-school')
+    res.redirect('/' + version + '/check-answers')
   })
 
 
-  router.get('/' + version + '/check-answers-single-school', function (req, res) {
-    res.render(version + '/check-answers-single-school')
+  router.get('/' + version + '/check-answers', function (req, res) {
+    res.render(version + '/check-answers')
   })
 
-  router.post('/' + version + '/check-answers-single-school', function (req, res) {
+  router.post('/' + version + '/check-answers', function (req, res) {
     res.redirect('/' + version + '/authorisation-RENAME')
   })
 

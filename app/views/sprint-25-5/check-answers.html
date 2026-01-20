@@ -1,7 +1,7 @@
 {% extends "layouts/main-branding-2025.html" %}
 
 {% block pageTitle %}
-  Check your answers - {{ serviceName }} - GOV.UK Prototype Kit
+  Check your answers - Energy for Schools
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,7 @@
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <h1 class="govuk-heading-xl">Check your answers</h1>
       <h2>{{ data['school'] }}</h2>
-      <form class="form" action="check-answers-single-school" method="post">
+      <form class="form" action="check-answers" method="post">
         {% if data['single-energyType'] == "gasandelec" %}
           <div class="govuk-summary-card">
             <div class="govuk-summary-card__title-wrapper">
