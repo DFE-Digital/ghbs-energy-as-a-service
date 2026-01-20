@@ -1,0 +1,122 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Electricity contract - Energy for Schools
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="electricity-contract" method="post">
+        <span class="govuk-caption-l">{{ data['school'] }}: Current electricity 
+          supplier</span>
+        <h1 class="govuk-heading-l">Electricity contract</h1>
+        {% set textHtml %}
+          {{ govukInput({
+            id: "e-supplier",
+            name: "e-supplier",
+            type: "tel",
+            autocomplete: "tel",
+            classes: "govuk-!-width-one-third",
+            label: {
+              text: "Electricity supplier"
+            }
+          }) }}
+        {% endset -%}
+        {{ govukRadios({
+          name: "e-supplier",
+          fieldset: {
+            legend: {
+              text: "Who currently supplies your electricity?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "British Gas",
+              text: "British Gas"
+            },
+            {
+              value: "EDF Energy",
+              text: "EDF Energy"
+            },
+            {
+              value: "E.ON Next",
+              text: "E.ON Next"
+            },
+            {
+              value: "Scottish Power",
+              text: "Scottish Power"
+            },
+            {
+              value: "OVO Energy",
+              text: "OVO Energy"
+            },
+            {
+              value: "Octopus Energy",
+              text: "Octopus Energy"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "text",
+              text: "Other",
+              conditional: {
+                html: textHtml
+              }
+            }
+          ]
+        }) }}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="econtract-end-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              When does the contract end?
+            </legend>
+            <div id="contract-end-hint" class="govuk-hint">
+              For example, 27 3 2025
+            </div>
+            <div class="govuk-date-input" id="contract-end">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="econtract-end-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="econtract-end-day" name="econtract-end-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="econtract-end-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="econtract-end-month" name="econtract-end-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="econtract-end-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="econtract-end-year" name="econtract-end-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-button-group">
+          {{ govukButton({text: "Save and continue"}) }}
+          <a class="govuk-link" href="/single-schools/tasklist">Discard and go to task list</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Page listing - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Page listing</h1>
+      <p class="govuk-body">This is a list of all the pages in the prototype.
+        Some pages are legacy pages that need removing. Some pages are for 
+        journeys that are no longer used and need removing.</p>
+      <p class="govuk-body">Please note, this list will not set any variables,
+        such as showing MAT specific content.
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/sprint-25/are-you-authorised" class="govuk-link">Are you authorised?</a></li>
+        <li><a href="/sprint-25/authorisation" class="govuk-link">Agree to the Energy for Schools letter of authority</a></li>
+        <li><a href="/sprint-25/before-you-start" class="govuk-link">Before you start</a></li>
+        <li><a href="/sprint-25/check-answers-single-school" class="govuk-link">Check answers</a></li>
+        <li><a href="/sprint-25/confirmation" class="govuk-link">Confirmation</a></li>
+        <li><a href="/sprint-25/dfe-sign-in-email" class="govuk-link">DfE sign in email</a></li>
+        <li><a href="/sprint-25/dfe-sign-in-password" class="govuk-link">DfE sign in password</a></li>
+        <li><a href="/sprint-25/elec-info-billing" class="govuk-link">Electricity billing consolidation</a></li>
+        <li><a href="/sprint-25/elec-info" class="govuk-link">Electricity information - single/multi meter site</a></li>
+        <li><a href="/sprint-25/elec-meter-info" class="govuk-link">Electricity meter details</a></li>
+        <li><a href="/sprint-25/elec-meter-info-1" class="govuk-link">Electricity meter details 1</a></li>
+        <li><a href="/sprint-25/elec-meter-info-2" class="govuk-link">Electricity meter details 2</a></li>
+        <li><a href="/sprint-25/elec-meter-review" class="govuk-link">Electricity meter MPAN summary</a></li>
+        <li><a href="/sprint-25/elec-meter-review-1" class="govuk-link">Electricity meter MPAN summary 1</a></li>
+        <li><a href="/sprint-25/elec-meter-review-2" class="govuk-link">Electricity meter MPAN summary 2</a></li>
+        <li><a href="/sprint-25/electricity-contract" class="govuk-link">Electricity contract</a></li>
+        <li><a href="/sprint-25/gas-contract" class="govuk-link">Gas contract</a></li>
+        <li><a href="/sprint-25/gas-info-billing" class="govuk-link">Gas billing consolidation</a></li>
+        <li><a href="/sprint-25/gas-info" class="govuk-link">Gas information - single/multi meter site</a></li>
+        <li><a href="/sprint-25/gas-meter-info" class="govuk-link">Gas meter details</a></li>
+        <li><a href="/sprint-25/gas-meter-info-1" class="govuk-link">Gas meter details 1</a></li>
+        <li><a href="/sprint-25/gas-meter-info-2" class="govuk-link">Gas meter details 2</a></li>
+        <li><a href="/sprint-25/gas-meter-review" class="govuk-link">Gas meter MPRN summary</a></li>
+        <li><a href="/sprint-25/gas-meter-review-1" class="govuk-link">Gas meter MPRN summary 1</a></li>
+        <li><a href="/sprint-25/gas-meter-review-2" class="govuk-link">Gas meter MPRN summary 2</a></li>
+        <li><a href="/sprint-25/guidance-page" class="govuk-link">Guidance page</a></li>
+        <li><a href="/sprint-25/mat-billing-contact" class="govuk-link">MAT billing address</a></li>
+        <li><a href="/sprint-25/mat-billing-setup" class="govuk-link">MAT billing setup</a></li>
+        <li><a href="/sprint-25/mat-existing-contracts" class="govuk-link">MAT will the trust pay all the schools’ energy bills? DELETE????</a></li>
+        <li><a href="/sprint-25/mat-site-contact" class="govuk-link">MAT site contact</a></li>
+        <li><a href="/sprint-25/mat-vat-contact" class="govuk-link">MAT VAT contact</a></li>
+        <li><a href="/sprint-25/mat-vat-contact-manual" class="govuk-link">MAT VAT contact manual</a></li>
+        <li><a href="/sprint-25/mat-vat-declaration" class="govuk-link">MAT VAT rate</a></li>
+        <li><a href="/sprint-25/remove-mpan" class="govuk-link">Remove MPAN</a></li>
+        <li><a href="/sprint-25/remove-mprn" class="govuk-link">Remove MPRN</a></li>
+        <li><a href="/sprint-25/request-for-help-email" class="govuk-link">Request for help email</a></li>
+        <li><a href="/sprint-25/start-page" class="govuk-link">Start page</a></li>
+        <li><a href="/sprint-25/tasklist" class="govuk-link">Tasklist</a></li>
+        <li><a href="/sprint-25/trust-schools" class="govuk-link">Trust schools</a></li>
+        <li><a href="/sprint-25/vat-certificate" class="govuk-link">VAT certificate</a></li>
+        <li><a href="/sprint-25/which-energy-supply-are-you-switching" class="govuk-link">Which energy supply are you switching</a></li>
+        <li><a href="/sprint-25/which-school-or-trust-are-you-buying-for" class="govuk-link">Which school or trust are you buying for</a></li>
+        <li><a href="/sprint-25/artefacts/confirmation-email-MAT" class="govuk-link">Confirmation email MAT</a></li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

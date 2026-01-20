@@ -1,0 +1,47 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Do you want your MPRNs consolidated on one bill? - Energy for Schools
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="gas-bill" method="post">
+        <span class="govuk-caption-l">{{ data['school'] }}: Gas meters and usage</span>
+        {{ govukRadios({
+          classes: "govuk-radios",
+          name: "billType",
+          fieldset: {
+            legend: {
+              text: "Do you want your MPRNs consolidated on one bill?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "Consolidated on one bill",
+              text: "Yes"
+            },
+            {
+              value: "Separate bill for each MPRN",
+              text: "No, I want a separate bill for each MPRN"
+            }
+          ]
+        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({text: "Save and continue"}) }}
+          {% if data['check-answers'] != "on" %}
+            <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+              to task list</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layouts/main-branding-2025.html" %}
+
+{% block pageTitle %}
+  Billing address - Energy for Schools
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({text: "Back",href: "javascript:window.history.back()"}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="billing-address" method="post">
+        {% if data['journeyType'] == "single-school" %}
+          <span class="govuk-caption-l">{{ data['school'] }}: Billing</span>
+        {% else %}
+          <span class="govuk-caption-l">{{ data['school'] }}: Billing preferences</span>
+        {% endif %}
+        {{ govukRadios({
+          id: "bill-address",
+          name: "billaddress",
+          fieldset: {
+            legend: {
+              text: "Billing address",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "1 St Peter's Square, Manchester, M2 3AE",
+              text: "1 St Peter's Square, Manchester, M2 3AE",
+              checked: checked("billaddress", "1 St Peter's Square, Manchester, M2 3AE")
+            },
+            {
+              value: "The Guildhall, High Street, Exeter, EX4 3EB",
+              text: "The Guildhall, High Street, Exeter, EX4 3EB",
+              checked: checked("billaddress", "The Guildhall, High Street, Exeter, EX4 3EB")
+            },
+            {
+              value: "Millennium Point, Curzon Street, Birmingham, B4 7XG",
+              text: "Millennium Point, Curzon Street, Birmingham, B4 7XG",
+              checked: checked("billaddress", "Millennium Point, Curzon Street, Birmingham, B4 7XG")
+            }
+          ]
+        }) }}
+        <div class="govuk-button-group">
+          {{ govukButton({text: "Save and continue"}) }}
+          <a class="govuk-link" href="/single-schools/tasklist">Discard and go
+            to task list</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
