@@ -18,6 +18,9 @@ the TRUST then a school within the trust to onboard as a way to bypass the
 problem where users may work for a given trust but not their DfE Sign in
 account may not be associated with one or more of the trust's schools.
 
+The prototype only covers the school facing parts of the journey, it does
+not acknowledge the subsequent work procurement operations would do.
+
 This documentation is opinionated and speaks to how I would want to maintain a 
 prototype over time to support user research and devlopers. You may want to work
 differently.
