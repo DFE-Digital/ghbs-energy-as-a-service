@@ -9,7 +9,7 @@
     "dfe-frontend": "^2.0.1",
     "govuk-frontend": "5.13.0",
     "govuk-prototype-kit": "13.19.0",
-    "jquery": "3.7.1",
+    "jquery": "4.0.0",
     "radio-button-redirect": "^1.2.0"
   }
 }
